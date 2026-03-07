@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://emeraldeyesmiami.com
+
+# Sitemaps
+Sitemap: https://emeraldeyesmiami.com/sitemap.xml
