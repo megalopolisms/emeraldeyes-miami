@@ -26,16 +26,16 @@ const inquirySchema = z.object({
 
 type InquiryFormData = z.infer<typeof inquirySchema>;
 
-interface BookPageClientProps {
-  initialOccasion?: string;
-}
-
-export default function BookPageClient({
-  initialOccasion,
-}: BookPageClientProps) {
+export default function BookPageClient() {
   const [showForm, setShowForm] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const initialOccasion =
+    typeof window !== "undefined"
+      ? (new URLSearchParams(window.location.search).get("occasion") ??
+        undefined)
+      : undefined;
   const prefilledOccasion = OCCASION_OPTIONS.some(
     (option) => option.id === initialOccasion,
   )
@@ -69,10 +69,7 @@ export default function BookPageClient({
           phone: data.phone,
           email: data.email,
           notes:
-            [
-              data.budget ? `Budget: ${data.budget}` : null,
-              data.notes || null,
-            ]
+            [data.budget ? `Budget: ${data.budget}` : null, data.notes || null]
               .filter(Boolean)
               .join(" | ") || "",
         },
@@ -157,7 +154,10 @@ export default function BookPageClient({
             )}
 
             {showForm && !formSubmitted && (
-              <form onSubmit={handleSubmit(onSubmit)} className="mt-8 space-y-5">
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="mt-8 space-y-5"
+              >
                 <div>
                   <label className="block text-white/60 text-sm mb-1">
                     Name *

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://emeraldeyesmiami.com/experiences/proposal-yacht-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences/corporate-yacht-charter-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/faq</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences/haulover-sandbar-yacht-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences/sunset-cruise-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/fleet</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/privacy</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences/bachelorette-yacht-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/gallery</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/terms</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/cancellation-policy</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/contact</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/about</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
-<url><loc>https://emeraldeyesmiami.com/experiences/private-party-yacht-miami</loc><lastmod>2026-03-07T13:28:59.738Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/bachelorette-yacht-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/private-party-yacht-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/about</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/faq</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/corporate-yacht-charter-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/haulover-sandbar-yacht-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/gallery</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/fleet</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/privacy</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/contact</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/terms</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/cancellation-policy</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/proposal-yacht-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/experiences/sunset-cruise-miami</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://emeraldeyesmiami.com/book</loc><lastmod>2026-03-07T15:30:13.621Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

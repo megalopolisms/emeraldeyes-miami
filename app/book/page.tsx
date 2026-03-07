@@ -18,21 +18,10 @@ export const metadata: Metadata = {
   },
 };
 
-interface BookPageProps {
-  searchParams: Promise<{
-    occasion?: string | string[];
-  }>;
-}
-
-export default async function BookPage({ searchParams }: BookPageProps) {
-  const resolvedSearchParams = await searchParams;
-  const initialOccasion = Array.isArray(resolvedSearchParams.occasion)
-    ? resolvedSearchParams.occasion[0]
-    : resolvedSearchParams.occasion;
-
+export default function BookPage() {
   return (
     <Suspense>
-      <BookPageClient initialOccasion={initialOccasion} />
+      <BookPageClient />
     </Suspense>
   );
 }
