@@ -171,15 +171,21 @@ export default function ChatWidget({
         typeof window !== "undefined" ? window.location.pathname : "/planner",
       submittedAt: new Date().toISOString(),
     };
+    const whatsappUrl = buildWhatsAppUrl(selections);
+
     setIsSubmitting(true);
     setSubmitError(null);
+
     void submitInquiry(payload)
       .then(() => {
         if (typeof window !== "undefined") {
           window.sessionStorage.removeItem(STORAGE_KEY);
-          window.open(buildWhatsAppUrl(selections), "_blank");
         }
         send({ type: "SUBMIT" });
+
+        if (typeof window !== "undefined") {
+          window.location.assign(whatsappUrl);
+        }
       })
       .catch((error: unknown) => {
         setSubmitError(

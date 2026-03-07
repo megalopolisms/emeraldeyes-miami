@@ -1,8 +1,8 @@
 // =============================================================================
 // EMERALD EYES MIAMI — Split-Screen Hero Container
 // =============================================================================
-// Full viewport height. Left half: LogoPanel. Right half: WhatsApp-style chat
-// in a phone mockup frame. Mobile: stacks vertically.
+// Desktop: Full viewport height, logo left, chat right in phone mockup.
+// Mobile: Stacked — compact logo, bounded chat height, scrollable page.
 // =============================================================================
 
 "use client";
@@ -14,18 +14,18 @@ import { asset } from "@/lib/constants";
 
 export default function HeroSplit() {
   return (
-    <section className="relative flex h-screen flex-col md:flex-row">
+    <section className="relative flex min-h-0 flex-col md:h-screen md:flex-row">
       {/* Left Half — Logo Panel */}
-      <div className="h-[30vh] w-full md:h-full md:w-1/2">
+      <div className="h-[28vh] w-full md:h-full md:w-1/2">
         <LogoPanel />
       </div>
 
       {/* Right Half — Chat in phone mockup */}
-      <div className="flex min-h-0 flex-1 flex-col items-center justify-center md:w-1/2 bg-[--color-navy] md:-ml-[10%] md:pt-[5vh]">
+      <div className="flex flex-col items-center justify-center md:w-1/2 bg-[--color-navy] md:-ml-[10%] md:pt-[5vh]">
         {/* Phone mockup container */}
-        <div className="relative w-full max-w-[360px] md:h-[60vh] flex flex-col flex-1 md:flex-initial mx-auto">
+        <div className="relative w-full max-w-[360px] h-[420px] md:h-[60vh] flex flex-col mx-auto">
           {/* Phone frame */}
-          <div className="flex flex-col flex-1 md:flex-initial md:h-full overflow-hidden md:rounded-[2rem] md:border-2 md:border-[#2EC4A5]/70 md:shadow-[0_0_30px_rgba(46,196,165,0.4)]">
+          <div className="flex flex-col h-full overflow-hidden md:rounded-[2rem] md:border-2 md:border-[#2EC4A5]/70 md:shadow-[0_0_30px_rgba(46,196,165,0.4)]">
             {/* Phone notch (desktop only) */}
             <div
               className="hidden md:flex items-center justify-center py-1.5"
@@ -76,8 +76,8 @@ export default function HeroSplit() {
         </div>
       </div>
 
-      {/* Scroll indicator — centered at bottom of hero */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-1 animate-bounce">
+      {/* Scroll indicator */}
+      <div className="flex md:absolute md:bottom-6 left-1/2 md:-translate-x-1/2 z-10 flex-col items-center gap-1 animate-bounce py-4 md:py-0 mx-auto">
         <span className="text-[10px] uppercase tracking-widest text-[#2EC4A5]/60">
           Scroll
         </span>

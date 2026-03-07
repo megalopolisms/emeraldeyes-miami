@@ -34,7 +34,9 @@ export default function Section({
         ${className}
       `}
     >
-      <div className="mx-auto max-w-7xl px-6 py-20">{children}</div>
+      <div className="mx-auto max-w-7xl px-5 py-12 md:px-6 md:py-20">
+        {children}
+      </div>
     </section>
   );
 }

@@ -136,13 +136,13 @@ function SashaSection() {
   const { t } = useLanguage();
   return (
     <Section id="meet-sasha">
-      <div className="mx-auto max-w-5xl grid items-center gap-12 md:grid-cols-[1fr_1.3fr]">
+      <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-sm"
+          className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
             <Image
@@ -213,12 +213,13 @@ function LiveSaxSection() {
   const { t } = useLanguage();
   return (
     <Section id="live-sax" dark>
-      <div className="mx-auto max-w-5xl grid items-center gap-12 md:grid-cols-[1.3fr_1fr]">
+      <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
+          className="order-2 md:order-1"
         >
           <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
@@ -259,7 +260,7 @@ function LiveSaxSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          className="relative mx-auto w-full max-w-sm"
+          className="relative mx-auto w-full max-w-[280px] md:max-w-sm order-1 md:order-2"
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
             <Image
@@ -285,13 +286,13 @@ function SushiSection() {
   const { t } = useLanguage();
   return (
     <Section id="sushi-chef">
-      <div className="mx-auto max-w-5xl grid items-center gap-12 md:grid-cols-[1fr_1.3fr]">
+      <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-sm"
+          className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
             <Image

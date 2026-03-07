@@ -148,7 +148,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "sasha.title": "Meet",
     "sasha.name": "Sasha",
     "sasha.p1":
-      "Born and raised in Miami, Sasha holds a degree in Merchant Marine Science and has spent her career on the water. As our partner and Director of Operations, she personally oversees every charter — from the first message to the moment you step back on the dock.",
+      "A proud Miami resident, Sasha holds a degree in Merchant Marine Science and has spent her career on the water. As our partner and Director of Operations, she personally oversees every charter — from the first message to the moment you step back on the dock.",
     "sasha.p2.pre":
       "When she's not coordinating charters, you'll find her on a",
     "sasha.p2.jetski": "jet ski",
@@ -318,7 +318,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "sasha.title": "Conoce a",
     "sasha.name": "Sasha",
     "sasha.p1":
-      "Nacida y criada en Miami, Sasha tiene un titulo en Ciencia de la Marina Mercante y ha dedicado su carrera al agua. Como nuestra socia y Directora de Operaciones, supervisa personalmente cada charter — desde el primer mensaje hasta que regresas al muelle.",
+      "Residente orgullosa de Miami, Sasha tiene un titulo en Ciencia de la Marina Mercante y ha dedicado su carrera al agua. Como nuestra socia y Directora de Operaciones, supervisa personalmente cada charter — desde el primer mensaje hasta que regresas al muelle.",
     "sasha.p2.pre":
       "Cuando no esta coordinando charters, la encontraras en una",
     "sasha.p2.jetski": "moto de agua",

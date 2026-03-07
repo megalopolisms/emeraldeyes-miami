@@ -27,14 +27,14 @@ export default function Header() {
           <span className="sr-only">Emerald Eyes Miami</span>
         </Link>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1 sm:gap-1.5">
           {LANGUAGES.map((lang) => (
             <button
               key={lang.code}
               type="button"
               onClick={() => setActive(lang.code)}
               title={lang.label}
-              className={`text-lg leading-none rounded-full w-8 h-8 flex items-center justify-center transition-all ${
+              className={`text-base sm:text-lg leading-none rounded-full w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center transition-all ${
                 active === lang.code
                   ? "bg-white/10 scale-110"
                   : "opacity-50 hover:opacity-100 hover:bg-white/5"
