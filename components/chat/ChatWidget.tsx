@@ -18,6 +18,7 @@ import {
   ADDON_OPTIONS,
   PICKUP_OPTIONS,
 } from "@/lib/constants";
+import { asset } from "@/lib/constants";
 import { formatPrice } from "@/lib/pricing";
 
 import Image from "next/image";
@@ -419,7 +420,7 @@ export default function ChatWidget({
         style={{ backgroundColor: "#1f2c34" }}
       >
         <Image
-          src="/images/boat-icon.jpg"
+          src={asset("/images/boat-icon.jpg")}
           alt="Emerald Eyes"
           width={44}
           height={44}

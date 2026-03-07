@@ -9,6 +9,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { asset } from "@/lib/constants";
 
 // ---------------------------------------------------------------------------
 // Component
@@ -26,7 +27,7 @@ export default function LogoPanel() {
         className="flex flex-col items-center"
       >
         <Image
-          src="/images/emeraldeyes.jpg"
+          src={asset("/images/emeraldeyes.jpg")}
           alt="Emerald Eyes Miami — Luxury Yacht Rental"
           width={784}
           height={1168}

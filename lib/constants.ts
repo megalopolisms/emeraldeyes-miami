@@ -6,6 +6,17 @@
 // =============================================================================
 
 // ---------------------------------------------------------------------------
+// Base Path (GitHub Pages deploys under /emeraldeyes-miami/)
+// next/image doesn't auto-prefix with basePath when unoptimized
+// ---------------------------------------------------------------------------
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+/** Prefix a public asset path with the basePath */
+export function asset(path: string): string {
+  return `${BASE_PATH}${path}`;
+}
+
+// ---------------------------------------------------------------------------
 // Brand Colors (from SKILL.md)
 // ---------------------------------------------------------------------------
 export const COLORS = {

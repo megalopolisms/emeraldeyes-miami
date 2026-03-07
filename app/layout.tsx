@@ -9,7 +9,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
-import { BUSINESS } from "@/lib/constants";
+import { BUSINESS, BASE_PATH } from "@/lib/constants";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FloatingButton from "@/components/chat/FloatingButton";
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     siteName: "Emerald Eyes Miami",
     images: [
       {
-        url: "/images/emeraldeyes.jpg",
+        url: `${BASE_PATH}/images/emeraldeyes.jpg`,
         width: 784,
         height: 1168,
         alt: "Emerald Eyes Miami logo",
@@ -67,11 +67,11 @@ export const metadata: Metadata = {
     title: "Emerald Eyes Miami | Luxury Yacht Rental",
     description:
       "Premium yacht charters in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate charters on Biscayne Bay and beyond.",
-    images: ["/images/emeraldeyes.jpg"],
+    images: [`${BASE_PATH}/images/emeraldeyes.jpg`],
   },
   icons: {
-    icon: "/images/emeraldeyes.jpg",
-    apple: "/images/emeraldeyes.jpg",
+    icon: `${BASE_PATH}/images/emeraldeyes.jpg`,
+    apple: `${BASE_PATH}/images/emeraldeyes.jpg`,
   },
 };
 

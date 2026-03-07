@@ -10,6 +10,7 @@
 import Image from "next/image";
 import LogoPanel from "@/components/home/LogoPanel";
 import ChatWidget from "@/components/chat/ChatWidget";
+import { asset } from "@/lib/constants";
 
 export default function HeroSplit() {
   return (
@@ -45,7 +46,7 @@ export default function HeroSplit() {
           <div className="flex items-center justify-center gap-6">
             <div className="bg-white rounded-lg p-2 h-[5.5rem] flex items-center">
               <Image
-                src="/images/miamidade.png"
+                src={asset("/images/miamidade.png")}
                 alt="Miami-Dade County"
                 width={500}
                 height={235}
@@ -53,14 +54,14 @@ export default function HeroSplit() {
               />
             </div>
             <Image
-              src="/images/northmiamibeach.png"
+              src={asset("/images/northmiamibeach.png")}
               alt="North Miami Beach"
               width={840}
               height={885}
               className="h-[6.6rem] w-auto rounded-full ml-3"
             />
             <Image
-              src="/images/bbb.png"
+              src={asset("/images/bbb.png")}
               alt="BBB Accredited Business"
               width={768}
               height={392}

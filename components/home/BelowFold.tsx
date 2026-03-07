@@ -15,7 +15,7 @@ import {
   MapPin,
   Award,
 } from "lucide-react";
-import { EXPERIENCES } from "@/lib/constants";
+import { EXPERIENCES, asset } from "@/lib/constants";
 import Section from "@/components/ui/Section";
 import { useLanguage } from "@/lib/language-context";
 
@@ -146,7 +146,7 @@ function SashaSection() {
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
             <Image
-              src="/images/sasha.jpg"
+              src={asset("/images/sasha.jpg")}
               alt="Sasha — Partner & Director of Operations at Emerald Eyes Miami"
               width={928}
               height={1120}
@@ -263,7 +263,7 @@ function LiveSaxSection() {
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
             <Image
-              src="/images/sax.jpg"
+              src={asset("/images/sax.jpg")}
               alt="Live saxophone player performing on a yacht at sunset — Emerald Eyes Miami"
               width={800}
               height={1000}
@@ -295,7 +295,7 @@ function SushiSection() {
         >
           <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
             <Image
-              src="/images/sushi.jpg"
+              src={asset("/images/sushi.jpg")}
               alt="Private sushi chef preparing fresh rolls on a yacht — Emerald Eyes Miami"
               width={800}
               height={1000}
