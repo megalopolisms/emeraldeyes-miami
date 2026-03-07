@@ -11,8 +11,11 @@ import Image from "next/image";
 import LogoPanel from "@/components/home/LogoPanel";
 import ChatWidget from "@/components/chat/ChatWidget";
 import { asset } from "@/lib/constants";
+import { useLanguage } from "@/lib/language-context";
 
 export default function HeroSplit() {
+  const { t } = useLanguage();
+
   return (
     <section className="relative flex min-h-0 flex-col md:h-screen md:flex-row">
       {/* Left Half — Logo Panel */}
@@ -69,9 +72,9 @@ export default function HeroSplit() {
             />
           </div>
           <div className="flex gap-4 text-[10px] text-white/30">
-            <span>Responds in 1 hour</span>
+            <span>{t("trust.responds")}</span>
             <span>|</span>
-            <span>100+ charters/year</span>
+            <span>{t("trust.charters")}</span>
           </div>
         </div>
       </div>
@@ -79,7 +82,7 @@ export default function HeroSplit() {
       {/* Scroll indicator */}
       <div className="flex md:absolute md:bottom-6 left-1/2 md:-translate-x-1/2 z-10 flex-col items-center gap-1 animate-bounce py-4 md:py-0 mx-auto">
         <span className="text-[10px] uppercase tracking-widest text-[#2EC4A5]/60">
-          Scroll
+          {t("scroll.label")}
         </span>
         <svg
           width="20"

@@ -1,10 +1,11 @@
 "use client";
 
 // =============================================================================
-// ContactForm — WhatsApp-style inline contact form (Step 7)
+// ContactForm — WhatsApp-style inline contact form (i18n)
 // =============================================================================
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/lib/language-context";
 
 interface ContactFormProps {
   onSubmit: (data: {
@@ -25,8 +26,9 @@ interface ContactFormProps {
 export default function ContactForm({
   onSubmit,
   initialValues,
-  submitLabel = "Continue",
+  submitLabel,
 }: ContactFormProps) {
+  const { t } = useLanguage();
   const [name, setName] = useState(initialValues?.name ?? "");
   const [phone, setPhone] = useState(initialValues?.phone ?? "");
   const [email, setEmail] = useState(initialValues?.email ?? "");
@@ -47,9 +49,9 @@ export default function ContactForm({
 
   const handleSubmit = () => {
     const newErrors: Record<string, string> = {};
-    if (!name.trim()) newErrors.name = "Required";
-    if (!phone.trim()) newErrors.phone = "Required";
-    if (!email.trim().includes("@")) newErrors.email = "Enter a valid email";
+    if (!name.trim()) newErrors.name = t("form.required");
+    if (!phone.trim()) newErrors.phone = t("form.required");
+    if (!email.trim().includes("@")) newErrors.email = t("form.validEmail");
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -72,21 +74,21 @@ export default function ContactForm({
         {
           key: "name",
           type: "text",
-          placeholder: "Your name",
+          placeholder: t("form.name"),
           value: name,
           set: setName,
         },
         {
           key: "phone",
           type: "tel",
-          placeholder: "Phone number",
+          placeholder: t("form.phone"),
           value: phone,
           set: setPhone,
         },
         {
           key: "email",
           type: "email",
-          placeholder: "Email",
+          placeholder: t("form.email"),
           value: email,
           set: setEmail,
         },
@@ -106,7 +108,7 @@ export default function ContactForm({
         </div>
       ))}
       <textarea
-        placeholder="Special requests (optional)"
+        placeholder={t("form.notes")}
         value={notes}
         onChange={(e) => setNotes(e.target.value)}
         rows={2}
@@ -119,7 +121,7 @@ export default function ContactForm({
         className="w-full py-2 rounded-lg text-[13px] font-semibold transition-all hover:opacity-90 active:scale-[0.98]"
         style={{ backgroundColor: "#2EC4A5", color: "#fff" }}
       >
-        {submitLabel}
+        {submitLabel ?? t("chat.continue")}
       </button>
     </div>
   );

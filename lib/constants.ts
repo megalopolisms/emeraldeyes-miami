@@ -42,11 +42,11 @@ export const OCCASION_OPTIONS = [
 ] as const;
 
 export const GROUP_SIZE_OPTIONS = [
-  { id: "2-4", label: "2-4", subtitle: "Intimate" },
-  { id: "5-8", label: "5-8", subtitle: "Small group" },
-  { id: "9-15", label: "9-15", subtitle: "Party" },
-  { id: "16-25", label: "16-25", subtitle: "Big group" },
-  { id: "25+", label: "25+", subtitle: "Event" },
+  { id: "2-4", label: "2-4", subtitle: "Intimate", tKey: "intimate" },
+  { id: "5-8", label: "5-8", subtitle: "Small group", tKey: "smallGroup" },
+  { id: "9-15", label: "9-15", subtitle: "Party", tKey: "party" },
+  { id: "16-25", label: "16-25", subtitle: "Big group", tKey: "bigGroup" },
+  { id: "25+", label: "25+", subtitle: "Event", tKey: "event" },
 ] as const;
 
 export const DURATION_OPTIONS = [
@@ -84,29 +84,30 @@ export const PICKUP_OPTIONS = [
 // Chat Messages — Bot responses for each step
 // ---------------------------------------------------------------------------
 export const CHAT_MESSAGES = {
-  welcome:
-    "Welcome to Emerald Eyes Miami. Let's build your perfect day on the water.",
-  occasion: "What's the occasion?",
-  groupSize: "Great choice! How many guests?",
-  date: "When are you thinking?",
-  duration: "How long on the water?",
-  addons: "Want to make it unforgettable? Pick as many as you'd like:",
-  pickup: "Where are you staying? We can pick you up.",
-  contact: "Almost there. How do we reach you?",
-  summary: "Here's your experience:",
-  confirmation: "We'll confirm within 1 hour. Talk soon! 🚢",
+  welcome: "chat.welcome",
+  occasion: "chat.occasion",
+  groupSize: "chat.groupSize",
+  date: "chat.date",
+  email: "chat.email",
+  phone: "chat.phone",
+  duration: "chat.duration",
+  addons: "chat.addons",
+  pickup: "chat.pickup",
+  contact: "chat.contact",
+  summary: "chat.summary",
+  confirmation: "chat.confirmation",
 } as const;
 
 // ---------------------------------------------------------------------------
 // Occasion-specific bot reactions (shown after user selects occasion)
 // ---------------------------------------------------------------------------
 export const OCCASION_REACTIONS: Record<string, string> = {
-  birthday: "Happy birthday! Let's make it one to remember. 🎉",
-  bachelor: "Oh it's going to be a movie. Let's set it up. 🎬",
-  sunset: "The golden hour on the water hits different. Great pick.",
-  proposal: "We love a good love story. Let's plan the perfect moment. 💍",
-  corporate: "Impressive setting for impressive people. Let's talk details.",
-  vibes: "No agenda, just ocean. We got you. 🌊",
+  birthday: "reaction.birthday",
+  bachelor: "reaction.bachelor",
+  sunset: "reaction.sunset",
+  proposal: "reaction.proposal",
+  corporate: "reaction.corporate",
+  vibes: "reaction.vibes",
 };
 
 // ---------------------------------------------------------------------------

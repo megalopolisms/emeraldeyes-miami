@@ -4,6 +4,8 @@
 // OptionChips — WhatsApp-style compact selectable pills
 // =============================================================================
 
+import { useLanguage } from "@/lib/language-context";
+
 interface ChipOption {
   id: string;
   label: string;
@@ -53,10 +55,17 @@ export default function OptionChips({
         </button>
       ))}
       {multiSelect && Array.isArray(selected) && selected.length > 0 && (
-        <span className="text-[10px] text-white/30 self-center ml-1">
-          tap Continue
-        </span>
+        <TapHint />
       )}
     </div>
+  );
+}
+
+function TapHint() {
+  const { t } = useLanguage();
+  return (
+    <span className="text-[10px] text-white/30 self-center ml-1">
+      {t("chat.tapContinue")}
+    </span>
   );
 }

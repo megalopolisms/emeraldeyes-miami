@@ -8,15 +8,7 @@
 
 import { setup, assign } from "xstate";
 import type { ChatSelections, ChatMessage, ChatStep } from "@/lib/types";
-import {
-  CHAT_MESSAGES,
-  OCCASION_REACTIONS,
-  OCCASION_OPTIONS,
-  GROUP_SIZE_OPTIONS,
-  DURATION_OPTIONS,
-  ADDON_OPTIONS,
-  PICKUP_OPTIONS,
-} from "@/lib/constants";
+import { CHAT_MESSAGES, OCCASION_REACTIONS } from "@/lib/constants";
 
 // ---------------------------------------------------------------------------
 // Context Shape
@@ -101,11 +93,8 @@ function isEditableStep(step?: ChatStep | null): step is EditableStep {
   return Boolean(step && EDITABLE_STEPS.includes(step as EditableStep));
 }
 
-function labelFor(
-  options: ReadonlyArray<{ id: string; label: string }>,
-  id: string,
-): string {
-  return options.find((option) => option.id === id)?.label ?? id;
+function optKey(id: string): string {
+  return "opt." + id;
 }
 
 function formatDate(isoDate: string): string {
@@ -118,8 +107,7 @@ function formatDate(isoDate: string): string {
 }
 
 function formatGroupSize(groupSize: string): string {
-  const option = GROUP_SIZE_OPTIONS.find((item) => item.id === groupSize);
-  return option ? `${option.label} (${option.subtitle})` : groupSize;
+  return groupSize; // "2-4", "5-8" etc. — universally understood
 }
 
 function formatAddons(addons: string[]): {
@@ -128,13 +116,13 @@ function formatAddons(addons: string[]): {
 } {
   if (addons.length === 0) {
     return {
-      text: "No add-ons for now",
+      text: "chat.noAddons",
       selections: ["none"],
     };
   }
 
   return {
-    text: addons.map((addonId) => labelFor(ADDON_OPTIONS, addonId)).join(", "),
+    text: addons.map((addonId) => optKey(addonId)).join(", "),
     selections: addons,
   };
 }
@@ -216,12 +204,9 @@ function buildMessages(
   }
 
   if (selections.occasion) {
-    push(
-      "answer-occasion",
-      "user",
-      labelFor(OCCASION_OPTIONS, selections.occasion),
-      [selections.occasion],
-    );
+    push("answer-occasion", "user", optKey(selections.occasion), [
+      selections.occasion,
+    ]);
 
     const reaction = OCCASION_REACTIONS[selections.occasion];
     if (reaction) {
@@ -251,7 +236,7 @@ function buildMessages(
     push("answer-date", "user", formatDate(selections.date), [selections.date]);
   }
 
-  push("prompt-email", "bot", "What's your email? We'll send the quote there.");
+  push("prompt-email", "bot", CHAT_MESSAGES.email);
 
   if (currentStep === "email") {
     return messages;
@@ -261,7 +246,7 @@ function buildMessages(
     push("answer-email", "user", selections.email, [selections.email]);
   }
 
-  push("prompt-phone", "bot", "And your phone number?");
+  push("prompt-phone", "bot", CHAT_MESSAGES.phone);
 
   if (currentStep === "phone") {
     return messages;
@@ -278,12 +263,9 @@ function buildMessages(
   }
 
   if (selections.duration) {
-    push(
-      "answer-duration",
-      "user",
-      labelFor(DURATION_OPTIONS, selections.duration),
-      [selections.duration],
-    );
+    push("answer-duration", "user", optKey(selections.duration), [
+      selections.duration,
+    ]);
   }
 
   push("prompt-addons", "bot", CHAT_MESSAGES.addons);
@@ -302,7 +284,7 @@ function buildMessages(
   }
 
   if (selections.pickup) {
-    push("answer-pickup", "user", labelFor(PICKUP_OPTIONS, selections.pickup), [
+    push("answer-pickup", "user", optKey(selections.pickup), [
       selections.pickup,
     ]);
   }
@@ -325,7 +307,7 @@ function buildMessages(
     return messages;
   }
 
-  push("answer-submit", "user", "Send this request");
+  push("answer-submit", "user", "chat.sendThis");
   push("prompt-confirmation", "bot", CHAT_MESSAGES.confirmation);
 
   return messages;
