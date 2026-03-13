@@ -1,7 +1,8 @@
 // =============================================================================
 // EMERALD EYES MIAMI — Coast Guard Inspection Article (Client Component)
 // =============================================================================
-// Full article with images, alternating backgrounds, animations, and i18n.
+// Full article matching home page visual language: image-text grids, visible
+// lifestyle photos, card layouts, and real visual contrast.
 // =============================================================================
 
 "use client";
@@ -49,7 +50,7 @@ const staggerItem = {
 };
 
 // ---------------------------------------------------------------------------
-// Safety Equipment Data
+// Data Arrays
 // ---------------------------------------------------------------------------
 const SAFETY_ITEMS = [
   { emoji: "\u{1F9BA}", key: "pfd" },
@@ -61,14 +62,8 @@ const SAFETY_ITEMS = [
   { emoji: "\u{1F4A1}", key: "nav" },
 ];
 
-// ---------------------------------------------------------------------------
-// Interview Questions
-// ---------------------------------------------------------------------------
 const INTERVIEW_QS = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"];
 
-// ---------------------------------------------------------------------------
-// Regulations Reference
-// ---------------------------------------------------------------------------
 const REGULATIONS = [
   { code: "NVIC 7-94", key: "cg.reg.nvic" },
   { code: "46 C.F.R. Part 25", key: "cg.reg.cfr25" },
@@ -88,10 +83,10 @@ export default function CoastGuardArticle() {
 
   return (
     <main>
-      {/* ============================================================= */}
-      {/* HERO — full-width image background with overlay                */}
-      {/* ============================================================= */}
-      <section className="relative min-h-[55vh] flex items-end overflow-hidden">
+      {/* ================================================================= */}
+      {/* HERO — visible yacht image, light gradient at bottom only         */}
+      {/* ================================================================= */}
+      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
         <Image
           src={asset("/images/emeraldeyes.jpg")}
           alt="Emerald Eyes yacht on the water in Miami"
@@ -99,12 +94,13 @@ export default function CoastGuardArticle() {
           className="object-cover object-center"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy] via-[--color-navy]/70 to-transparent" />
+        {/* Light gradient only at bottom so image stays visible */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy] via-[--color-navy]/30 to-transparent" />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-12"
+          className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-14"
         >
           <Link
             href="/blog"
@@ -113,25 +109,28 @@ export default function CoastGuardArticle() {
             &larr; {t("blog.backToBlog")}
           </Link>
           <div className="flex items-center gap-3 mb-4">
-            <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-[--color-emerald]/15 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
+            <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
               <ShieldCheck className="w-3.5 h-3.5" />
               {t("blog.cat.safety")}
             </span>
-            <span className="text-xs text-white/60">
+            <span className="text-xs text-white/80 drop-shadow-md">
               March 13, 2026 &middot; {t("blog.cg.readTime")}
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl lg:text-6xl text-white leading-tight">
+          <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl lg:text-6xl text-white leading-tight drop-shadow-lg">
             {t("cg.heroTitle")}
           </h1>
         </motion.div>
       </section>
 
-      {/* ============================================================= */}
-      {/* TRUST STRIP — authority badges                                 */}
-      {/* ============================================================= */}
-      <section className="border-y border-white/5 bg-[--color-navy-light]/50">
-        <div className="mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-6">
+      {/* ================================================================= */}
+      {/* TRUST STRIP — matching home page TrustSection exactly             */}
+      {/* ================================================================= */}
+      <Section
+        className="py-10 border-y border-white/5 bg-[--color-navy-light]/50"
+        dark
+      >
+        <div className="mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-center gap-8">
           {[
             {
               icon: ShieldCheck,
@@ -150,21 +149,21 @@ export default function CoastGuardArticle() {
             },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-3">
-              <item.icon className="w-7 h-7 text-[--color-emerald]" />
-              <div>
-                <h4 className="text-white font-medium text-sm">{item.label}</h4>
-                <p className="text-xs text-white/50">{item.sub}</p>
+              <item.icon className="w-8 h-8 text-[--color-emerald]" />
+              <div className="text-left">
+                <h4 className="text-white font-medium">{item.label}</h4>
+                <p className="text-xs text-white/60">{item.sub}</p>
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
-      {/* ============================================================= */}
-      {/* INTRO — white-ish background for contrast                      */}
-      {/* ============================================================= */}
-      <section className="bg-gradient-to-b from-[--color-navy-light] to-[--color-navy]">
-        <div className="mx-auto max-w-3xl px-6 py-16">
+      {/* ================================================================= */}
+      {/* INTRO — short, punchy, then flows into content                    */}
+      {/* ================================================================= */}
+      <Section>
+        <div className="mx-auto max-w-3xl">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -180,221 +179,209 @@ export default function CoastGuardArticle() {
             </p>
           </motion.div>
         </div>
-      </section>
+      </Section>
 
-      {/* ============================================================= */}
-      {/* SECTION 1: What Is a Bareboat Charter — dark bg                */}
-      {/* ============================================================= */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
+      {/* ================================================================= */}
+      {/* WHAT IS A BAREBOAT — Image-Text Grid (SashaSection pattern)       */}
+      {/* Yacht image LEFT, text RIGHT — matching home page layout          */}
+      {/* ================================================================= */}
+      <Section dark>
+        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
+          {/* Yacht image — same decorative treatment as home */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
-                {t("cg.s1.title")}
-              </h2>
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
+              <Image
+                src={asset("/images/emeraldeyes.jpg")}
+                alt="Emerald Eyes yacht — bareboat charter in Miami"
+                width={800}
+                height={600}
+                className="h-auto w-full object-cover"
+              />
             </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+          </motion.div>
+
+          {/* Text */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("blog.cat.safety")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+              {t("cg.s1.title")}
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-white/75">
               {t("cg.s1.p1")}
             </p>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            <p className="mt-4 text-base leading-relaxed text-white/75">
               {t("cg.s1.p2")}
             </p>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            <p className="mt-4 text-base leading-relaxed text-white/75">
               {t("cg.s1.p3")}
             </p>
-          </motion.div>
 
-          <motion.ul
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="space-y-3 mb-8"
-          >
-            {[
-              "cg.s1.li1",
-              "cg.s1.li2",
-              "cg.s1.li3",
-              "cg.s1.li4",
-              "cg.s1.li5",
-            ].map((key) => (
-              <motion.li
-                key={key}
-                variants={staggerItem}
-                className="flex items-start gap-3 text-white/80 text-lg leading-relaxed"
-              >
-                <CheckCircle className="w-5 h-5 text-[--color-emerald] mt-1 flex-shrink-0" />
-                <span>{t(key)}</span>
-              </motion.li>
-            ))}
-          </motion.ul>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="text-white/80 text-lg leading-relaxed"
-          >
-            {t("cg.s1.p4")}
-          </motion.p>
-        </div>
-      </Section>
-
-      {/* ============================================================= */}
-      {/* SECTION 2: Why CG Boards — lighter background                  */}
-      {/* ============================================================= */}
-      <Section dark>
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
-                {t("cg.s2.title")}
-              </h2>
-            </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {t("cg.s2.p1")}
-            </p>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
-              {t("cg.s2.p2")}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8"
-          >
-            {[
-              {
-                icon: ShieldCheck,
-                num: "1",
-                titleKey: "cg.s2.c1.title",
-                textKey: "cg.s2.c1.text",
-                color: "emerald",
-              },
-              {
-                icon: FileText,
-                num: "2",
-                titleKey: "cg.s2.c2.title",
-                textKey: "cg.s2.c2.text",
-                color: "emerald",
-              },
-              {
-                icon: Users,
-                num: "3",
-                titleKey: "cg.s2.c3.title",
-                textKey: "cg.s2.c3.text",
-                color: "gold",
-              },
-            ].map((card) => (
-              <motion.div
-                key={card.num}
-                variants={staggerItem}
-                className="bg-[--color-navy] rounded-2xl p-6 border border-white/10 hover:border-[--color-emerald]/20 transition-all duration-300"
-              >
-                <div
-                  className={`flex items-center justify-center w-12 h-12 rounded-xl mb-4 ${card.color === "gold" ? "bg-[--color-gold]/10 text-[--color-gold]" : "bg-[--color-emerald]/10 text-[--color-emerald]"}`}
+            <div className="mt-6 flex flex-wrap gap-3 text-xs">
+              {["cg.s1.li1", "cg.s1.li2", "cg.s1.li3"].map((key) => (
+                <span
+                  key={key}
+                  className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium"
                 >
-                  <card.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-white font-semibold text-lg mb-2">
-                  {t(card.titleKey)}
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  {t(card.textKey)}
-                </p>
-              </motion.div>
-            ))}
+                  {t(key)}
+                </span>
+              ))}
+            </div>
           </motion.div>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="text-white/80 text-lg leading-relaxed"
-          >
-            {t("cg.s2.p3")}
-          </motion.p>
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* SECTION 3: Boarding Steps — visual timeline                    */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* WHY CG BOARDS — 3-Column Card Grid (WhySection pattern)           */}
+      {/* ================================================================= */}
       <Section>
-        <div className="max-w-3xl mx-auto">
+        <div className="mb-12 text-center">
+          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            {t("cg.s2.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-white/50 text-base leading-relaxed">
+            {t("cg.s2.p1")}
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-3">
+          {[
+            {
+              icon: ShieldCheck,
+              titleKey: "cg.s2.c1.title",
+              textKey: "cg.s2.c1.text",
+              accent: "emerald",
+            },
+            {
+              icon: FileText,
+              titleKey: "cg.s2.c2.title",
+              textKey: "cg.s2.c2.text",
+              accent: "emerald",
+            },
+            {
+              icon: Users,
+              titleKey: "cg.s2.c3.title",
+              textKey: "cg.s2.c3.text",
+              accent: "gold",
+            },
+          ].map((card, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              variants={fadeUp}
+              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-8 text-center"
+            >
+              <div
+                className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full mb-5 ${
+                  card.accent === "gold"
+                    ? "border border-[--color-gold]/30 bg-[--color-gold]/10"
+                    : "border border-[--color-emerald]/30 bg-[--color-emerald]/10"
+                }`}
+              >
+                <card.icon
+                  className={`w-7 h-7 ${
+                    card.accent === "gold"
+                      ? "text-[--color-gold]"
+                      : "text-[--color-emerald]"
+                  }`}
+                />
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-xl font-semibold text-white">
+                {t(card.titleKey)}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/50">
+                {t(card.textKey)}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </Section>
+
+      {/* ================================================================= */}
+      {/* FULL-WIDTH SAX IMAGE BREAK — visible lifestyle photo              */}
+      {/* Light overlay, text overlay for visual rhythm                     */}
+      {/* ================================================================= */}
+      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
+        <Image
+          src={asset("/images/sax.jpg")}
+          alt="Live saxophone on a yacht at sunset — Emerald Eyes Miami"
+          fill
+          className="object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[--color-navy]/60 via-transparent to-transparent" />
+        <div className="relative z-10 h-full flex items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-md px-8 md:px-16"
+          >
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald] mb-2 drop-shadow-md">
+              {t("cg.s3.title")}
+            </p>
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-white drop-shadow-lg leading-snug">
+              {t("cg.s3.intro")}
+            </h2>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ================================================================= */}
+      {/* BOARDING STEPS — Timeline with compact step cards                 */}
+      {/* ================================================================= */}
+      <Section dark>
+        <div className="max-w-4xl mx-auto">
+          {/* Steps 1-8 */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
+            variants={staggerContainer}
+            className="grid grid-cols-1 md:grid-cols-2 gap-5"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
-                {t("cg.s3.title")}
-              </h2>
-            </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-10">
-              {t("cg.s3.intro")}
-            </p>
-          </motion.div>
-
-          {/* Steps 1-8 as visual timeline */}
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-5 top-0 bottom-0 w-px bg-gradient-to-b from-[--color-emerald]/40 via-[--color-emerald]/20 to-transparent hidden md:block" />
-
             {[1, 2, 3, 4, 5, 6, 7, 8].map((step) => (
               <motion.div
                 key={step}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={fadeUp}
-                custom={0}
-                className="relative mb-10 md:pl-16"
+                variants={staggerItem}
+                className="bg-[--color-navy] rounded-xl p-6 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
               >
-                {/* Step number badge */}
-                <div className="md:absolute md:left-0 md:top-0 inline-flex items-center justify-center w-10 h-10 rounded-full bg-[--color-emerald]/15 border border-[--color-emerald]/30 text-[--color-emerald] text-sm font-bold mb-3 md:mb-0">
-                  {step}
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[--color-emerald]/15 border border-[--color-emerald]/30 text-[--color-emerald] text-sm font-bold">
+                    {step}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-[family-name:var(--font-heading)] text-lg text-white mb-2">
+                      {t(`cg.step${step}.title`)}
+                    </h3>
+                    <p className="text-white/60 text-sm leading-relaxed">
+                      {t(`cg.step${step}.p1`)}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-[family-name:var(--font-heading)] text-xl md:text-2xl text-white mb-3">
-                  {t(`cg.step${step}.title`)}
-                </h3>
-                <p className="text-white/75 text-base leading-relaxed mb-3">
-                  {t(`cg.step${step}.p1`)}
-                </p>
-                {t(`cg.step${step}.p2`) !== `cg.step${step}.p2` && (
-                  <p className="text-white/75 text-base leading-relaxed">
-                    {t(`cg.step${step}.p2`)}
-                  </p>
-                )}
 
                 {/* Step 2 — question list */}
                 {step === 2 && (
-                  <div className="mt-4 space-y-2">
+                  <div className="mt-4 ml-14 space-y-1.5">
                     {[
                       "cg.step2.q1",
                       "cg.step2.q2",
@@ -403,18 +390,18 @@ export default function CoastGuardArticle() {
                     ].map((key) => (
                       <div
                         key={key}
-                        className="flex items-start gap-3 text-white/75 text-base leading-relaxed"
+                        className="flex items-start gap-2 text-white/55 text-sm"
                       >
-                        <ChevronRight className="w-4 h-4 text-[--color-emerald] mt-1 flex-shrink-0" />
+                        <ChevronRight className="w-3.5 h-3.5 text-[--color-emerald] mt-0.5 flex-shrink-0" />
                         <span>{t(key)}</span>
                       </div>
                     ))}
                   </div>
                 )}
 
-                {/* Step 4 — passenger count card */}
+                {/* Step 4 — passenger counts */}
                 {step === 4 && (
-                  <div className="mt-4 bg-[--color-navy-light] rounded-xl p-5 border border-white/10 space-y-3">
+                  <div className="mt-4 ml-14 space-y-2">
                     {[
                       {
                         count: "cg.pax.6",
@@ -432,63 +419,79 @@ export default function CoastGuardArticle() {
                         textKey: "cg.pax.13.text",
                       },
                     ].map((item, idx) => (
-                      <div key={idx}>
-                        {idx > 0 && <hr className="border-white/10 mb-3" />}
-                        <div className="flex items-start gap-3">
-                          <span
-                            className={`${item.color} font-bold text-base mt-0.5 shrink-0`}
-                          >
-                            {t(item.count)}
-                          </span>
-                          <p className="text-white/60 text-sm">
-                            {t(item.textKey)}
-                          </p>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-
-                {/* Step 6 — safety equipment grid */}
-                {step === 6 && (
-                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {SAFETY_ITEMS.map((item) => (
-                      <div
-                        key={item.key}
-                        className="flex items-start gap-3 bg-[--color-navy-light] rounded-xl p-4 border border-white/10"
-                      >
-                        <span className="text-2xl flex-shrink-0">
-                          {item.emoji}
+                      <div key={idx} className="flex items-start gap-2">
+                        <span
+                          className={`${item.color} font-bold text-xs mt-0.5 shrink-0`}
+                        >
+                          {t(item.count)}
                         </span>
-                        <div>
-                          <h4 className="text-white font-semibold text-sm">
-                            {t(`cg.${item.key}.title`)}
-                          </h4>
-                          <p className="text-white/55 text-xs mt-1 leading-relaxed">
-                            {t(`cg.${item.key}.text`)}
-                          </p>
-                        </div>
+                        <p className="text-white/50 text-xs">
+                          {t(item.textKey)}
+                        </p>
                       </div>
                     ))}
                   </div>
                 )}
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* MID-ARTICLE CTA with yacht image                               */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* SAFETY EQUIPMENT — Grid cards with emojis                         */}
+      {/* ================================================================= */}
+      <Section>
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-10 text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+              {t("cg.step6.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-md text-white/45 text-sm leading-relaxed">
+              {t("cg.step6.p1")}
+            </p>
+          </div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            {SAFETY_ITEMS.map((item) => (
+              <motion.div
+                key={item.key}
+                variants={staggerItem}
+                className="flex items-start gap-4 bg-[--color-navy-light] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
+              >
+                <span className="text-3xl flex-shrink-0">{item.emoji}</span>
+                <div>
+                  <h4 className="text-white font-semibold text-sm">
+                    {t(`cg.${item.key}.title`)}
+                  </h4>
+                  <p className="text-white/50 text-xs mt-1 leading-relaxed">
+                    {t(`cg.${item.key}.text`)}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* ================================================================= */}
+      {/* MID-ARTICLE CTA — visible image, lighter overlay                  */}
+      {/* ================================================================= */}
       <section className="relative overflow-hidden">
         <Image
-          src={asset("/images/sax.jpg")}
-          alt="Yacht charter experience in Miami"
+          src={asset("/images/sushi.jpg")}
+          alt="Private sushi chef on a yacht — Emerald Eyes Miami"
           fill
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[--color-navy]/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[--color-navy]/70 via-[--color-navy]/40 to-transparent" />
         <div className="relative z-10 mx-auto max-w-4xl px-6 py-20">
           <motion.div
             initial="hidden"
@@ -496,13 +499,13 @@ export default function CoastGuardArticle() {
             viewport={{ once: true }}
             variants={fadeUp}
             custom={0}
-            className="text-center"
+            className="max-w-md"
           >
-            <Anchor className="w-10 h-10 text-[--color-emerald] mx-auto mb-4" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-white mb-4">
+            <Anchor className="w-10 h-10 text-[--color-emerald] mb-4 drop-shadow-lg" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-white mb-4 drop-shadow-lg">
               {t("cg.midCta.title")}
             </h2>
-            <p className="text-white/70 text-lg mb-8 max-w-xl mx-auto">
+            <p className="text-white/90 text-lg mb-8 drop-shadow-md">
               {t("cg.midCta.text")}
             </p>
             <Button href="/book" size="lg">
@@ -512,35 +515,27 @@ export default function CoastGuardArticle() {
         </div>
       </section>
 
-      {/* ============================================================= */}
-      {/* WHAT MAKES IT PASS — lighter background                        */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* WHAT MAKES IT PASS — 2-column card grid                           */}
+      {/* ================================================================= */}
       <Section dark>
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-emerald]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
-                {t("cg.pass.title")}
-              </h2>
-            </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="mb-10 text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+              {t("cg.pass.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-lg text-white/45 text-sm leading-relaxed">
               {t("cg.pass.intro")}
             </p>
-          </motion.div>
+          </div>
 
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
             {[
               "cg.pass.li1",
@@ -555,30 +550,19 @@ export default function CoastGuardArticle() {
               <motion.div
                 key={key}
                 variants={staggerItem}
-                className="flex items-start gap-3 bg-[--color-navy] rounded-xl p-4 border border-white/5"
+                className="flex items-start gap-3 bg-[--color-navy] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
               >
                 <CheckCircle className="w-5 h-5 text-[--color-emerald] mt-0.5 flex-shrink-0" />
-                <span className="text-white/75 text-sm">{t(key)}</span>
+                <span className="text-white/70 text-sm">{t(key)}</span>
               </motion.div>
             ))}
           </motion.div>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="text-white/80 text-lg leading-relaxed"
-          >
-            {t("cg.pass.closing")}
-          </motion.p>
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* RED FLAGS                                                      */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* RED FLAGS — compact bordered section                              */}
+      {/* ================================================================= */}
       <Section>
         <div className="max-w-3xl mx-auto">
           <motion.div
@@ -594,7 +578,7 @@ export default function CoastGuardArticle() {
                 {t("cg.red.title")}
               </h2>
             </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-6">
+            <p className="text-white/75 text-base leading-relaxed mb-6">
               {t("cg.red.intro")}
             </p>
           </motion.div>
@@ -604,7 +588,7 @@ export default function CoastGuardArticle() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={staggerContainer}
-            className="bg-[--color-navy-light] rounded-2xl border border-[--color-gold]/15 p-6 md:p-8 mb-8"
+            className="bg-[--color-navy-light] rounded-2xl border border-[--color-gold]/15 p-6 md:p-8"
           >
             {[
               "cg.red.li1",
@@ -619,156 +603,161 @@ export default function CoastGuardArticle() {
                 {idx > 0 && <hr className="border-white/5 my-4" />}
                 <div className="flex items-start gap-3">
                   <AlertTriangle className="w-5 h-5 text-[--color-gold] mt-0.5 flex-shrink-0" />
-                  <span className="text-white/75 text-base">{t(key)}</span>
+                  <span className="text-white/70 text-base">{t(key)}</span>
                 </div>
               </motion.div>
             ))}
           </motion.div>
-
-          <motion.p
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="text-white/80 text-lg leading-relaxed"
-          >
-            {t("cg.red.closing")}
-          </motion.p>
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* SASHA INTERVIEW — image + text grid like home page             */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* SASHA INTERVIEW — EXACT SashaSection pattern from home page       */}
+      {/* Image LEFT, text RIGHT, decorative elements, big image            */}
+      {/* ================================================================= */}
       <Section dark>
-        <div className="max-w-5xl mx-auto">
+        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
+          {/* Sasha image — identical to home page SashaSection */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="mb-10"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
-                {t("cg.sasha.title")}
-              </h2>
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
+              <Image
+                src={asset("/images/sasha.jpg")}
+                alt="Sasha — Partner & Director of Operations at Emerald Eyes Miami"
+                width={928}
+                height={1120}
+                className="h-auto w-full object-cover"
+              />
             </div>
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
           </motion.div>
 
-          {/* Sasha image + intro — matching home page layout */}
-          <div className="grid items-center gap-8 md:gap-12 md:grid-cols-[280px_1fr] mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="relative mx-auto w-full max-w-[240px]"
-            >
-              <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
-                <Image
-                  src={asset("/images/sasha.jpg")}
-                  alt="Sasha — Operations Lead at Emerald Eyes Miami"
-                  width={928}
-                  height={1120}
-                  className="h-auto w-full object-cover"
-                />
-              </div>
-              <div className="absolute -bottom-3 -right-3 h-20 w-20 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold] mb-2">
-                {t("sasha.role")}
-              </p>
-              <p className="text-white/80 text-base leading-relaxed mb-4">
-                {t("cg.sasha.intro")}
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs">
-                <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-3 py-1 text-[--color-emerald] font-medium">
-                  {t("sasha.badge1")}
-                </span>
-                <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-3 py-1 text-[--color-emerald] font-medium">
-                  {t("sasha.badge2")}
-                </span>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Interview Q&A */}
+          {/* Sasha info */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="space-y-5 max-w-3xl mx-auto"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
           >
-            {INTERVIEW_QS.map((q) => (
-              <motion.div
-                key={q}
-                variants={staggerItem}
-                className="bg-[--color-navy] rounded-xl p-6 border border-white/10 hover:border-[--color-emerald]/20 transition-colors"
-              >
-                <div className="flex items-start gap-3 mb-3">
-                  <MessageCircle className="w-5 h-5 text-[--color-emerald] mt-0.5 flex-shrink-0" />
-                  <p className="text-[--color-emerald] font-semibold text-sm">
-                    {t(`cg.sasha.${q}.q`)}
-                  </p>
-                </div>
-                <p className="text-white/80 text-base leading-relaxed pl-8">
-                  {t(`cg.sasha.${q}.a`)}
-                </p>
-              </motion.div>
-            ))}
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("sasha.role")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+              {t("cg.sasha.title")}
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-white/75">
+              {t("cg.sasha.intro")}
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-3 text-xs">
+              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
+                {t("sasha.badge1")}
+              </span>
+              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
+                {t("sasha.badge2")}
+              </span>
+              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
+                {t("sasha.badge3")}
+              </span>
+            </div>
           </motion.div>
         </div>
+
+        {/* Interview Q&A — below the image-text grid */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={staggerContainer}
+          className="mt-14 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          {INTERVIEW_QS.map((q) => (
+            <motion.div
+              key={q}
+              variants={staggerItem}
+              className="bg-[--color-navy] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
+            >
+              <div className="flex items-start gap-3 mb-2">
+                <MessageCircle className="w-4 h-4 text-[--color-emerald] mt-0.5 flex-shrink-0" />
+                <p className="text-[--color-emerald] font-semibold text-sm">
+                  {t(`cg.sasha.${q}.q`)}
+                </p>
+              </div>
+              <p className="text-white/65 text-sm leading-relaxed pl-7">
+                {t(`cg.sasha.${q}.a`)}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* WHAT THIS MEANS FOR YOU                                        */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* WHAT THIS MEANS FOR YOU — Image-Text Grid (SaxSection pattern)    */}
+      {/* Text LEFT, image RIGHT                                            */}
+      {/* ================================================================= */}
       <Section>
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
+          {/* Text */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-emerald]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
-                {t("cg.client.title")}
-              </h2>
-            </div>
-            <p className="text-white/80 text-lg leading-relaxed mb-5">
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
+              {t("blog.cat.safety")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+              {t("cg.client.title")}
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-white/75">
               {t("cg.client.p1")}
             </p>
-            <p className="text-white/80 text-lg leading-relaxed mb-5">
+            <p className="mt-4 text-base leading-relaxed text-white/75">
               {t("cg.client.p2")}
             </p>
-            <p className="text-white/80 text-lg leading-relaxed mb-5">
+            <p className="mt-4 text-base leading-relaxed text-white/75">
               {t("cg.client.p3")}
             </p>
-            <p className="text-white/90 text-lg leading-relaxed font-medium italic font-[family-name:var(--font-heading)]">
+            <p className="mt-4 text-[17px] leading-relaxed text-white/90 font-medium italic font-[family-name:var(--font-heading)]">
               &ldquo;{t("cg.client.p4")}&rdquo;
             </p>
           </motion.div>
+
+          {/* Sax image — decorative treatment matching home */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
+          >
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
+              <Image
+                src={asset("/images/sax.jpg")}
+                alt="Live saxophone experience on the water"
+                width={800}
+                height={1000}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -left-4 h-28 w-28 rounded-2xl border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+            <div className="absolute -top-3 -right-3 h-16 w-16 rounded-full border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+          </motion.div>
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* REGULATIONS TABLE + RELATED LINKS — side by side               */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* REGULATIONS + RELATED LINKS — side by side                        */}
+      {/* ================================================================= */}
       <Section dark>
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8">
           {/* Regulations */}
@@ -785,13 +774,13 @@ export default function CoastGuardArticle() {
                 {t("cg.ref.title")}
               </h2>
             </div>
-            <div className="bg-[--color-navy] rounded-xl p-5 border border-white/10 space-y-3">
+            <div className="bg-[--color-navy] rounded-xl p-5 border border-white/5 space-y-3">
               {REGULATIONS.map((reg) => (
                 <div key={reg.code} className="flex items-start gap-3">
                   <span className="text-[--color-emerald] font-mono text-xs mt-0.5 shrink-0 bg-[--color-emerald]/5 px-2 py-0.5 rounded">
                     {reg.code}
                   </span>
-                  <p className="text-white/60 text-sm">{t(reg.key)}</p>
+                  <p className="text-white/55 text-sm">{t(reg.key)}</p>
                 </div>
               ))}
             </div>
@@ -830,7 +819,7 @@ export default function CoastGuardArticle() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group flex items-center gap-3 text-white/70 hover:text-[--color-emerald] transition-all duration-200 text-sm py-3 px-4 rounded-xl hover:bg-[--color-navy] border border-transparent hover:border-white/5"
+                  className="group flex items-center gap-3 text-white/60 hover:text-[--color-emerald] transition-all duration-200 text-sm py-3 px-4 rounded-xl hover:bg-[--color-navy] border border-transparent hover:border-white/5"
                 >
                   <ChevronRight className="w-4 h-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
                   {t(link.labelKey)}
@@ -841,18 +830,18 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
-      {/* ============================================================= */}
-      {/* FINAL CTA — full-width image background                        */}
-      {/* ============================================================= */}
+      {/* ================================================================= */}
+      {/* FINAL CTA — full-width visible yacht image                        */}
+      {/* ================================================================= */}
       <section className="relative overflow-hidden">
         <Image
           src={asset("/images/emeraldeyes.jpg")}
           alt="Emerald Eyes Miami yacht"
           fill
-          className="object-cover object-center"
+          className="object-cover object-bottom"
         />
-        <div className="absolute inset-0 bg-[--color-navy]/85" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 py-24 text-center">
+        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/80 via-[--color-navy]/40 to-transparent" />
+        <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -860,11 +849,11 @@ export default function CoastGuardArticle() {
             variants={fadeUp}
             custom={0}
           >
-            <Anchor className="w-12 h-12 text-[--color-emerald] mx-auto mb-5" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl text-white mb-5">
+            <Anchor className="w-12 h-12 text-[--color-emerald] mx-auto mb-5 drop-shadow-lg" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl text-white mb-5 drop-shadow-lg">
               {t("cg.cta.title")}
             </h2>
-            <p className="text-white/70 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+            <p className="text-white/90 text-lg mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-md">
               {t("cg.cta.text")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
