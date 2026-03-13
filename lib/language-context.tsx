@@ -340,6 +340,232 @@ const translations: Record<Lang, Record<string, string>> = {
     "how.3.title": "Board & Enjoy",
     "how.3.text":
       "We handle every detail. You just step aboard and make memories.",
+    // Blog
+    "blog.title": "Blog",
+    "blog.subtitle":
+      "Guides, tips, and insider knowledge about chartering in Miami.",
+    "blog.readArticle": "Read article \u2192",
+    "blog.backToBlog": "Back to Blog",
+    "blog.ctaTitle": "Ready to get on the water?",
+    "blog.ctaText":
+      "Every Emerald Eyes charter comes fully equipped, properly documented, and crewed by licensed professionals.",
+    "blog.ctaBook": "Plan Your Charter",
+    "blog.ctaExperiences": "Browse Experiences",
+    "blog.cat.safety": "Safety & Regulations",
+    "blog.cg.title":
+      "What Happens During a Coast Guard Inspection on a Bareboat Charter?",
+    "blog.cg.excerpt":
+      "A complete guide to USCG boardings on bareboat yacht charters in Miami. What they check, what paperwork you need, safety equipment requirements, and how to pass every time.",
+    "blog.cg.readTime": "10 min read",
+    // Coast Guard article
+    "cg.heroTitle":
+      "What Happens During a Coast Guard Inspection on a Bareboat Charter?",
+    "cg.intro1":
+      "If you\u2019re renting a yacht in Miami, there\u2019s a good chance the U.S. Coast Guard will board your vessel at some point during the trip. It\u2019s not a raid. It\u2019s not a sign that something went wrong. It\u2019s routine \u2014 and if you\u2019re on a properly run bareboat charter, it takes about ten minutes and you\u2019re back to enjoying the water.",
+    "cg.intro2":
+      "But most people have no idea what to expect. What do they check? What paperwork do they ask for? Why do they separate the crew from the guests? This guide breaks it all down \u2014 from the legal framework behind the inspection to what actually happens on the water, based on real experience running charters in South Florida.",
+    "cg.s1.title": "What Is a Bareboat Charter?",
+    "cg.s1.p1":
+      "Before we get into the inspection itself, it\u2019s important to understand the bareboat charter structure \u2014 because that\u2019s exactly what the Coast Guard is verifying when they board.",
+    "cg.s1.p2":
+      "A bareboat charter means the client rents the vessel itself \u2014 without crew. The client becomes the temporary \u201Cowner\u201D for the duration of the charter. They choose their own captain, they choose their own deckhand, and they\u2019re responsible for the operation of the vessel during the rental period.",
+    "cg.s1.p3":
+      "This distinction matters legally. Under Coast Guard guidance (specifically NVIC 7-94), a bareboat charter is only valid when:",
+    "cg.s1.li1":
+      "The charterer chooses the captain \u2014 not the vessel owner",
+    "cg.s1.li2": "The charterer pays the captain directly",
+    "cg.s1.li3":
+      "The captain works for the charterer during the charter, not for the vessel owner",
+    "cg.s1.li4": "The charterer can dismiss the captain for cause",
+    "cg.s1.li5":
+      "The vessel owner may suggest qualified captains, but cannot effectively force one specific captain or keep operational control",
+    "cg.s1.p4":
+      "This is the framework that keeps most yacht rentals in Miami operating without needing a full Coast Guard Certificate of Inspection (COI). When the structure is legitimate, the vessel operates as an uninspected passenger vessel carrying six or fewer passengers \u2014 or as a true bareboat with up to 12.",
+    "cg.s2.title": "Why Does the Coast Guard Board Charter Vessels?",
+    "cg.s2.p1":
+      "The Coast Guard has the authority to board any vessel in U.S. waters at any time. For charter vessels in the Miami area \u2014 Biscayne Bay, Haulover, the Intracoastal, the Atlantic side \u2014 boardings are frequent, especially on weekends and holidays.",
+    "cg.s2.p2": "They\u2019re checking for three things:",
+    "cg.s2.c1.title": "Safety compliance",
+    "cg.s2.c1.text":
+      "Life jackets, fire extinguishers, life rings, navigation lights, visual distress signals \u2014 all the gear required under 46 C.F.R. Part 25.",
+    "cg.s2.c2.title": "Legal charter structure",
+    "cg.s2.c2.text":
+      "Is this a legitimate bareboat? Or is the vessel owner running an illegal crewed charter disguised as a bareboat to avoid inspection requirements?",
+    "cg.s2.c3.title": "Passenger count",
+    "cg.s2.c3.text":
+      "How many people are on board? Over 6 passengers with owner-provided crew triggers Subchapter T requirements (46 C.F.R. \u00A7 175.110). Over 12 on a bareboat triggers the same.",
+    "cg.s2.p3":
+      "The Coast Guard actively terminates illegal charter trips. Their enforcement routinely focuses on too many paying passengers, no proper credentialed operator, fake bareboat paperwork, and owner-selected \u201Cindependent\u201D captains who are not actually independent.",
+    "cg.s3.title": "What Actually Happens During the Boarding",
+    "cg.s3.intro":
+      "Here\u2019s what a typical Coast Guard boarding looks like on a bareboat charter in the Miami area, step by step.",
+    "cg.step1.title": "They Separate the Crew from the Guests",
+    "cg.step1.p1":
+      "The first thing the Coast Guard does is separate the captain and any crew members from the charter guests. This is intentional. They want to ask each group questions independently to verify that the bareboat arrangement is real \u2014 not a paper-only structure where the owner is actually running the show.",
+    "cg.step1.p2": "Don\u2019t be alarmed. It\u2019s standard procedure.",
+    "cg.step2.title": "They Ask the Lead Guest Key Questions",
+    "cg.step2.p1":
+      "The Coast Guard officer will talk to the primary charterer \u2014 the person who signed the charter agreement \u2014 and ask questions like:",
+    "cg.step2.q1":
+      "Who did you choose as your captain? \u2014 They want to hear that you selected them, not that the boat owner assigned them.",
+    "cg.step2.q2":
+      "What is the captain\u2019s name? \u2014 You should know the name of the person operating your vessel.",
+    "cg.step2.q3":
+      "Who is the deckhand / first mate? \u2014 Same thing. If there\u2019s crew on board, you should know who they are.",
+    "cg.step2.q4":
+      "Who is paying the captain? \u2014 In a bareboat, the answer must be the charterer, not the vessel owner.",
+    "cg.step2.p2":
+      "This is the heart of the bareboat verification. The Coast Guard is confirming that the charterer is acting as the temporary \u201Cowner\u201D of the vessel. If the answers suggest the vessel owner chose the captain, pays the captain, or controls the operation, the bareboat structure falls apart \u2014 and the trip may be terminated.",
+    "cg.step3.title": "They Review the Charter Contract",
+    "cg.step3.p1":
+      "The officer will ask to see the charter agreement. They\u2019re looking for all signatures (charterer and vessel owner), bareboat language clearly stating the vessel is chartered without crew, and that dates and vessel ID match the actual situation on the water.",
+    "cg.step3.p2":
+      "A properly executed bareboat charter agreement is not optional \u2014 it\u2019s the legal foundation of the entire arrangement. If the contract is missing, unsigned, or doesn\u2019t match the situation on the water, that\u2019s a serious problem.",
+    "cg.step4.title": "They Count Everyone on Board",
+    "cg.step4.p1":
+      "A head count is standard. The number of passengers on board determines which federal regulations apply:",
+    "cg.step5.title": "They Check Vessel Registration",
+    "cg.step5.p1":
+      "The Coast Guard will verify the vessel\u2019s registration or USCG Certificate of Documentation. The vessel name must match the paperwork. The Hull Identification Number (HIN) on the transom must be legible. If the vessel is documented, it needs a current, valid certificate under 46 U.S.C. Chapter 121 and 46 C.F.R. Part 67.",
+    "cg.step6.title": "They Inspect Safety Equipment",
+    "cg.step6.intro":
+      "This is the most hands-on part of the inspection. The officer will physically check for:",
+    "cg.step7.title": "They Check the Engine Room",
+    "cg.step7.p1":
+      "The officer may open the engine compartment for a visual inspection. They\u2019re looking for fuel leaks, proper ventilation, bilge conditions, and fire suppression readiness. On larger vessels, this is more thorough. On smaller charter boats, it\u2019s usually a quick visual check.",
+    "cg.step8.title": "Captain Credentials",
+    "cg.step8.p1":
+      "The captain must carry a valid USCG credential \u2014 typically an OUPV (Operator of Uninspected Passenger Vessels, also known as a \u201Csix-pack license\u201D) or a Master license for larger operations. Under 46 C.F.R. \u00A7 15.605, every uninspected passenger vessel must be under the direction of a properly credentialed operator when underway. No credential, no charter.",
+    // Passenger counts
+    "cg.pax.6": "6 or fewer",
+    "cg.pax.6.text":
+      "passengers with owner-provided crew: may operate as an uninspected passenger vessel with a credentialed \u201Csix-pack\u201D captain (46 C.F.R. \u00A7 15.605).",
+    "cg.pax.712": "7\u201312",
+    "cg.pax.712.text":
+      "passengers on a true bareboat: still legal, but the bareboat structure must be airtight.",
+    "cg.pax.13": "13+",
+    "cg.pax.13.text":
+      "passengers on a bareboat: major red flag. Triggers Subchapter T requirements and likely requires a Certificate of Inspection (46 C.F.R. \u00A7 176.100).",
+    // Safety equipment
+    "cg.pfd.title": "Life Jackets (PFDs)",
+    "cg.pfd.text":
+      "One USCG-approved Type I, II, or III life jacket for every person on board \u2014 including the captain. Plus appropriately sized child PFDs if children are aboard. Required under 46 C.F.R. \u00A7 25.25-5.",
+    "cg.fire.title": "Fire Extinguishers",
+    "cg.fire.text":
+      "Correct number and type for the vessel length. Must have a current inspection date and be in working condition. Required under 46 C.F.R. \u00A7 25.30-20.",
+    "cg.ring.title": "Throwable Life Ring (Type IV PFD)",
+    "cg.ring.text":
+      "One Type IV throwable device \u2014 typically a ring buoy or throwable cushion \u2014 required for vessels 16 feet and over. Required under 46 C.F.R. \u00A7 25.25-5(b).",
+    "cg.placard.title": "Placards",
+    "cg.placard.text":
+      "Required safety placards must be posted in visible locations \u2014 including waste discharge regulations, navigation rules, and carbon monoxide warnings where applicable.",
+    "cg.vds.title": "Visual Distress Signals",
+    "cg.vds.text":
+      "Three day/night pyrotechnic signals or one electric SOS light plus three day signals. Must not be expired. Required under 46 C.F.R. \u00A7 25.25-10.",
+    "cg.sound.title": "Sound-Producing Device",
+    "cg.sound.text":
+      "A horn or whistle audible for half a nautical mile. Vessels 39.4 feet and over require a mechanical horn. Required under 33 C.F.R. \u00A7 83.33.",
+    "cg.nav.title": "Navigation Lights",
+    "cg.nav.text":
+      "Red/green bow lights, white stern light, and masthead light \u2014 all functional. Required under 33 C.F.R. Part 83.",
+    // What makes it pass
+    "cg.pass.title": "What Makes a Charter Pass Every Time",
+    "cg.pass.intro":
+      "There are no tricks. A well-run bareboat charter passes a Coast Guard boarding because everything is genuine:",
+    "cg.pass.li1":
+      "The charterer genuinely chose their captain and can name them",
+    "cg.pass.li2": "The charter contract is signed by all parties and on board",
+    "cg.pass.li3": "The passenger count is within the legal limit",
+    "cg.pass.li4": "Every person has a life jacket",
+    "cg.pass.li5": "Fire extinguishers are current and accessible",
+    "cg.pass.li6": "The life ring is ready to throw, not buried under gear",
+    "cg.pass.li7": "The captain has their credential on them",
+    "cg.pass.li8": "Vessel documentation matches the boat you\u2019re on",
+    "cg.pass.closing":
+      "The whole process usually takes about ten minutes. If everything checks out, the officer thanks the captain, sometimes hands over a decal, and the charter continues.",
+    // Red flags
+    "cg.red.title": "What Gets a Charter in Trouble",
+    "cg.red.intro":
+      "The Coast Guard has seen every shortcut. These are the things that get trips terminated or result in fines:",
+    "cg.red.li1":
+      "The charterer doesn\u2019t know who the captain is or didn\u2019t choose them",
+    "cg.red.li2": "The vessel owner is on board in an operational role",
+    "cg.red.li3":
+      "The charter contract is missing, unsigned, or clearly boilerplate with no real bareboat substance",
+    "cg.red.li4":
+      "More passengers than allowed without a Certificate of Inspection",
+    "cg.red.li5": "Missing or expired safety equipment",
+    "cg.red.li6": "Captain has no credential or an expired credential",
+    "cg.red.li7": "The owner pays the captain directly (not the charterer)",
+    "cg.red.closing":
+      "If the Coast Guard determines the bareboat structure is a sham, the vessel may be treated as an uninspected small passenger vessel operating illegally. The trip can be terminated on the water, and both the operator and owner may face enforcement action under 46 U.S.C. \u00A7 2101 and 46 C.F.R. \u00A7 176.100.",
+    // Mid CTA
+    "cg.midCta.title": "Want a charter that handles all of this?",
+    "cg.midCta.text":
+      "Every Emerald Eyes charter is fully compliant, fully equipped, and Coast Guard ready.",
+    "cg.midCta.btn": "Plan Your Charter",
+    // Sasha Interview
+    "cg.sasha.title": "From the Water: An Interview with Sasha",
+    "cg.sasha.intro":
+      "Sasha is our operations lead at Emerald Eyes Miami. She\u2019s been running yacht charters out of North Miami and has been through countless Coast Guard boardings firsthand. We sat down with her to get the real picture of what these inspections look like in practice.",
+    "cg.sasha.q1.q":
+      "Q: What\u2019s the first thing the Coast Guard does when they pull up?",
+    "cg.sasha.q1.a":
+      "\u201CThe very first thing is they separate everybody. The crew goes to one side, the clients go to the other. They don\u2019t want you talking to each other while they\u2019re asking questions. It\u2019s not aggressive or anything \u2014 they just need independent answers to verify the charter is real.\u201D",
+    "cg.sasha.q2.q": "Q: What do they ask the clients?",
+    "cg.sasha.q2.a":
+      "\u201CThey go straight to the main client \u2014 the person who booked the charter \u2014 and ask them: who did you choose as your captain? What\u2019s the captain\u2019s name? What\u2019s the first mate\u2019s name? Because in a bareboat, the client is basically the temporary owner. They should know who they hired. If the client looks confused or says \u2018I don\u2019t know, the company sent them,\u2019 that\u2019s a problem.\u201D",
+    "cg.sasha.q3.q": "Q: What about the paperwork?",
+    "cg.sasha.q3.a":
+      "\u201CThey want to see the charter contract. And it can\u2019t just exist \u2014 it has to be signed by everybody. The client signed, the owner signed, all parties. They flip through it and check that the signatures are there, the dates match, and the vessel information is correct. If you show up with an unsigned contract, or one that doesn\u2019t match the boat you\u2019re on, that\u2019s not going to go well.\u201D",
+    "cg.sasha.q4.q": "Q: After the questions, what do they physically inspect?",
+    "cg.sasha.q4.a":
+      "\u201CThey count everybody on board first. Head count. Then they go through the safety equipment \u2014 life jackets, fire extinguishers, the life ring, placards. They check the yacht registration. Then they go look at the engine room. It\u2019s all pretty quick if everything is where it should be.\u201D",
+    "cg.sasha.q5.q": "Q: How long does it usually take?",
+    "cg.sasha.q5.a":
+      "\u201CIf you\u2019re prepared, maybe ten minutes. They come on, they do their checks, they\u2019re professional about it. I\u2019ve never had a problem because we always make sure everything is right before we leave the dock. The contract is signed, the equipment is checked, the head count matches. You do the work before you go out, and the inspection is nothing.\u201D",
+    "cg.sasha.q6.q":
+      "Q: What\u2019s the most important thing for clients to understand?",
+    "cg.sasha.q6.a":
+      "\u201CThat they\u2019re the boss. In a bareboat charter, the client is the temporary owner of that vessel. That\u2019s the whole point. You chose your captain, you chose your crew, you are paying them. When the Coast Guard asks, you should be able to say that confidently. It\u2019s not a trick question \u2014 it\u2019s how the system is supposed to work. And when it works right, the inspection is just a formality.\u201D",
+    "cg.sasha.q7.q": "Q: Have you ever seen an inspection go wrong?",
+    "cg.sasha.q7.a":
+      "\u201CNot on our boats. But I\u2019ve heard stories from other operators. The most common issue is too many people on board. Someone invites a few extra friends, and now you\u2019re over the passenger limit. Or the paperwork isn\u2019t right \u2014 the contract wasn\u2019t signed, or the captain\u2019s name doesn\u2019t match. That\u2019s why we\u2019re strict about it before we leave. You do it right on the dock, and you never have a problem on the water.\u201D",
+    // What this means
+    "cg.client.title": "What This Means for You as a Client",
+    "cg.client.p1":
+      "If you\u2019re booking a yacht charter in Miami, here\u2019s the bottom line:",
+    "cg.client.p2":
+      "A reputable charter company wants to pass the inspection. We don\u2019t cut corners on safety equipment. We don\u2019t overload vessels. We run real bareboat structures where you genuinely choose your captain, and the contract reflects what\u2019s actually happening on the water.",
+    "cg.client.p3":
+      "When the Coast Guard pulls alongside, the captain greets them professionally, the paperwork is in order, the life jackets are counted, and within ten minutes you\u2019re back to your sunset cruise.",
+    "cg.client.p4":
+      "That\u2019s how it should work. That\u2019s how it works with us.",
+    // Reference table
+    "cg.ref.title": "Quick Reference: Key Federal Regulations",
+    "cg.reg.nvic": "Coast Guard guidance on bareboat charter analysis",
+    "cg.reg.cfr25":
+      "Safety equipment requirements (PFDs, extinguishers, signals)",
+    "cg.reg.175": "Subchapter T applicability (vessels carrying >6 passengers)",
+    "cg.reg.176": "Certificate of Inspection requirement",
+    "cg.reg.2101":
+      "Definitions: small passenger vessel, uninspected passenger vessel",
+    "cg.reg.15605":
+      "Credentialed operator requirement for uninspected passenger vessels",
+    "cg.reg.83": "Navigation lights and sound signals",
+    "cg.reg.16": "Drug and alcohol testing for commercial vessel personnel",
+    // Related links
+    "cg.related.title": "Explore More",
+    "cg.related.sunset": "Sunset Cruise Experience",
+    "cg.related.party": "Private Party Charter",
+    "cg.related.sandbar": "Haulover Sandbar Trip",
+    "cg.related.about": "About Emerald Eyes Miami",
+    // Final CTA
+    "cg.cta.title": "Charter with confidence.",
+    "cg.cta.text":
+      "Every Emerald Eyes charter is built on a legitimate bareboat structure, fully equipped vessels, and credentialed captains. We welcome Coast Guard inspections because we have nothing to hide.",
+    "cg.cta.book": "Plan Your Charter",
+    "cg.cta.explore": "Browse Experiences",
   },
 
   es: {
@@ -523,6 +749,240 @@ const translations: Record<Lang, Record<string, string>> = {
     "how.3.title": "Sube a Bordo",
     "how.3.text":
       "Nosotros manejamos cada detalle. Tu solo sube y crea recuerdos.",
+    // Blog
+    "blog.title": "Blog",
+    "blog.subtitle":
+      "Guias, consejos y conocimiento exclusivo sobre charters en Miami.",
+    "blog.readArticle": "Leer articulo \u2192",
+    "blog.backToBlog": "Volver al Blog",
+    "blog.ctaTitle": "\u00BFListo para salir al agua?",
+    "blog.ctaText":
+      "Cada charter de Emerald Eyes viene completamente equipado, documentado correctamente y con capitanes licenciados.",
+    "blog.ctaBook": "Planifica Tu Charter",
+    "blog.ctaExperiences": "Ver Experiencias",
+    "blog.cat.safety": "Seguridad y Regulaciones",
+    "blog.cg.title":
+      "\u00BFQue Pasa Durante una Inspeccion del Coast Guard en un Bareboat Charter?",
+    "blog.cg.excerpt":
+      "Guia completa sobre inspecciones del USCG en charters bareboat en Miami. Que revisan, que documentos necesitas, requisitos de equipo de seguridad y como pasar cada vez.",
+    "blog.cg.readTime": "10 min de lectura",
+    // Coast Guard article
+    "cg.heroTitle":
+      "\u00BFQue Pasa Durante una Inspeccion del Coast Guard en un Bareboat Charter?",
+    "cg.intro1":
+      "Si estas alquilando un yate en Miami, es muy probable que el Coast Guard de EE.UU. aborde tu embarcacion en algun momento del viaje. No es una redada. No es senal de que algo salio mal. Es rutina \u2014 y si estas en un bareboat charter bien operado, toma unos diez minutos y vuelves a disfrutar del agua.",
+    "cg.intro2":
+      "Pero la mayoria de la gente no sabe que esperar. \u00BFQue revisan? \u00BFQue documentos piden? \u00BFPor que separan a la tripulacion de los invitados? Esta guia lo explica todo \u2014 desde el marco legal detras de la inspeccion hasta lo que realmente sucede en el agua, basado en experiencia real operando charters en el sur de Florida.",
+    "cg.s1.title": "\u00BFQue es un Bareboat Charter?",
+    "cg.s1.p1":
+      "Antes de entrar en la inspeccion, es importante entender la estructura del bareboat charter \u2014 porque eso es exactamente lo que el Coast Guard verifica cuando aborda.",
+    "cg.s1.p2":
+      "Un bareboat charter significa que el cliente alquila la embarcacion sola \u2014 sin tripulacion. El cliente se convierte en el \u201Cpropietario temporal\u201D durante la duracion del charter. Ellos eligen su propio capitan, eligen su propio marinero, y son responsables de la operacion de la embarcacion durante el periodo de alquiler.",
+    "cg.s1.p3":
+      "Esta distincion importa legalmente. Bajo la guia del Coast Guard (especificamente NVIC 7-94), un bareboat charter solo es valido cuando:",
+    "cg.s1.li1":
+      "El arrendatario elige al capitan \u2014 no el propietario de la embarcacion",
+    "cg.s1.li2": "El arrendatario paga al capitan directamente",
+    "cg.s1.li3":
+      "El capitan trabaja para el arrendatario durante el charter, no para el propietario",
+    "cg.s1.li4":
+      "El arrendatario puede despedir al capitan con causa justificada",
+    "cg.s1.li5":
+      "El propietario puede sugerir capitanes calificados, pero no puede forzar a uno especifico ni mantener control operacional",
+    "cg.s1.p4":
+      "Este es el marco que permite que la mayoria de los alquileres de yates en Miami operen sin necesitar un Certificado de Inspeccion (COI) completo del Coast Guard. Cuando la estructura es legitima, la embarcacion opera como una embarcacion de pasajeros no inspeccionada con seis o menos pasajeros \u2014 o como un bareboat real con hasta 12.",
+    "cg.s2.title": "\u00BFPor Que el Coast Guard Aborda Embarcaciones Charter?",
+    "cg.s2.p1":
+      "El Coast Guard tiene la autoridad de abordar cualquier embarcacion en aguas de EE.UU. en cualquier momento. Para embarcaciones charter en el area de Miami \u2014 Biscayne Bay, Haulover, el Intracoastal, el lado del Atlantico \u2014 los abordajes son frecuentes, especialmente en fines de semana y feriados.",
+    "cg.s2.p2": "Revisan tres cosas:",
+    "cg.s2.c1.title": "Cumplimiento de seguridad",
+    "cg.s2.c1.text":
+      "Chalecos salvavidas, extintores, aros salvavidas, luces de navegacion, senales de socorro visual \u2014 todo el equipo requerido bajo 46 C.F.R. Part 25.",
+    "cg.s2.c2.title": "Estructura legal del charter",
+    "cg.s2.c2.text":
+      "\u00BFEs un bareboat legitimo? \u00BFO el propietario esta operando un charter tripulado ilegal disfrazado de bareboat para evitar requisitos de inspeccion?",
+    "cg.s2.c3.title": "Conteo de pasajeros",
+    "cg.s2.c3.text":
+      "\u00BFCuantas personas hay a bordo? Mas de 6 pasajeros con tripulacion del propietario activa los requisitos del Subcapitulo T (46 C.F.R. \u00A7 175.110). Mas de 12 en un bareboat activa lo mismo.",
+    "cg.s2.p3":
+      "El Coast Guard termina activamente viajes de charter ilegales. Su aplicacion se enfoca rutinariamente en demasiados pasajeros pagos, falta de operador acreditado, documentacion bareboat falsa y capitanes \u201Cindependientes\u201D seleccionados por el propietario que no son realmente independientes.",
+    "cg.s3.title": "Que Sucede Realmente Durante el Abordaje",
+    "cg.s3.intro":
+      "Asi es como se ve un abordaje tipico del Coast Guard en un bareboat charter en el area de Miami, paso a paso.",
+    "cg.step1.title": "Separan a la Tripulacion de los Invitados",
+    "cg.step1.p1":
+      "Lo primero que hace el Coast Guard es separar al capitan y cualquier miembro de la tripulacion de los invitados del charter. Esto es intencional. Quieren hacer preguntas a cada grupo de forma independiente para verificar que el acuerdo bareboat es real \u2014 no una estructura solo en papel donde el propietario realmente controla todo.",
+    "cg.step1.p2": "No te alarmes. Es procedimiento estandar.",
+    "cg.step2.title": "Hacen Preguntas Clave al Invitado Principal",
+    "cg.step2.p1":
+      "El oficial del Coast Guard hablara con el arrendatario principal \u2014 la persona que firmo el contrato de charter \u2014 y hara preguntas como:",
+    "cg.step2.q1":
+      "\u00BFA quien elegiste como tu capitan? \u2014 Quieren escuchar que tu los seleccionaste, no que el dueno del barco los asigno.",
+    "cg.step2.q2":
+      "\u00BFCual es el nombre del capitan? \u2014 Deberias saber el nombre de la persona que opera tu embarcacion.",
+    "cg.step2.q3":
+      "\u00BFQuien es el marinero / primer oficial? \u2014 Lo mismo. Si hay tripulacion a bordo, deberias saber quienes son.",
+    "cg.step2.q4":
+      "\u00BFQuien le paga al capitan? \u2014 En un bareboat, la respuesta debe ser el arrendatario, no el propietario de la embarcacion.",
+    "cg.step2.p2":
+      "Este es el corazon de la verificacion bareboat. El Coast Guard esta confirmando que el arrendatario actua como el \u201Cpropietario temporal\u201D de la embarcacion. Si las respuestas sugieren que el propietario eligio al capitan, le paga al capitan o controla la operacion, la estructura bareboat se desmorona \u2014 y el viaje puede ser terminado.",
+    "cg.step3.title": "Revisan el Contrato de Charter",
+    "cg.step3.p1":
+      "El oficial pedira ver el contrato de charter. Buscan que todas las firmas esten (arrendatario y propietario), lenguaje bareboat que establezca claramente que la embarcacion se alquila sin tripulacion, y que las fechas e identificacion de la embarcacion coincidan con la situacion real en el agua.",
+    "cg.step3.p2":
+      "Un contrato de bareboat charter correctamente ejecutado no es opcional \u2014 es la base legal de todo el acuerdo. Si el contrato falta, no esta firmado o no coincide con la situacion en el agua, eso es un problema serio.",
+    "cg.step4.title": "Cuentan a Todos a Bordo",
+    "cg.step4.p1":
+      "Un conteo de personas es estandar. El numero de pasajeros a bordo determina que regulaciones federales aplican:",
+    "cg.step5.title": "Verifican el Registro de la Embarcacion",
+    "cg.step5.p1":
+      "El Coast Guard verificara el registro de la embarcacion o el Certificado de Documentacion del USCG. El nombre de la embarcacion debe coincidir con los documentos. El Numero de Identificacion del Casco (HIN) en la popa debe ser legible. Si la embarcacion esta documentada, necesita un certificado vigente y valido bajo 46 U.S.C. Capitulo 121 y 46 C.F.R. Part 67.",
+    "cg.step6.title": "Inspeccionan el Equipo de Seguridad",
+    "cg.step6.intro":
+      "Esta es la parte mas practica de la inspeccion. El oficial verificara fisicamente:",
+    "cg.step7.title": "Revisan la Sala de Maquinas",
+    "cg.step7.p1":
+      "El oficial puede abrir el compartimiento del motor para una inspeccion visual. Buscan fugas de combustible, ventilacion adecuada, condiciones de la sentina y preparacion contra incendios. En embarcaciones mas grandes, es mas exhaustivo. En barcos charter mas pequenos, es usualmente una revision visual rapida.",
+    "cg.step8.title": "Credenciales del Capitan",
+    "cg.step8.p1":
+      "El capitan debe portar una credencial valida del USCG \u2014 tipicamente un OUPV (Operador de Embarcaciones de Pasajeros No Inspeccionadas, tambien conocido como \u201Clicencia six-pack\u201D) o una licencia Master para operaciones mas grandes. Bajo 46 C.F.R. \u00A7 15.605, toda embarcacion de pasajeros no inspeccionada debe estar bajo la direccion de un operador debidamente acreditado cuando este en movimiento. Sin credencial, no hay charter.",
+    // Passenger counts
+    "cg.pax.6": "6 o menos",
+    "cg.pax.6.text":
+      "pasajeros con tripulacion del propietario: pueden operar como embarcacion de pasajeros no inspeccionada con un capitan acreditado \u201Csix-pack\u201D (46 C.F.R. \u00A7 15.605).",
+    "cg.pax.712": "7\u201312",
+    "cg.pax.712.text":
+      "pasajeros en un bareboat real: sigue siendo legal, pero la estructura bareboat debe ser solida.",
+    "cg.pax.13": "13+",
+    "cg.pax.13.text":
+      "pasajeros en un bareboat: bandera roja importante. Activa los requisitos del Subcapitulo T y probablemente requiere un Certificado de Inspeccion (46 C.F.R. \u00A7 176.100).",
+    // Safety equipment
+    "cg.pfd.title": "Chalecos Salvavidas (PFDs)",
+    "cg.pfd.text":
+      "Un chaleco salvavidas Tipo I, II o III aprobado por USCG por cada persona a bordo \u2014 incluyendo al capitan. Mas chalecos de tamano apropiado para ninos si hay ninos a bordo. Requerido bajo 46 C.F.R. \u00A7 25.25-5.",
+    "cg.fire.title": "Extintores",
+    "cg.fire.text":
+      "Numero y tipo correcto para la eslora de la embarcacion. Deben tener una fecha de inspeccion vigente y estar en condiciones de funcionamiento. Requerido bajo 46 C.F.R. \u00A7 25.30-20.",
+    "cg.ring.title": "Aro Salvavidas (PFD Tipo IV)",
+    "cg.ring.text":
+      "Un dispositivo arrojadizo Tipo IV \u2014 tipicamente un aro salvavidas o cojin arrojadizo \u2014 requerido para embarcaciones de 16 pies o mas. Requerido bajo 46 C.F.R. \u00A7 25.25-5(b).",
+    "cg.placard.title": "Carteles de Seguridad",
+    "cg.placard.text":
+      "Los carteles de seguridad requeridos deben estar colocados en lugares visibles \u2014 incluyendo regulaciones de descarga de residuos, reglas de navegacion y advertencias de monoxido de carbono donde corresponda.",
+    "cg.vds.title": "Senales de Socorro Visual",
+    "cg.vds.text":
+      "Tres senales pirotecnicas dia/noche o una luz electrica SOS mas tres senales diurnas. No deben estar vencidas. Requerido bajo 46 C.F.R. \u00A7 25.25-10.",
+    "cg.sound.title": "Dispositivo Sonoro",
+    "cg.sound.text":
+      "Una bocina o silbato audible a media milla nautica. Embarcaciones de 39.4 pies o mas requieren una bocina mecanica. Requerido bajo 33 C.F.R. \u00A7 83.33.",
+    "cg.nav.title": "Luces de Navegacion",
+    "cg.nav.text":
+      "Luces roja/verde de proa, luz blanca de popa y luz de tope \u2014 todas funcionando. Requerido bajo 33 C.F.R. Part 83.",
+    // What makes it pass
+    "cg.pass.title": "Que Hace que un Charter Pase Siempre",
+    "cg.pass.intro":
+      "No hay trucos. Un bareboat charter bien operado pasa una inspeccion del Coast Guard porque todo es genuino:",
+    "cg.pass.li1":
+      "El arrendatario genuinamente eligio a su capitan y puede nombrarlo",
+    "cg.pass.li2":
+      "El contrato de charter esta firmado por todas las partes y a bordo",
+    "cg.pass.li3": "El conteo de pasajeros esta dentro del limite legal",
+    "cg.pass.li4": "Cada persona tiene un chaleco salvavidas",
+    "cg.pass.li5": "Los extintores estan vigentes y accesibles",
+    "cg.pass.li6":
+      "El aro salvavidas esta listo para lanzar, no enterrado bajo equipaje",
+    "cg.pass.li7": "El capitan tiene su credencial consigo",
+    "cg.pass.li8":
+      "La documentacion de la embarcacion coincide con el barco en el que estas",
+    "cg.pass.closing":
+      "Todo el proceso usualmente toma unos diez minutos. Si todo esta en orden, el oficial agradece al capitan, a veces entrega una calcomania, y el charter continua.",
+    // Red flags
+    "cg.red.title": "Que Mete en Problemas a un Charter",
+    "cg.red.intro":
+      "El Coast Guard ha visto todos los atajos. Estas son las cosas que hacen que se terminen viajes o resulten en multas:",
+    "cg.red.li1": "El arrendatario no sabe quien es el capitan o no lo eligio",
+    "cg.red.li2":
+      "El propietario de la embarcacion esta a bordo en un rol operacional",
+    "cg.red.li3":
+      "El contrato de charter falta, no esta firmado, o es claramente generico sin contenido bareboat real",
+    "cg.red.li4":
+      "Mas pasajeros de los permitidos sin Certificado de Inspeccion",
+    "cg.red.li5": "Equipo de seguridad faltante o vencido",
+    "cg.red.li6": "El capitan no tiene credencial o tiene credencial vencida",
+    "cg.red.li7":
+      "El propietario paga al capitan directamente (no el arrendatario)",
+    "cg.red.closing":
+      "Si el Coast Guard determina que la estructura bareboat es una farsa, la embarcacion puede ser tratada como una embarcacion pequena de pasajeros no inspeccionada operando ilegalmente. El viaje puede ser terminado en el agua, y tanto el operador como el propietario pueden enfrentar acciones de aplicacion bajo 46 U.S.C. \u00A7 2101 y 46 C.F.R. \u00A7 176.100.",
+    // Mid CTA
+    "cg.midCta.title": "\u00BFQuieres un charter que maneje todo esto?",
+    "cg.midCta.text":
+      "Cada charter de Emerald Eyes esta completamente en cumplimiento, equipado y listo para el Coast Guard.",
+    "cg.midCta.btn": "Planifica Tu Charter",
+    // Sasha Interview
+    "cg.sasha.title": "Desde el Agua: Una Entrevista con Sasha",
+    "cg.sasha.intro":
+      "Sasha es nuestra lider de operaciones en Emerald Eyes Miami. Ha estado operando charters de yates desde North Miami y ha pasado por innumerables abordajes del Coast Guard en primera persona. Nos sentamos con ella para obtener la imagen real de como son estas inspecciones en la practica.",
+    "cg.sasha.q1.q":
+      "P: \u00BFQue es lo primero que hace el Coast Guard cuando llega?",
+    "cg.sasha.q1.a":
+      "\u201CLo primero es que separan a todos. La tripulacion va a un lado, los clientes al otro. No quieren que hablen entre ustedes mientras hacen las preguntas. No es agresivo ni nada \u2014 solo necesitan respuestas independientes para verificar que el charter es real.\u201D",
+    "cg.sasha.q2.q": "P: \u00BFQue le preguntan a los clientes?",
+    "cg.sasha.q2.a":
+      "\u201CVan directo al cliente principal \u2014 la persona que reservo el charter \u2014 y le preguntan: \u00BFa quien elegiste como tu capitan? \u00BFCual es el nombre del capitan? \u00BFCual es el nombre del primer oficial? Porque en un bareboat, el cliente basicamente es el propietario temporal. Deberian saber a quien contrataron. Si el cliente se ve confundido o dice \u2018no se, la empresa los mando\u2019, eso es un problema.\u201D",
+    "cg.sasha.q3.q": "P: \u00BFY los documentos?",
+    "cg.sasha.q3.a":
+      "\u201CQuieren ver el contrato de charter. Y no puede solo existir \u2014 tiene que estar firmado por todos. El cliente firmo, el propietario firmo, todas las partes. Lo revisan y verifican que las firmas estan, las fechas coinciden y la informacion de la embarcacion es correcta. Si llegas con un contrato sin firmar, o uno que no coincide con el barco en el que estas, eso no va a salir bien.\u201D",
+    "cg.sasha.q4.q":
+      "P: Despues de las preguntas, \u00BFque inspeccionan fisicamente?",
+    "cg.sasha.q4.a":
+      "\u201CCuentan a todos a bordo primero. Conteo. Luego revisan el equipo de seguridad \u2014 chalecos salvavidas, extintores, el aro salvavidas, carteles. Verifican el registro del yate. Luego van a ver la sala de maquinas. Todo es bastante rapido si todo esta donde debe estar.\u201D",
+    "cg.sasha.q5.q": "P: \u00BFCuanto tiempo suele tomar?",
+    "cg.sasha.q5.a":
+      "\u201CSi estas preparado, tal vez diez minutos. Suben, hacen sus verificaciones, son profesionales al respecto. Nunca he tenido un problema porque siempre nos aseguramos de que todo este bien antes de salir del muelle. El contrato esta firmado, el equipo esta revisado, el conteo coincide. Haces el trabajo antes de salir, y la inspeccion no es nada.\u201D",
+    "cg.sasha.q6.q":
+      "P: \u00BFQue es lo mas importante que los clientes deben entender?",
+    "cg.sasha.q6.a":
+      "\u201CQue ellos son el jefe. En un bareboat charter, el cliente es el propietario temporal de esa embarcacion. Ese es todo el punto. Tu elegiste a tu capitan, elegiste a tu tripulacion, tu les estas pagando. Cuando el Coast Guard pregunte, deberias poder decir eso con confianza. No es una pregunta trampa \u2014 asi es como debe funcionar el sistema. Y cuando funciona bien, la inspeccion es solo una formalidad.\u201D",
+    "cg.sasha.q7.q": "P: \u00BFAlguna vez has visto una inspeccion salir mal?",
+    "cg.sasha.q7.a":
+      "\u201CEn nuestros barcos no. Pero he escuchado historias de otros operadores. El problema mas comun es demasiada gente a bordo. Alguien invita a unos amigos extra, y ahora estas por encima del limite de pasajeros. O los documentos no estan bien \u2014 el contrato no estaba firmado, o el nombre del capitan no coincide. Por eso somos estrictos antes de salir. Lo haces bien en el muelle, y nunca tienes un problema en el agua.\u201D",
+    // What this means
+    "cg.client.title": "Que Significa Esto para Ti como Cliente",
+    "cg.client.p1":
+      "Si estas reservando un charter de yate en Miami, aqui esta la conclusion:",
+    "cg.client.p2":
+      "Una empresa de charters respetable quiere pasar la inspeccion. No cortamos esquinas en equipo de seguridad. No sobrecargamos embarcaciones. Operamos estructuras bareboat reales donde tu genuinamente eliges a tu capitan, y el contrato refleja lo que realmente esta sucediendo en el agua.",
+    "cg.client.p3":
+      "Cuando el Coast Guard se acerca, el capitan los saluda profesionalmente, los documentos estan en orden, los chalecos salvavidas estan contados, y en diez minutos vuelves a tu crucero al atardecer.",
+    "cg.client.p4":
+      "Asi es como debe funcionar. Asi es como funciona con nosotros.",
+    // Reference table
+    "cg.ref.title": "Referencia Rapida: Regulaciones Federales Clave",
+    "cg.reg.nvic": "Guia del Coast Guard sobre analisis de bareboat charter",
+    "cg.reg.cfr25":
+      "Requisitos de equipo de seguridad (PFDs, extintores, senales)",
+    "cg.reg.175":
+      "Aplicabilidad del Subcapitulo T (embarcaciones con >6 pasajeros)",
+    "cg.reg.176": "Requisito de Certificado de Inspeccion",
+    "cg.reg.2101":
+      "Definiciones: embarcacion pequena de pasajeros, embarcacion de pasajeros no inspeccionada",
+    "cg.reg.15605":
+      "Requisito de operador acreditado para embarcaciones de pasajeros no inspeccionadas",
+    "cg.reg.83": "Luces de navegacion y senales sonoras",
+    "cg.reg.16":
+      "Pruebas de drogas y alcohol para personal de embarcaciones comerciales",
+    // Related links
+    "cg.related.title": "Explorar Mas",
+    "cg.related.sunset": "Experiencia Crucero al Atardecer",
+    "cg.related.party": "Charter de Fiesta Privada",
+    "cg.related.sandbar": "Viaje al Banco de Arena de Haulover",
+    "cg.related.about": "Sobre Emerald Eyes Miami",
+    // Final CTA
+    "cg.cta.title": "Charter con confianza.",
+    "cg.cta.text":
+      "Cada charter de Emerald Eyes esta construido sobre una estructura bareboat legitima, embarcaciones completamente equipadas y capitanes acreditados. Damos la bienvenida a las inspecciones del Coast Guard porque no tenemos nada que ocultar.",
+    "cg.cta.book": "Planifica Tu Charter",
+    "cg.cta.explore": "Ver Experiencias",
   },
 
   pt: {
