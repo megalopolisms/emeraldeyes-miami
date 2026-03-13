@@ -84,43 +84,61 @@ export default function CoastGuardArticle() {
   return (
     <main>
       {/* ================================================================= */}
-      {/* HERO — visible yacht image, light gradient at bottom only         */}
+      {/* HERO — split layout: title LEFT, lifestyle photo RIGHT            */}
+      {/* Matches SashaSection / LiveSaxSection pattern from home page      */}
       {/* ================================================================= */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
-        <Image
-          src={asset("/images/emeraldeyes.jpg")}
-          alt="Emerald Eyes yacht on the water in Miami"
-          fill
-          className="object-cover object-center"
-          priority
-        />
-        {/* Light gradient only at bottom so image stays visible */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy] via-[--color-navy]/30 to-transparent" />
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative z-10 w-full max-w-4xl mx-auto px-6 pb-14"
-        >
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1 text-sm text-[--color-emerald] mb-4 hover:underline underline-offset-4"
+      <section className="bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
+        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24 grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
+          {/* Title + metadata */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            &larr; {t("blog.backToBlog")}
-          </Link>
-          <div className="flex items-center gap-3 mb-4">
-            <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              {t("blog.cat.safety")}
-            </span>
-            <span className="text-xs text-white/80 drop-shadow-md">
-              March 13, 2026 &middot; {t("blog.cg.readTime")}
-            </span>
-          </div>
-          <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl lg:text-6xl text-white leading-tight drop-shadow-lg">
-            {t("cg.heroTitle")}
-          </h1>
-        </motion.div>
+            <Link
+              href="/blog"
+              className="inline-flex items-center gap-1 text-sm text-[--color-emerald] mb-6 hover:underline underline-offset-4"
+            >
+              &larr; {t("blog.backToBlog")}
+            </Link>
+            <div className="flex items-center gap-3 mb-5">
+              <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-[--color-emerald]/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
+                <ShieldCheck className="w-3.5 h-3.5" />
+                {t("blog.cat.safety")}
+              </span>
+              <span className="text-xs text-white/50">
+                March 13, 2026 &middot; {t("blog.cg.readTime")}
+              </span>
+            </div>
+            <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+              {t("cg.heroTitle")}
+            </h1>
+            <p className="text-white/60 text-base leading-relaxed max-w-lg">
+              {t("cg.intro1")}
+            </p>
+          </motion.div>
+
+          {/* Sax lifestyle photo — proper portrait display with decorative elements */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
+          >
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
+              <Image
+                src={asset("/images/sax.jpg")}
+                alt="Live saxophone on a yacht in Miami — Emerald Eyes charter experience"
+                width={784}
+                height={1168}
+                className="h-auto w-full object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+          </motion.div>
+        </div>
       </section>
 
       {/* ================================================================= */}
@@ -160,28 +178,6 @@ export default function CoastGuardArticle() {
       </Section>
 
       {/* ================================================================= */}
-      {/* INTRO — short, punchy, then flows into content                    */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="mx-auto max-w-3xl">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <p className="text-white/85 text-lg leading-relaxed mb-6">
-              {t("cg.intro1")}
-            </p>
-            <p className="text-white/85 text-lg leading-relaxed">
-              {t("cg.intro2")}
-            </p>
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* ================================================================= */}
       {/* WHAT IS A BAREBOAT — Image-Text Grid (SashaSection pattern)       */}
       {/* Yacht image LEFT, text RIGHT — matching home page layout          */}
       {/* ================================================================= */}
@@ -197,10 +193,10 @@ export default function CoastGuardArticle() {
           >
             <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
               <Image
-                src={asset("/images/emeraldeyes.jpg")}
-                alt="Emerald Eyes yacht — bareboat charter in Miami"
-                width={800}
-                height={600}
+                src={asset("/images/sushi.jpg")}
+                alt="Luxury yacht deck at night — bareboat charter in Miami"
+                width={832}
+                height={1248}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -317,33 +313,25 @@ export default function CoastGuardArticle() {
       </Section>
 
       {/* ================================================================= */}
-      {/* FULL-WIDTH SAX IMAGE BREAK — visible lifestyle photo              */}
-      {/* Light overlay, text overlay for visual rhythm                     */}
+      {/* SECTION HEADING — The 8 Steps                                     */}
       {/* ================================================================= */}
-      <section className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-        <Image
-          src={asset("/images/sax.jpg")}
-          alt="Live saxophone on a yacht at sunset — Emerald Eyes Miami"
-          fill
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[--color-navy]/60 via-transparent to-transparent" />
-        <div className="relative z-10 h-full flex items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-md px-8 md:px-16"
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald] mb-2 drop-shadow-md">
-              {t("cg.s3.title")}
-            </p>
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-white drop-shadow-lg leading-snug">
-              {t("cg.s3.intro")}
-            </h2>
-          </motion.div>
-        </div>
+      <section className="bg-[--color-navy] py-14">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={0}
+          className="text-center max-w-3xl mx-auto px-6"
+        >
+          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            {t("cg.s3.title")}
+          </h2>
+          <p className="mx-auto mt-4 max-w-lg text-white/45 text-base leading-relaxed">
+            {t("cg.s3.intro")}
+          </p>
+        </motion.div>
       </section>
 
       {/* ================================================================= */}
@@ -482,38 +470,56 @@ export default function CoastGuardArticle() {
       </Section>
 
       {/* ================================================================= */}
-      {/* MID-ARTICLE CTA — visible image, lighter overlay                  */}
+      {/* MID-ARTICLE CTA — image-text grid (SushiSection pattern)          */}
       {/* ================================================================= */}
-      <section className="relative overflow-hidden">
-        <Image
-          src={asset("/images/sushi.jpg")}
-          alt="Private sushi chef on a yacht — Emerald Eyes Miami"
-          fill
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-[--color-navy]/70 via-[--color-navy]/40 to-transparent" />
-        <div className="relative z-10 mx-auto max-w-4xl px-6 py-20">
+      <Section>
+        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
+          {/* Sushi yacht image */}
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-            className="max-w-md"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
           >
-            <Anchor className="w-10 h-10 text-[--color-emerald] mb-4 drop-shadow-lg" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-white mb-4 drop-shadow-lg">
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
+              <Image
+                src={asset("/images/sushi.jpg")}
+                alt="Luxury yacht at night with sushi — Emerald Eyes Miami"
+                width={832}
+                height={1248}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+          </motion.div>
+
+          {/* CTA text */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
+              Emerald Eyes Miami
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
               {t("cg.midCta.title")}
             </h2>
-            <p className="text-white/90 text-lg mb-8 drop-shadow-md">
+            <p className="mt-6 text-base leading-relaxed text-white/75">
               {t("cg.midCta.text")}
             </p>
-            <Button href="/book" size="lg">
-              {t("cg.midCta.btn")}
-            </Button>
+            <div className="mt-8">
+              <Button href="/book" size="lg">
+                {t("cg.midCta.btn")}
+              </Button>
+            </div>
           </motion.div>
         </div>
-      </section>
+      </Section>
 
       {/* ================================================================= */}
       {/* WHAT MAKES IT PASS — 2-column card grid                           */}
@@ -732,7 +738,7 @@ export default function CoastGuardArticle() {
             </p>
           </motion.div>
 
-          {/* Sax image — decorative treatment matching home */}
+          {/* Brand image — decorative card with emerald border */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -742,10 +748,10 @@ export default function CoastGuardArticle() {
           >
             <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
               <Image
-                src={asset("/images/sax.jpg")}
-                alt="Live saxophone experience on the water"
-                width={800}
-                height={1000}
+                src={asset("/images/emeraldeyes.jpg")}
+                alt="Emerald Eyes Miami — yacht charter brand"
+                width={784}
+                height={1168}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -831,16 +837,16 @@ export default function CoastGuardArticle() {
       </Section>
 
       {/* ================================================================= */}
-      {/* FINAL CTA — full-width visible yacht image                        */}
+      {/* FINAL CTA — sax player on yacht, ocean visible                    */}
       {/* ================================================================= */}
       <section className="relative overflow-hidden">
         <Image
-          src={asset("/images/emeraldeyes.jpg")}
-          alt="Emerald Eyes Miami yacht"
+          src={asset("/images/sax.jpg")}
+          alt="Live sax on yacht — Emerald Eyes Miami"
           fill
           className="object-cover object-bottom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/80 via-[--color-navy]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/80 via-[--color-navy]/50 to-[--color-navy]/30" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
           <motion.div
             initial="hidden"
