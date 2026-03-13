@@ -138,6 +138,7 @@ export const NAV_LINKS: readonly {
   { href: "/fleet", label: "Fleet" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
   { href: "/faq", label: "FAQ" },
   { href: "/book", label: "Book Now", cta: true },
 ];

@@ -16,6 +16,7 @@ const quickLinks = [
   { href: "/fleet", label: "Fleet" },
   { href: "/gallery", label: "Gallery" },
   { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
 ];
 
 const experienceLinks = [
