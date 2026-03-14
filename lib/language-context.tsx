@@ -605,7 +605,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Hero
     "js.heroTitle": "Do You Need a License to Ride a Jet Ski in Miami?",
     "js.heroIntro":
-      "You\u2019re planning a trip to Miami, scrolling through jet ski rentals, and the question hits: do I actually need a license for this? The short answer is no \u2014 Florida doesn\u2019t issue a \u201Cjet ski license.\u201D But depending on when you were born, you might need a Boating Safety Education Card before you can cruise past Star Island and into Biscayne Bay. Here\u2019s exactly what the rules are, how to get certified in 30 minutes from your phone, and everything else you should know.",
+      "You\u2019re planning a trip to Miami, scrolling through jet ski rentals, and the question hits: do I actually need a license for this? At Emerald Eyes Miami, we get this question all the time from guests exploring their options on the water. The short answer is no \u2014 Florida doesn\u2019t issue a \u201Cjet ski license.\u201D But depending on when you were born, you might need a Boating Safety Education Card before you can cruise past Star Island and into Biscayne Bay. Here\u2019s exactly what the rules are, how to get certified in 30 minutes from your phone, and everything else you should know.",
     // Jet Ski article — Trust strip
     "js.trust.yearRound": "Year-Round Riding",
     "js.trust.yearRound.sub":
@@ -672,7 +672,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Mid CTA
     "js.midCta.title": "Want the View Without the Rules?",
     "js.midCta.text":
-      "Love the idea of cruising past Star Island mansions and watching the Miami skyline from the water \u2014 but don\u2019t want to deal with certifications, life jacket rules, and sunset curfews? A private yacht charter handles everything. Your captain navigates. Your crew handles the details. You just step aboard with a drink in hand.",
+      "Love the idea of cruising past Star Island mansions and watching the Miami skyline from the water \u2014 but don\u2019t want to deal with certifications, life jacket rules, and sunset curfews? An Emerald Eyes Miami private yacht charter handles everything. Our captain navigates. Our crew handles the details. You just step aboard with a drink in hand. No license, no card, no hassle \u2014 just the best views in Miami.",
     "js.midCta.btn": "Plan Your Charter",
     // Jet Ski article — Best Spots
     "js.spots.title": "Where to Ride in Miami",
@@ -680,7 +680,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Miami has some of the best jet ski waters in the country. Here are the spots that make it worth the trip.",
     "js.spot.biscayne.title": "Biscayne Bay",
     "js.spot.biscayne.text":
-      "The go-to for beginners and experienced riders alike. Calm, shallow waters with the entire Miami skyline as your backdrop. Pass by Jungle Island, the Venetian Islands, and get views you can\u2019t see from shore.",
+      "The go-to for beginners and experienced riders alike. Calm, shallow waters with the entire Miami skyline as your backdrop. Pass by Jungle Island, the Venetian Islands, and get views you can\u2019t see from shore. This is also where Emerald Eyes Miami runs our most popular yacht charters.",
     "js.spot.star.title": "Star Island & Fisher Island",
     "js.spot.star.text":
       "The celebrity mansion tour on water. Cruise past $40 million waterfront estates, mega-yachts, and infinity pools. The most Instagram-worthy stretch in Miami.",
@@ -715,7 +715,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.pricing.p2":
       "Most operators use Yamaha VX Deluxe or Sea-Doo models and launch from Miami Beach Marina, Bayside Marketplace, or Rickenbacker Causeway. Security deposits range from $200\u2013$500 (credit card hold, not charged unless there\u2019s damage).",
     "js.pricing.p3":
-      "For groups, consider the math: a jet ski fits 1\u20132 people at $150/hour each. A private yacht charter for 6\u201312 guests starts around $2,500 \u2014 often a better per-person value with drinks, music, and zero certification hassle.",
+      "For groups, consider the math: a jet ski fits 1\u20132 people at $150/hour each. An Emerald Eyes Miami yacht charter for 6\u201312 guests starts around $2,500 \u2014 often a better per-person value with drinks, music, a professional captain, and zero certification hassle.",
     // Jet Ski article — Safety
     "js.safety.title": "Why the Card Matters",
     "js.safety.p1":
@@ -775,7 +775,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Final CTA
     "js.cta.title": "Skip the jet ski hassle.",
     "js.cta.text":
-      "Same Biscayne Bay views. Same Star Island mansions. Same Miami sunset. But from a private yacht with music, drinks, and room to relax \u2014 and your captain handles everything. No license needed.",
+      "Same Biscayne Bay views. Same Star Island mansions. Same Miami sunset. But from an Emerald Eyes Miami private yacht with music, drinks, and room to relax \u2014 our captain handles everything. No license needed. No certification. Just you and the water.",
     "js.cta.book": "Plan Your Charter",
     "js.cta.explore": "Browse Experiences",
     // Blog listing — Jet Ski card
@@ -1443,7 +1443,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Hero
     "js.heroTitle": "¿Necesitas Licencia para Montar Jet Ski en Miami?",
     "js.heroIntro":
-      'Estás planeando un viaje a Miami, revisando alquileres de jet ski, y la pregunta surge: ¿realmente necesito una licencia? La respuesta corta es no — Florida no emite una "licencia de jet ski." Pero dependiendo de tu fecha de nacimiento, podrías necesitar una Tarjeta de Educación de Seguridad Náutica antes de poder navegar frente a Star Island hacia la Bahía de Biscayne. Aquí tienes exactamente cuáles son las reglas, cómo certificarte en 30 minutos desde tu teléfono, y todo lo que deberías saber.',
+      'Estás planeando un viaje a Miami, revisando alquileres de jet ski, y la pregunta surge: ¿realmente necesito una licencia? En Emerald Eyes Miami, recibimos esta pregunta todo el tiempo de huéspedes explorando sus opciones en el agua. La respuesta corta es no — Florida no emite una "licencia de jet ski." Pero dependiendo de tu fecha de nacimiento, podrías necesitar una Tarjeta de Educación de Seguridad Náutica antes de poder navegar frente a Star Island hacia la Bahía de Biscayne. Aquí tienes exactamente cuáles son las reglas, cómo certificarte en 30 minutos desde tu teléfono, y todo lo que deberías saber.',
     // Jet Ski article — Trust strip
     "js.trust.yearRound": "Navegación Todo el Año",
     "js.trust.yearRound.sub":
@@ -1512,7 +1512,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Mid CTA
     "js.midCta.title": "¿Quieres la Vista Sin las Reglas?",
     "js.midCta.text":
-      "¿Te encanta la idea de navegar frente a las mansiones de Star Island y ver el skyline de Miami desde el agua — pero no quieres lidiar con certificaciones, reglas de chalecos salvavidas y toques de queda al atardecer? Un charter de yate privado se encarga de todo. Tu capitán navega. Tu tripulación maneja los detalles. Tú solo subes a bordo con un trago en la mano.",
+      "¿Te encanta la idea de navegar frente a las mansiones de Star Island y ver el skyline de Miami desde el agua — pero no quieres lidiar con certificaciones, reglas de chalecos salvavidas y toques de queda al atardecer? Un charter privado de Emerald Eyes Miami se encarga de todo. Nuestro capitán navega. Nuestra tripulación maneja los detalles. Tú solo subes a bordo con un trago en la mano. Sin licencia, sin tarjeta, sin complicaciones — solo las mejores vistas de Miami.",
     "js.midCta.btn": "Planifica Tu Charter",
     // Jet Ski article — Best Spots
     "js.spots.title": "Dónde Navegar en Miami",
@@ -1520,7 +1520,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Miami tiene algunas de las mejores aguas para jet ski del país. Estos son los lugares que hacen que valga la pena el viaje.",
     "js.spot.biscayne.title": "Bahía de Biscayne",
     "js.spot.biscayne.text":
-      "El lugar favorito tanto para principiantes como para expertos. Aguas tranquilas y poco profundas con todo el skyline de Miami como telón de fondo. Pasa por Jungle Island, las Islas Venecianas y obtén vistas que no puedes ver desde la costa.",
+      "El lugar favorito tanto para principiantes como para expertos. Aguas tranquilas y poco profundas con todo el skyline de Miami como telón de fondo. Pasa por Jungle Island, las Islas Venecianas y obtén vistas que no puedes ver desde la costa. Aquí es también donde Emerald Eyes Miami opera nuestros charters de yates más populares.",
     "js.spot.star.title": "Star Island y Fisher Island",
     "js.spot.star.text":
       "El tour de mansiones de celebridades sobre el agua. Navega frente a propiedades frente al mar de $40 millones, mega-yates y piscinas infinitas. El tramo más digno de Instagram en Miami.",
@@ -1555,7 +1555,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.pricing.p2":
       "La mayoría de los operadores usan modelos Yamaha VX Deluxe o Sea-Doo y salen desde Miami Beach Marina, Bayside Marketplace o Rickenbacker Causeway. Los depósitos de seguridad van de $200–$500 (retención en tarjeta de crédito, no se cobra a menos que haya daños).",
     "js.pricing.p3":
-      "Para grupos, considera las cuentas: un jet ski cabe 1–2 personas a $150/hora cada uno. Un charter de yate privado para 6–12 invitados empieza en alrededor de $2,500 — a menudo un mejor valor por persona con bebidas, música y cero complicaciones de certificación.",
+      "Para grupos, considera las cuentas: un jet ski cabe 1–2 personas a $150/hora cada uno. Un charter de Emerald Eyes Miami para 6–12 invitados empieza en alrededor de $2,500 — a menudo un mejor valor por persona con bebidas, música, un capitán profesional y cero complicaciones de certificación.",
     // Jet Ski article — Safety
     "js.safety.title": "Por Qué Importa la Tarjeta",
     "js.safety.p1":
@@ -1619,7 +1619,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Final CTA
     "js.cta.title": "Olvídate de las complicaciones del jet ski.",
     "js.cta.text":
-      "Las mismas vistas de la Bahía de Biscayne. Las mismas mansiones de Star Island. El mismo atardecer de Miami. Pero desde un yate privado con música, bebidas y espacio para relajarte — y tu capitán se encarga de todo. Sin licencia necesaria.",
+      "Las mismas vistas de la Bahía de Biscayne. Las mismas mansiones de Star Island. El mismo atardecer de Miami. Pero desde un yate privado de Emerald Eyes Miami con música, bebidas y espacio para relajarte — nuestro capitán se encarga de todo. Sin licencia necesaria. Sin certificación. Solo tú y el agua.",
     "js.cta.book": "Planifica Tu Charter",
     "js.cta.explore": "Ver Experiencias",
     // Blog listing — Haulover Sandbar card
