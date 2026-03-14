@@ -159,7 +159,7 @@ export default function JetSkiLicenseArticle() {
           >
             <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
               <Image
-                src={asset("/images/sax.jpg")}
+                src={asset("/images/jetski.jpg")}
                 alt="Jet skiing on Biscayne Bay with the Miami skyline — Emerald Eyes Miami"
                 width={784}
                 height={1168}
