@@ -987,6 +987,16 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.ft.excerpt":
       "The complete beginner\u2019s guide to yacht charters in Miami \u2014 booking process, what to bring, etiquette, safety, common mistakes to avoid, and everything else first-timers need to know.",
     "blog.ft.readTime": "12 min read",
+    // Blog listing — Yacht Prices card
+    "blog.yp.title": "Miami Yacht Charter Prices: What Does It Actually Cost?",
+    "blog.yp.excerpt":
+      "Everyone Googles it. Nobody gives a straight answer. Here\u2019s exactly what a private yacht charter costs in Miami \u2014 no vague ranges, no hidden fees, no bait-and-switch.",
+    "blog.yp.readTime": "12 min read",
+    // Blog listing — Bachelorette card
+    "blog.bach.title": "Bachelorette Party on a Yacht in Miami",
+    "blog.bach.excerpt":
+      "The ultimate guide to planning a bachelorette yacht party in Miami \u2014 itineraries, pricing, what to bring, add-ons, group size, and insider tips from the team that does this every weekend.",
+    "blog.bach.readTime": "16 min read",
     // First Time Yacht Rental article — Hero
     "ft.heroTitle":
       "First Time Renting a Yacht in Miami? Everything You Need to Know",
@@ -2428,6 +2438,17 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.ft.excerpt":
       "La guia completa para principiantes sobre charters de yate en Miami \u2014 proceso de reserva, que traer, etiqueta, seguridad, errores comunes a evitar, y todo lo que los primerizos necesitan saber.",
     "blog.ft.readTime": "12 min de lectura",
+    // Blog listing — Yacht Prices card (ES)
+    "blog.yp.title":
+      "Precios de Alquiler de Yate en Miami: \u00bfCu\u00e1nto Cuesta Realmente?",
+    "blog.yp.excerpt":
+      "Todo el mundo lo busca en Google. Nadie da una respuesta directa. Aqu\u00ed tienes exactamente lo que cuesta un alquiler privado de yate en Miami \u2014 sin rangos vagos, sin cargos ocultos.",
+    "blog.yp.readTime": "12 min de lectura",
+    // Blog listing — Bachelorette card (ES)
+    "blog.bach.title": "Despedida de Soltera en Yate en Miami",
+    "blog.bach.excerpt":
+      "La gu\u00eda definitiva para planificar una despedida de soltera en yate en Miami \u2014 itinerarios, precios, qu\u00e9 traer, extras, tama\u00f1o de grupo y consejos del equipo.",
+    "blog.bach.readTime": "16 min de lectura",
     // First Time Yacht Rental article (ES) — Hero
     "ft.heroTitle":
       "Primera Vez Alquilando un Yate en Miami? Todo lo que Necesitas Saber",
@@ -2631,17 +2652,6 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.cta.text":
       "Yate privado. Capitan licenciado. Sistema de sonido, colchonetas flotantes, y una tripulacion que maneja cada detalle. Todo lo que tienes que hacer es presentarte.",
     "ft.cta.explore": "Ver Experiencias",
-    // Blog listing — Yacht Prices card (ES)
-    "blog.yp.title":
-      "Precios de Alquiler de Yate en Miami: Cuanto Cuesta Realmente?",
-    "blog.yp.excerpt":
-      "Todo el mundo lo busca en Google. Nadie da una respuesta directa. Aqui tienes exactamente lo que cuesta un alquiler privado de yate en Miami — sin rangos vagos, sin cargos ocultos.",
-    "blog.yp.readTime": "12 min de lectura",
-    // Blog listing — Bachelorette card (ES)
-    "blog.bach.title": "Despedida de Soltera en Yate en Miami",
-    "blog.bach.excerpt":
-      "La guia definitiva para planificar una despedida de soltera en yate en Miami — itinerarios, precios, que traer, extras, tamano de grupo y consejos del equipo que hace esto cada fin de semana.",
-    "blog.bach.readTime": "16 min de lectura",
     // Yacht Prices article (ES)
     "yp.heroTitle":
       "Precios de Alquiler de Yate en Miami: Cuanto Cuesta Realmente?",
