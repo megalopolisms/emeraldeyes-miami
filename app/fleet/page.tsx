@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Our Fleet | Emerald Eyes Miami",
   description:
     "Intimate yachts, party vessels, and luxury charters available through our trusted North Miami charter network. Tell us your group size and style — we'll match you.",
+  keywords: ["Miami yacht fleet", "yacht sizes Miami", "party boats North Miami", "luxury charter vessels", "boat rental options"],
   alternates: {
     canonical: "/fleet",
   },
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
     description:
       "From intimate 2-person cruises to 25+ guest events. We match you with the perfect vessel from our curated Miami charter network.",
     url: "/fleet",
+    type: "website",
   },
 };
 
@@ -79,7 +81,7 @@ const fleetSchema = {
 // ---------------------------------------------------------------------------
 export default function FleetPage() {
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/CollectionPage">
       <Script
         id="fleet-schema"
         type="application/ld+json"

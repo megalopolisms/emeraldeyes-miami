@@ -53,6 +53,7 @@ export default function HeroSplit() {
                 alt="Miami-Dade County"
                 width={500}
                 height={235}
+                sizes="(max-width: 768px) 100vw, 500px"
                 className="h-[3.8rem] w-auto"
               />
             </div>
@@ -61,6 +62,7 @@ export default function HeroSplit() {
               alt="North Miami Beach"
               width={840}
               height={885}
+              sizes="(max-width: 768px) 100vw, 840px"
               className="h-[6.6rem] w-auto rounded-full ml-3"
             />
             <Image
@@ -68,6 +70,7 @@ export default function HeroSplit() {
               alt="BBB Accredited Business"
               width={768}
               height={392}
+              sizes="(max-width: 768px) 100vw, 768px"
               className="h-[6.9rem] w-auto"
             />
           </div>

@@ -1,57 +1,23 @@
-// =============================================================================
-// EMERALD EYES MIAMI — Coast Guard Inspection Article (Client Component)
-// =============================================================================
-// Full article matching home page visual language: image-text grids, visible
-// lifestyle photos, card layouts, and real visual contrast.
-// =============================================================================
-
 "use client";
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
-  ShieldCheck,
-  FileText,
-  Users,
-  Anchor,
   AlertTriangle,
-  CheckCircle,
-  MessageCircle,
-  ChevronRight,
+  Anchor,
   Award,
+  CheckCircle,
+  ChevronRight,
+  FileText,
   MapPin,
+  ShieldCheck,
+  Users,
 } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { useLanguage } from "@/lib/language-context";
 import { asset } from "@/lib/constants";
 
-// ---------------------------------------------------------------------------
-// Animation Variants
-// ---------------------------------------------------------------------------
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
-  }),
-};
-
-const staggerContainer = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
-
-const staggerItem = {
-  hidden: { opacity: 0, y: 15 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
-};
-
-// ---------------------------------------------------------------------------
-// Data Arrays
-// ---------------------------------------------------------------------------
 const SAFETY_ITEMS = [
   { emoji: "\u{1F9BA}", key: "pfd" },
   { emoji: "\u{1F9EF}", key: "fire" },
@@ -62,7 +28,32 @@ const SAFETY_ITEMS = [
   { emoji: "\u{1F4A1}", key: "nav" },
 ];
 
-const INTERVIEW_QS = ["q1", "q2", "q3", "q4", "q5", "q6", "q7"];
+const RULES = [
+  {
+    num: 1,
+    titleKey: "cg.rule1.title",
+    items: ["cg.rule1.li1", "cg.rule1.li2"],
+    accent: "emerald" as const,
+  },
+  {
+    num: 2,
+    titleKey: "cg.rule2.title",
+    items: ["cg.rule2.li1", "cg.rule2.li2", "cg.rule2.li3"],
+    accent: "emerald" as const,
+  },
+  {
+    num: 3,
+    titleKey: "cg.rule3.title",
+    items: ["cg.rule3.li1", "cg.rule3.li2", "cg.rule3.li3"],
+    accent: "gold" as const,
+  },
+  {
+    num: 4,
+    titleKey: "cg.rule4.title",
+    items: ["cg.rule4.li1", "cg.rule4.li2"],
+    accent: "gold" as const,
+  },
+];
 
 const REGULATIONS = [
   { code: "NVIC 7-94", key: "cg.reg.nvic" },
@@ -75,80 +66,156 @@ const REGULATIONS = [
   { code: "46 C.F.R. Part 16", key: "cg.reg.16" },
 ];
 
-// ---------------------------------------------------------------------------
-// Component
-// ---------------------------------------------------------------------------
+const GUIDE_SECTIONS = [
+  { id: "basics", titleKey: "cg.s1.title" },
+  { id: "boarding", titleKey: "cg.s3.title" },
+  { id: "equipment", titleKey: "cg.equip.title" },
+  { id: "rules", titleKey: "cg.rules.title" },
+  { id: "pass", titleKey: "cg.pass.title" },
+  { id: "red-flags", titleKey: "cg.red.title" },
+  { id: "client", titleKey: "cg.client.title" },
+  { id: "references", titleKey: "cg.ref.title" },
+];
+
+const SUMMARY_ITEMS = [
+  { icon: Users, titleKey: "cg.step2.title", textKey: "cg.step2.p1" },
+  { icon: FileText, titleKey: "cg.step3.title", textKey: "cg.step3.p1" },
+  { icon: ShieldCheck, titleKey: "cg.step6.title", textKey: "cg.step6.intro" },
+  { icon: Anchor, titleKey: "cg.pass.title", textKey: "cg.pass.intro" },
+];
+
+const PASS_ITEMS = [
+  "cg.pass.li1",
+  "cg.pass.li2",
+  "cg.pass.li3",
+  "cg.pass.li4",
+  "cg.pass.li5",
+  "cg.pass.li6",
+  "cg.pass.li7",
+  "cg.pass.li8",
+];
+
+const RED_FLAGS = [
+  "cg.red.li1",
+  "cg.red.li2",
+  "cg.red.li3",
+  "cg.red.li4",
+  "cg.red.li5",
+  "cg.red.li6",
+  "cg.red.li7",
+];
+
+const RELATED_LINKS = [
+  {
+    href: "/experiences/sunset-cruise-miami",
+    labelKey: "cg.related.sunset",
+  },
+  {
+    href: "/experiences/private-party-yacht-miami",
+    labelKey: "cg.related.party",
+  },
+  {
+    href: "/experiences/haulover-sandbar-yacht-miami",
+    labelKey: "cg.related.sandbar",
+  },
+  { href: "/about", labelKey: "cg.related.about" },
+];
+
 export default function CoastGuardArticle() {
   const { t } = useLanguage();
 
   return (
     <main>
-      {/* ================================================================= */}
-      {/* HERO — split layout: title LEFT, lifestyle photo RIGHT            */}
-      {/* Matches SashaSection / LiveSaxSection pattern from home page      */}
-      {/* ================================================================= */}
-      <section className="bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
-        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24 grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
-          {/* Title + metadata */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at top left, rgba(46, 196, 165, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.14), transparent 28%), linear-gradient(180deg, #0d1b2a 0%, #132436 100%)",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-28 md:px-6 md:pb-20 md:pt-36 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+          <div className="max-w-2xl">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-1 text-sm text-[--color-emerald] mb-6 hover:underline underline-offset-4"
+              className="inline-flex items-center gap-1 text-sm text-[--color-emerald] hover:underline underline-offset-4"
             >
               &larr; {t("blog.backToBlog")}
             </Link>
-            <div className="flex items-center gap-3 mb-5">
-              <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-[--color-emerald]/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
-                <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                <ShieldCheck className="h-3.5 w-3.5" />
                 {t("blog.cat.safety")}
               </span>
-              <span className="text-xs text-white/50">
+              <span className="text-white/50">
                 March 13, 2026 &middot; {t("blog.cg.readTime")}
               </span>
             </div>
-            <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-4xl leading-tight text-white md:text-5xl lg:text-6xl">
               {t("cg.heroTitle")}
             </h1>
-            <p className="text-white/60 text-base leading-relaxed max-w-lg">
+            <p className="mt-6 text-lg leading-relaxed text-white/72">
               {t("cg.intro1")}
             </p>
-          </motion.div>
-
-          {/* Sax lifestyle photo — proper portrait display with decorative elements */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
-          >
-            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
-              <Image
-                src={asset("/images/sax.jpg")}
-                alt="Live saxophone on a yacht in Miami — Emerald Eyes charter experience"
-                width={784}
-                height={1168}
-                className="h-auto w-full object-cover"
-                priority
-              />
+            <p className="mt-4 text-base leading-relaxed text-white/58">
+              {t("cg.intro2")}
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#guide"
+                className="inline-flex items-center justify-center rounded-full border border-[--color-emerald] bg-transparent px-8 py-3.5 text-lg text-[--color-emerald] transition-colors hover:bg-[--color-emerald-dim]"
+              >
+                {t("cg.guide.title")}
+              </a>
+              <Button href="/book" variant="secondary" size="lg">
+                {t("cg.cta.book")}
+              </Button>
             </div>
-            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
-          </motion.div>
+          </div>
+
+          <div className="space-y-5">
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_30px_80px_rgba(0,0,0,0.32)]">
+                <Image
+                  src={asset("/images/sax.jpg")}
+                  alt="Live saxophone on a yacht in Miami — Emerald Eyes charter experience"
+                  width={784}
+                  height={1168}
+                  className="h-auto w-full object-cover"
+                  priority
+                />
+              </div>
+              <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-[2rem] border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+              <div className="absolute -left-4 -top-4 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+            </div>
+
+            <div className="rounded-[2rem] border border-white/10 bg-[--color-navy]/80 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.25)] backdrop-blur">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+                {t("cg.quick.title")}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-white/60">
+                {t("cg.s3.intro")}
+              </p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                {SUMMARY_ITEMS.map((item) => (
+                  <div
+                    key={item.titleKey}
+                    className="rounded-2xl border border-white/8 bg-white/[0.03] p-4"
+                  >
+                    <item.icon className="h-5 w-5 text-[--color-emerald]" />
+                    <p className="mt-3 text-sm leading-relaxed text-white/75">
+                      {t(item.titleKey)}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* ================================================================= */}
-      {/* TRUST STRIP — matching home page TrustSection exactly             */}
-      {/* ================================================================= */}
-      <Section
-        className="py-10 border-y border-white/5 bg-[--color-navy-light]/50"
-        dark
-      >
-        <div className="mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-center gap-8">
+      <Section dark className="border-y border-white/5 bg-[--color-navy-light]/60">
+        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
           {[
             {
               icon: ShieldCheck,
@@ -166,32 +233,78 @@ export default function CoastGuardArticle() {
               sub: t("trust.location.sub"),
             },
           ].map((item) => (
-            <div key={item.label} className="flex items-center gap-3">
-              <item.icon className="w-8 h-8 text-[--color-emerald]" />
-              <div className="text-left">
-                <h4 className="text-white font-medium">{item.label}</h4>
-                <p className="text-xs text-white/60">{item.sub}</p>
-              </div>
+            <div
+              key={item.label}
+              className="rounded-[2rem] border border-white/8 bg-[--color-navy]/45 p-5"
+            >
+              <item.icon className="h-7 w-7 text-[--color-emerald]" />
+              <h2 className="mt-4 text-lg font-medium text-white">
+                {item.label}
+              </h2>
+              <p className="mt-1 text-sm leading-relaxed text-white/60">
+                {item.sub}
+              </p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* WHAT IS A BAREBOAT — Image-Text Grid (SashaSection pattern)       */}
-      {/* Yacht image LEFT, text RIGHT — matching home page layout          */}
-      {/* ================================================================= */}
-      <Section dark>
-        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
-          {/* Yacht image — same decorative treatment as home */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
-          >
-            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
+      <Section id="guide" className="scroll-mt-28">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-8 md:p-10">
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+              {t("cg.quick.title")}
+            </h2>
+            <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/70">
+              {t("blog.cg.excerpt")}
+            </p>
+            <div className="mt-8 grid gap-4 md:grid-cols-2">
+              {SUMMARY_ITEMS.map((item) => (
+                <div
+                  key={item.titleKey}
+                  className="rounded-[1.5rem] border border-white/8 bg-[--color-navy]/70 p-5"
+                >
+                  <div className="flex items-start gap-3">
+                    <item.icon className="mt-0.5 h-5 w-5 text-[--color-emerald]" />
+                    <div>
+                      <h3 className="font-[family-name:var(--font-heading)] text-xl text-white">
+                        {t(item.titleKey)}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/60">
+                        {t(item.textKey)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <aside className="self-start rounded-[2rem] border border-white/8 bg-[--color-navy-light]/80 p-6 lg:sticky lg:top-24">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("cg.guide.title")}
+            </p>
+            <nav className="mt-4 space-y-2">
+              {GUIDE_SECTIONS.map((section) => (
+                <a
+                  key={section.id}
+                  href={`#${section.id}`}
+                  className="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm text-white/65 transition-colors hover:bg-[--color-navy]/80 hover:text-[--color-emerald]"
+                >
+                  <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
+                  {t(section.titleKey)}
+                </a>
+              ))}
+            </nav>
+          </aside>
+        </div>
+      </Section>
+
+      <Section id="basics" dark className="scroll-mt-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_26px_70px_rgba(0,0,0,0.26)]">
               <Image
                 src={asset("/images/sushi.jpg")}
                 alt="Luxury yacht deck at night — bareboat charter in Miami"
@@ -200,176 +313,75 @@ export default function CoastGuardArticle() {
                 className="h-auto w-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
-          </motion.div>
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-[2rem] border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+            <div className="absolute -left-4 -top-4 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+          </div>
 
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          >
+          <div className="max-w-2xl">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
               {t("blog.cat.safety")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
               {t("cg.s1.title")}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/75">
               {t("cg.s1.p1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/75">
+            <p className="mt-4 text-base leading-relaxed text-white/72">
               {t("cg.s1.p2")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/75">
+            <p className="mt-4 text-base leading-relaxed text-white/72">
               {t("cg.s1.p3")}
             </p>
-
             <div className="mt-6 flex flex-wrap gap-3 text-xs">
               {["cg.s1.li1", "cg.s1.li2", "cg.s1.li3"].map((key) => (
                 <span
                   key={key}
-                  className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium"
+                  className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 font-medium text-[--color-emerald]"
                 >
                   {t(key)}
                 </span>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* WHY CG BOARDS — 3-Column Card Grid (WhySection pattern)           */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="mb-12 text-center">
-          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
-            {t("cg.s2.title")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-white/50 text-base leading-relaxed">
-            {t("cg.s2.p1")}
-          </p>
-        </div>
+      <Section id="boarding" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+              {t("cg.s3.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+              {t("cg.s3.intro")}
+            </p>
+          </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
-          {[
-            {
-              icon: ShieldCheck,
-              titleKey: "cg.s2.c1.title",
-              textKey: "cg.s2.c1.text",
-              accent: "emerald",
-            },
-            {
-              icon: FileText,
-              titleKey: "cg.s2.c2.title",
-              textKey: "cg.s2.c2.text",
-              accent: "emerald",
-            },
-            {
-              icon: Users,
-              titleKey: "cg.s2.c3.title",
-              textKey: "cg.s2.c3.text",
-              accent: "gold",
-            },
-          ].map((card, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-60px" }}
-              variants={fadeUp}
-              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-8 text-center"
-            >
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {([1, 2, 3, 4, 5, 6, 7, 8] as const).map((step) => (
               <div
-                className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full mb-5 ${
-                  card.accent === "gold"
-                    ? "border border-[--color-gold]/30 bg-[--color-gold]/10"
-                    : "border border-[--color-emerald]/30 bg-[--color-emerald]/10"
-                }`}
-              >
-                <card.icon
-                  className={`w-7 h-7 ${
-                    card.accent === "gold"
-                      ? "text-[--color-gold]"
-                      : "text-[--color-emerald]"
-                  }`}
-                />
-              </div>
-              <h3 className="font-[family-name:var(--font-heading)] text-xl font-semibold text-white">
-                {t(card.titleKey)}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-white/50">
-                {t(card.textKey)}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
-
-      {/* ================================================================= */}
-      {/* SECTION HEADING — The 8 Steps                                     */}
-      {/* ================================================================= */}
-      <section className="bg-[--color-navy] py-14">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          custom={0}
-          className="text-center max-w-3xl mx-auto px-6"
-        >
-          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
-            {t("cg.s3.title")}
-          </h2>
-          <p className="mx-auto mt-4 max-w-lg text-white/45 text-base leading-relaxed">
-            {t("cg.s3.intro")}
-          </p>
-        </motion.div>
-      </section>
-
-      {/* ================================================================= */}
-      {/* BOARDING STEPS — Timeline with compact step cards                 */}
-      {/* ================================================================= */}
-      <Section dark>
-        <div className="max-w-4xl mx-auto">
-          {/* Steps 1-8 */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
-          >
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((step) => (
-              <motion.div
                 key={step}
-                variants={staggerItem}
-                className="bg-[--color-navy] rounded-xl p-6 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
+                className="rounded-[1.5rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-[--color-emerald]/15 border border-[--color-emerald]/30 text-[--color-emerald] text-sm font-bold">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/15 text-sm font-bold text-[--color-emerald]">
                     {step}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-[family-name:var(--font-heading)] text-lg text-white mb-2">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-[family-name:var(--font-heading)] text-xl text-white">
                       {t(`cg.step${step}.title`)}
                     </h3>
-                    <p className="text-white/60 text-sm leading-relaxed">
-                      {t(`cg.step${step}.p1`)}
+                    <p className="mt-2 text-sm leading-relaxed text-white/60">
+                      {t(step === 6 ? "cg.step6.intro" : `cg.step${step}.p1`)}
                     </p>
                   </div>
                 </div>
 
-                {/* Step 2 — question list */}
                 {step === 2 && (
-                  <div className="mt-4 ml-14 space-y-1.5">
+                  <div className="mt-5 space-y-2 pl-14">
                     {[
                       "cg.step2.q1",
                       "cg.step2.q2",
@@ -378,18 +390,17 @@ export default function CoastGuardArticle() {
                     ].map((key) => (
                       <div
                         key={key}
-                        className="flex items-start gap-2 text-white/55 text-sm"
+                        className="flex items-start gap-2 text-sm text-white/55"
                       >
-                        <ChevronRight className="w-3.5 h-3.5 text-[--color-emerald] mt-0.5 flex-shrink-0" />
+                        <ChevronRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[--color-emerald]" />
                         <span>{t(key)}</span>
                       </div>
                     ))}
                   </div>
                 )}
 
-                {/* Step 4 — passenger counts */}
                 {step === 4 && (
-                  <div className="mt-4 ml-14 space-y-2">
+                  <div className="mt-5 space-y-2 pl-14">
                     {[
                       {
                         count: "cg.pax.6",
@@ -406,439 +417,256 @@ export default function CoastGuardArticle() {
                         color: "text-[--color-gold]",
                         textKey: "cg.pax.13.text",
                       },
-                    ].map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <span
-                          className={`${item.color} font-bold text-xs mt-0.5 shrink-0`}
-                        >
+                    ].map((item) => (
+                      <div key={item.count} className="flex items-start gap-2">
+                        <span className={`${item.color} shrink-0 text-xs font-bold`}>
                           {t(item.count)}
                         </span>
-                        <p className="text-white/50 text-xs">
+                        <p className="text-xs leading-relaxed text-white/50">
                           {t(item.textKey)}
                         </p>
                       </div>
                     ))}
                   </div>
                 )}
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* SAFETY EQUIPMENT — Grid cards with emojis                         */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="max-w-4xl mx-auto">
+      <Section id="equipment" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
-              {t("cg.step6.title")}
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+              {t("cg.equip.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-md text-white/45 text-sm leading-relaxed">
-              {t("cg.step6.p1")}
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
+              {t("cg.equip.intro")}
             </p>
           </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-          >
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {SAFETY_ITEMS.map((item) => (
-              <motion.div
+              <div
                 key={item.key}
-                variants={staggerItem}
-                className="flex items-start gap-4 bg-[--color-navy-light] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
+                className="flex items-start gap-4 rounded-[1.5rem] border border-white/8 bg-[--color-navy]/75 p-5"
               >
-                <span className="text-3xl flex-shrink-0">{item.emoji}</span>
+                <span className="shrink-0 text-3xl">{item.emoji}</span>
                 <div>
-                  <h4 className="text-white font-semibold text-sm">
+                  <h3 className="text-sm font-semibold text-white">
                     {t(`cg.${item.key}.title`)}
-                  </h4>
-                  <p className="text-white/50 text-xs mt-1 leading-relaxed">
+                  </h3>
+                  <p className="mt-1 text-xs leading-relaxed text-white/55">
                     {t(`cg.${item.key}.text`)}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* MID-ARTICLE CTA — image-text grid (SushiSection pattern)          */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
-          {/* Sushi yacht image */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
-          >
-            <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
-              <Image
-                src={asset("/images/sushi.jpg")}
-                alt="Luxury yacht at night with sushi — Emerald Eyes Miami"
-                width={832}
-                height={1248}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
-            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-          </motion.div>
-
-          {/* CTA text */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-          >
-            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
-              Emerald Eyes Miami
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
-              {t("cg.midCta.title")}
+      <Section id="rules" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+              {t("cg.rules.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/75">
-              {t("cg.midCta.text")}
-            </p>
-            <div className="mt-8">
-              <Button href="/book" size="lg">
-                {t("cg.midCta.btn")}
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* ================================================================= */}
-      {/* WHAT MAKES IT PASS — 2-column card grid                           */}
-      {/* ================================================================= */}
-      <Section dark>
-        <div className="max-w-4xl mx-auto">
-          <div className="mb-10 text-center">
-            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
-              {t("cg.pass.title")}
-            </h2>
-            <p className="mx-auto mt-4 max-w-lg text-white/45 text-sm leading-relaxed">
-              {t("cg.pass.intro")}
+            <p className="mt-4 text-base leading-relaxed text-white/50">
+              {t("cg.rules.intro")}
             </p>
           </div>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-          >
-            {[
-              "cg.pass.li1",
-              "cg.pass.li2",
-              "cg.pass.li3",
-              "cg.pass.li4",
-              "cg.pass.li5",
-              "cg.pass.li6",
-              "cg.pass.li7",
-              "cg.pass.li8",
-            ].map((key) => (
-              <motion.div
-                key={key}
-                variants={staggerItem}
-                className="flex items-start gap-3 bg-[--color-navy] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
+          <div className="mt-10 grid gap-5 md:grid-cols-2">
+            {RULES.map((rule) => (
+              <div
+                key={rule.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
               >
-                <CheckCircle className="w-5 h-5 text-[--color-emerald] mt-0.5 flex-shrink-0" />
-                <span className="text-white/70 text-sm">{t(key)}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </Section>
-
-      {/* ================================================================= */}
-      {/* RED FLAGS — compact bordered section                              */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="max-w-3xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
-                {t("cg.red.title")}
-              </h2>
-            </div>
-            <p className="text-white/75 text-base leading-relaxed mb-6">
-              {t("cg.red.intro")}
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="bg-[--color-navy-light] rounded-2xl border border-[--color-gold]/15 p-6 md:p-8"
-          >
-            {[
-              "cg.red.li1",
-              "cg.red.li2",
-              "cg.red.li3",
-              "cg.red.li4",
-              "cg.red.li5",
-              "cg.red.li6",
-              "cg.red.li7",
-            ].map((key, idx) => (
-              <motion.div key={key} variants={staggerItem}>
-                {idx > 0 && <hr className="border-white/5 my-4" />}
-                <div className="flex items-start gap-3">
-                  <AlertTriangle className="w-5 h-5 text-[--color-gold] mt-0.5 flex-shrink-0" />
-                  <span className="text-white/70 text-base">{t(key)}</span>
+                <div className="flex items-center gap-3">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold ${
+                      rule.accent === "gold"
+                        ? "border border-[--color-gold]/30 bg-[--color-gold]/10 text-[--color-gold]"
+                        : "border border-[--color-emerald]/30 bg-[--color-emerald]/10 text-[--color-emerald]"
+                    }`}
+                  >
+                    {rule.num}
+                  </div>
+                  <h3 className="font-[family-name:var(--font-heading)] text-2xl text-white">
+                    {t(rule.titleKey)}
+                  </h3>
                 </div>
-              </motion.div>
+
+                <div className="mt-5 space-y-3">
+                  {rule.items.map((key) => (
+                    <div key={key} className="flex items-start gap-3">
+                      <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+                      <p className="text-sm leading-relaxed text-white/65">
+                        {t(key)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* SASHA INTERVIEW — EXACT SashaSection pattern from home page       */}
-      {/* Image LEFT, text RIGHT, decorative elements, big image            */}
-      {/* ================================================================= */}
-      <Section dark>
-        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
-          {/* Sasha image — identical to home page SashaSection */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
-          >
-            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
-              <Image
-                src={asset("/images/sasha.jpg")}
-                alt="Sasha — Partner & Director of Operations at Emerald Eyes Miami"
-                width={928}
-                height={1120}
-                className="h-auto w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
-          </motion.div>
-
-          {/* Sasha info */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+      <Section dark className="scroll-mt-28">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
+          <div
+            id="pass"
+            className="scroll-mt-28 rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
-              {t("sasha.role")}
-            </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
-              {t("cg.sasha.title")}
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+              {t("cg.pass.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/75">
-              {t("cg.sasha.intro")}
+            <p className="mt-4 text-sm leading-relaxed text-white/55">
+              {t("cg.pass.intro")}
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-3 text-xs">
-              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
-                {t("sasha.badge1")}
-              </span>
-              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
-                {t("sasha.badge2")}
-              </span>
-              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
-                {t("sasha.badge3")}
-              </span>
+            <div className="mt-6 space-y-4">
+              {PASS_ITEMS.map((key) => (
+                <div key={key} className="flex items-start gap-3">
+                  <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-[--color-emerald]" />
+                  <span className="text-sm leading-relaxed text-white/72">
+                    {t(key)}
+                  </span>
+                </div>
+              ))}
             </div>
-          </motion.div>
-        </div>
 
-        {/* Interview Q&A — below the image-text grid */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={staggerContainer}
-          className="mt-14 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4"
-        >
-          {INTERVIEW_QS.map((q) => (
-            <motion.div
-              key={q}
-              variants={staggerItem}
-              className="bg-[--color-navy] rounded-xl p-5 border border-white/5 hover:border-[--color-emerald]/15 transition-colors"
-            >
-              <div className="flex items-start gap-3 mb-2">
-                <MessageCircle className="w-4 h-4 text-[--color-emerald] mt-0.5 flex-shrink-0" />
-                <p className="text-[--color-emerald] font-semibold text-sm">
-                  {t(`cg.sasha.${q}.q`)}
-                </p>
-              </div>
-              <p className="text-white/65 text-sm leading-relaxed pl-7">
-                {t(`cg.sasha.${q}.a`)}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
+            <p className="mt-6 text-sm leading-relaxed text-white/55">
+              {t("cg.pass.closing")}
+            </p>
+          </div>
+
+          <div
+            id="red-flags"
+            className="scroll-mt-28 rounded-[2rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-8"
+          >
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold] md:text-4xl">
+              {t("cg.red.title")}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-white/55">
+              {t("cg.red.intro")}
+            </p>
+
+            <div className="mt-6 space-y-4">
+              {RED_FLAGS.map((key) => (
+                <div key={key} className="flex items-start gap-3">
+                  <AlertTriangle className="mt-0.5 h-5 w-5 shrink-0 text-[--color-gold]" />
+                  <span className="text-sm leading-relaxed text-white/72">
+                    {t(key)}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <p className="mt-6 text-sm leading-relaxed text-white/55">
+              {t("cg.red.closing")}
+            </p>
+          </div>
+        </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* WHAT THIS MEANS FOR YOU — Image-Text Grid (SaxSection pattern)    */}
-      {/* Text LEFT, image RIGHT                                            */}
-      {/* ================================================================= */}
-      <Section>
-        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
-          {/* Text */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+      <Section id="client" className="scroll-mt-28">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+          <div className="max-w-2xl">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
               {t("blog.cat.safety")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
               {t("cg.client.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/75">
+            <p className="mt-6 text-base leading-relaxed text-white/72">
               {t("cg.client.p1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/75">
+            <p className="mt-4 text-base leading-relaxed text-white/68">
               {t("cg.client.p2")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/75">
+            <p className="mt-4 text-base leading-relaxed text-white/68">
               {t("cg.client.p3")}
             </p>
-            <p className="mt-4 text-[17px] leading-relaxed text-white/90 font-medium italic font-[family-name:var(--font-heading)]">
+            <p className="mt-5 font-[family-name:var(--font-heading)] text-2xl italic leading-relaxed text-white/90">
               &ldquo;{t("cg.client.p4")}&rdquo;
             </p>
-          </motion.div>
+          </div>
 
-          {/* Brand image — decorative card with emerald border */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
-            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
-          >
-            <div className="overflow-hidden rounded-2xl border-2 border-[--color-gold]/25 shadow-xl shadow-[--color-gold]/10">
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-gold]/20 shadow-[0_26px_70px_rgba(0,0,0,0.26)]">
               <Image
                 src={asset("/images/emeraldeyes.jpg")}
-                alt="Emerald Eyes Miami — yacht charter brand"
+                alt="Emerald Eyes Miami yacht charter brand"
                 width={784}
                 height={1168}
                 className="h-auto w-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-4 -left-4 h-28 w-28 rounded-2xl border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
-            <div className="absolute -top-3 -right-3 h-16 w-16 rounded-full border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
-          </motion.div>
+            <div className="absolute -bottom-4 -left-4 h-28 w-28 rounded-[2rem] border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+            <div className="absolute -right-4 -top-4 h-16 w-16 rounded-full border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* REGULATIONS + RELATED LINKS — side by side                        */}
-      {/* ================================================================= */}
-      <Section dark>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-8">
-          {/* Regulations */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-gold]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold]">
-                {t("cg.ref.title")}
-              </h2>
-            </div>
-            <div className="bg-[--color-navy] rounded-xl p-5 border border-white/5 space-y-3">
+      <Section id="references" dark className="scroll-mt-28">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8">
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
+              {t("cg.ref.title")}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-white/55">
+              {t("cg.s2.p1")}
+            </p>
+
+            <div className="mt-6 space-y-3">
               {REGULATIONS.map((reg) => (
                 <div key={reg.code} className="flex items-start gap-3">
-                  <span className="text-[--color-emerald] font-mono text-xs mt-0.5 shrink-0 bg-[--color-emerald]/5 px-2 py-0.5 rounded">
+                  <span className="mt-0.5 shrink-0 rounded bg-[--color-emerald]/5 px-2 py-0.5 font-mono text-xs text-[--color-emerald]">
                     {reg.code}
                   </span>
-                  <p className="text-white/55 text-sm">{t(reg.key)}</p>
+                  <p className="text-sm leading-relaxed text-white/55">
+                    {t(reg.key)}
+                  </p>
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          {/* Related links */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={1}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-1 w-8 rounded-full bg-[--color-emerald]" />
-              <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white">
-                {t("cg.related.title")}
-              </h2>
-            </div>
-            <div className="space-y-2">
-              {[
-                {
-                  href: "/experiences/sunset-cruise-miami",
-                  labelKey: "cg.related.sunset",
-                },
-                {
-                  href: "/experiences/private-party-yacht-miami",
-                  labelKey: "cg.related.party",
-                },
-                {
-                  href: "/experiences/haulover-sandbar-yacht-miami",
-                  labelKey: "cg.related.sandbar",
-                },
-                { href: "/about", labelKey: "cg.related.about" },
-              ].map((link) => (
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8">
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
+              {t("cg.related.title")}
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-white/55">
+              {t("cg.client.p4")}
+            </p>
+
+            <div className="mt-6 space-y-2">
+              {RELATED_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group flex items-center gap-3 text-white/60 hover:text-[--color-emerald] transition-all duration-200 text-sm py-3 px-4 rounded-xl hover:bg-[--color-navy] border border-transparent hover:border-white/5"
+                  className="group flex items-center gap-3 rounded-2xl border border-transparent px-4 py-3 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy-light] hover:text-[--color-emerald]"
                 >
-                  <ChevronRight className="w-4 h-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
+                  <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
                   {t(link.labelKey)}
                 </Link>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </Section>
 
-      {/* ================================================================= */}
-      {/* FINAL CTA — sax player on yacht, ocean visible                    */}
-      {/* ================================================================= */}
       <section className="relative overflow-hidden">
         <Image
           src={asset("/images/sax.jpg")}
@@ -846,31 +674,23 @@ export default function CoastGuardArticle() {
           fill
           className="object-cover object-bottom"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/80 via-[--color-navy]/50 to-[--color-navy]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/85 via-[--color-navy]/55 to-[--color-navy]/35" />
         <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            custom={0}
-          >
-            <Anchor className="w-12 h-12 text-[--color-emerald] mx-auto mb-5 drop-shadow-lg" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl text-white mb-5 drop-shadow-lg">
-              {t("cg.cta.title")}
-            </h2>
-            <p className="text-white/90 text-lg mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-md">
-              {t("cg.cta.text")}
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/book" size="lg">
-                {t("cg.cta.book")}
-              </Button>
-              <Button href="/experiences" variant="secondary" size="lg">
-                {t("cg.cta.explore")}
-              </Button>
-            </div>
-          </motion.div>
+          <Anchor className="mx-auto mb-5 h-12 w-12 text-[--color-emerald] drop-shadow-lg" />
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white drop-shadow-lg md:text-5xl">
+            {t("cg.cta.title")}
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/88 drop-shadow-md">
+            {t("cg.cta.text")}
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button href="/book" size="lg">
+              {t("cg.cta.book")}
+            </Button>
+            <Button href="/experiences" variant="secondary" size="lg">
+              {t("cg.cta.explore")}
+            </Button>
+          </div>
         </div>
       </section>
     </main>

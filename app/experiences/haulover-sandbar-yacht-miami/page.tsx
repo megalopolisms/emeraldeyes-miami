@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Haulover Sandbar Yacht Miami | Emerald Eyes Miami",
   description:
     "The island party everyone's talking about. Floating mats, music, cold drinks, and the quintessential Miami sandbar experience. From $2,500.",
+  keywords: ["Haulover Sandbar yacht", "Miami sandbar boat rental", "yacht rental Haulover", "sandbar party Miami"],
+  alternates: {
+    canonical: "/experiences/haulover-sandbar-yacht-miami",
+  },
   openGraph: {
     title: "Haulover Sandbar Yacht Miami | Emerald Eyes Miami",
     description:
       "Anchor up at Haulover Sandbar with floating mats, music, and cold drinks. The ultimate Miami water day.",
+    url: "/experiences/haulover-sandbar-yacht-miami",
+    type: "website",
   },
 };
 

@@ -31,6 +31,7 @@ export default function LogoPanel() {
           alt="Emerald Eyes Miami — Luxury Yacht Rental"
           width={784}
           height={1168}
+          sizes="(max-width: 640px) 288px, (max-width: 768px) 320px, (max-width: 1024px) 352px, 512px"
           priority
           className="h-auto w-72 object-contain sm:w-80 md:w-[22rem] lg:w-[28rem] xl:w-[32rem]"
         />

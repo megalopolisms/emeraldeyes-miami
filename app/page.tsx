@@ -17,10 +17,16 @@ export const metadata: Metadata = {
   title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
   description:
     "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay. Chat with us to build your perfect day on the water.",
+  keywords: ["yacht rental Miami", "North Miami yacht charter", "sunset cruise Miami", "private yacht party", "bachelorette yacht Miami", "boat rental Haulover"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
     description:
       "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
+    url: "/",
+    type: "website",
   },
 };
 
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
 // ---------------------------------------------------------------------------
 export default function HomePage() {
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/WebPage">
       {/* Full-viewport split-screen: logo left, chat right */}
       <HeroSplit />
 

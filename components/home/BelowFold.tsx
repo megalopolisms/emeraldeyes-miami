@@ -106,21 +106,21 @@ function TrustSection() {
         <div className="flex items-center gap-3">
           <ShieldCheck className="w-8 h-8 text-[--color-emerald]" />
           <div className="text-left">
-            <h4 className="text-white font-medium">{t("trust.uscg")}</h4>
+            <p className="text-white font-medium text-lg">{t("trust.uscg")}</p>
             <p className="text-xs text-white/60">{t("trust.uscg.sub")}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <Award className="w-8 h-8 text-[--color-emerald]" />
           <div className="text-left">
-            <h4 className="text-white font-medium">{t("trust.captains")}</h4>
+            <p className="text-white font-medium text-lg">{t("trust.captains")}</p>
             <p className="text-xs text-white/60">{t("trust.captains.sub")}</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <MapPin className="w-8 h-8 text-[--color-emerald]" />
           <div className="text-left">
-            <h4 className="text-white font-medium">{t("trust.location")}</h4>
+            <p className="text-white font-medium text-lg">{t("trust.location")}</p>
             <p className="text-xs text-white/60">{t("trust.location.sub")}</p>
           </div>
         </div>
@@ -150,6 +150,7 @@ function SashaSection() {
               alt="Sasha — Partner & Director of Operations at Emerald Eyes Miami"
               width={928}
               height={1120}
+              sizes="(max-width: 768px) 100vw, 400px"
               className="h-auto w-full object-cover"
             />
           </div>
@@ -268,6 +269,7 @@ function LiveSaxSection() {
               alt="Live saxophone player performing on a yacht at sunset — Emerald Eyes Miami"
               width={800}
               height={1000}
+              sizes="(max-width: 768px) 100vw, 400px"
               className="h-auto w-full object-cover"
             />
           </div>
@@ -300,6 +302,7 @@ function SushiSection() {
               alt="Private sushi chef preparing fresh rolls on a yacht — Emerald Eyes Miami"
               width={800}
               height={1000}
+              sizes="(max-width: 768px) 100vw, 400px"
               className="h-auto w-full object-cover"
             />
           </div>

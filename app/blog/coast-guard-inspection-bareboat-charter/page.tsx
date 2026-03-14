@@ -16,6 +16,7 @@ export const metadata: Metadata = {
     "What Happens During a Coast Guard Inspection on a Bareboat Charter? | Emerald Eyes Miami",
   description:
     "A complete guide to Coast Guard boardings on bareboat yacht charters in Miami. Learn what the USCG checks, what paperwork you need, safety equipment requirements, and how to pass every time.",
+  keywords: ["Coast Guard inspection", "bareboat charter Miami", "USCG boarding", "yacht rental safety", "Miami yacht charter rules", "bareboat agreement", "uninspected passenger vessel"],
   alternates: {
     canonical: "/blog/coast-guard-inspection-bareboat-charter",
   },
@@ -26,6 +27,14 @@ export const metadata: Metadata = {
       "Everything you need to know about USCG boardings on bareboat charters in South Florida. Safety equipment, paperwork, passenger counts, and the bareboat structure explained.",
     url: "/blog/coast-guard-inspection-bareboat-charter",
     type: "article",
+    images: [
+      {
+        url: "/images/sax.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Coast Guard Inspection Bareboat Charter",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -33,6 +42,7 @@ export const metadata: Metadata = {
       "What Happens During a Coast Guard Inspection on a Bareboat Charter?",
     description:
       "Everything you need to know about USCG boardings on bareboat charters in South Florida.",
+    images: ["/images/sax.jpg"],
   },
 };
 
@@ -46,14 +56,26 @@ const articleSchema = {
     "What Happens During a Coast Guard Inspection on a Bareboat Charter?",
   description:
     "A comprehensive guide to Coast Guard boardings during bareboat yacht charters in Miami, covering safety equipment, documentation, and USCG requirements.",
+  image: [
+    "https://emeraldeyesmiami.com/images/sax.jpg",
+    "https://emeraldeyesmiami.com/images/sushi.jpg"
+  ],
   author: {
-    "@type": "Organization",
-    name: "Emerald Eyes Miami",
-    url: "https://emeraldeyesmiami.com",
+    "@type": "Person",
+    name: "Sasha",
+    jobTitle: "Partner & Director of Operations",
+    worksFor: {
+      "@type": "Organization",
+      name: "Emerald Eyes Miami"
+    }
   },
   publisher: {
     "@type": "Organization",
     name: "Emerald Eyes Miami",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://emeraldeyesmiami.com/images/emeraldeyes.jpg"
+    },
     url: "https://emeraldeyesmiami.com",
   },
   datePublished: "2026-03-13",

@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Private Party Yacht Miami | Emerald Eyes Miami",
   description:
     "Your boat. Your rules. Your playlist. Birthdays, celebrations, and private yacht parties in Miami. Full sound system, bottle service, and a crew that sets the vibe. From $3,500.",
+  keywords: ["private party yacht Miami", "birthday yacht rental", "party boat Miami", "private boat charter"],
+  alternates: {
+    canonical: "/experiences/private-party-yacht-miami",
+  },
   openGraph: {
     title: "Private Party Yacht Miami | Emerald Eyes Miami",
     description:
       "Throw the party of the year on a private yacht. DJ, bottle service, and Miami's skyline as your backdrop.",
+    url: "/experiences/private-party-yacht-miami",
+    type: "website",
   },
 };
 

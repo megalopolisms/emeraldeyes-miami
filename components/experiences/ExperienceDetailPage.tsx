@@ -101,7 +101,9 @@ export default function ExperienceDetailPage({
   };
 
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/Service">
+      <meta itemProp="name" content={`${data.title} | Emerald Eyes Miami`} />
+      <meta itemProp="description" content={data.tagline} />
       <Script
         id="experience-service-schema"
         type="application/ld+json"

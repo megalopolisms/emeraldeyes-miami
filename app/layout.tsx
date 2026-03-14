@@ -90,6 +90,14 @@ export default function RootLayout({
     description:
       "Luxury yacht charters curated from North Miami for sunset cruises, celebrations, proposals, and corporate outings.",
     url: siteUrl,
+    image: `${siteUrl}/images/emeraldeyes.jpg`,
+    priceRange: "$$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "North Miami",
+      addressRegion: "FL",
+      addressCountry: "US"
+    },
     areaServed: [
       "North Miami",
       "Miami",

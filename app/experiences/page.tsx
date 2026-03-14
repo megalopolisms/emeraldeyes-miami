@@ -19,10 +19,16 @@ export const metadata: Metadata = {
   title: "Experiences | Emerald Eyes Miami",
   description:
     "Sunset cruises, private parties, corporate charters, bachelorette trips, proposals, and Haulover Sandbar adventures. Choose your perfect Miami yacht experience.",
+  keywords: ["Miami yacht experiences", "Miami boat charter packages", "private yacht tours Miami", "bachelorette boat Miami", "yacht rental packages"],
+  alternates: {
+    canonical: "/experiences",
+  },
   openGraph: {
     title: "Yacht Experiences | Emerald Eyes Miami",
     description:
       "Every charter is tailored. Sunset cruises, private parties, corporate events, and more on the water in Miami.",
+    url: "/experiences",
+    type: "website",
   },
 };
 
@@ -31,7 +37,7 @@ export const metadata: Metadata = {
 // ---------------------------------------------------------------------------
 export default function ExperiencesPage() {
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/ItemList">
       {/* Hero */}
       <section className="relative flex items-center justify-center min-h-[45vh] px-6 py-28 bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
         <div className="text-center max-w-3xl mx-auto">

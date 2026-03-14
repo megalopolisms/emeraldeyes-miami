@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Miami Yacht Charter FAQ | Emerald Eyes Miami",
   description:
     "Answers to common questions about Emerald Eyes Miami charters, including departures, inclusions, weather, deposits, photographers, and transportation.",
+  keywords: ["yacht charter FAQ", "Miami boat rental rules", "what to bring on yacht", "yacht weather policy", "Emerald Eyes Miami FAQ"],
   alternates: {
     canonical: "/faq",
   },
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
     description:
       "Read common Emerald Eyes Miami charter questions about planning, inclusions, departures, and add-ons before you book.",
     url: "/faq",
+    type: "website",
   },
 };
 

@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Sunset Cruise Miami | Emerald Eyes Miami",
   description:
     "Watch Miami's skyline glow as the sun dips below the horizon. Intimate groups, champagne, and the kind of evening you don't forget. From $2,500.",
+  keywords: ["sunset cruise Miami", "romantic boat ride Miami", "Miami sunset yacht charter", "sunset boat rental"],
+  alternates: {
+    canonical: "/experiences/sunset-cruise-miami",
+  },
   openGraph: {
     title: "Sunset Cruise Miami | Emerald Eyes Miami",
     description:
       "Golden hour on the water. Champagne, ocean breezes, and Miami's skyline at sunset. Book your private sunset cruise.",
+    url: "/experiences/sunset-cruise-miami",
+    type: "website",
   },
 };
 

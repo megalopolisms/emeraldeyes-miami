@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Bachelorette Yacht Miami | Emerald Eyes Miami",
   description:
     "The pregame before forever. DJ, champagne, photo props, and open water. The bachelorette your squad will talk about for years. From $3,500.",
+  keywords: ["bachelorette yacht Miami", "bachelorette party boat Miami", "Miami bachelorette charter", "boat rental bachelorette"],
+  alternates: {
+    canonical: "/experiences/bachelorette-yacht-miami",
+  },
   openGraph: {
     title: "Bachelorette Yacht Miami | Emerald Eyes Miami",
     description:
       "Throw the ultimate bachelorette party on a private yacht in Miami. DJ, champagne, and ocean vibes.",
+    url: "/experiences/bachelorette-yacht-miami",
+    type: "website",
   },
 };
 

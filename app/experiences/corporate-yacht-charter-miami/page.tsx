@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Corporate Yacht Charter Miami | Emerald Eyes Miami",
   description:
     "Impress without saying a word. Executive hosting, team events, and client entertainment on a private yacht in Miami. From $4,000.",
+  keywords: ["corporate yacht charter Miami", "Miami corporate boat rental", "executive yacht charter", "team building boat rental"],
+  alternates: {
+    canonical: "/experiences/corporate-yacht-charter-miami",
+  },
   openGraph: {
     title: "Corporate Yacht Charter Miami | Emerald Eyes Miami",
     description:
       "The boardroom with a better view. Host clients, teams, or executives on a private yacht charter in Miami.",
+    url: "/experiences/corporate-yacht-charter-miami",
+    type: "website",
   },
 };
 

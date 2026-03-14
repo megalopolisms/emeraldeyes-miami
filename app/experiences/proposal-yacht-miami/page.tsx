@@ -16,10 +16,16 @@ export const metadata: Metadata = {
   title: "Proposal Yacht Miami | Emerald Eyes Miami",
   description:
     "She'll say yes. The ocean guarantees it. Rose petals, hidden photographer, champagne on ice, and a sunset that sets the stage. From $3,000.",
+  keywords: ["proposal yacht Miami", "engagement boat rental Miami", "romantic yacht proposal", "Miami proposal packages"],
+  alternates: {
+    canonical: "/experiences/proposal-yacht-miami",
+  },
   openGraph: {
     title: "Proposal Yacht Miami | Emerald Eyes Miami",
     description:
-      "Plan the perfect proposal on a private yacht in Miami. Rose petals, sunset, champagne, and a hidden photographer.",
+      "The perfect proposal on a private yacht. Rose petals, champagne, and Miami's skyline at sunset.",
+    url: "/experiences/proposal-yacht-miami",
+    type: "website",
   },
 };
 
