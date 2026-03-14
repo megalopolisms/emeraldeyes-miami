@@ -69,6 +69,18 @@ const staticPages = [
     priority: 0.8,
   },
   {
+    route: "/privacy",
+    lastModified: "2026-03-14",
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  },
+  {
+    route: "/terms",
+    lastModified: "2026-03-14",
+    changeFrequency: "yearly" as const,
+    priority: 0.3,
+  },
+  {
     route: "/cancellation-policy",
     lastModified: "2026-03-14",
     changeFrequency: "yearly" as const,
