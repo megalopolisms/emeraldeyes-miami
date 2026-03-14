@@ -696,7 +696,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Our charter contracts are drafted to withstand Coast Guard scrutiny. Every agreement clearly establishes the bareboat structure, identifies the charterer as the temporary owner, and is fully executed before the vessel leaves the dock.",
     "cg.ee.briefing.title": "Pre-Departure Safety Briefing",
     "cg.ee.briefing.text":
-      "Before every charter, our captain conducts a full safety briefing covering life jacket locations, fire extinguisher positions, man-overboard procedures, and emergency protocols. You will know your captain's name — because you chose them.",
+      "Before every charter, your captain conducts a full safety briefing covering life jacket locations, fire extinguisher positions, man-overboard procedures, and emergency protocols. You will know your captain's name — because you chose them.",
     "cg.ee.equipment.title": "Equipment That Exceeds Standards",
     "cg.ee.equipment.text":
       "We carry more than the minimum required safety equipment. Extra PFDs, current flares, fully charged extinguishers, and first aid kits on every vessel. Our navigation lights are LED-upgraded for maximum visibility.",
@@ -936,7 +936,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Final CTA
     "js.cta.title": "Skip the jet ski hassle.",
     "js.cta.text":
-      "Same Biscayne Bay views. Same Star Island mansions. Same Miami sunset. But from an Emerald Eyes Miami private yacht with music, drinks, and room to relax \u2014 our captain handles everything. No license needed. No certification. Just you and the water.",
+      "Same Biscayne Bay views. Same Star Island mansions. Same Miami sunset. But from an Emerald Eyes Miami private yacht with music, drinks, and room to relax \u2014 add a captain and they handle everything. No license needed. No certification. Just you and the water.",
     "js.cta.book": "Plan Your Charter",
     "js.cta.explore": "Browse Experiences",
     // Blog listing — Jet Ski card
@@ -1187,7 +1187,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "You can rent any boat and motor to the sandbar. But the experience gap between a random rental and an Emerald Eyes charter is enormous. Here’s what you actually get.",
     "hs.advantage.captain.title": "USCG-Licensed Captains",
     "hs.advantage.captain.text":
-      "Every Emerald Eyes charter includes a captain who’s logged hundreds of trips to Haulover Sandbar. They know where the sand is firmest, where the current is weakest, and exactly when to arrive for the best positioning. You don’t navigate, anchor, or worry.",
+      "Add one of our captains who’s logged hundreds of trips to Haulover Sandbar. They know where the sand is firmest, where the current is weakest, and exactly when to arrive for the best positioning. You don’t navigate, anchor, or worry.",
     "hs.advantage.gear.title": "Everything on Board",
     "hs.advantage.gear.text":
       "Floating mats, premium Bluetooth sound system, ice-stocked coolers, real glassware, bottled water, and water toys. Most rental companies give you a boat and a gas tank. We give you the full experience.",
@@ -2510,7 +2510,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Nuestros contratos estan redactados para resistir el escrutinio del Coast Guard. Cada acuerdo establece claramente la estructura bareboat y esta completamente ejecutado antes de salir del muelle.",
     "cg.ee.briefing.title": "Briefing de Seguridad Pre-Salida",
     "cg.ee.briefing.text":
-      "Antes de cada charter, nuestro capitan realiza un briefing completo de seguridad cubriendo ubicaciones de chalecos, extintores, procedimientos de hombre al agua y protocolos de emergencia.",
+      "Antes de cada charter, tu capitan realiza un briefing completo de seguridad cubriendo ubicaciones de chalecos, extintores, procedimientos de hombre al agua y protocolos de emergencia. Sabras el nombre de tu capitan — porque tu lo elegiste.",
     "cg.ee.equipment.title": "Equipo Que Supera los Estandares",
     "cg.ee.equipment.text":
       "Llevamos mas del equipo minimo requerido. PFDs extra, bengalas vigentes, extintores completamente cargados y botiquines en cada embarcacion.",
@@ -2628,7 +2628,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Mid CTA
     "js.midCta.title": "¿Quieres la Vista Sin las Reglas?",
     "js.midCta.text":
-      "¿Te encanta la idea de navegar frente a las mansiones de Star Island y ver el skyline de Miami desde el agua — pero no quieres lidiar con certificaciones, reglas de chalecos salvavidas y toques de queda al atardecer? Un charter privado de Emerald Eyes Miami se encarga de todo. Nuestro capitán navega. Nuestra tripulación maneja los detalles. Tú solo subes a bordo con un trago en la mano. Sin licencia, sin tarjeta, sin complicaciones — solo las mejores vistas de Miami.",
+      "¿Te encanta la idea de navegar frente a las mansiones de Star Island y ver el skyline de Miami desde el agua — pero no quieres lidiar con certificaciones, reglas de chalecos salvavidas y toques de queda al atardecer? Un charter privado de Emerald Eyes Miami se encarga de todo. Agrega un capitan y el navega mientras tu disfrutas. Tu solo subes a bordo con un trago en la mano. Sin complicaciones — solo las mejores vistas de Miami.",
     "js.midCta.btn": "Planifica Tu Charter",
     // Jet Ski article — Jet Skis from Your Yacht (ES)
     "js.yacht.eyebrow": "Yate + Jet Ski como Extra",
@@ -2762,7 +2762,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Final CTA (ES)
     "js.cta.title": "Olv\u00EDdate de las complicaciones del jet ski.",
     "js.cta.text":
-      "Las mismas vistas de la Bahía de Biscayne. Las mismas mansiones de Star Island. El mismo atardecer de Miami. Pero desde un yate privado de Emerald Eyes Miami con música, bebidas y espacio para relajarte — nuestro capitán se encarga de todo. Sin licencia necesaria. Sin certificación. Solo tú y el agua.",
+      "Las mismas vistas de la Bahia de Biscayne. Las mismas mansiones de Star Island. El mismo atardecer de Miami. Pero desde un yate privado de Emerald Eyes Miami con musica, bebidas y espacio para relajarte — agrega un capitan y el se encarga de todo. Sin licencia necesaria. Sin certificacion. Solo tu y el agua.",
     "js.cta.book": "Planifica Tu Charter",
     "js.cta.explore": "Ver Experiencias",
     // Blog listing — Haulover Sandbar card
@@ -2859,9 +2859,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "hs.provide.glass.title": "Agua Embotellada",
     "hs.provide.glass.text":
       "Agua embotellada de cortesia durante todo el viaje.",
-    "hs.provide.captain.title": "Capitan y Tripulacion Licenciados",
+    "hs.provide.captain.title": "Capitan Disponible como Extra",
     "hs.provide.captain.text":
-      "Capitan con credencial USCG que conoce cada rincon del sandbar.",
+      "Capitanes con licencia USCG disponibles que conocen cada rincon del sandbar. Nosotros nos encargamos de la reserva.",
     // Haulover Sandbar article — Reglas
     "hs.rules.title": "Reglas y Regulaciones",
     "hs.rules.intro":
@@ -2952,12 +2952,12 @@ const translations: Record<Lang, Record<string, string>> = {
     "hs.midCta.title":
       "\u00BFListo para hacer el sandbar de la forma correcta?",
     "hs.midCta.text":
-      "Yate privado, capitan licenciado, colchonetas flotantes, musica y el mejor lugar para anclar en el sandbar. Desde $2,500 por 4\u20138 horas. Trae tu grupo y tus bebidas \u2014 nosotros nos encargamos de todo lo demas.",
+      "Yate privado, colchonetas flotantes, musica y el mejor lugar para anclar en el sandbar. Desde $2,500 por 4\u20138 horas. Agrega un capitan licenciado y trae tus bebidas \u2014 nosotros nos encargamos de todo lo demas.",
     "hs.midCta.btn": "Ver la Experiencia Haulover",
     // Haulover Sandbar article — CTA final
     "hs.cta.title": "Asi es como Miami hace el sandbar.",
     "hs.cta.text":
-      "Yate privado. Capitan licenciado. Colchonetas flotantes, musica y espacio para hasta 12. Llega a Haulover Sandbar como fue pensado \u2014 y dejanos encargarnos del resto.",
+      "Yate privado. Colchonetas flotantes, musica y espacio para hasta 12. Agrega un capitan licenciado y llega a Haulover Sandbar como fue pensado \u2014 y dejanos encargarnos del resto.",
     "hs.cta.book": "Planifica Tu Charter",
     "hs.cta.explore": "Ver Experiencias",
     // Haulover Sandbar article — The Sandbar Experience (ES)
@@ -2994,7 +2994,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "hs.cost.navTitle": "Precios",
     "hs.cost.title": "Cuanto Cuesta?",
     "hs.cost.p1":
-      "Un charter de yate privado a Haulover Sandbar comienza en $2,500 por un viaje de 4 horas con Emerald Eyes Miami. Eso incluye el yate, un capitan con licencia USCG, combustible, colchonetas flotantes, sistema de sonido premium, hielo, hieleras y agua embotellada. Tu traes la comida, las bebidas y tu grupo — hasta 12 invitados.",
+      "Un charter bareboat privado a Haulover Sandbar comienza en $2,500 por un viaje de 4 horas con Emerald Eyes Miami. Eso incluye el yate, combustible, colchonetas flotantes, sistema de sonido premium, hielo, hieleras y agua embotellada. La mayoria de los clientes agregan un capitan con licencia USCG. Tu traes la comida, las bebidas y tu grupo — hasta 12 invitados.",
     "hs.cost.p2":
       "Viajes mas largos (6–8 horas), extras premium como un saxofonista en vivo o chef de sushi privado, y embarcaciones mas grandes estan disponibles a precios mas altos. Sin cargos ocultos, sin recargos de combustible, sin sorpresas.",
     "hs.cost.priceLink": "Ver desglose completo de precios →",
@@ -3006,7 +3006,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Puedes alquilar cualquier barco e ir al sandbar. Pero la diferencia de experiencia entre un alquiler cualquiera y un charter de Emerald Eyes es enorme. Esto es lo que realmente obtienes.",
     "hs.advantage.captain.title": "Capitanes con Licencia USCG",
     "hs.advantage.captain.text":
-      "Cada charter de Emerald Eyes incluye un capitan que ha hecho cientos de viajes a Haulover Sandbar. Saben donde la arena es mas firme, donde la corriente es mas debil, y exactamente cuando llegar para el mejor posicionamiento. Tu no navegas, no anclas, no te preocupas.",
+      "Agrega uno de nuestros capitanes que ha hecho cientos de viajes a Haulover Sandbar. Saben donde la arena es mas firme, donde la corriente es mas debil, y exactamente cuando llegar para el mejor posicionamiento. Tu no navegas, no anclas, no te preocupas.",
     "hs.advantage.gear.title": "Todo a Bordo",
     "hs.advantage.gear.text":
       "Colchonetas flotantes, sistema de sonido Bluetooth premium, hieleras con hielo, cristaleria real, agua embotellada y juguetes acuaticos. La mayoria de las companias de alquiler te dan un barco y un tanque de gasolina. Nosotros te damos la experiencia completa.",
@@ -3487,9 +3487,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.save.longer.title": "Reserva un Charter Mas Largo",
     "yp.save.longer.text":
       "El costo por hora baja en charters mas largos. Un dia completo de 8 horas es significativamente mejor valor por hora que dos viajes separados de 4 horas. Ademas, obtienes la experiencia completa de Miami sin prisas.",
-    "yp.tipping.title": "Propina para Tu Capitan y Tripulacion",
+    "yp.tipping.title": "Propina para Tu Capitan",
     "yp.tipping.intro":
-      "La propina es el unico costo adicional a tu cotizacion. Aqui tienes todo lo que necesitas saber para que no haya sorpresas.",
+      "Si contratas un capitan a traves de nosotros, la propina es habitual. Aqui tienes todo lo que necesitas saber para que no haya sorpresas.",
     "yp.tipping.standard.title": "Estandar de la Industria: 15-20%",
     "yp.tipping.standard.text":
       "La propina estandar para charters de yate en Miami es 15-20% de la tarifa base del charter. Esto es consistente en toda la industria, similar a dar propina en un restaurante de alta gama.",
@@ -3498,9 +3498,9 @@ const translations: Record<Lang, Record<string, string>> = {
       "En un charter de medio dia de $2,500, una propina tipica es $375-$500. En un charter de dia completo de $5,000, $750-$1,000. El monto siempre queda a tu discrecion basado en tu experiencia.",
     "yp.tipping.how.title": "Como Dar Propina",
     "yp.tipping.how.text":
-      "Se prefiere efectivo y se entrega directamente al capitan al final del viaje. El capitan reparte la propina con la tripulacion. Tambien se acepta Venmo y Zelle si prefieres digital.",
+      "Se prefiere efectivo y se entrega directamente al capitan al final del viaje. Tambien se acepta Venmo y Zelle si prefieres digital.",
     "yp.tipping.note":
-      "La propina nunca esta incluida en nuestros precios y nunca se espera — pero se agradece profundamente. Tu tripulacion trabaja duro para hacer cada charter especial.",
+      "La propina nunca esta incluida en nuestros precios y nunca se espera — pero cuando contratas un capitan a traves de nosotros, se agradece profundamente. Trabajan duro para hacer cada charter especial.",
     "yp.midCta.label": "Listo para Reservar?",
     "yp.midCta.title": "Obtiene Tu Cotizacion en Minutos",
     "yp.midCta.text":
@@ -3513,22 +3513,22 @@ const translations: Record<Lang, Record<string, string>> = {
       "Un charter privado de yate en Miami comienza en $2,500 por 4 horas con Emerald Eyes. Los precios en el mercado van desde $1,000 hasta $15,000+ por medio dia dependiendo del tamano y las comodidades de la embarcacion. Nuestro rango ideal es $2,500-$5,000 para grupos de 2-15.",
     "yp.faq.q2": "Que esta incluido en el precio del charter?",
     "yp.faq.a2":
-      "Cada charter de Emerald Eyes incluye capitan con licencia USCG, tripulacion profesional, combustible para recorridos locales, sistema de sonido premium, hielo y neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria. Sin recargos ocultos de combustible ni tarifas de atraque.",
+      "Cada charter bareboat de Emerald Eyes incluye la embarcacion, combustible para recorridos locales, sistema de sonido premium, hielo y neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria. Capitan disponible como extra popular. Sin recargos ocultos de combustible ni tarifas de atraque.",
     "yp.faq.q3": "Cuanto cuesta un yate por hora?",
     "yp.faq.a3":
       "Basado en nuestras tarifas, el costo por hora es aproximadamente $583-$625 dependiendo de la duracion del charter. En el mercado mas amplio de Miami, las tarifas por hora van de $250 a $1,500+ dependiendo del yate. Los charters mas largos siempre ofrecen mejor valor por hora.",
     "yp.faq.q4": "Hay costos adicionales que deba presupuestar?",
     "yp.faq.a4":
-      "El unico costo adicional es la propina para tu capitan y tripulacion, que queda a tu discrecion (el estandar de la industria es 15-20%). Si agregas extras como un saxofonista, chef de sushi o jet ski, esos se cotizan por adelantado. Tu propia comida y bebidas son bienvenidas y gratis de traer.",
+      "La mayoria de los clientes agregan un capitan (desde $300), y la propina para tu capitan queda a tu discrecion (el estandar de la industria es 15-20%). Si agregas extras como un saxofonista, chef de sushi o jet ski, esos se cotizan por adelantado. Tu propia comida y bebidas son bienvenidas y gratis de traer.",
     "yp.faq.q5": "Esta incluido el combustible?",
     "yp.faq.a5":
       "Si. El combustible para todas las rutas estandar de Miami esta incluido — Haulover Sandbar, Star Island, Biscayne Bay y Key Biscayne. Viajes extendidos fuera del area estandar pueden tener costos adicionales de combustible, pero siempre te avisamos antes de reservar.",
     "yp.faq.q6": "Cuando es el momento mas barato para alquilar?",
     "yp.faq.a6":
       "Los dias de semana (martes a jueves) durante meses de temporada baja (mayo a noviembre) ofrecen las mejores tarifas. Puedes ahorrar 10-20% comparado con un charter de fin de semana en temporada alta. Septiembre y octubre suelen ser los meses mas economicos con excelente clima.",
-    "yp.faq.q7": "Cuanto debo dar de propina a la tripulacion?",
+    "yp.faq.q7": "Cuanto debo dar de propina al capitan?",
     "yp.faq.a7":
-      "La propina nunca esta incluida y siempre queda a tu discrecion. El estandar de la industria en Miami es 15-20% de la tarifa base del charter. Para un charter de $2,500, eso seria tipicamente $375-$500. Las propinas van directamente a tu capitan y tripulacion.",
+      "Si contratas un capitan a traves de nosotros, la propina nunca esta incluida y siempre queda a tu discrecion. El estandar de la industria en Miami es 15-20% de la tarifa base del charter. Para un charter de $2,500, eso seria tipicamente $375-$500. Las propinas van directamente a tu capitan.",
     "yp.faq.q8": "Puedo llevar mi propia comida y bebidas?",
     "yp.faq.a8":
       "Por supuesto. Eres bienvenido a traer tu propia comida, bebidas y alcohol sin cargo adicional. Nosotros proporcionamos hielo, neveras y cristaleria. No botellas de vidrio a bordo — por favor usa latas o sirve en los vasos que proporcionamos. Tambien puedes agregar nuestros paquetes de catering.",
@@ -3548,7 +3548,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.sample.total": "Total: ~$3,300 para hasta 13 invitados",
     "yp.finalCta.title": "Conoce el Precio. Ama la Experiencia.",
     "yp.finalCta.text":
-      "Sin sorpresas, sin cargos ocultos. Solo una cotizacion transparente y una tripulacion lista para hacer tu dia en el agua inolvidable. Dinos que estas buscando.",
+      "Sin sorpresas, sin cargos ocultos. Solo una cotizacion transparente y un equipo listo para hacer tu dia en el agua inolvidable. Dinos que estas buscando.",
     // Bachelorette article (ES)
     "bach.category": "Experiencias",
     "bach.readTime": "16 min de lectura",
@@ -3580,7 +3580,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.why.p2":
       "Cada foto parece portada de revista cuando disparas contra agua turquesa y el skyline de Miami. La luz en la hora dorada es irreal. Y cuando la musica rebota en el agua sin paredes alrededor, la energia se siente diferente.",
     "bach.why.p3":
-      "Ademas, todo esta resuelto. Un capitan licenciado maneja, la tripulacion prepara y limpia todo, y lo unico que tienes que hacer es llegar. Esta es la despedida de soltera donde la dama de honor tambien puede disfrutar.",
+      "Ademas, todo puede estar resuelto. Agrega un capitan licenciado y el maneja mientras tu grupo disfruta. Lo unico que tienes que hacer es llegar. Esta es la despedida de soltera donde la dama de honor tambien puede disfrutar.",
     "bach.why.privacy.title": "Privacidad Total",
     "bach.why.privacy.text":
       "Sin desconocidos, sin filas, sin quejas de ruido. El yate es exclusivamente tuyo — tu playlist, tus reglas, tu fiesta.",
@@ -3591,7 +3591,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.why.freedom.text":
       "Sistema de sonido Bluetooth premium a bordo. Conecta tu telefono y pon tu playlist tan fuerte como quieras — sin limites de ruido en mar abierto.",
     "bach.why.tag1": "Yate Privado",
-    "bach.why.tag2": "Tripulacion Todo Incluido",
+    "bach.why.tag2": "Capitan Disponible",
     "bach.why.tag3": "Cero Limpieza",
     "bach.plan.title": "Cuando Reservar y Como Planificar",
     "bach.plan.p1":
@@ -3618,9 +3618,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.included.intro":
       "Todo lo que necesitas para una despedida de soltera sin estres esta a bordo desde el momento en que subes.",
     "bach.included.label": "Incluido en Tu Charter",
-    "bach.included.captain.title": "Capitan Licenciado USCG",
+    "bach.included.captain.title": "Tu Yate Privado",
     "bach.included.captain.text":
-      "Capitan profesional que conoce cada ruta, sandbar y punto de atardecer en Miami. Tu relajate — ellos manejan.",
+      "Un yate completamente equipado con todo lo que necesitas para el dia perfecto en el agua. Agrega un capitan con licencia USCG y ellos se encargan del resto.",
     "bach.included.sound.title": "Sistema de Sonido Premium",
     "bach.included.sound.text":
       "Parlantes Bluetooth en todo el yate. Conecta tu telefono y pon tu playlist a todo volumen — sin limites de ruido en el agua.",
@@ -3691,7 +3691,7 @@ const translations: Record<Lang, Record<string, string>> = {
       'Banner de "Last Sail Before the Veil", koozies personalizados, lentes divertidos. Los props dan mucho juego en las fotos del yate. Sin globos, brillantina ni confeti.',
     "bach.party.cash.title": "Efectivo e Identificacion",
     "bach.party.cash.text":
-      "Trae tu ID para abordar y efectivo para propinas. La propina de la tripulacion es costumbre (18-20%) y muy apreciada.",
+      "Trae tu ID para abordar y efectivo para propinas. Si contrataste un capitan, la propina es costumbre (18-20%) y muy apreciada.",
     "bach.price.title": "Tamano de Grupo y Precios",
     "bach.price.intro":
       "Cada charter es privado — tu grupo, tu yate. Los precios escalan con el tamano del grupo y tipo de embarcacion.",
@@ -3706,7 +3706,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.price.big.price": "$6,000+",
     "bach.price.perHour": "Minimo de charter 4 horas",
     "bach.price.note":
-      "Todos los precios incluyen capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo, hieleras y copas. Los extras son adicionales. Cotizaciones personalizadas para multiples dias o solicitudes especiales — solo pregunta.",
+      "Todos los precios incluyen el yate, sistema de sonido, colchonetas flotantes, hielo, hieleras y copas. El capitan y otros extras son adicionales. Cotizaciones personalizadas para multiples dias o solicitudes especiales — solo pregunta.",
     "bach.tips.label": "De Nuestro Equipo",
     "bach.tips.title": "Consejos de Sasha",
     "bach.tips.tip1":
@@ -3721,12 +3721,12 @@ const translations: Record<Lang, Record<string, string>> = {
       "Designen a una persona como contacto de reserva. Demasiadas cocineras en el chat grupal hace la planificacion mas dificil. Una persona habla con nosotros, recolecta el pago del grupo y comparte los detalles.",
     "bach.midCta.title": "Lista para empezar a planificar?",
     "bach.midCta.text":
-      "Yate privado, capitan licenciado, colchonetas flotantes, sistema de sonido y toda la costa de Miami como tu escenario. Dinos tu fecha y tamano de grupo — armaremos el charter de despedida perfecto para ti.",
+      "Yate privado, colchonetas flotantes, sistema de sonido y toda la costa de Miami como tu escenario. Agrega un capitan licenciado y nosotros nos encargamos del resto. Dinos tu fecha y tamano de grupo — armaremos el charter de despedida perfecto para ti.",
     "bach.midCta.btn": "Ver Paquetes de Despedida",
     "bach.faq.title": "Preguntas Frecuentes",
     "bach.faq.q1": "Cuanto cuesta una despedida de soltera en yate en Miami?",
     "bach.faq.a1":
-      "Un charter privado de despedida con Emerald Eyes empieza en $3,500 por 4 horas. Eso incluye capitan licenciado USCG, tripulacion profesional, sistema de sonido premium, colchonetas flotantes, hielo, hieleras y copas. Extras populares como saxofonista en vivo ($350), chef de sushi ($500) o jet skis ($200) estan disponibles. La mayoria de los grupos gastan $4,000-$6,000 por una experiencia completa de 4-6 horas.",
+      "Un charter privado de despedida con Emerald Eyes empieza en $3,500 por 4 horas. Eso incluye el yate, sistema de sonido premium, colchonetas flotantes, hielo, hieleras y copas. La mayoria de los grupos agregan un capitan con licencia USCG (desde $300). Extras populares como saxofonista en vivo ($350), chef de sushi ($500) o jet skis ($200) tambien estan disponibles. La mayoria de los grupos gastan $4,000-$6,000 por una experiencia completa de 4-6 horas.",
     "bach.faq.q2": "Cuantas personas caben en un yate de despedida?",
     "bach.faq.a2":
       "Nuestros yates acomodan grupos de 2 a 25+ invitados. El punto ideal para despedidas es 8-15 personas — suficiente para una gran fiesta, intimo para que todas disfruten el yate. Grupos de mas de 13 pueden requerir una embarcacion mas grande con precios ajustados.",

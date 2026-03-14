@@ -144,7 +144,7 @@ const faqSchema = {
       name: "What is included in a Miami yacht charter price?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "With Emerald Eyes Miami, every charter includes a USCG-licensed captain, professional crew, fuel for local cruising, a premium sound system, ice and coolers, floating mats, water toys, bottled water, and glassware. There are no hidden fees for these essentials.",
+        text: "With Emerald Eyes Miami, every charter includes fuel for local cruising, a premium sound system, ice and coolers, floating mats, water toys, bottled water, and glassware. A USCG-licensed captain is available as an add-on — most clients hire one through us. There are no hidden fees for these essentials.",
       },
     },
     {
@@ -184,7 +184,7 @@ const faqSchema = {
       name: "Do I need to tip the yacht crew?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Gratuity is not included in the charter price and is at your discretion. The industry standard in Miami is 15-20% of the base charter fee. For a $2,500 charter, that would be $375-$500. Tips are given directly to the captain and crew.",
+        text: "Gratuity is not included in the charter price and is at your discretion. If you hire a captain through us, the industry standard in Miami is 15-20% of the base charter fee. For a $2,500 charter, that would be $375-$500. Tips are given directly to the captain.",
       },
     },
     {

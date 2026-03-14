@@ -139,7 +139,7 @@ const faqSchema = {
       name: "How much does a bachelorette yacht party cost in Miami?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A private bachelorette yacht charter with Emerald Eyes starts at $3,500 for 4 hours. That includes a USCG-licensed captain, professional crew, premium sound system, floating mats, ice, coolers, and glassware. Popular add-ons like a live sax player ($350), sushi chef ($500), or jet skis ($200) are available. Most bachelorette groups spend $4,000-$6,000 for a fully loaded 4-6 hour experience.",
+        text: "A private bachelorette yacht charter with Emerald Eyes starts at $3,500 for 4 hours. That includes a premium sound system, floating mats, ice, coolers, and glassware. A USCG-licensed captain is available as an add-on — most groups hire one through us. Popular add-ons like a live sax player ($350), sushi chef ($500), or jet skis ($200) are also available. Most bachelorette groups spend $4,000-$6,000 for a fully loaded 4-6 hour experience.",
       },
     },
     {

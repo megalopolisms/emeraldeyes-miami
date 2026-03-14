@@ -60,7 +60,7 @@ const faqSchema = {
       name: "What's included in the charter price?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Every charter includes a licensed captain, professional crew, fuel, basic amenities, bottled water, ice, and sound system access. Add-ons like photography, DJ, sushi chef, bottle service, and transportation are available separately.",
+        text: "Every charter includes fuel, bottled water, ice, coolers, a premium sound system, floating mats, water toys, and glassware. A USCG-licensed captain is available as an add-on — most clients add one. Add-ons like photography, DJ, sushi chef, bottle service, and transportation are also available separately.",
       },
     },
     {
@@ -76,7 +76,7 @@ const faqSchema = {
       name: "Do you provide a captain?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Captains and crew are included so you can focus on the experience instead of logistics.",
+        text: "We offer a bareboat charter, meaning the yacht comes without a captain by default. Most clients add a USCG-licensed captain through us — it's the easiest way to handle the logistics so you can focus on the experience.",
       },
     },
     {

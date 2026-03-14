@@ -176,7 +176,7 @@ const faqSchema = {
       name: "What should I bring to Haulover Sandbar?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sunscreen (reef-safe preferred), sunglasses with a strap, a waterproof phone case, cash for floating food vendors, and your own food and drinks (no glass). On an Emerald Eyes charter, we provide the captain, floating mats, water toys, ice, coolers, glassware, and a full sound system.",
+        text: "Sunscreen (reef-safe preferred), sunglasses with a strap, a waterproof phone case, cash for floating food vendors, and your own food and drinks (no glass). On an Emerald Eyes charter, we provide floating mats, water toys, ice, coolers, glassware, and a full sound system. Most clients also add a USCG-licensed captain through us.",
       },
     },
     {
@@ -184,7 +184,7 @@ const faqSchema = {
       name: "How much does a yacht charter to Haulover Sandbar cost?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "A private yacht charter to Haulover Sandbar with Emerald Eyes starts at $2,500 for 4-8 hours. That includes a licensed USCG captain, crew, floating mats, water toys, sound system, ice, coolers, and glassware. Add-ons like live saxophone, a sushi chef, or jet skis are available.",
+        text: "A private yacht charter to Haulover Sandbar with Emerald Eyes starts at $2,500 for 4-8 hours. That includes fuel, floating mats, water toys, sound system, ice, coolers, and glassware. Most clients add a USCG-licensed captain through us. Add-ons like live saxophone, a sushi chef, or jet skis are also available.",
       },
     },
   ],
