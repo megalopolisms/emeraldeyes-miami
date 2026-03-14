@@ -808,7 +808,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // Jet Ski article — Mid CTA
     "js.midCta.title": "Want the View Without the Rules?",
     "js.midCta.text":
-      "Love the idea of cruising past Star Island mansions and watching the Miami skyline from the water \u2014 but don\u2019t want to deal with certifications, life jacket rules, and sunset curfews? An Emerald Eyes Miami private yacht charter handles everything. Our captain navigates. Our crew handles the details. You just step aboard with a drink in hand. No license, no card, no hassle \u2014 just the best views in Miami.",
+      "Love the idea of cruising past Star Island mansions and watching the Miami skyline from the water \u2014 but don\u2019t want to deal with certifications, life jacket rules, and sunset curfews? An Emerald Eyes Miami private yacht charter handles everything. Add a captain and they navigate while you enjoy. You just step aboard with a drink in hand. No hassle \u2014 just the best views in Miami.",
     "js.midCta.btn": "Plan Your Charter",
     // Jet Ski article — Jet Skis from Your Yacht
     "js.yacht.eyebrow": "Yacht + Jet Ski Add-On",
@@ -1868,7 +1868,7 @@ const translations: Record<Lang, Record<string, string>> = {
       '"Last Sail Before the Veil" banner, custom koozies, silly glasses. Props go a long way on a yacht shoot. No balloons, glitter, or confetti.',
     "bach.party.cash.title": "Cash & ID",
     "bach.party.cash.text":
-      "Bring your ID for boarding and cash for tips. Crew gratuity is customary (18-20%) and very much appreciated.",
+      "Bring your ID for boarding and cash for tips. If you hired a captain, gratuity is customary (18-20%) and very much appreciated.",
     "bach.price.title": "Group Size & Pricing",
     "bach.price.intro":
       "Every charter is private — your group, your yacht. Pricing scales with group size and vessel type.",
@@ -2137,7 +2137,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "trust.uscg": "Inspeccion USCG",
     "trust.uscg.sub": "Embarcaciones seguras y certificadas",
     "trust.captains": "Capitanes Licenciados",
-    "trust.captains.sub": "Tripulacion profesional con experiencia",
+    "trust.captains.sub": "Disponibles como extra en cada charter",
     "trust.location": "Base en North Miami",
     "trust.location.sub": "Haulover, Aventura, Sunny Isles",
     "why.title": "Por Que Emerald Eyes",
@@ -2170,7 +2170,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.backToBlog": "Volver al Blog",
     "blog.ctaTitle": "\u00BFListo para salir al agua?",
     "blog.ctaText":
-      "Cada charter de Emerald Eyes viene completamente equipado, documentado correctamente y con capitanes licenciados.",
+      "Cada charter de Emerald Eyes viene completamente equipado y documentado correctamente. Agrega un capitan con licencia USCG y disfruta un dia sin preocupaciones en el agua.",
     "blog.ctaBook": "Planifica Tu Charter",
     "blog.ctaExperiences": "Ver Experiencias",
     "blog.cat.safety": "Seguridad y Regulaciones",
@@ -3062,24 +3062,24 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time (ES) — Quick Facts
     "ft.quick.title": "Datos rapidos",
     "ft.quick.price":
-      "Charters desde $2,500 por 2\u20138 horas con capitan y tripulacion incluidos",
+      "Charter bareboat desde $2,500 por 2\u20138 horas \u2014 capitan disponible como extra",
     "ft.quick.group":
       "Grupos de 2 a 25+ invitados \u2014 hay un yate para cada tamano de grupo",
     "ft.quick.included":
-      "Capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo y hieleras incluidos",
+      "Combustible, sistema de sonido, colchonetas flotantes, hielo y hieleras incluidos",
     "ft.quick.noLicense":
       "No necesitas licencia nautica \u2014 tu capitan con licencia USCG se encarga de todo",
     // First Time (ES) — What to Expect
     "ft.expect.label": "Para Empezar",
     "ft.expect.title": "Que Esperar en Tu Primer Charter de Yate",
     "ft.expect.p1":
-      "Un charter de yate en Miami es mas simple de lo que la mayoria piensa. Llegas a la marina, conoces a tu capitan y tripulacion, recibes una breve charla de seguridad, y en minutos estas en el agua. De ahi, el dia es tuyo \u2014 navega a un banco de arena, ancla frente a Star Island, mira un atardecer desde mar abierto, o simplemente flota con musica y bebidas frias.",
+      "Un charter de yate en Miami es mas simple de lo que la mayoria piensa. Llegas a la marina, y si agregaste un capitan, te recibira con una breve charla de seguridad antes de salir al agua en minutos. De ahi, el dia es tuyo \u2014 navega a un banco de arena, ancla frente a Star Island, mira un atardecer desde mar abierto, o simplemente flota con musica y bebidas frias.",
     "ft.expect.p2":
-      "Tu capitan maneja toda la navegacion, anclaje y operaciones del barco. La tripulacion mantiene la musica, prepara las colchonetas flotantes y juguetes acuaticos, y se asegura de que todos la pasen bien. No necesitas saber nada de barcos.",
+      "Cuando agregas un capitan, ellos manejan toda la navegacion, anclaje y operaciones del barco para que no necesites saber nada de barcos. La mayoria de los clientes primerizos eligen esta opcion para una experiencia completamente sin estres.",
     "ft.expect.p3":
       "La mayoria de los invitados primerizos se sorprenden de lo relajada que es toda la experiencia. No hay codigo de vestimenta formal, no hay protocolo rigido, no hay asientos asignados. Basicamente estas en un salon flotante privado con un equipo profesional haciendo que todo funcione detras de escena.",
     "ft.expect.tag1": "Sin experiencia necesaria",
-    "ft.expect.tag2": "Capitan incluido",
+    "ft.expect.tag2": "Capitan disponible",
     "ft.expect.tag3": "Todas las edades",
     "ft.expect.linkHaulover": "Ruta popular: Guia de Haulover Sandbar",
     "ft.expect.linkBach": "Planeas una despedida de soltera? Lee nuestra guia",
@@ -3089,9 +3089,9 @@ const translations: Record<Lang, Record<string, string>> = {
       "La pregunta numero uno de los principiantes. Aqui tienes una respuesta rapida — con enlace al desglose completo de precios.",
     "ft.pricing.starting.title": "Desde ,500 por 4 horas",
     "ft.pricing.starting.text":
-      "Eso incluye yate privado con capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo y hieleras — todo incluido. Sin cargos ocultos, sin sorpresas. Cruceros de 2 horas al atardecer empiezan mas bajo, y aventuras de dia completo van mas alto dependiendo del tamano del yate y extras.",
-    "ft.pricing.includes.captain": "Capitan con licencia USCG",
-    "ft.pricing.includes.crew": "Tripulacion profesional",
+      "Eso incluye yate privado bareboat con combustible, sistema de sonido, colchonetas flotantes, hielo y hieleras. La mayoria de los clientes agregan un capitan con licencia USCG (desde $300). Sin cargos ocultos, sin sorpresas. Cruceros de 2 horas al atardecer empiezan mas bajo, y aventuras de dia completo van mas alto dependiendo del tamano del yate y extras.",
+    "ft.pricing.includes.captain": "Capitan disponible como extra",
+    "ft.pricing.includes.crew": "Combustible y equipo incluidos",
     "ft.pricing.includes.gear": "Todo el equipo incluido",
     "ft.pricing.detail":
       "Extras como saxofonista en vivo, chef de sushi, jet skis o servicio de botellas se cobran aparte. La mayoria de los grupos gastan \,500–\,000 en total por una tarde completa en el agua. Precios de fin de semana y feriados pueden variar.",
@@ -3100,17 +3100,17 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.charter.label": "Conoce la Diferencia",
     "ft.charter.title": "Bareboat vs. Charter con Tripulacion",
     "ft.charter.p1":
-      "En el mundo de los yates, \u201Cbareboat\u201D significa que alquilas la embarcacion \u2014 y el operador proporciona el capitan y la tripulacion. No es lo mismo que navegar solo. En Emerald Eyes, cada charter incluye un capitan con licencia USCG y tripulacion profesional, asi que incluso nuestro modelo bareboat viene completamente tripulado.",
+      "En el mundo de los yates, \u201Cbareboat\u201D significa que alquilas la embarcacion \u2014 sin capitan ni tripulacion incluidos en el precio base. En Emerald Eyes, operamos un modelo bareboat verdadero. La mayoria de los clientes agregan un capitan con licencia USCG a traves de nosotros, pero si tienes la licencia apropiada, puedes operar la embarcacion tu mismo.",
     "ft.charter.p2":
-      "Un \u201Ccharter con tripulacion\u201D en el sentido tradicional generalmente significa un viaje de varios dias en un yate mas grande con capitan, chef y azafata a bordo \u2014 piensa en viajes de una semana por el Caribe. Para charters de dia en Miami, el modelo bareboat con capitan proporcionado es estandar y te da lo mejor de ambos mundos: tripulacion profesional manejando el barco, y libertad total para que disfrutes la experiencia.",
+      "Un \u201Ccharter con tripulacion\u201D en el sentido tradicional generalmente significa un viaje de varios dias en un yate mas grande con capitan, chef y azafata a bordo \u2014 piensa en viajes de una semana por el Caribe. Para charters de dia en Miami, el modelo bareboat es estandar. Tu alquilas el yate y decides si agregar un capitan \u2014 la mayoria de los clientes lo hacen, y nosotros nos encargamos de la reserva.",
     "ft.charter.p3":
       "En resumen: no necesitas licencia nautica, no necesitas experiencia, y no tienes que preocuparte por la navegacion o el atraque. Solo presentate.",
     "ft.charter.note":
-      "Cada charter de Emerald Eyes incluye un capitan con licencia USCG y tripulacion entrenada \u2014 sin importar el paquete.",
+      "Emerald Eyes es una empresa de charter bareboat. Capitan disponible como extra \u2014 la mayoria de los clientes eligen esta opcion para una experiencia sin preocupaciones.",
     // First Time (ES) — Your Captain Handles Everything
     "ft.captain.title": "Tu Capitan Se Encarga de Todo",
     "ft.captain.intro":
-      "Los primerizos a menudo se preguntan de que son responsables en el agua. La respuesta es simple: nada. Tu capitan con licencia USCG y tripulacion profesional manejan cada detalle para que puedas relajarte.",
+      "Los primerizos a menudo se preguntan de que son responsables en el agua. Cuando agregas un capitan a traves de nosotros, la respuesta es simple: nada. Tu capitan con licencia USCG maneja cada detalle para que puedas relajarte.",
     "ft.captain.nav.title": "Navegacion y Ruta",
     "ft.captain.nav.text":
       "Tu capitan planifica y conduce toda la ruta \u2014 desde la salida hasta Haulover Sandbar, Star Island, o donde quieras ir. Conocen los canales, las zonas sin oleaje y los mejores puntos para anclar.",
@@ -3130,7 +3130,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.captain.local.text":
       "Los mejores bancos de arena, los fondeaderos mas tranquilos, el angulo perfecto del atardecer \u2014 tu capitan conoce las aguas de Miami por dentro y por fuera. Ajustaran la ruta al ambiente de tu grupo y haran sugerencias en tiempo real.",
     "ft.captain.note":
-      "Cada charter incluye capitan y tripulacion. No necesitas experiencia nautica, licencia, ni siquiera un plan \u2014 solo presentate y disfruta.",
+      "La mayoria de los clientes agregan un capitan \u2014 nosotros nos encargamos de la reserva. No necesitas experiencia nautica ni siquiera un plan. Solo presentate y disfruta.",
     "ft.captain.cgLink":
       "Aprende mas: Como las inspecciones de la Guardia Costera te protegen",
     // First Time (ES) — Booking Process
@@ -3166,16 +3166,16 @@ const translations: Record<Lang, Record<string, string>> = {
       "Probablemente estaras entrando y saliendo del agua. Trae ropa de cambio si quieres estar seco despues.",
     "ft.bring.cash.title": "Efectivo para Propinas",
     "ft.bring.cash.text":
-      "15\u201320% para tu capitan y tripulacion es estandar en la industria de charters. Ellos trabajan duro para hacer tu dia perfecto.",
+      "Si agregas un capitan, la propina del 15\u201320% es estandar en la industria de charters. Ellos trabajan duro para hacer tu dia perfecto.",
     "ft.bring.id.title": "Identificacion Valida",
     "ft.bring.id.text":
       "Trae una identificacion oficial con foto. Requerida para el registro y si vas a traer alcohol a bordo.",
-    "ft.provide.captain.title": "Capitan Licenciado",
+    "ft.provide.captain.title": "Capitan como Extra",
     "ft.provide.captain.text":
-      "Con licencia USCG e inspeccion de la Guardia Costera. Tu capitan conoce cada fondeadero, banco de arena y punto de atardecer en Miami.",
-    "ft.provide.crew.title": "Tripulacion Profesional",
+      "Capitanes con licencia USCG disponibles. Conocen cada fondeadero, banco de arena y punto de atardecer en Miami. Nosotros manejamos la reserva.",
+    "ft.provide.crew.title": "Embarcacion Totalmente Equipada",
     "ft.provide.crew.text":
-      "Tripulacion de hospitalidad entrenada para mantener la musica, servir bebidas, preparar juguetes y asegurar que todos esten comodos.",
+      "Todo a bordo para un gran dia \u2014 sistema de sonido, colchonetas flotantes, juguetes acuaticos, hielo, hieleras y agua embotellada.",
     "ft.provide.sound.title": "Sistema de Sonido",
     "ft.provide.sound.text":
       "Bocinas Bluetooth premium en todo el yate. Conecta tu telefono y pon tu propia playlist todo el dia.",
@@ -3211,12 +3211,12 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.etiquette.time.title": "Se Puntual",
     "ft.etiquette.time.text":
       "Llega 15 minutos antes de la salida. El reloj del charter comienza a tu hora confirmada, no cuando llegas. Llegar tarde significa menos tiempo en el agua \u2014 para todos.",
-    "ft.etiquette.tip.title": "Propina a Tu Tripulacion",
+    "ft.etiquette.tip.title": "Propina a Tu Capitan",
     "ft.etiquette.tip.text":
-      "15\u201320% del costo del charter es estandar. Efectivo es preferido, dividido entre el capitan y la tripulacion. Una gran tripulacion hace la experiencia \u2014 demuestra que lo notaste.",
-    "ft.etiquette.respect.title": "Respeta la Tripulacion y la Embarcacion",
+      "Si contrataste un capitan, el 15\u201320% del costo del charter es estandar. Efectivo es preferido y se entrega directamente al capitan. Un gran capitan hace la experiencia \u2014 demuestra que lo notaste.",
+    "ft.etiquette.respect.title": "Respeta al Capitan y la Embarcacion",
     "ft.etiquette.respect.text":
-      "La tripulacion esta ahi para hacer tu dia increible, no para recibir ordenes. Tratalos como tratarias a un anfitrion en su casa. No entres al timon o areas del motor, y sigue las instrucciones del capitan en todo momento.",
+      "Si agregaste un capitan, estan ahi para hacer tu dia increible. Tratalos como tratarias a un anfitrion en su casa. No entres al timon o areas del motor, y sigue las instrucciones del capitan en todo momento.",
     // First Time (ES) — Common Mistakes
     "ft.mistakes.title": "Errores Comunes que Debes Evitar",
     "ft.mistakes.intro":
@@ -3260,7 +3260,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time (ES) — Safety
     "ft.safety.title": "Seguridad a Bordo",
     "ft.safety.intro":
-      "Tu seguridad es la prioridad numero uno \u2014 y en un charter con tripulacion profesional, el capitan se encarga de todo.",
+      "Tu seguridad es la prioridad numero uno. Cuando agregas un capitan a traves de nosotros, ellos manejan todos los protocolos de seguridad y cumplimiento.",
     "ft.safety.briefing.title": "Charla de Seguridad Pre-Salida",
     "ft.safety.briefing.text":
       "Antes de salir del muelle, tu capitan te mostrara la ubicacion de los chalecos salvavidas, extintores, salidas de emergencia y las reglas basicas de la embarcacion. Toma cinco minutos y es importante.",
@@ -3275,7 +3275,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time (ES) — Mid CTA
     "ft.midCta.title": "Listo para Tu Primer Charter?",
     "ft.midCta.text":
-      "Emerald Eyes lo hace facil. Capitan licenciado, tripulacion profesional, todo el equipo incluido. Solo elige tu fecha y presentate \u2014 nosotros nos encargamos de todo lo demas.",
+      "Emerald Eyes lo hace facil. Yate totalmente equipado, capitan disponible como extra, todo lo que necesitas a bordo. Solo elige tu fecha y presentate \u2014 nosotros nos encargamos de todo lo demas.",
     "ft.midCta.btn": "Planifica Tu Charter",
     // First Time (ES) — FAQ
     "ft.faq.title": "Preguntas Frecuentes de Principiantes",
@@ -3284,7 +3284,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.faq.q1":
       "Necesito una licencia nautica para alquilar un yate en Miami?",
     "ft.faq.a1":
-      "No. Cada charter de Emerald Eyes incluye un capitan con licencia USCG que maneja toda la navegacion y operaciones del barco. No necesitas experiencia nautica ni certificaciones.",
+      "No. La mayoria de los clientes agregan un capitan con licencia USCG a traves de nosotros, y ellos manejan toda la navegacion y operaciones del barco. No necesitas experiencia nautica ni certificaciones. Si tienes licencia, puedes operar la embarcacion tu mismo.",
     "ft.faq.q2": "Puedo traer mi propia comida y bebidas?",
     "ft.faq.a2":
       "Si. La mayoria de los invitados traen su propia hielera con bebidas y snacks. Nosotros proporcionamos hielo, hieleras y vasos. No botellas de vidrio \u2014 solo latas y plastico. Tambien puedes agregar paquetes de catering como chef de sushi o servicio de botellas.",
@@ -3297,9 +3297,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.faq.q5": "Es seguro traer ninos a un yate?",
     "ft.faq.a5":
       "Absolutamente. Tenemos chalecos salvavidas en tallas infantiles, y nuestra tripulacion tiene experiencia con familias. Los ninos menores de 6 anos deben usar chaleco salvavidas en todo momento. Las experiencias en el banco de arena son especialmente populares con familias.",
-    "ft.faq.q6": "Cuanto debo dar de propina al capitan y tripulacion?",
+    "ft.faq.q6": "Cuanto debo dar de propina al capitan?",
     "ft.faq.a6":
-      "15\u201320% del costo total del charter es estandar en la industria. Efectivo es preferido y se puede dar directamente al capitan al final del viaje, quien lo dividira con la tripulacion.",
+      "Si contratas un capitan a traves de nosotros, el 15\u201320% del costo total del charter es estandar en la industria. Efectivo es preferido y se puede dar directamente al capitan al final del viaje.",
     "ft.faq.q7": "Cual es la politica de cancelacion?",
     "ft.faq.a7":
       "Cancelaciones con mas de 48 horas de anticipacion reciben reembolso completo. Dentro de 48 horas, tu deposito puede aplicarse a una fecha futura. Las cancelaciones por clima siempre se reprograman sin costo.",
@@ -3320,7 +3320,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.related.experience": "Ver Todas las Experiencias",
     "ft.cta.title": "Tu primera vez en un yate deberia sentirse sin esfuerzo.",
     "ft.cta.text":
-      "Yate privado. Capitan licenciado. Sistema de sonido, colchonetas flotantes, y una tripulacion que maneja cada detalle. Todo lo que tienes que hacer es presentarte.",
+      "Yate privado. Sistema de sonido, colchonetas flotantes, y todo lo que necesitas a bordo. Agrega un capitan licenciado y todo lo que tienes que hacer es presentarte.",
     "ft.cta.explore": "Ver Experiencias",
     // Yacht Prices article (ES)
     "yp.heroTitle":
@@ -3337,34 +3337,34 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.quick.starting": "Desde $2,500 por un charter de 4 horas",
     "yp.quick.minimum": "Minimo de 4 horas en todas las reservas",
     "yp.quick.included":
-      "Capitan, tripulacion, combustible, sonido y juguetes incluidos",
+      "Combustible, sistema de sonido, juguetes acuaticos y colchonetas incluidos",
     "yp.quick.peak": "Temporada alta: diciembre a abril",
     "yp.nav.title": "En esta guia",
     "yp.nav.shortAnswer": "La Respuesta Corta",
     "yp.nav.included": "Que Esta Incluido",
     "yp.nav.duration": "Duracion y Precios",
     "yp.nav.addons": "Costos de Extras",
-    "yp.nav.captain": "Tu Capitan y Tripulacion",
+    "yp.nav.captain": "Bareboat y Capitan",
     "yp.nav.factors": "Factores que Afectan el Precio",
     "yp.nav.save": "Como Ahorrar",
     "yp.nav.tipping": "Guia de Propinas",
     "yp.nav.faq": "Preguntas Frecuentes",
     "yp.short.title": "La Respuesta Corta",
     "yp.short.p1":
-      "Un charter privado de yate en Miami comienza en $2,500 por 4 horas con Emerald Eyes. Eso incluye capitan con licencia USCG, tripulacion profesional, combustible para recorridos locales, sistema de sonido premium, hielo, neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria.",
+      "Un charter privado bareboat de yate en Miami comienza en $2,500 por 4 horas con Emerald Eyes. Eso incluye la embarcacion, combustible para recorridos locales, sistema de sonido premium, hielo, neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria. La mayoria de los clientes agregan un capitan con licencia USCG, que nosotros coordinamos.",
     "yp.short.p2":
       "Para comparar: en el mercado de Miami, los charters de yate van desde aproximadamente $1,000 hasta $15,000+ por medio dia dependiendo del tamano del barco, antiguedad y nivel de servicio. La amplia gama se debe a si estas en una lancha de 30 pies o un superyate de 100 pies.",
     "yp.short.p3":
       "En Emerald Eyes operamos una flota seleccionada de embarcaciones bien mantenidas en el rango de 40-65 pies — el punto ideal para grupos de 2 a 15 que desean una experiencia de lujo sin el precio de un superyate.",
     "yp.short.note":
-      "Sin cargos ocultos. El precio que cotizamos es el precio que pagas. La propina para tu tripulacion es el unico costo adicional y siempre queda a tu discrecion.",
+      "Sin cargos ocultos. El precio que cotizamos es el precio que pagas. El capitan y la propina son los unicos costos adicionales, y ambos se cotizan por adelantado.",
     "yp.included.label": "Cada Charter",
     "yp.included.title": "Que Esta Incluido en Tu Precio",
     "yp.included.intro":
       "Cada charter de Emerald Eyes viene con todo lo que necesitas para un dia perfecto en el agua. Sin cargos sorpresa, sin ventas adicionales en el muelle.",
-    "yp.inc.captain.title": "Capitan y Tripulacion con Licencia",
-    "yp.inc.captain.text":
-      "Capitan con licencia USCG y tripulacion profesional que conocen cada rincon de Biscayne Bay.",
+    "yp.inc.vessel.title": "Tu Yate Privado",
+    "yp.inc.vessel.text":
+      "Una embarcacion bien mantenida en el rango de 40-65 pies, totalmente equipada para un dia de lujo en el agua.",
     "yp.inc.sound.title": "Sistema de Sonido Premium",
     "yp.inc.sound.text":
       "Parlantes marinos con Bluetooth. Pon tu playlist todo el dia.",
@@ -3385,19 +3385,19 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.inc.glass.title": "Cristaleria y Vasos",
     "yp.inc.glass.text":
       "Vasos reutilizables y cristaleria para que traigas tus bebidas con estilo.",
-    "yp.captain.label": "Tu Tripulacion",
-    "yp.captain.title": "Tu Capitan y Tripulacion",
+    "yp.captain.label": "Charter Bareboat",
+    "yp.captain.title": "Charter Bareboat y Capitan como Extra",
     "yp.captain.intro":
-      "Cada charter de Emerald Eyes viene con un equipo profesional — y su costo ya esta incluido en tu precio base. Sin cargos adicionales, sin sorpresas.",
-    "yp.captain.captain.title": "Capitan con Licencia USCG",
-    "yp.captain.captain.text":
-      "Tu capitan tiene licencia de la Guardia Costera de los Estados Unidos y conoce cada canal, banco de arena y zona sin oleaje en Biscayne Bay. Se encarga de la navegacion, anclaje, atraque y todos los protocolos de seguridad para que tu solo te concentres en disfrutar.",
-    "yp.captain.crew.title": "Tripulacion Profesional",
-    "yp.captain.crew.text":
-      "Tu tripulacion se encarga de la hospitalidad — sirviendo bebidas, preparando juguetes acuaticos, manejando el sistema de sonido y asegurandose de que todo funcione perfectamente. Para grupos grandes (10+), agregamos un miembro adicional de tripulacion sin costo extra.",
-    "yp.captain.cost.title": "Cuanto Cuesta Esto?",
-    "yp.captain.cost.text":
-      "Nada adicional. Tu capitan y tripulacion estan incluidos en el precio base del charter. El unico costo adicional que debes presupuestar es la propina, que siempre queda a tu discrecion.",
+      "Emerald Eyes es una empresa de charter bareboat — tu alquilas el yate. La mayoria de los clientes agregan un capitan con licencia USCG, y nosotros nos encargamos de la reserva. Si tienes la licencia apropiada, puedes operar la embarcacion tu mismo.",
+    "yp.captain.bareboat.title": "Que Significa Bareboat",
+    "yp.captain.bareboat.text":
+      "Un charter bareboat significa que alquilas la embarcacion sin capitan ni tripulacion incluidos en el precio base. Tu eres el arrendatario temporal del yate durante la duracion de tu alquiler. Esto te da flexibilidad para elegir exactamente la tripulacion que deseas — u operar el barco tu mismo si tienes las credenciales apropiadas.",
+    "yp.captain.addon.title": "Agrega un Capitan con Licencia USCG",
+    "yp.captain.addon.text":
+      "La mayoria de los clientes agregan un capitan, y lo hacemos facil. Te conectamos con capitanes experimentados con licencia USCG que conocen cada canal, banco de arena y zona sin oleaje en Biscayne Bay. Se encargan de la navegacion, anclaje, atraque y todos los protocolos de seguridad para que tu solo te concentres en disfrutar.",
+    "yp.captain.self.title": "Puedo Capitanear Yo Mismo?",
+    "yp.captain.self.text":
+      "Si tienes una licencia nautica valida y cumples con los requisitos de la USCG, puedes operar la embarcacion tu mismo. La mayoria de los clientes primerizos eligen agregar un capitan por tranquilidad — especialmente para anclar en el sandbar y navegar Biscayne Bay.",
     "yp.dur.title": "Duracion y Precios del Charter",
     "yp.dur.intro":
       "Los charters mas largos ofrecen mejor valor por hora y te permiten explorar mas de la costa de Miami. Asi se desglosan nuestras tarifas.",
@@ -3417,10 +3417,14 @@ const translations: Record<Lang, Record<string, string>> = {
       "La experiencia completa de Miami. Sandbar por la manana, recorrido por las islas de Biscayne Bay y regreso al atardecer. Mejor valor por hora.",
     "yp.dur.8hr.perHour": "~$625/hora",
     "yp.dur.tipNote":
-      "La propina estandar de la industria es 15-20% de la tarifa del charter y se entrega directamente a tu capitan y tripulacion. Nunca esta incluida en nuestros precios y siempre queda a tu discrecion.",
+      "Si contratas un capitan a traves de nosotros, la propina estandar de la industria es 15-20% de la tarifa del charter. Nunca esta incluida en nuestros precios y siempre queda a tu discrecion.",
     "yp.addons.title": "Extras Populares",
     "yp.addons.intro":
       "Haz tu charter inolvidable con nuestras experiencias adicionales seleccionadas. Todos se pueden organizar al momento de reservar.",
+    "yp.addon.captain.title": "Capitan con Licencia USCG",
+    "yp.addon.captain.price": "Desde $300",
+    "yp.addon.captain.desc":
+      "Un capitan profesional con licencia USCG que conoce cada ruta, banco de arena y punto de atardecer en Miami. Se encarga de la navegacion, anclaje y seguridad. Recomendado para la mayoria de los grupos — especialmente primerizos.",
     "yp.addon.sax.title": "Saxofon en Vivo",
     "yp.addon.sax.price": "Desde $350",
     "yp.addon.sax.desc":
@@ -3458,13 +3462,13 @@ const translations: Record<Lang, Record<string, string>> = {
       "No todos los charters cuestan lo mismo. Estos son los cuatro factores principales que determinan tu precio final.",
     "yp.factor.size.title": "Tamano y Tipo de Embarcacion",
     "yp.factor.size.text":
-      "Un crucero de 40 pies cuesta menos que un yate de 65 pies. Las embarcaciones mas grandes tienen mas espacio en cubierta, cabinas y comodidades — y requieren mas combustible y tripulacion. Para grupos de menos de 10, una embarcacion mediana (40-50 pies) suele ser el mejor valor.",
+      "Un crucero de 40 pies cuesta menos que un yate de 65 pies. Las embarcaciones mas grandes tienen mas espacio en cubierta, cabinas y comodidades — y requieren mas combustible. Para grupos de menos de 10, una embarcacion mediana (40-50 pies) suele ser el mejor valor.",
     "yp.factor.season.title": "Temporada",
     "yp.factor.season.text":
       "La temporada alta va de diciembre a abril, cuando Miami esta llena de turistas y la demanda es maxima. La temporada baja (mayo a noviembre) ofrece el mismo clima hermoso a tarifas mas bajas. La temporada de huracanes (junio-noviembre) tiene interrupciones raras pero las mejores ofertas.",
     "yp.factor.group.title": "Tamano del Grupo",
     "yp.factor.group.text":
-      "Mas invitados pueden requerir una embarcacion mas grande o miembros adicionales de tripulacion. Grupos de 2-8 caben comodamente en nuestra flota estandar. Grupos de 9-15 pueden necesitar un yate mas grande. Para 16+, recomendamos paquetes multi-embarcacion.",
+      "Mas invitados pueden requerir una embarcacion mas grande. Grupos de 2-8 caben comodamente en nuestra flota estandar. Grupos de 9-15 pueden necesitar un yate mas grande. Para 16+, recomendamos paquetes multi-embarcacion.",
     "yp.factor.day.title": "Dia de la Semana",
     "yp.factor.day.text":
       "Viernes, sabado y domingo son dias premium con mayor demanda. Martes a jueves tipicamente ofrecen mejor disponibilidad y tarifas. Los lunes tambien tienden a ser mas tranquilos con mejores precios.",
@@ -3473,7 +3477,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Estrategias inteligentes de reserva que te dan la misma experiencia por menos. Queremos verte en el agua — asi es como lograrlo.",
     "yp.save.weekday.title": "Reserva entre Semana",
     "yp.save.weekday.text":
-      "Los charters de martes a jueves tipicamente ofrecen mejores tarifas que los fines de semana. Tambien tendras menos trafico de barcos en el sandbar, aguas mas tranquilas y atencion mas personalizada de la tripulacion.",
+      "Los charters de martes a jueves tipicamente ofrecen mejores tarifas que los fines de semana. Tambien tendras menos trafico de barcos en el sandbar, aguas mas tranquilas y una experiencia mas relajada en general.",
     "yp.save.offpeak.title": "Ve en Temporada Baja",
     "yp.save.offpeak.text":
       "De mayo a noviembre ofrece clima calido, mares tranquilos y tarifas que pueden ser 10-20% mas bajas que la temporada alta. Septiembre y octubre son joyas ocultas — agua hermosa, minimas multitudes y las mejores ofertas del ano.",
