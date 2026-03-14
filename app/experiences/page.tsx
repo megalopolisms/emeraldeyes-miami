@@ -19,7 +19,13 @@ export const metadata: Metadata = {
   title: "Experiences | Emerald Eyes Miami",
   description:
     "Sunset cruises, private parties, corporate charters, bachelorette trips, proposals, and Haulover Sandbar adventures. Choose your perfect Miami yacht experience.",
-  keywords: ["Miami yacht experiences", "Miami boat charter packages", "private yacht tours Miami", "bachelorette boat Miami", "yacht rental packages"],
+  keywords: [
+    "Miami yacht experiences",
+    "Miami boat charter packages",
+    "private yacht tours Miami",
+    "bachelorette boat Miami",
+    "yacht rental packages",
+  ],
   alternates: {
     canonical: "/experiences",
   },
@@ -29,6 +35,21 @@ export const metadata: Metadata = {
       "Every charter is tailored. Sunset cruises, private parties, corporate events, and more on the water in Miami.",
     url: "/experiences",
     type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Yacht experiences in Miami — Emerald Eyes Miami",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yacht Experiences | Emerald Eyes Miami",
+    description:
+      "Sunset cruises, private parties, corporate charters, bachelorette trips, proposals, and Haulover Sandbar adventures.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 

@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Haulover Sandbar Yacht Miami | Emerald Eyes Miami",
   description:
     "The island party everyone's talking about. Floating mats, music, cold drinks, and the quintessential Miami sandbar experience. From $2,500.",
-  keywords: ["Haulover Sandbar yacht", "Miami sandbar boat rental", "yacht rental Haulover", "sandbar party Miami"],
+  keywords: [
+    "Haulover Sandbar yacht",
+    "Miami sandbar boat rental",
+    "yacht rental Haulover",
+    "sandbar party Miami",
+  ],
   alternates: {
     canonical: "/experiences/haulover-sandbar-yacht-miami",
   },
@@ -26,7 +32,44 @@ export const metadata: Metadata = {
       "Anchor up at Haulover Sandbar with floating mats, music, and cold drinks. The ultimate Miami water day.",
     url: "/experiences/haulover-sandbar-yacht-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/sandbar.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Haulover Sandbar yacht day Miami — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Haulover Sandbar Yacht Miami | Emerald Eyes Miami",
+    description:
+      "Anchor up at Haulover Sandbar with floating mats, music, and cold drinks. The ultimate Miami water day.",
+    images: ["/images/sandbar.jpg"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Haulover Sandbar Yacht Miami",
+  description:
+    "Anchor up at Haulover Sandbar with floating mats, music, and cold drinks. The quintessential Miami water experience.",
+  touristType: "Friends, influencers, weekend warriors, groups",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "2500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/haulover-sandbar-yacht-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/sandbar.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -90,5 +133,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function HauloverSandbarPage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

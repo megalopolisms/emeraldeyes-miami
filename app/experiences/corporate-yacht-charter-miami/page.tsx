@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Corporate Yacht Charter Miami | Emerald Eyes Miami",
   description:
     "Impress without saying a word. Executive hosting, team events, and client entertainment on a private yacht in Miami. From $4,000.",
-  keywords: ["corporate yacht charter Miami", "Miami corporate boat rental", "executive yacht charter", "team building boat rental"],
+  keywords: [
+    "corporate yacht charter Miami",
+    "Miami corporate boat rental",
+    "executive yacht charter",
+    "team building boat rental",
+  ],
   alternates: {
     canonical: "/experiences/corporate-yacht-charter-miami",
   },
@@ -26,7 +32,44 @@ export const metadata: Metadata = {
       "The boardroom with a better view. Host clients, teams, or executives on a private yacht charter in Miami.",
     url: "/experiences/corporate-yacht-charter-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/corporate.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Corporate yacht charter Miami — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Corporate Yacht Charter Miami | Emerald Eyes Miami",
+    description:
+      "The boardroom with a better view. Host clients, teams, or executives on a private yacht in Miami.",
+    images: ["/images/corporate.jpg"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Corporate Yacht Charter Miami",
+  description:
+    "Executive hosting, team events, and client entertainment on a private yacht in Miami.",
+  touristType: "Teams, clients, executive events, product launches",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "4000",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/corporate-yacht-charter-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/corporate.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -91,5 +134,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function CorporateCharterPage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

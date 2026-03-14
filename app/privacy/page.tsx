@@ -12,7 +12,18 @@ import Section from "@/components/ui/Section";
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
   title: "Privacy Policy | Emerald Eyes Miami",
-  description: "Privacy policy for Emerald Eyes Miami yacht charter services.",
+  description:
+    "Privacy policy for Emerald Eyes Miami yacht charter services in North Miami, Florida.",
+  alternates: {
+    canonical: "/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Emerald Eyes Miami",
+    description:
+      "Privacy policy for Emerald Eyes Miami yacht charter services.",
+    url: "/privacy",
+    type: "website",
+  },
 };
 
 // ---------------------------------------------------------------------------

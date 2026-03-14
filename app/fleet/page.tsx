@@ -17,7 +17,13 @@ export const metadata: Metadata = {
   title: "Our Fleet | Emerald Eyes Miami",
   description:
     "Intimate yachts, party vessels, and luxury charters available through our trusted North Miami charter network. Tell us your group size and style — we'll match you.",
-  keywords: ["Miami yacht fleet", "yacht sizes Miami", "party boats North Miami", "luxury charter vessels", "boat rental options"],
+  keywords: [
+    "Miami yacht fleet",
+    "yacht sizes Miami",
+    "party boats North Miami",
+    "luxury charter vessels",
+    "boat rental options",
+  ],
   alternates: {
     canonical: "/fleet",
   },
@@ -27,6 +33,21 @@ export const metadata: Metadata = {
       "From intimate 2-person cruises to 25+ guest events. We match you with the perfect vessel from our curated Miami charter network.",
     url: "/fleet",
     type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Yacht fleet — Emerald Eyes Miami",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yacht Fleet | Emerald Eyes Miami",
+    description:
+      "From intimate 2-person cruises to 25+ guest events. We match you with the perfect vessel from our curated Miami charter network.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 
@@ -63,17 +84,17 @@ const VESSEL_CATEGORIES = [
 const fleetSchema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Emerald Eyes Miami Fleet",
-  "description": "Our curated network of yachts in North Miami.",
-  "mainEntity": {
+  name: "Emerald Eyes Miami Fleet",
+  description: "Our curated network of yachts in North Miami.",
+  mainEntity: {
     "@type": "ItemList",
-    "itemListElement": VESSEL_CATEGORIES.map((cat, index) => ({
+    itemListElement: VESSEL_CATEGORIES.map((cat, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "name": cat.name,
-      "description": cat.description
-    }))
-  }
+      position: index + 1,
+      name: cat.name,
+      description: cat.description,
+    })),
+  },
 };
 
 // ---------------------------------------------------------------------------

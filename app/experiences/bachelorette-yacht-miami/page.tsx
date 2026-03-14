@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Bachelorette Yacht Miami | Emerald Eyes Miami",
   description:
     "The pregame before forever. DJ, champagne, photo props, and open water. The bachelorette your squad will talk about for years. From $3,500.",
-  keywords: ["bachelorette yacht Miami", "bachelorette party boat Miami", "Miami bachelorette charter", "boat rental bachelorette"],
+  keywords: [
+    "bachelorette yacht Miami",
+    "bachelorette party boat Miami",
+    "Miami bachelorette charter",
+    "boat rental bachelorette",
+  ],
   alternates: {
     canonical: "/experiences/bachelorette-yacht-miami",
   },
@@ -26,7 +32,44 @@ export const metadata: Metadata = {
       "Throw the ultimate bachelorette party on a private yacht in Miami. DJ, champagne, and ocean vibes.",
     url: "/experiences/bachelorette-yacht-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/bachelorette.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Bachelorette yacht party Miami — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bachelorette Yacht Miami | Emerald Eyes Miami",
+    description:
+      "Throw the ultimate bachelorette party on a private yacht in Miami.",
+    images: ["/images/bachelorette.jpg"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Bachelorette Yacht Miami",
+  description:
+    "DJ, champagne, photo props, and open water. The bachelorette your squad will talk about for years.",
+  touristType: "Bride squads, celebration groups, bridal showers",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "3500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/bachelorette-yacht-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/bachelorette.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -91,5 +134,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function BacheloretteYachtPage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

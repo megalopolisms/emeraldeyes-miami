@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Sunset Cruise Miami | Emerald Eyes Miami",
   description:
     "Watch Miami's skyline glow as the sun dips below the horizon. Intimate groups, champagne, and the kind of evening you don't forget. From $2,500.",
-  keywords: ["sunset cruise Miami", "romantic boat ride Miami", "Miami sunset yacht charter", "sunset boat rental"],
+  keywords: [
+    "sunset cruise Miami",
+    "romantic boat ride Miami",
+    "Miami sunset yacht charter",
+    "sunset boat rental",
+  ],
   alternates: {
     canonical: "/experiences/sunset-cruise-miami",
   },
@@ -26,7 +32,47 @@ export const metadata: Metadata = {
       "Golden hour on the water. Champagne, ocean breezes, and Miami's skyline at sunset. Book your private sunset cruise.",
     url: "/experiences/sunset-cruise-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/sunset.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Sunset cruise on Biscayne Bay — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sunset Cruise Miami | Emerald Eyes Miami",
+    description:
+      "Golden hour on the water. Champagne, ocean breezes, and Miami's skyline at sunset.",
+    images: ["/images/sunset.jpg"],
+  },
+};
+
+// ---------------------------------------------------------------------------
+// JSON-LD
+// ---------------------------------------------------------------------------
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Sunset Cruise Miami",
+  description:
+    "Watch Miami's skyline glow as the sun dips below the horizon. Intimate groups, champagne, and the kind of evening you don't forget.",
+  touristType: "Couples, dates, small celebrations, anniversaries",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "2500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/sunset-cruise-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/sunset.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -84,5 +130,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function SunsetCruisePage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

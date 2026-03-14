@@ -73,6 +73,11 @@ export const metadata: Metadata = {
     icon: `${BASE_PATH}/images/emeraldeyes.jpg`,
     apple: `${BASE_PATH}/images/emeraldeyes.jpg`,
   },
+  manifest: `${BASE_PATH}/manifest.json`,
+  other: {
+    "google-site-verification":
+      process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION ?? "",
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -86,24 +91,47 @@ export default function RootLayout({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": `${siteUrl}/#organization`,
     name: BUSINESS.name,
+    alternateName: "Emerald Eyes Yacht Charter",
     description:
-      "Luxury yacht charters curated from North Miami for sunset cruises, celebrations, proposals, and corporate outings.",
+      "Luxury yacht charters curated from North Miami for sunset cruises, celebrations, proposals, and corporate outings on Biscayne Bay.",
     url: siteUrl,
     image: `${siteUrl}/images/emeraldeyes.jpg`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteUrl}/images/emeraldeyes.jpg`,
+    },
     priceRange: "$$$",
+    currenciesAccepted: "USD",
+    paymentAccepted: "Credit Card, Cash, Zelle, Venmo",
     address: {
       "@type": "PostalAddress",
       addressLocality: "North Miami",
       addressRegion: "FL",
-      addressCountry: "US"
+      postalCode: "33181",
+      addressCountry: "US",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 25.8903,
+      longitude: -80.1864,
     },
     areaServed: [
-      "North Miami",
-      "Miami",
-      "Miami Beach",
-      "Haulover",
-      "Biscayne Bay",
+      { "@type": "City", name: "North Miami" },
+      { "@type": "City", name: "Miami" },
+      { "@type": "City", name: "Miami Beach" },
+      { "@type": "City", name: "Aventura" },
+      { "@type": "City", name: "Sunny Isles Beach" },
+      { "@type": "City", name: "Bal Harbour" },
+    ],
+    serviceType: [
+      "Yacht Charter",
+      "Sunset Cruise",
+      "Bachelorette Party Boat",
+      "Corporate Yacht Event",
+      "Proposal Yacht Package",
+      "Haulover Sandbar Trip",
     ],
     sameAs: [
       "https://instagram.com/EmeraldEyesMiami",
@@ -111,6 +139,20 @@ export default function RootLayout({
     ],
     telephone: BUSINESS.phone || undefined,
     email: BUSINESS.email || undefined,
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+      ],
+      opens: "08:00",
+      closes: "22:00",
+    },
   };
 
   return (

@@ -13,7 +13,17 @@ import Section from "@/components/ui/Section";
 export const metadata: Metadata = {
   title: "Terms of Service | Emerald Eyes Miami",
   description:
-    "Terms of service for Emerald Eyes Miami yacht charter services.",
+    "Terms of service for Emerald Eyes Miami yacht charter services in North Miami, Florida.",
+  alternates: {
+    canonical: "/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Emerald Eyes Miami",
+    description:
+      "Terms of service for Emerald Eyes Miami yacht charter services.",
+    url: "/terms",
+    type: "website",
+  },
 };
 
 // ---------------------------------------------------------------------------

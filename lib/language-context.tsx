@@ -981,6 +981,611 @@ const translations: Record<Lang, Record<string, string>> = {
       "Private yacht. Licensed captain. Floating mats, music, and room for up to 12. Pull up to Haulover Sandbar the way it was meant to be experienced \u2014 and let us handle the rest.",
     "hs.cta.book": "Plan Your Charter",
     "hs.cta.explore": "Browse Experiences",
+    // Blog listing — First Time Yacht Rental card
+    "blog.ft.title":
+      "First Time Renting a Yacht in Miami? Everything You Need to Know",
+    "blog.ft.excerpt":
+      "The complete beginner\u2019s guide to yacht charters in Miami \u2014 booking process, what to bring, etiquette, safety, common mistakes to avoid, and everything else first-timers need to know.",
+    "blog.ft.readTime": "12 min read",
+    // First Time Yacht Rental article — Hero
+    "ft.heroTitle":
+      "First Time Renting a Yacht in Miami? Everything You Need to Know",
+    "ft.intro1":
+      "You\u2019ve seen the reels. Yachts gliding through Biscayne Bay, groups clinking glasses against a sunset, someone doing a backflip off the swim platform. It looks incredible \u2014 and it is. But if you\u2019ve never actually booked a yacht before, the process can feel like a mystery. How much does it cost? What do you wear? Do you tip the captain? Can you bring your own drinks?",
+    "ft.intro2":
+      "This guide answers every question first-timers ask \u2014 from how the booking works to what to bring, what not to do, and why Miami is the best city in the world to rent a yacht for the first time.",
+    "ft.readTime": "12 min read",
+    "ft.guide.title": "In this guide",
+    "ft.cta.book": "Book Your First Charter",
+    // First Time — Quick Facts
+    "ft.quick.title": "Quick facts",
+    "ft.quick.price":
+      "Charters from $2,500 for 2\u20138 hours with captain & crew included",
+    "ft.quick.group":
+      "Groups from 2 to 25+ guests \u2014 there\u2019s a yacht for every party size",
+    "ft.quick.included":
+      "Captain, crew, sound system, floating mats, ice & coolers all included",
+    "ft.quick.noLicense":
+      "No boating license needed \u2014 your USCG-licensed captain handles everything",
+    // First Time — What to Expect
+    "ft.expect.label": "Getting Started",
+    "ft.expect.title": "What to Expect on Your First Yacht Charter",
+    "ft.expect.p1":
+      "A yacht charter in Miami is simpler than most people think. You show up at the marina, meet your captain and crew, get a quick safety briefing, and you\u2019re on the water within minutes. From there, it\u2019s your day \u2014 cruise to a sandbar, anchor off Star Island, watch a sunset from the open ocean, or just float with music and cold drinks.",
+    "ft.expect.p2":
+      "Your captain handles all the navigation, anchoring, and boat operations. The crew keeps the music going, sets out the floating mats and water toys, and makes sure everyone\u2019s having a good time. You don\u2019t need to know anything about boats.",
+    "ft.expect.p3":
+      "Most first-time guests are surprised at how relaxed the whole experience is. There\u2019s no formal dress code, no stiff protocol, no assigned seating. You\u2019re basically on a private floating lounge with a professional team making it all work behind the scenes.",
+    "ft.expect.tag1": "No experience needed",
+    "ft.expect.tag2": "Captain included",
+    "ft.expect.tag3": "All ages welcome",
+    // First Time — Bareboat vs Crewed
+    "ft.charter.label": "Know the Difference",
+    "ft.charter.title": "Bareboat vs. Crewed Charter",
+    "ft.charter.p1":
+      "In the yacht world, \u201Cbareboat\u201D means you rent the vessel itself \u2014 and the operator provides the captain and crew. It\u2019s not the same as sailing a boat by yourself. At Emerald Eyes, every charter comes with a USCG-licensed captain and professional crew, so even our bareboat model is fully crewed.",
+    "ft.charter.p2":
+      "A \u201Ccrewed charter\u201D in the traditional sense usually means a multi-day trip on a larger yacht with a live-aboard captain, chef, and stewardess \u2014 think Caribbean weeklong voyages. For day charters in Miami, the bareboat model with a provided captain is standard and gives you the best of both worlds: professional crew handling the boat, and total freedom for you to enjoy the experience.",
+    "ft.charter.p3":
+      "Bottom line: you don\u2019t need a boating license, you don\u2019t need experience, and you don\u2019t need to worry about navigation or docking. Just show up.",
+    "ft.charter.note":
+      "Every Emerald Eyes charter includes a USCG-licensed captain and trained crew \u2014 no matter the package.",
+    // First Time — Booking Process
+    "ft.booking.title": "The Booking Process",
+    "ft.booking.intro":
+      "From first click to stepping aboard \u2014 here\u2019s exactly how it works.",
+    "ft.booking.step1.title": "Choose Your Experience",
+    "ft.booking.step1.text":
+      "Browse our experiences \u2014 sunset cruise, Haulover Sandbar, private party, bachelorette, or build your own. Each one comes with a suggested itinerary, but everything is customizable.",
+    "ft.booking.step2.title": "Pick Date & Duration",
+    "ft.booking.step2.text":
+      "Select your date and charter length. Options range from 2-hour sunset cruises to full-day adventures. Weekdays tend to have better availability and calmer waters.",
+    "ft.booking.step3.title": "Select Add-Ons",
+    "ft.booking.step3.text":
+      "Make it yours. Add a live sax player, sushi chef, jet skis, bottle service, hookah, or a professional photographer. Or keep it simple \u2014 the base package already includes everything you need.",
+    "ft.booking.step4.title": "Show Up & Enjoy",
+    "ft.booking.step4.text":
+      "Arrive at the marina 15 minutes early, meet your captain, get a quick safety briefing, and you\u2019re off. We handle the rest \u2014 you just have fun.",
+    // First Time — What to Bring
+    "ft.bring.title": "What to Bring (and What We Provide)",
+    "ft.bring.intro":
+      "We\u2019ve got the yacht covered. Here\u2019s what to pack \u2014 and what you can leave at home.",
+    "ft.bring.you": "You Bring",
+    "ft.bring.we": "We Provide",
+    "ft.bring.sunscreen.title": "Sunscreen",
+    "ft.bring.sunscreen.text":
+      "Reef-safe preferred. The sun on the water is twice as strong. Reapply every 90 minutes.",
+    "ft.bring.swimsuit.title": "Swimsuit & Towel",
+    "ft.bring.swimsuit.text":
+      "You\u2019ll likely be in and out of the water. Bring a change of clothes if you want to stay dry later.",
+    "ft.bring.cash.title": "Cash for Tips",
+    "ft.bring.cash.text":
+      "15\u201320% for your captain and crew is standard in the charter industry. They work hard to make your day perfect.",
+    "ft.bring.id.title": "Valid ID",
+    "ft.bring.id.text":
+      "Bring a government-issued photo ID. Required for check-in and if you\u2019re bringing alcohol aboard.",
+    "ft.provide.captain.title": "Licensed Captain",
+    "ft.provide.captain.text":
+      "USCG-licensed and Coast Guard inspected. Your captain knows every anchorage, sandbar, and sunset spot in Miami.",
+    "ft.provide.crew.title": "Professional Crew",
+    "ft.provide.crew.text":
+      "Trained hospitality crew to keep the music going, serve drinks, set out toys, and make sure everyone\u2019s comfortable.",
+    "ft.provide.sound.title": "Sound System",
+    "ft.provide.sound.text":
+      "Premium Bluetooth speakers throughout the yacht. Connect your phone and play your own playlist all day.",
+    "ft.provide.ice.title": "Ice & Coolers",
+    "ft.provide.ice.text":
+      "Coolers stocked with ice and water. Bring your own drinks and snacks \u2014 we keep everything cold.",
+    "ft.provide.toys.title": "Water Toys & Mats",
+    "ft.provide.toys.text":
+      "Floating mats, noodles, and water toys included on every charter. Perfect for sandbar days.",
+    "ft.provide.safety.title": "Safety Equipment",
+    "ft.provide.safety.text":
+      "Life jackets for all ages, first aid kit, fire extinguisher, and all USCG-required safety gear on board.",
+    // First Time — What to Wear
+    "ft.wear.title": "What to Wear",
+    "ft.wear.intro":
+      "There\u2019s no dress code on a yacht charter \u2014 but here\u2019s what actually works.",
+    "ft.wear.casual.title": "Daytime / Sandbar",
+    "ft.wear.casual.text":
+      "Swimsuit, cover-up, flip-flops or slides. You\u2019ll be in the water most of the day. Bring a hat and sunglasses \u2014 the glare off the water is real.",
+    "ft.wear.evening.title": "Sunset / Evening Cruise",
+    "ft.wear.evening.text":
+      "Smart casual works great. Light sundress or linen shirt, nice sandals. Bring a light layer \u2014 the breeze picks up after sunset and it can get cool on the water.",
+    "ft.wear.shoes.title": "Footwear Rule",
+    "ft.wear.shoes.text":
+      "Soft-soled shoes or bare feet only on the yacht. Hard soles and heels can damage the deck. Leave the sneakers and dress shoes in the car.",
+    // First Time — Etiquette
+    "ft.etiquette.title": "Yacht Etiquette for First-Timers",
+    "ft.etiquette.intro":
+      "No one expects you to know yacht protocol. But these four simple rules will make you look like a seasoned charter guest.",
+    "ft.etiquette.shoes.title": "Shoes Off on Board",
+    "ft.etiquette.shoes.text":
+      "It\u2019s the number one rule on every yacht. Remove your shoes before stepping on the deck. The crew will show you where to leave them. This protects the teak and non-skid surfaces.",
+    "ft.etiquette.time.title": "Be On Time",
+    "ft.etiquette.time.text":
+      "Arrive 15 minutes before departure. The charter clock starts at your confirmed time, not when you show up. Late arrivals mean less time on the water \u2014 for everyone.",
+    "ft.etiquette.tip.title": "Tipping Your Crew",
+    "ft.etiquette.tip.text":
+      "15\u201320% of the charter cost is standard. Cash is preferred, divided between the captain and crew. A great crew makes the experience \u2014 show them you noticed.",
+    "ft.etiquette.respect.title": "Respect the Crew & Vessel",
+    "ft.etiquette.respect.text":
+      "The crew is there to make your day amazing, not to be ordered around. Treat them like you\u2019d treat a host at their home. Don\u2019t enter the helm or engine areas, and follow the captain\u2019s instructions at all times.",
+    // First Time — Common Mistakes
+    "ft.mistakes.title": "Common Mistakes to Avoid",
+    "ft.mistakes.intro":
+      "We\u2019ve seen it all. Here are the top four first-timer mistakes \u2014 and how to avoid them.",
+    "ft.mistakes.short.title": "Booking Too Short",
+    "ft.mistakes.short.text":
+      "A 2-hour charter sounds fine on paper, but by the time you board, cruise out, anchor, and enjoy the water, it\u2019s time to head back. For a sandbar day or party, 4 hours is the sweet spot. 6\u20138 hours if you want to really unwind.",
+    "ft.mistakes.crowd.title": "Too Many People",
+    "ft.mistakes.crowd.text":
+      "Every yacht has a legal passenger capacity set by the Coast Guard. Showing up with extra people means someone isn\u2019t coming. Confirm your headcount when you book and stick to it.",
+    "ft.mistakes.sun.title": "Underestimating the Sun",
+    "ft.mistakes.sun.text":
+      "The sun reflects off the water from every angle. First-timers consistently underestimate it. Bring SPF 50+, a hat, and reapply often. Dehydration is real \u2014 drink water between drinks.",
+    "ft.mistakes.glass.title": "Bringing Glass Bottles",
+    "ft.mistakes.glass.text":
+      "Glass on a boat is a safety hazard. Broken glass on a wet deck is dangerous, and shards in the water are worse. Transfer drinks to cans or plastic before boarding. Most yacht companies won\u2019t allow glass on board.",
+    // First Time — Safety
+    "ft.safety.title": "Safety on Board",
+    "ft.safety.intro":
+      "Your safety is the number one priority \u2014 and on a professionally crewed charter, the captain handles everything.",
+    "ft.safety.briefing.title": "Pre-Departure Safety Briefing",
+    "ft.safety.briefing.text":
+      "Before you leave the dock, your captain will walk through the location of life jackets, fire extinguishers, emergency exits, and the basic rules of the vessel. It takes five minutes and it matters.",
+    "ft.safety.jackets.title": "Life Jackets for Everyone",
+    "ft.safety.jackets.text":
+      "Coast Guard-approved life jackets in all sizes are on board \u2014 including children\u2019s sizes. You don\u2019t have to wear one while cruising, but they\u2019re required for children under 6 and available anytime you want one.",
+    "ft.safety.captain.title": "Your Captain Handles It All",
+    "ft.safety.captain.text":
+      "Navigation, weather monitoring, anchoring, docking, and emergency protocols \u2014 that\u2019s all on your captain. They\u2019re USCG-licensed, drug-tested, and experienced in Miami waters. You focus on having fun; they focus on getting everyone home safe.",
+    "ft.safety.cgLink": "Read more: Coast Guard Safety & Bareboat Inspections",
+    // First Time — Mid CTA
+    "ft.midCta.title": "Ready for Your First Charter?",
+    "ft.midCta.text":
+      "Emerald Eyes makes it easy. Licensed captain, professional crew, all equipment included. Just pick your date and show up \u2014 we handle everything else.",
+    "ft.midCta.btn": "Plan Your Charter",
+    // First Time — FAQ
+    "ft.faq.title": "First-Timer FAQs",
+    "ft.faq.intro":
+      "Real questions from real first-time guests. If yours isn\u2019t here, message us on WhatsApp \u2014 we respond within an hour.",
+    "ft.faq.q1": "Do I need a boating license to rent a yacht in Miami?",
+    "ft.faq.a1":
+      "No. Every Emerald Eyes charter comes with a USCG-licensed captain who handles all navigation and boat operations. You don\u2019t need any boating experience or certifications.",
+    "ft.faq.q2": "Can I bring my own food and drinks?",
+    "ft.faq.a2":
+      "Yes. Most guests bring their own cooler with drinks and snacks. We provide ice, coolers, and glassware. No glass bottles \u2014 cans and plastic only. You can also add catering packages like a sushi chef or bottle service.",
+    "ft.faq.q3": "How far in advance should I book?",
+    "ft.faq.a3":
+      "For the best selection, book 1\u20132 weeks ahead for weekday charters and 2\u20133 weeks ahead for weekends. Peak season (November through April) and holidays can book up a month or more in advance.",
+    "ft.faq.q4": "What happens if the weather is bad?",
+    "ft.faq.a4":
+      "We monitor weather closely. If conditions are unsafe, we\u2019ll reschedule your charter at no extra cost. Light rain usually clears quickly in Miami \u2014 your captain will make the call on the morning of your trip.",
+    "ft.faq.q5": "Is it safe to bring kids on a yacht?",
+    "ft.faq.a5":
+      "Absolutely. We have life jackets in children\u2019s sizes, and our crew is experienced with families. Kids under 6 are required to wear a life jacket at all times. The sandbar experiences are especially popular with families.",
+    "ft.faq.q6": "How much should I tip the captain and crew?",
+    "ft.faq.a6":
+      "15\u201320% of the total charter cost is standard in the industry. Cash is preferred and can be given directly to the captain at the end of the trip, who will split it with the crew.",
+    "ft.faq.q7": "What\u2019s the cancellation policy?",
+    "ft.faq.a7":
+      "Cancellations more than 48 hours before departure receive a full refund. Within 48 hours, your deposit may be applied to a future date. Weather cancellations are always rescheduled at no cost.",
+    "ft.faq.q8": "Can I play my own music?",
+    "ft.faq.a8":
+      "Yes. Every yacht has a premium Bluetooth sound system. Connect your phone and DJ the entire trip. We also have curated playlists if you\u2019d rather just vibe.",
+    // First Time — Related & Final CTA
+    "ft.related.title": "Keep Reading",
+    "ft.related.intro":
+      "More guides to help you plan the perfect day on the water.",
+    "ft.related.coastGuard":
+      "Coast Guard Safety & Bareboat Charter Inspections",
+    "ft.related.haulover": "Haulover Sandbar by Yacht: The Complete Guide",
+    "ft.related.jetski": "Do You Need a License to Ride a Jet Ski in Miami?",
+    "ft.related.prices": "Miami Yacht Charter Prices: What to Expect",
+    "ft.related.experience": "Browse All Experiences",
+    "ft.cta.title": "Your first time on a yacht should feel effortless.",
+    "ft.cta.text":
+      "Private yacht. Licensed captain. Sound system, floating mats, and a crew that handles every detail. All you have to do is show up.",
+    "ft.cta.explore": "Browse Experiences",
+    // Yacht Prices article
+    "yp.heroTitle": "Miami Yacht Charter Prices: What Does It Actually Cost?",
+    "yp.readTime": "12 min read",
+    "yp.intro1":
+      "Everyone Googles it. Nobody gives a straight answer. We're changing that. Here's exactly what a private yacht charter costs in Miami — no vague ranges, no hidden fees, no bait-and-switch.",
+    "yp.intro2":
+      "We've been running charters out of North Miami for years. This guide breaks down base rates, what's included, popular add-ons, and the best ways to get more for your money.",
+    "yp.hero.seeBreakdown": "See the Breakdown",
+    "yp.cta.getQuote": "Get a Quote",
+    "yp.cta.experiences": "View Experiences",
+    "yp.quick.title": "Pricing at a glance",
+    "yp.quick.starting": "Starting at $2,500 for a 4-hour charter",
+    "yp.quick.minimum": "4-hour minimum on all bookings",
+    "yp.quick.included": "Captain, crew, fuel, sound & toys included",
+    "yp.quick.peak": "Peak season: December through April",
+    "yp.nav.title": "In this guide",
+    "yp.nav.shortAnswer": "The Short Answer",
+    "yp.nav.included": "What's Included",
+    "yp.nav.duration": "Duration & Pricing",
+    "yp.nav.addons": "Add-On Costs",
+    "yp.nav.factors": "Factors That Affect Price",
+    "yp.nav.save": "How to Save",
+    "yp.nav.faq": "FAQ",
+    "yp.short.title": "The Short Answer",
+    "yp.short.p1":
+      "A private yacht charter in Miami starts at $2,500 for a 4-hour outing with Emerald Eyes. That includes a USCG-licensed captain, professional crew, fuel for local cruising, a premium sound system, ice, coolers, floating mats, water toys, bottled water, and glassware.",
+    "yp.short.p2":
+      "If you want to compare: across the Miami market, yacht charters range from roughly $1,000 to $15,000+ for a half-day depending on boat size, vessel age, and level of service. The wide range comes down to whether you're on a 30-foot center console or a 100-foot superyacht.",
+    "yp.short.p3":
+      "At Emerald Eyes, we operate a curated fleet of well-maintained vessels in the 40-65 foot range — the sweet spot for groups of 2 to 15 who want a luxury experience without the superyacht price tag.",
+    "yp.short.note":
+      "No hidden fees. The price we quote is the price you pay. Gratuity for your crew is the only additional cost and is always at your discretion.",
+    "yp.included.label": "Every Charter",
+    "yp.included.title": "What's Included in Your Price",
+    "yp.included.intro":
+      "Every Emerald Eyes charter comes with everything you need for a perfect day on the water. No surprise charges, no upsells at the dock.",
+    "yp.inc.captain.title": "Licensed Captain & Crew",
+    "yp.inc.captain.text":
+      "USCG-licensed captain and professional crew who know every inch of Biscayne Bay.",
+    "yp.inc.sound.title": "Premium Sound System",
+    "yp.inc.sound.text":
+      "Bluetooth-connected marine-grade speakers. Play your playlist all day.",
+    "yp.inc.fuel.title": "Fuel for Local Cruising",
+    "yp.inc.fuel.text":
+      "Standard Miami routes including Haulover Sandbar, Star Island, and Key Biscayne.",
+    "yp.inc.ice.title": "Ice, Coolers & Setup",
+    "yp.inc.ice.text":
+      "Industrial-grade coolers stocked with ice so your drinks stay cold from dock to dock.",
+    "yp.inc.mats.title": "Floating Mats",
+    "yp.inc.mats.text":
+      "Large floating mats for lounging on the water at sandbar stops.",
+    "yp.inc.toys.title": "Water Toys",
+    "yp.inc.toys.text":
+      "Paddleboards, noodles, and inflatables for everyone on board.",
+    "yp.inc.water.title": "Bottled Water",
+    "yp.inc.water.text":
+      "Complimentary bottled water throughout your entire trip.",
+    "yp.inc.glass.title": "Glassware & Cups",
+    "yp.inc.glass.text":
+      "Reusable cups and glassware so you can bring your own drinks in style.",
+    "yp.dur.title": "Charter Duration & Pricing",
+    "yp.dur.intro":
+      "Longer charters offer better per-hour value and let you explore more of Miami's coastline. Here's how our rates break down.",
+    "yp.dur.4hr.title": "Half Day",
+    "yp.dur.4hr.price": "From $2,500",
+    "yp.dur.4hr.desc":
+      "Perfect for a Haulover Sandbar trip, sunset cruise, or a quick celebration. Most popular for birthdays and bachelorettes.",
+    "yp.dur.4hr.perHour": "~$625/hour",
+    "yp.dur.6hr.title": "Extended",
+    "yp.dur.6hr.price": "From $3,500",
+    "yp.dur.6hr.desc":
+      "Time to hit the sandbar and cruise past Star Island. Great for groups who want to combine swimming, sightseeing, and a sunset.",
+    "yp.dur.6hr.perHour": "~$583/hour",
+    "yp.dur.8hr.title": "Full Day",
+    "yp.dur.8hr.price": "From $5,000",
+    "yp.dur.8hr.desc":
+      "The complete Miami experience. Sandbar in the morning, island-hopping through Biscayne Bay, and a sunset return. Best per-hour value.",
+    "yp.dur.8hr.perHour": "~$625/hour",
+    "yp.dur.tipNote":
+      "Industry-standard gratuity is 15-20% of the charter fee and is given directly to your captain and crew. It's never included in our pricing and always at your discretion.",
+    "yp.addons.title": "Popular Add-Ons",
+    "yp.addons.intro":
+      "Make your charter unforgettable with our curated add-on experiences. All can be arranged at the time of booking.",
+    "yp.addon.sax.title": "Live Saxophone",
+    "yp.addon.sax.price": "From $350",
+    "yp.addon.sax.desc":
+      "A professional sax player performing live as you cruise through Biscayne Bay. Our most requested add-on — pure Miami vibes.",
+    "yp.addon.sushi.title": "Sushi Chef",
+    "yp.addon.sushi.price": "From $500",
+    "yp.addon.sushi.desc":
+      "A private sushi chef rolling fresh omakase-style on board. Includes the chef, premium fish, and full presentation.",
+    "yp.addon.jetski.title": "Jet Ski Rental",
+    "yp.addon.jetski.price": "From $200/hr",
+    "yp.addon.jetski.desc":
+      "One or two jet skis delivered to the yacht at the sandbar. No license required. Helmet and safety briefing included.",
+    "yp.addon.catering.title": "Catering Package",
+    "yp.addon.catering.price": "From $30/person",
+    "yp.addon.catering.desc":
+      "From charcuterie boards and fruit platters to full-service catering with a private chef. Customized to your group and occasion.",
+    "yp.addon.dj.title": "DJ",
+    "yp.addon.dj.price": "From $300",
+    "yp.addon.dj.desc":
+      "A professional DJ with their own setup brings the nightlife energy to the water. Perfect for parties and bachelorettes.",
+    "yp.addon.photo.title": "Photographer",
+    "yp.addon.photo.price": "From $150",
+    "yp.addon.photo.desc":
+      "A professional photographer captures every moment. Drone shots, candid party photos, and golden-hour portraits. Edited gallery within 48 hours.",
+    "yp.factors.title": "What Affects the Price",
+    "yp.factors.intro":
+      "Not every charter costs the same. Here are the four main variables that determine your final price.",
+    "yp.factor.size.title": "Vessel Size & Type",
+    "yp.factor.size.text":
+      "A 40-foot cruiser costs less than a 65-foot yacht. Larger vessels have more deck space, cabins, and amenities — and require more fuel and a larger crew. For groups under 10, a mid-size vessel (40-50 ft) is usually the best value.",
+    "yp.factor.season.title": "Season",
+    "yp.factor.season.text":
+      "Peak season runs December through April, when Miami is packed with tourists and demand is highest. Off-peak (May through November) offers the same beautiful weather at lower rates. Hurricane season (June-November) has rare disruptions but the best deals.",
+    "yp.factor.group.title": "Group Size",
+    "yp.factor.group.text":
+      "More guests may require a larger vessel or additional crew members. Groups of 2-8 fit comfortably on our standard fleet. Groups of 9-15 may need a larger yacht. For 16+, we recommend multi-vessel packages.",
+    "yp.factor.day.title": "Day of Week",
+    "yp.factor.day.text":
+      "Friday, Saturday, and Sunday are premium days with higher demand. Tuesday through Thursday typically offer the best availability and rates. Monday charters also tend to be quieter with better pricing.",
+    "yp.save.title": "How to Save",
+    "yp.save.intro":
+      "Smart booking strategies that get you the same experience for less. We want you on the water — here's how to make it happen.",
+    "yp.save.weekday.title": "Book a Weekday",
+    "yp.save.weekday.text":
+      "Tuesday through Thursday charters typically offer better rates than weekends. You also get less boat traffic at the sandbar, calmer waters, and more personalized attention from the crew.",
+    "yp.save.offpeak.title": "Go Off-Peak",
+    "yp.save.offpeak.text":
+      "May through November offers warm weather, calm seas, and rates that can be 10-20% lower than peak season. September and October are hidden gems — gorgeous water, minimal crowds, and the best deals of the year.",
+    "yp.save.direct.title": "Book Direct",
+    "yp.save.direct.text":
+      "Booking directly with us instead of through third-party platforms means no middleman markups. You also get direct communication with our team for custom requests and last-minute changes.",
+    "yp.save.longer.title": "Book a Longer Charter",
+    "yp.save.longer.text":
+      "The per-hour cost drops on longer charters. An 8-hour full day is significantly better value per hour than two separate 4-hour trips. Plus, you get the full Miami experience without rushing.",
+    "yp.midCta.label": "Ready to Book?",
+    "yp.midCta.title": "Get Your Custom Quote in Minutes",
+    "yp.midCta.text":
+      "Tell us your date, group size, and any add-ons you want. We'll put together a transparent quote with everything included — no surprises, no back-and-forth. Most quotes come back within an hour.",
+    "yp.faq.title": "Pricing FAQ",
+    "yp.faq.intro":
+      "The most common questions we get about yacht charter costs in Miami.",
+    "yp.faq.q1": "How much does it cost to rent a yacht in Miami?",
+    "yp.faq.a1":
+      "A private yacht charter in Miami starts at $2,500 for a 4-hour outing with Emerald Eyes. Prices across the market range from $1,000 to $15,000+ for a half-day depending on vessel size and amenities. Our sweet spot is the $2,500-$5,000 range for groups of 2-15.",
+    "yp.faq.q2": "What's included in the charter price?",
+    "yp.faq.a2":
+      "Every Emerald Eyes charter includes a USCG-licensed captain, professional crew, fuel for local cruising, premium sound system, ice and coolers, floating mats, water toys, bottled water, and glassware. There are no hidden fuel surcharges or docking fees.",
+    "yp.faq.q3": "How much does a yacht cost per hour?",
+    "yp.faq.a3":
+      "Based on our rates, per-hour cost is approximately $583-$625 depending on charter length. Across the broader Miami market, hourly rates range from $250 to $1,500+ depending on the yacht. Longer charters always offer better per-hour value.",
+    "yp.faq.q4": "Are there additional costs I should budget for?",
+    "yp.faq.a4":
+      "The only additional cost is gratuity for your captain and crew, which is at your discretion (industry standard is 15-20%). If you add extras like a sax player, sushi chef, or jet ski, those are quoted upfront. Your own food and drinks are welcome and free to bring.",
+    "yp.faq.q5": "Is fuel included?",
+    "yp.faq.a5":
+      "Yes. Fuel for all standard Miami cruising routes is included — Haulover Sandbar, Star Island, Biscayne Bay, and Key Biscayne. Extended trips outside of the standard area may incur additional fuel costs, but we'll always tell you before booking.",
+    "yp.faq.q6": "When is the cheapest time to charter?",
+    "yp.faq.a6":
+      "Weekdays (Tuesday-Thursday) during off-peak months (May-November) offer the best rates. You can save 10-20% compared to a weekend charter during peak season. September and October are often the most affordable months with excellent weather.",
+    "yp.faq.q7": "How much should I tip the crew?",
+    "yp.faq.a7":
+      "Gratuity is never included and always at your discretion. The industry standard in Miami is 15-20% of the base charter fee. For a $2,500 charter, that's typically $375-$500. Tips go directly to your captain and crew.",
+    "yp.faq.q8": "Can I bring my own food and drinks?",
+    "yp.faq.a8":
+      "Absolutely. You're welcome to bring your own food, drinks, and alcohol at no extra charge. We provide ice, coolers, and glassware. No glass bottles on board — please use cans or pour into the cups we provide. You can also add our catering packages.",
+    "yp.related.title": "Related Guides",
+    "yp.related.intro":
+      "More resources to help you plan the perfect Miami yacht experience.",
+    "yp.related.sandbar": "Haulover Sandbar Experience",
+    "yp.related.haulover": "Complete Haulover Sandbar Guide",
+    "yp.related.sunset": "Sunset Cruise Experience",
+    "yp.related.book": "Book Your Charter",
+    "yp.sample.title": "Sample Total",
+    "yp.sample.intro":
+      "Here's what a typical 4-hour charter looks like all-in, so you can budget with confidence.",
+    "yp.sample.base": "4-hour charter: $2,500",
+    "yp.sample.sax": "Live sax player: +$350",
+    "yp.sample.tip": "Gratuity (18%): ~$450",
+    "yp.sample.total": "Total: ~$3,300 for up to 13 guests",
+    "yp.finalCta.title": "Know the Price. Love the Experience.",
+    "yp.finalCta.text":
+      "No surprises, no hidden fees. Just a transparent quote and a crew that's ready to make your day on the water unforgettable. Tell us what you're looking for.",
+    // Bachelorette article
+    "bach.category": "Experiences",
+    "bach.readTime": "16 min read",
+    "bach.heroTitle": "Bachelorette Party on a Yacht in Miami",
+    "bach.intro1":
+      "Forget the crowded club or the overpriced brunch. The bachelorette party your group will actually remember happens on a private yacht — music playing, champagne flowing, and the Miami skyline behind every photo. No dress code drama, no reservation stress, no sharing the space with strangers.",
+    "bach.intro2":
+      "This guide covers everything you need to plan the perfect bachelorette yacht party in Miami: itineraries, pricing, what to bring, the best add-ons, group size considerations, and insider tips from the team that does this every weekend.",
+    "bach.guide.title": "Planning Guide",
+    "bach.cta.book": "Plan Your Charter",
+    "bach.cta.explore": "Browse Experiences",
+    "bach.quick.title": "Quick Facts",
+    "bach.quick.group": "Groups of 2-25+ guests (sweet spot: 8-15)",
+    "bach.quick.duration": "4-8 hours recommended for bachelorettes",
+    "bach.quick.route": "Star Island, Haulover Sandbar, Sunset Skyline",
+    "bach.quick.starting": "Starting at $3,500 for 4 hours",
+    "bach.nav.whyYacht": "Why a Yacht",
+    "bach.nav.planning": "Planning Timeline",
+    "bach.nav.itinerary": "The Perfect Itinerary",
+    "bach.nav.included": "What's Included",
+    "bach.nav.addons": "Popular Add-Ons",
+    "bach.nav.whatToBring": "What to Bring",
+    "bach.nav.pricing": "Group Size & Pricing",
+    "bach.nav.tips": "Tips from Our Team",
+    "bach.nav.faq": "FAQ",
+    "bach.why.title": "Why a Yacht Beats Every Other Bachelorette Option",
+    "bach.why.p1":
+      "A nightclub has a two-hour wait, a restaurant has a time limit, and a beach house means somebody's cleaning up. A private yacht is the one venue where there are zero restrictions on your group having the best time possible — your music, your drinks, your schedule, and the entire ocean as your backdrop.",
+    "bach.why.p2":
+      "Every photo looks like a magazine cover when you're shooting against turquoise water and the Miami skyline. The lighting at golden hour is unreal. And when the music is bouncing off the water with no walls around you, the energy hits different.",
+    "bach.why.p3":
+      "Plus, everything is handled for you. A licensed captain drives, the crew sets up and cleans up, and all you have to do is show up. This is the bachelorette party where the maid of honor actually gets to enjoy it.",
+    "bach.why.privacy.title": "Total Privacy",
+    "bach.why.privacy.text":
+      "No strangers, no lines, no noise complaints. The yacht is exclusively yours — your playlist, your rules, your party.",
+    "bach.why.views.title": "Unmatched Photos",
+    "bach.why.views.text":
+      "Turquoise water, celebrity mansions, and the Miami skyline. Every angle is a photo opportunity that beats any rooftop bar.",
+    "bach.why.freedom.title": "Your Music, Full Volume",
+    "bach.why.freedom.text":
+      "Premium Bluetooth sound system on board. Play your own playlist as loud as you want — no noise limits on the open water.",
+    "bach.why.tag1": "Private Yacht",
+    "bach.why.tag2": "All-Inclusive Crew",
+    "bach.why.tag3": "Zero Cleanup",
+    "bach.plan.title": "When to Book & How to Plan",
+    "bach.plan.p1":
+      "Start planning 3-6 months before the wedding date. Miami yacht charters book fast during peak season (December through April) and holiday weekends. A $500 deposit locks in your date and vessel — and it's refundable up to 14 days before your charter.",
+    "bach.plan.p2":
+      'Two to three months out: finalize headcount, pick your add-ons, and decide on a day versus sunset cruise. One month out: coordinate outfits with the bridal party, confirm dietary needs if adding a sushi chef, and share the itinerary with the group. One week out: confirm pickup logistics and send a "what to bring" list to everyone.',
+    "bach.plan.p3":
+      "For last-minute bookings, summer and midweek dates usually have availability with 3-4 weeks notice. Peak season weekends? Book as early as you can.",
+    "bach.plan.tip":
+      "Pro tip: Sunset cruises (departing 4-5 PM) give you the best of both worlds — daylight swimming at the sandbar followed by golden hour photos with the skyline.",
+    "bach.itin.title": "The Perfect Itinerary",
+    "bach.itin.intro":
+      "Three ways to do it, depending on your group's vibe. Mix and match, or go all day.",
+    "bach.itin.morning.title": "Morning / Afternoon",
+    "bach.itin.morning.text":
+      "Depart late morning and cruise to Haulover Sandbar or Nixon Sandbar. Anchor up in the shallows with floating mats, swim, and party in waist-deep water with 200+ other boats on weekends. Blast your playlist on the premium sound system while the crew keeps drinks cold. This is the classic Miami sandbar day — and it hits harder from a private yacht.",
+    "bach.itin.sunset.title": "Sunset Cruise",
+    "bach.itin.sunset.text":
+      "Depart around 4-5 PM and cruise past Star Island, the Venetian Islands, and Millionaire's Row. Watch the sun set over Miami's skyline while the golden hour light makes every photo effortless. Add a live sax player and champagne for an elevated experience. This is the most popular bachelorette itinerary we run — it's the one that makes the group chat go silent because everyone's too busy posting.",
+    "bach.itin.evening.title": "Evening / Night Cruise",
+    "bach.itin.evening.text":
+      "Depart after dark and see Miami's skyline lit up from the water. Cruise past the glowing towers of Brickell, downtown, and South Beach. The vibe shifts to full nightclub energy — DJ-level sound system, LED lighting on deck, and the city as your backdrop. Perfect as a pre-game before hitting the clubs, or as the main event itself.",
+    "bach.included.title": "What's Included with Every Charter",
+    "bach.included.intro":
+      "Everything you need for a stress-free bachelorette party is on board from the moment you step on.",
+    "bach.included.label": "Included in Your Charter",
+    "bach.included.captain.title": "USCG Licensed Captain",
+    "bach.included.captain.text":
+      "Professional captain who knows every route, sandbar, and sunset spot in Miami. You relax — they drive.",
+    "bach.included.sound.title": "Premium Sound System",
+    "bach.included.sound.text":
+      "Bluetooth speakers throughout the yacht. Connect your phone and play your playlist at full volume — no noise limits on the water.",
+    "bach.included.mats.title": "Floating Mats & Lily Pads",
+    "bach.included.mats.text":
+      "Oversized floating mats for lounging at the sandbar. Perfect for group photos and sunbathing on the water.",
+    "bach.included.ice.title": "Ice, Coolers & Water",
+    "bach.included.ice.text":
+      "Fully stocked coolers with ice and water. Bring your own drinks — we keep everything cold all day.",
+    "bach.included.glass.title": "Glassware & Cups",
+    "bach.included.glass.text":
+      "Champagne flutes, wine glasses, and cups on board. No need to bring disposable anything — we've got you covered.",
+    "bach.included.toys.title": "Water Toys",
+    "bach.included.toys.text":
+      "Pool noodles, floats, and snorkel gear available on board. Everything you need to enjoy the water beyond the yacht.",
+    "bach.addon.title": "Popular Add-Ons",
+    "bach.addon.intro":
+      "Upgrade your bachelorette from great to unforgettable. These are the add-ons our bachelorette groups book most.",
+    "bach.addon.sax.title": "Live Saxophone",
+    "bach.addon.sax.text":
+      "A professional sax player sets the tone while you cruise. Smooth jazz over house beats, golden hour energy, and the kind of ambiance that makes the whole group put their phones down. Then pick them back up because they need to film it.",
+    "bach.addon.sax.price": "From $350",
+    "bach.addon.sushi.title": "Onboard Sushi Chef",
+    "bach.addon.sushi.text":
+      "A private sushi chef prepares fresh rolls on the yacht. Salmon, tuna, shrimp tempura — all made to order while you cruise. It's a full dining experience on the water, and it looks incredible on camera.",
+    "bach.addon.sushi.price": "From $500",
+    "bach.addon.jetski.title": "Jet Ski Rental",
+    "bach.addon.jetski.text":
+      "Two jet skis meet you at the sandbar for an hour of riding. No license needed in Florida for riders born before 1988 — everyone else takes a quick online course. Pure adrenaline between the champagne.",
+    "bach.addon.jetski.price": "From $200",
+    "bach.addon.decor.title": "Custom Decorations",
+    "bach.addon.decor.text":
+      'Rose gold balloons, "Bride" banners, flower arrangements, and matching color themes — all set up before you board. Our team handles everything so you walk into a fully decorated yacht.',
+    "bach.addon.decor.price": "From $250",
+    "bach.addon.photo.title": "Photographer Package",
+    "bach.addon.photo.text":
+      "A professional photographer captures the entire charter — candid moments, group shots, and those golden hour portraits. You get 100+ edited photos delivered within 48 hours.",
+    "bach.addon.photo.price": "From $150",
+    "bach.addon.champagne.title": "Champagne & Bottle Service",
+    "bach.addon.champagne.text":
+      "Champagne on ice when you board, plus premium bottle service throughout the cruise. Moet, Veuve, or Dom — we source whatever you want and have it cold and ready.",
+    "bach.addon.champagne.price": "From $400",
+    "bach.bring.title": "What to Bring",
+    "bach.bring.intro":
+      "Two checklists — one for the bride-to-be, one for the bridal party. Forward this to the group chat.",
+    "bach.bring.bride": "Bride-to-Be",
+    "bach.bring.party": "Bridal Party",
+    "bach.bride.outfit.title": "White Outfit or Swimsuit",
+    "bach.bride.outfit.text":
+      "White swimsuit, cover-up, or matching set. You need to stand out in every photo — and you will.",
+    "bach.bride.sunglasses.title": "Bride Sash & Sunglasses",
+    "bach.bride.sunglasses.text":
+      '"Bride" sash, tiara, or custom sunglasses. The more extra, the better the photos.',
+    "bach.bride.phone.title": "Waterproof Phone Case",
+    "bach.bride.phone.text":
+      "You'll want your phone on you all day. A waterproof case keeps it safe at the sandbar and during splash moments.",
+    "bach.bride.touch.title": "Touch-Up Kit",
+    "bach.bride.touch.text":
+      "Waterproof mascara, lip gloss, and dry shampoo. The salt air and sun do their thing — a quick touch-up keeps you camera-ready.",
+    "bach.party.matching.title": "Matching Outfits",
+    "bach.party.matching.text":
+      "Coordinate a color — hot pink, black, or neon. Matching swimsuits or cover-ups make the group photos pop.",
+    "bach.party.sunscreen.title": "Sunscreen (Reef-Safe)",
+    "bach.party.sunscreen.text":
+      "SPF 50+, reef-safe preferred. Reapply every 2 hours. Miami sun on the water is no joke — trust us.",
+    "bach.party.props.title": "Photo Props & Signs",
+    "bach.party.props.text":
+      '"Last Sail Before the Veil" banner, custom koozies, silly glasses. Props go a long way on a yacht shoot. No balloons, glitter, or confetti.',
+    "bach.party.cash.title": "Cash & ID",
+    "bach.party.cash.text":
+      "Bring your ID for boarding and cash for tips. Crew gratuity is customary (18-20%) and very much appreciated.",
+    "bach.price.title": "Group Size & Pricing",
+    "bach.price.intro":
+      "Every charter is private — your group, your yacht. Pricing scales with group size and vessel type.",
+    "bach.price.intimate.title": "Intimate",
+    "bach.price.intimate.size": "2-8 guests",
+    "bach.price.intimate.price": "$3,500+",
+    "bach.price.party.title": "The Sweet Spot",
+    "bach.price.party.size": "8-15 guests",
+    "bach.price.party.price": "$4,500+",
+    "bach.price.big.title": "Big Group",
+    "bach.price.big.size": "16-25+ guests",
+    "bach.price.big.price": "$6,000+",
+    "bach.price.perHour": "4-hour minimum charter",
+    "bach.price.note":
+      "All pricing includes captain, crew, sound system, floating mats, ice, coolers, and glassware. Add-ons are extra. Custom quotes for multi-day or special requests — just ask.",
+    "bach.tips.label": "From Our Team",
+    "bach.tips.title": "Insider Tips from Sasha",
+    "bach.tips.tip1":
+      "Book the sunset cruise. I say it every time because it's true — the golden hour photos from the water are unbeatable, and the energy shift from daylight to city lights is magic. It's our #1 bachelorette itinerary for a reason.",
+    "bach.tips.tip2":
+      "Coordinate outfits, but keep it comfortable. The yacht deck can be slippery when wet, so flat shoes or bare feet only. Skip the heels — trust me, you won't miss them once the music starts.",
+    "bach.tips.tip3":
+      "Add the sax player. I've seen 200+ bachelorette charters, and the groups that add live sax always say it was the highlight. Something about a saxophone over house beats on the open water just works.",
+    "bach.tips.tip4":
+      "Bring your own drinks and save the budget for add-ons. We provide ice, coolers, and glassware — so grab your champagne and rosé from Total Wine before you come. Then splurge on the sushi chef or photographer.",
+    "bach.tips.tip5":
+      "Designate one person as the booking contact. Too many cooks in the group chat makes planning harder. One person talks to us, collects payment from the group, and shares the details.",
+    "bach.midCta.title": "Ready to start planning?",
+    "bach.midCta.text":
+      "Private yacht, licensed captain, floating mats, sound system, and the entire Miami coastline as your venue. Tell us your date and group size — we'll build the perfect bachelorette charter for you.",
+    "bach.midCta.btn": "See Bachelorette Packages",
+    "bach.faq.title": "Frequently Asked Questions",
+    "bach.faq.q1": "How much does a bachelorette yacht party cost in Miami?",
+    "bach.faq.a1":
+      "A private bachelorette yacht charter with Emerald Eyes starts at $3,500 for 4 hours. That includes a USCG-licensed captain, professional crew, premium sound system, floating mats, ice, coolers, and glassware. Popular add-ons like a live sax player ($350), sushi chef ($500), or jet skis ($200) are available. Most bachelorette groups spend $4,000-$6,000 for a fully loaded 4-6 hour experience.",
+    "bach.faq.q2": "How many people can fit on a bachelorette yacht?",
+    "bach.faq.a2":
+      "Our yachts accommodate groups of 2 to 25+ guests. The sweet spot for bachelorette parties is 8-15 people — large enough for a great party, intimate enough for everyone to enjoy the yacht. Groups over 13 may require a larger vessel at adjusted pricing.",
+    "bach.faq.q3": "Can we bring our own alcohol on the yacht?",
+    "bach.faq.a3":
+      "Yes. Florida allows open containers on boats, so bring your own drinks. We provide ice, coolers, and glassware. No glass bottles — use cans or plastic. You can also add a champagne package or bottle service through us. The captain must stay under the 0.08% BAC limit.",
+    "bach.faq.q4":
+      "What is the best time of year for a bachelorette yacht party?",
+    "bach.faq.a4":
+      "Miami is a year-round destination. October through April offers the most comfortable weather with low humidity and calm seas. Summer (June-September) is hotter but brings fewer crowds and lower prices. Sunset cruises are stunning year-round. Book 2-3 months ahead during peak season.",
+    "bach.faq.q5": "What should we wear on the yacht?",
+    "bach.faq.a5":
+      "Swimsuits with cover-ups are the standard. Many groups coordinate matching swimsuits — white for the bride, a color for the bridal party. Bring a change of clothes if you're going out after. Flat shoes or bare feet only on board — no heels.",
+    "bach.faq.q6": "Where does the yacht cruise?",
+    "bach.faq.a6":
+      "The most popular bachelorette route cruises past Star Island and the celebrity mansions on Millionaire's Row, then anchors at Haulover Sandbar or Nixon Sandbar for swimming. Sunset cruises finish with the Miami skyline glowing at golden hour. Your captain can customize the route.",
+    "bach.faq.q7": "How far in advance should we book?",
+    "bach.faq.a7":
+      "Book 2-3 months in advance for peak season (December-April) and holiday weekends. For summer and midweek dates, 3-4 weeks is usually sufficient. A $500 deposit secures your date.",
+    "bach.faq.q8": "Can we bring decorations on the yacht?",
+    "bach.faq.a8":
+      "Yes — banners, sashes, photo props, flower arrangements, and signs are welcome. No balloons, glitter, or confetti, as these are prohibited to protect Miami's waters. We also offer a custom decorations add-on where our team handles setup before you arrive.",
+    "bach.related.title": "Explore More",
+    "bach.related.intro":
+      "More guides and experiences from Emerald Eyes Miami.",
+    "bach.related.experience": "Bachelorette Yacht Experience",
+    "bach.related.haulover": "Haulover Sandbar Guide",
+    "bach.related.sunset": "Sunset Cruise Experience",
+    "bach.related.about": "About Emerald Eyes Miami",
+    "bach.share.title": "Share with Your Group",
+    "bach.share.text":
+      "Send this guide to the bridal party group chat. Everyone will have the details they need — what to bring, what to wear, and what to expect.",
+    "bach.final.title": "This is the bachelorette she deserves.",
+    "bach.final.text":
+      "Private yacht. Licensed captain. The Miami skyline, golden hour, and a sound system loud enough for the whole sandbar to hear. This is the celebration your bride-to-be will talk about forever.",
   },
 
   es: {
@@ -1817,6 +2422,623 @@ const translations: Record<Lang, Record<string, string>> = {
       "Yate privado. Capitan licenciado. Colchonetas flotantes, musica y espacio para hasta 12. Llega a Haulover Sandbar como fue pensado \u2014 y dejanos encargarnos del resto.",
     "hs.cta.book": "Planifica Tu Charter",
     "hs.cta.explore": "Ver Experiencias",
+    // Blog listing — First Time Yacht Rental card (ES)
+    "blog.ft.title":
+      "Primera Vez Alquilando un Yate en Miami? Todo lo que Necesitas Saber",
+    "blog.ft.excerpt":
+      "La guia completa para principiantes sobre charters de yate en Miami \u2014 proceso de reserva, que traer, etiqueta, seguridad, errores comunes a evitar, y todo lo que los primerizos necesitan saber.",
+    "blog.ft.readTime": "12 min de lectura",
+    // First Time Yacht Rental article (ES) — Hero
+    "ft.heroTitle":
+      "Primera Vez Alquilando un Yate en Miami? Todo lo que Necesitas Saber",
+    "ft.intro1":
+      "Has visto los reels. Yates deslizandose por la Bahia de Biscayne, grupos brindando contra el atardecer, alguien haciendo un backflip desde la plataforma de nado. Se ve increible \u2014 y lo es. Pero si nunca has reservado un yate, el proceso puede parecer un misterio. Cuanto cuesta? Que te pones? Le das propina al capitan? Puedes traer tus propias bebidas?",
+    "ft.intro2":
+      "Esta guia responde cada pregunta que los principiantes hacen \u2014 desde como funciona la reserva hasta que traer, que no hacer, y por que Miami es la mejor ciudad del mundo para alquilar un yate por primera vez.",
+    "ft.readTime": "12 min de lectura",
+    "ft.guide.title": "En esta guia",
+    "ft.cta.book": "Reserva Tu Primer Charter",
+    // First Time (ES) — Quick Facts
+    "ft.quick.title": "Datos rapidos",
+    "ft.quick.price":
+      "Charters desde $2,500 por 2\u20138 horas con capitan y tripulacion incluidos",
+    "ft.quick.group":
+      "Grupos de 2 a 25+ invitados \u2014 hay un yate para cada tamano de grupo",
+    "ft.quick.included":
+      "Capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo y hieleras incluidos",
+    "ft.quick.noLicense":
+      "No necesitas licencia nautica \u2014 tu capitan con licencia USCG se encarga de todo",
+    // First Time (ES) — What to Expect
+    "ft.expect.label": "Para Empezar",
+    "ft.expect.title": "Que Esperar en Tu Primer Charter de Yate",
+    "ft.expect.p1":
+      "Un charter de yate en Miami es mas simple de lo que la mayoria piensa. Llegas a la marina, conoces a tu capitan y tripulacion, recibes una breve charla de seguridad, y en minutos estas en el agua. De ahi, el dia es tuyo \u2014 navega a un banco de arena, ancla frente a Star Island, mira un atardecer desde mar abierto, o simplemente flota con musica y bebidas frias.",
+    "ft.expect.p2":
+      "Tu capitan maneja toda la navegacion, anclaje y operaciones del barco. La tripulacion mantiene la musica, prepara las colchonetas flotantes y juguetes acuaticos, y se asegura de que todos la pasen bien. No necesitas saber nada de barcos.",
+    "ft.expect.p3":
+      "La mayoria de los invitados primerizos se sorprenden de lo relajada que es toda la experiencia. No hay codigo de vestimenta formal, no hay protocolo rigido, no hay asientos asignados. Basicamente estas en un salon flotante privado con un equipo profesional haciendo que todo funcione detras de escena.",
+    "ft.expect.tag1": "Sin experiencia necesaria",
+    "ft.expect.tag2": "Capitan incluido",
+    "ft.expect.tag3": "Todas las edades",
+    // First Time (ES) — Bareboat vs Crewed
+    "ft.charter.label": "Conoce la Diferencia",
+    "ft.charter.title": "Bareboat vs. Charter con Tripulacion",
+    "ft.charter.p1":
+      "En el mundo de los yates, \u201Cbareboat\u201D significa que alquilas la embarcacion \u2014 y el operador proporciona el capitan y la tripulacion. No es lo mismo que navegar solo. En Emerald Eyes, cada charter incluye un capitan con licencia USCG y tripulacion profesional, asi que incluso nuestro modelo bareboat viene completamente tripulado.",
+    "ft.charter.p2":
+      "Un \u201Ccharter con tripulacion\u201D en el sentido tradicional generalmente significa un viaje de varios dias en un yate mas grande con capitan, chef y azafata a bordo \u2014 piensa en viajes de una semana por el Caribe. Para charters de dia en Miami, el modelo bareboat con capitan proporcionado es estandar y te da lo mejor de ambos mundos: tripulacion profesional manejando el barco, y libertad total para que disfrutes la experiencia.",
+    "ft.charter.p3":
+      "En resumen: no necesitas licencia nautica, no necesitas experiencia, y no tienes que preocuparte por la navegacion o el atraque. Solo presentate.",
+    "ft.charter.note":
+      "Cada charter de Emerald Eyes incluye un capitan con licencia USCG y tripulacion entrenada \u2014 sin importar el paquete.",
+    // First Time (ES) — Booking Process
+    "ft.booking.title": "El Proceso de Reserva",
+    "ft.booking.intro":
+      "Desde el primer clic hasta subir a bordo \u2014 asi es exactamente como funciona.",
+    "ft.booking.step1.title": "Elige Tu Experiencia",
+    "ft.booking.step1.text":
+      "Explora nuestras experiencias \u2014 crucero al atardecer, Haulover Sandbar, fiesta privada, despedida de soltera, o arma la tuya. Cada una viene con un itinerario sugerido, pero todo es personalizable.",
+    "ft.booking.step2.title": "Escoge Fecha y Duracion",
+    "ft.booking.step2.text":
+      "Selecciona tu fecha y duracion del charter. Las opciones van desde cruceros de 2 horas al atardecer hasta aventuras de dia completo. Los dias entre semana suelen tener mejor disponibilidad y aguas mas tranquilas.",
+    "ft.booking.step3.title": "Selecciona Extras",
+    "ft.booking.step3.text":
+      "Hazlo tuyo. Agrega un saxofonista en vivo, chef de sushi, jet skis, servicio de botellas, hookah o un fotografo profesional. O mantenlo simple \u2014 el paquete base ya incluye todo lo que necesitas.",
+    "ft.booking.step4.title": "Presentate y Disfruta",
+    "ft.booking.step4.text":
+      "Llega a la marina 15 minutos antes, conoce a tu capitan, recibe una breve charla de seguridad, y listo. Nosotros nos encargamos del resto \u2014 tu solo diviertete.",
+    // First Time (ES) — What to Bring
+    "ft.bring.title": "Que Traer (y Que Proporcionamos Nosotros)",
+    "ft.bring.intro":
+      "Nosotros tenemos el yate cubierto. Esto es lo que debes empacar \u2014 y lo que puedes dejar en casa.",
+    "ft.bring.you": "Tu Traes",
+    "ft.bring.we": "Nosotros Proporcionamos",
+    "ft.bring.sunscreen.title": "Protector Solar",
+    "ft.bring.sunscreen.text":
+      "Preferiblemente reef-safe. El sol sobre el agua es dos veces mas fuerte. Reaplica cada 90 minutos.",
+    "ft.bring.swimsuit.title": "Traje de Bano y Toalla",
+    "ft.bring.swimsuit.text":
+      "Probablemente estaras entrando y saliendo del agua. Trae ropa de cambio si quieres estar seco despues.",
+    "ft.bring.cash.title": "Efectivo para Propinas",
+    "ft.bring.cash.text":
+      "15\u201320% para tu capitan y tripulacion es estandar en la industria de charters. Ellos trabajan duro para hacer tu dia perfecto.",
+    "ft.bring.id.title": "Identificacion Valida",
+    "ft.bring.id.text":
+      "Trae una identificacion oficial con foto. Requerida para el registro y si vas a traer alcohol a bordo.",
+    "ft.provide.captain.title": "Capitan Licenciado",
+    "ft.provide.captain.text":
+      "Con licencia USCG e inspeccion de la Guardia Costera. Tu capitan conoce cada fondeadero, banco de arena y punto de atardecer en Miami.",
+    "ft.provide.crew.title": "Tripulacion Profesional",
+    "ft.provide.crew.text":
+      "Tripulacion de hospitalidad entrenada para mantener la musica, servir bebidas, preparar juguetes y asegurar que todos esten comodos.",
+    "ft.provide.sound.title": "Sistema de Sonido",
+    "ft.provide.sound.text":
+      "Bocinas Bluetooth premium en todo el yate. Conecta tu telefono y pon tu propia playlist todo el dia.",
+    "ft.provide.ice.title": "Hielo y Hieleras",
+    "ft.provide.ice.text":
+      "Hieleras con hielo y agua. Trae tus propias bebidas y snacks \u2014 nosotros mantenemos todo frio.",
+    "ft.provide.toys.title": "Juguetes Acuaticos y Colchonetas",
+    "ft.provide.toys.text":
+      "Colchonetas flotantes, churros y juguetes acuaticos incluidos en cada charter. Perfectos para dias en el banco de arena.",
+    "ft.provide.safety.title": "Equipo de Seguridad",
+    "ft.provide.safety.text":
+      "Chalecos salvavidas para todas las edades, botiquin de primeros auxilios, extintor, y todo el equipo de seguridad requerido por la USCG.",
+    // First Time (ES) — What to Wear
+    "ft.wear.title": "Que Ponerse",
+    "ft.wear.intro":
+      "No hay codigo de vestimenta en un charter de yate \u2014 pero esto es lo que realmente funciona.",
+    "ft.wear.casual.title": "Dia / Banco de Arena",
+    "ft.wear.casual.text":
+      "Traje de bano, pareo, chancletas o sandalias. Estaras en el agua la mayor parte del dia. Trae gorra y lentes de sol \u2014 el reflejo del agua es intenso.",
+    "ft.wear.evening.title": "Atardecer / Crucero Nocturno",
+    "ft.wear.evening.text":
+      "Smart casual funciona perfecto. Vestido ligero o camisa de lino, sandalias bonitas. Trae una capa ligera \u2014 la brisa aumenta despues del atardecer y puede refrescar en el agua.",
+    "ft.wear.shoes.title": "Regla de Calzado",
+    "ft.wear.shoes.text":
+      "Solo zapatos de suela blanda o pies descalzos en el yate. Las suelas duras y tacones pueden danar la cubierta. Deja los tenis y zapatos de vestir en el carro.",
+    // First Time (ES) — Etiquette
+    "ft.etiquette.title": "Etiqueta de Yate para Principiantes",
+    "ft.etiquette.intro":
+      "Nadie espera que sepas el protocolo de yates. Pero estas cuatro reglas simples te haran parecer un invitado experimentado.",
+    "ft.etiquette.shoes.title": "Zapatos Fuera a Bordo",
+    "ft.etiquette.shoes.text":
+      "Es la regla numero uno en cada yate. Quitense los zapatos antes de pisar la cubierta. La tripulacion les mostrara donde dejarlos. Esto protege la teca y las superficies antideslizantes.",
+    "ft.etiquette.time.title": "Se Puntual",
+    "ft.etiquette.time.text":
+      "Llega 15 minutos antes de la salida. El reloj del charter comienza a tu hora confirmada, no cuando llegas. Llegar tarde significa menos tiempo en el agua \u2014 para todos.",
+    "ft.etiquette.tip.title": "Propina a Tu Tripulacion",
+    "ft.etiquette.tip.text":
+      "15\u201320% del costo del charter es estandar. Efectivo es preferido, dividido entre el capitan y la tripulacion. Una gran tripulacion hace la experiencia \u2014 demuestra que lo notaste.",
+    "ft.etiquette.respect.title": "Respeta la Tripulacion y la Embarcacion",
+    "ft.etiquette.respect.text":
+      "La tripulacion esta ahi para hacer tu dia increible, no para recibir ordenes. Tratalos como tratarias a un anfitrion en su casa. No entres al timon o areas del motor, y sigue las instrucciones del capitan en todo momento.",
+    // First Time (ES) — Common Mistakes
+    "ft.mistakes.title": "Errores Comunes que Debes Evitar",
+    "ft.mistakes.intro":
+      "Lo hemos visto todo. Aqui estan los cuatro errores mas comunes de principiantes \u2014 y como evitarlos.",
+    "ft.mistakes.short.title": "Reservar Muy Poco Tiempo",
+    "ft.mistakes.short.text":
+      "Un charter de 2 horas suena bien en papel, pero para cuando abordas, navegas, anclas y disfrutas el agua, ya es hora de regresar. Para un dia en el banco de arena o fiesta, 4 horas es el punto ideal. 6\u20138 horas si quieres realmente relajarte.",
+    "ft.mistakes.crowd.title": "Demasiadas Personas",
+    "ft.mistakes.crowd.text":
+      "Cada yate tiene una capacidad legal de pasajeros establecida por la Guardia Costera. Llegar con personas extra significa que alguien no podra subir. Confirma tu numero de invitados al reservar y mantenlo.",
+    "ft.mistakes.sun.title": "Subestimar el Sol",
+    "ft.mistakes.sun.text":
+      "El sol se refleja en el agua desde todos los angulos. Los primerizos consistentemente lo subestiman. Trae SPF 50+, un sombrero y reaplica seguido. La deshidratacion es real \u2014 toma agua entre bebidas.",
+    "ft.mistakes.glass.title": "Traer Botellas de Vidrio",
+    "ft.mistakes.glass.text":
+      "El vidrio en un barco es un riesgo de seguridad. Vidrio roto en una cubierta mojada es peligroso, y fragmentos en el agua son peor. Pasa las bebidas a latas o plastico antes de abordar. La mayoria de companias de yates no permiten vidrio a bordo.",
+    // First Time (ES) — Safety
+    "ft.safety.title": "Seguridad a Bordo",
+    "ft.safety.intro":
+      "Tu seguridad es la prioridad numero uno \u2014 y en un charter con tripulacion profesional, el capitan se encarga de todo.",
+    "ft.safety.briefing.title": "Charla de Seguridad Pre-Salida",
+    "ft.safety.briefing.text":
+      "Antes de salir del muelle, tu capitan te mostrara la ubicacion de los chalecos salvavidas, extintores, salidas de emergencia y las reglas basicas de la embarcacion. Toma cinco minutos y es importante.",
+    "ft.safety.jackets.title": "Chalecos Salvavidas para Todos",
+    "ft.safety.jackets.text":
+      "Chalecos salvavidas aprobados por la Guardia Costera en todas las tallas a bordo \u2014 incluyendo tallas infantiles. No tienes que usar uno mientras navegas, pero son requeridos para ninos menores de 6 anos y estan disponibles cuando quieras.",
+    "ft.safety.captain.title": "Tu Capitan Se Encarga de Todo",
+    "ft.safety.captain.text":
+      "Navegacion, monitoreo del clima, anclaje, atraque y protocolos de emergencia \u2014 todo eso es responsabilidad de tu capitan. Tienen licencia USCG, pruebas de drogas y experiencia en aguas de Miami. Tu enfocate en divertirte; ellos se enfocan en llevar a todos a casa seguros.",
+    "ft.safety.cgLink":
+      "Lee mas: Seguridad de la Guardia Costera e Inspecciones de Bareboat",
+    // First Time (ES) — Mid CTA
+    "ft.midCta.title": "Listo para Tu Primer Charter?",
+    "ft.midCta.text":
+      "Emerald Eyes lo hace facil. Capitan licenciado, tripulacion profesional, todo el equipo incluido. Solo elige tu fecha y presentate \u2014 nosotros nos encargamos de todo lo demas.",
+    "ft.midCta.btn": "Planifica Tu Charter",
+    // First Time (ES) — FAQ
+    "ft.faq.title": "Preguntas Frecuentes de Principiantes",
+    "ft.faq.intro":
+      "Preguntas reales de invitados primerizos reales. Si la tuya no esta aqui, escribenos por WhatsApp \u2014 respondemos en una hora.",
+    "ft.faq.q1":
+      "Necesito una licencia nautica para alquilar un yate en Miami?",
+    "ft.faq.a1":
+      "No. Cada charter de Emerald Eyes incluye un capitan con licencia USCG que maneja toda la navegacion y operaciones del barco. No necesitas experiencia nautica ni certificaciones.",
+    "ft.faq.q2": "Puedo traer mi propia comida y bebidas?",
+    "ft.faq.a2":
+      "Si. La mayoria de los invitados traen su propia hielera con bebidas y snacks. Nosotros proporcionamos hielo, hieleras y vasos. No botellas de vidrio \u2014 solo latas y plastico. Tambien puedes agregar paquetes de catering como chef de sushi o servicio de botellas.",
+    "ft.faq.q3": "Con cuanta anticipacion debo reservar?",
+    "ft.faq.a3":
+      "Para la mejor seleccion, reserva 1\u20132 semanas antes para charters entre semana y 2\u20133 semanas antes para fines de semana. La temporada alta (noviembre a abril) y los feriados pueden agotarse con un mes o mas de anticipacion.",
+    "ft.faq.q4": "Que pasa si el clima esta malo?",
+    "ft.faq.a4":
+      "Monitoreamos el clima de cerca. Si las condiciones no son seguras, reprogramaremos tu charter sin costo adicional. La lluvia ligera generalmente pasa rapido en Miami \u2014 tu capitan tomara la decision la manana de tu viaje.",
+    "ft.faq.q5": "Es seguro traer ninos a un yate?",
+    "ft.faq.a5":
+      "Absolutamente. Tenemos chalecos salvavidas en tallas infantiles, y nuestra tripulacion tiene experiencia con familias. Los ninos menores de 6 anos deben usar chaleco salvavidas en todo momento. Las experiencias en el banco de arena son especialmente populares con familias.",
+    "ft.faq.q6": "Cuanto debo dar de propina al capitan y tripulacion?",
+    "ft.faq.a6":
+      "15\u201320% del costo total del charter es estandar en la industria. Efectivo es preferido y se puede dar directamente al capitan al final del viaje, quien lo dividira con la tripulacion.",
+    "ft.faq.q7": "Cual es la politica de cancelacion?",
+    "ft.faq.a7":
+      "Cancelaciones con mas de 48 horas de anticipacion reciben reembolso completo. Dentro de 48 horas, tu deposito puede aplicarse a una fecha futura. Las cancelaciones por clima siempre se reprograman sin costo.",
+    "ft.faq.q8": "Puedo poner mi propia musica?",
+    "ft.faq.a8":
+      "Si. Cada yate tiene un sistema de sonido Bluetooth premium. Conecta tu telefono y se el DJ todo el viaje. Tambien tenemos playlists curadas si prefieres simplemente disfrutar el ambiente.",
+    // First Time (ES) — Related & Final CTA
+    "ft.related.title": "Sigue Leyendo",
+    "ft.related.intro":
+      "Mas guias para ayudarte a planificar el dia perfecto en el agua.",
+    "ft.related.coastGuard":
+      "Seguridad de la Guardia Costera e Inspecciones de Bareboat",
+    "ft.related.haulover": "Haulover Sandbar en Yate: La Guia Completa",
+    "ft.related.jetski": "Necesitas Licencia para Manejar un Jet Ski en Miami?",
+    "ft.related.prices": "Precios de Charter de Yate en Miami: Que Esperar",
+    "ft.related.experience": "Ver Todas las Experiencias",
+    "ft.cta.title": "Tu primera vez en un yate deberia sentirse sin esfuerzo.",
+    "ft.cta.text":
+      "Yate privado. Capitan licenciado. Sistema de sonido, colchonetas flotantes, y una tripulacion que maneja cada detalle. Todo lo que tienes que hacer es presentarte.",
+    "ft.cta.explore": "Ver Experiencias",
+    // Blog listing — Yacht Prices card (ES)
+    "blog.yp.title":
+      "Precios de Alquiler de Yate en Miami: Cuanto Cuesta Realmente?",
+    "blog.yp.excerpt":
+      "Todo el mundo lo busca en Google. Nadie da una respuesta directa. Aqui tienes exactamente lo que cuesta un alquiler privado de yate en Miami — sin rangos vagos, sin cargos ocultos.",
+    "blog.yp.readTime": "12 min de lectura",
+    // Blog listing — Bachelorette card (ES)
+    "blog.bach.title": "Despedida de Soltera en Yate en Miami",
+    "blog.bach.excerpt":
+      "La guia definitiva para planificar una despedida de soltera en yate en Miami — itinerarios, precios, que traer, extras, tamano de grupo y consejos del equipo que hace esto cada fin de semana.",
+    "blog.bach.readTime": "16 min de lectura",
+    // Yacht Prices article (ES)
+    "yp.heroTitle":
+      "Precios de Alquiler de Yate en Miami: Cuanto Cuesta Realmente?",
+    "yp.readTime": "12 min de lectura",
+    "yp.intro1":
+      "Todo el mundo lo busca en Google. Nadie da una respuesta directa. Eso cambia hoy. Aqui tienes exactamente lo que cuesta un alquiler privado de yate en Miami — sin rangos vagos, sin cargos ocultos, sin sorpresas.",
+    "yp.intro2":
+      "Llevamos anos operando charters desde North Miami. Esta guia desglosa tarifas base, que esta incluido, extras populares y las mejores formas de obtener mas por tu dinero.",
+    "yp.hero.seeBreakdown": "Ver el Desglose",
+    "yp.cta.getQuote": "Pedir Cotizacion",
+    "yp.cta.experiences": "Ver Experiencias",
+    "yp.quick.title": "Precios de un vistazo",
+    "yp.quick.starting": "Desde $2,500 por un charter de 4 horas",
+    "yp.quick.minimum": "Minimo de 4 horas en todas las reservas",
+    "yp.quick.included":
+      "Capitan, tripulacion, combustible, sonido y juguetes incluidos",
+    "yp.quick.peak": "Temporada alta: diciembre a abril",
+    "yp.nav.title": "En esta guia",
+    "yp.nav.shortAnswer": "La Respuesta Corta",
+    "yp.nav.included": "Que Esta Incluido",
+    "yp.nav.duration": "Duracion y Precios",
+    "yp.nav.addons": "Costos de Extras",
+    "yp.nav.factors": "Factores que Afectan el Precio",
+    "yp.nav.save": "Como Ahorrar",
+    "yp.nav.faq": "Preguntas Frecuentes",
+    "yp.short.title": "La Respuesta Corta",
+    "yp.short.p1":
+      "Un charter privado de yate en Miami comienza en $2,500 por 4 horas con Emerald Eyes. Eso incluye capitan con licencia USCG, tripulacion profesional, combustible para recorridos locales, sistema de sonido premium, hielo, neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria.",
+    "yp.short.p2":
+      "Para comparar: en el mercado de Miami, los charters de yate van desde aproximadamente $1,000 hasta $15,000+ por medio dia dependiendo del tamano del barco, antiguedad y nivel de servicio. La amplia gama se debe a si estas en una lancha de 30 pies o un superyate de 100 pies.",
+    "yp.short.p3":
+      "En Emerald Eyes operamos una flota seleccionada de embarcaciones bien mantenidas en el rango de 40-65 pies — el punto ideal para grupos de 2 a 15 que desean una experiencia de lujo sin el precio de un superyate.",
+    "yp.short.note":
+      "Sin cargos ocultos. El precio que cotizamos es el precio que pagas. La propina para tu tripulacion es el unico costo adicional y siempre queda a tu discrecion.",
+    "yp.included.label": "Cada Charter",
+    "yp.included.title": "Que Esta Incluido en Tu Precio",
+    "yp.included.intro":
+      "Cada charter de Emerald Eyes viene con todo lo que necesitas para un dia perfecto en el agua. Sin cargos sorpresa, sin ventas adicionales en el muelle.",
+    "yp.inc.captain.title": "Capitan y Tripulacion con Licencia",
+    "yp.inc.captain.text":
+      "Capitan con licencia USCG y tripulacion profesional que conocen cada rincon de Biscayne Bay.",
+    "yp.inc.sound.title": "Sistema de Sonido Premium",
+    "yp.inc.sound.text":
+      "Parlantes marinos con Bluetooth. Pon tu playlist todo el dia.",
+    "yp.inc.fuel.title": "Combustible para Recorridos Locales",
+    "yp.inc.fuel.text":
+      "Rutas estandar de Miami incluyendo Haulover Sandbar, Star Island y Key Biscayne.",
+    "yp.inc.ice.title": "Hielo, Neveras y Montaje",
+    "yp.inc.ice.text":
+      "Neveras industriales con hielo para que tus bebidas se mantengan frias de muelle a muelle.",
+    "yp.inc.mats.title": "Colchonetas Flotantes",
+    "yp.inc.mats.text":
+      "Grandes colchonetas flotantes para relajarte en el agua en las paradas del sandbar.",
+    "yp.inc.toys.title": "Juguetes Acuaticos",
+    "yp.inc.toys.text":
+      "Paddleboards, fideos flotantes e inflables para todos a bordo.",
+    "yp.inc.water.title": "Agua Embotellada",
+    "yp.inc.water.text": "Agua embotellada de cortesia durante todo tu viaje.",
+    "yp.inc.glass.title": "Cristaleria y Vasos",
+    "yp.inc.glass.text":
+      "Vasos reutilizables y cristaleria para que traigas tus bebidas con estilo.",
+    "yp.dur.title": "Duracion y Precios del Charter",
+    "yp.dur.intro":
+      "Los charters mas largos ofrecen mejor valor por hora y te permiten explorar mas de la costa de Miami. Asi se desglosan nuestras tarifas.",
+    "yp.dur.4hr.title": "Medio Dia",
+    "yp.dur.4hr.price": "Desde $2,500",
+    "yp.dur.4hr.desc":
+      "Perfecto para un viaje a Haulover Sandbar, crucero al atardecer o una celebracion rapida. Lo mas popular para cumpleanos y despedidas de soltera.",
+    "yp.dur.4hr.perHour": "~$625/hora",
+    "yp.dur.6hr.title": "Extendido",
+    "yp.dur.6hr.price": "Desde $3,500",
+    "yp.dur.6hr.desc":
+      "Tiempo para ir al sandbar y navegar frente a Star Island. Ideal para grupos que quieren combinar natacion, turismo y un atardecer.",
+    "yp.dur.6hr.perHour": "~$583/hora",
+    "yp.dur.8hr.title": "Dia Completo",
+    "yp.dur.8hr.price": "Desde $5,000",
+    "yp.dur.8hr.desc":
+      "La experiencia completa de Miami. Sandbar por la manana, recorrido por las islas de Biscayne Bay y regreso al atardecer. Mejor valor por hora.",
+    "yp.dur.8hr.perHour": "~$625/hora",
+    "yp.dur.tipNote":
+      "La propina estandar de la industria es 15-20% de la tarifa del charter y se entrega directamente a tu capitan y tripulacion. Nunca esta incluida en nuestros precios y siempre queda a tu discrecion.",
+    "yp.addons.title": "Extras Populares",
+    "yp.addons.intro":
+      "Haz tu charter inolvidable con nuestras experiencias adicionales seleccionadas. Todos se pueden organizar al momento de reservar.",
+    "yp.addon.sax.title": "Saxofon en Vivo",
+    "yp.addon.sax.price": "Desde $350",
+    "yp.addon.sax.desc":
+      "Un saxofonista profesional tocando en vivo mientras navegas por Biscayne Bay. Nuestro extra mas solicitado — pura vibra Miami.",
+    "yp.addon.sushi.title": "Chef de Sushi",
+    "yp.addon.sushi.price": "Desde $500",
+    "yp.addon.sushi.desc":
+      "Un chef privado de sushi preparando omakase fresco a bordo. Incluye al chef, pescado premium y presentacion completa.",
+    "yp.addon.jetski.title": "Alquiler de Jet Ski",
+    "yp.addon.jetski.price": "Desde $200/hr",
+    "yp.addon.jetski.desc":
+      "Uno o dos jet skis entregados al yate en el sandbar. No se requiere licencia. Casco e instrucciones de seguridad incluidos.",
+    "yp.addon.catering.title": "Paquete de Catering",
+    "yp.addon.catering.price": "Desde $30/persona",
+    "yp.addon.catering.desc":
+      "Desde tablas de quesos y bandejas de frutas hasta catering completo con chef privado. Personalizado para tu grupo y ocasion.",
+    "yp.addon.dj.title": "DJ",
+    "yp.addon.dj.price": "Desde $300",
+    "yp.addon.dj.desc":
+      "Un DJ profesional con su propio equipo trae la energia nocturna al agua. Perfecto para fiestas y despedidas de soltera.",
+    "yp.addon.photo.title": "Fotografo",
+    "yp.addon.photo.price": "Desde $150",
+    "yp.addon.photo.desc":
+      "Un fotografo profesional captura cada momento. Tomas con dron, fotos espontaneas y retratos al atardecer. Galeria editada en 48 horas.",
+    "yp.factors.title": "Que Afecta el Precio",
+    "yp.factors.intro":
+      "No todos los charters cuestan lo mismo. Estos son los cuatro factores principales que determinan tu precio final.",
+    "yp.factor.size.title": "Tamano y Tipo de Embarcacion",
+    "yp.factor.size.text":
+      "Un crucero de 40 pies cuesta menos que un yate de 65 pies. Las embarcaciones mas grandes tienen mas espacio en cubierta, cabinas y comodidades — y requieren mas combustible y tripulacion. Para grupos de menos de 10, una embarcacion mediana (40-50 pies) suele ser el mejor valor.",
+    "yp.factor.season.title": "Temporada",
+    "yp.factor.season.text":
+      "La temporada alta va de diciembre a abril, cuando Miami esta llena de turistas y la demanda es maxima. La temporada baja (mayo a noviembre) ofrece el mismo clima hermoso a tarifas mas bajas. La temporada de huracanes (junio-noviembre) tiene interrupciones raras pero las mejores ofertas.",
+    "yp.factor.group.title": "Tamano del Grupo",
+    "yp.factor.group.text":
+      "Mas invitados pueden requerir una embarcacion mas grande o miembros adicionales de tripulacion. Grupos de 2-8 caben comodamente en nuestra flota estandar. Grupos de 9-15 pueden necesitar un yate mas grande. Para 16+, recomendamos paquetes multi-embarcacion.",
+    "yp.factor.day.title": "Dia de la Semana",
+    "yp.factor.day.text":
+      "Viernes, sabado y domingo son dias premium con mayor demanda. Martes a jueves tipicamente ofrecen mejor disponibilidad y tarifas. Los lunes tambien tienden a ser mas tranquilos con mejores precios.",
+    "yp.save.title": "Como Ahorrar",
+    "yp.save.intro":
+      "Estrategias inteligentes de reserva que te dan la misma experiencia por menos. Queremos verte en el agua — asi es como lograrlo.",
+    "yp.save.weekday.title": "Reserva entre Semana",
+    "yp.save.weekday.text":
+      "Los charters de martes a jueves tipicamente ofrecen mejores tarifas que los fines de semana. Tambien tendras menos trafico de barcos en el sandbar, aguas mas tranquilas y atencion mas personalizada de la tripulacion.",
+    "yp.save.offpeak.title": "Ve en Temporada Baja",
+    "yp.save.offpeak.text":
+      "De mayo a noviembre ofrece clima calido, mares tranquilos y tarifas que pueden ser 10-20% mas bajas que la temporada alta. Septiembre y octubre son joyas ocultas — agua hermosa, minimas multitudes y las mejores ofertas del ano.",
+    "yp.save.direct.title": "Reserva Directo",
+    "yp.save.direct.text":
+      "Reservar directamente con nosotros en vez de plataformas de terceros significa sin recargos de intermediarios. Tambien tienes comunicacion directa con nuestro equipo para solicitudes personalizadas y cambios de ultimo momento.",
+    "yp.save.longer.title": "Reserva un Charter Mas Largo",
+    "yp.save.longer.text":
+      "El costo por hora baja en charters mas largos. Un dia completo de 8 horas es significativamente mejor valor por hora que dos viajes separados de 4 horas. Ademas, obtienes la experiencia completa de Miami sin prisas.",
+    "yp.midCta.label": "Listo para Reservar?",
+    "yp.midCta.title": "Obtiene Tu Cotizacion en Minutos",
+    "yp.midCta.text":
+      "Dinos tu fecha, tamano de grupo y cualquier extra que desees. Armaremos una cotizacion transparente con todo incluido — sin sorpresas, sin idas y vueltas. La mayoria de las cotizaciones se responden en una hora.",
+    "yp.faq.title": "Preguntas Frecuentes sobre Precios",
+    "yp.faq.intro":
+      "Las preguntas mas comunes que recibimos sobre costos de charters de yate en Miami.",
+    "yp.faq.q1": "Cuanto cuesta alquilar un yate en Miami?",
+    "yp.faq.a1":
+      "Un charter privado de yate en Miami comienza en $2,500 por 4 horas con Emerald Eyes. Los precios en el mercado van desde $1,000 hasta $15,000+ por medio dia dependiendo del tamano y las comodidades de la embarcacion. Nuestro rango ideal es $2,500-$5,000 para grupos de 2-15.",
+    "yp.faq.q2": "Que esta incluido en el precio del charter?",
+    "yp.faq.a2":
+      "Cada charter de Emerald Eyes incluye capitan con licencia USCG, tripulacion profesional, combustible para recorridos locales, sistema de sonido premium, hielo y neveras, colchonetas flotantes, juguetes acuaticos, agua embotellada y cristaleria. Sin recargos ocultos de combustible ni tarifas de atraque.",
+    "yp.faq.q3": "Cuanto cuesta un yate por hora?",
+    "yp.faq.a3":
+      "Basado en nuestras tarifas, el costo por hora es aproximadamente $583-$625 dependiendo de la duracion del charter. En el mercado mas amplio de Miami, las tarifas por hora van de $250 a $1,500+ dependiendo del yate. Los charters mas largos siempre ofrecen mejor valor por hora.",
+    "yp.faq.q4": "Hay costos adicionales que deba presupuestar?",
+    "yp.faq.a4":
+      "El unico costo adicional es la propina para tu capitan y tripulacion, que queda a tu discrecion (el estandar de la industria es 15-20%). Si agregas extras como un saxofonista, chef de sushi o jet ski, esos se cotizan por adelantado. Tu propia comida y bebidas son bienvenidas y gratis de traer.",
+    "yp.faq.q5": "Esta incluido el combustible?",
+    "yp.faq.a5":
+      "Si. El combustible para todas las rutas estandar de Miami esta incluido — Haulover Sandbar, Star Island, Biscayne Bay y Key Biscayne. Viajes extendidos fuera del area estandar pueden tener costos adicionales de combustible, pero siempre te avisamos antes de reservar.",
+    "yp.faq.q6": "Cuando es el momento mas barato para alquilar?",
+    "yp.faq.a6":
+      "Los dias de semana (martes a jueves) durante meses de temporada baja (mayo a noviembre) ofrecen las mejores tarifas. Puedes ahorrar 10-20% comparado con un charter de fin de semana en temporada alta. Septiembre y octubre suelen ser los meses mas economicos con excelente clima.",
+    "yp.faq.q7": "Cuanto debo dar de propina a la tripulacion?",
+    "yp.faq.a7":
+      "La propina nunca esta incluida y siempre queda a tu discrecion. El estandar de la industria en Miami es 15-20% de la tarifa base del charter. Para un charter de $2,500, eso seria tipicamente $375-$500. Las propinas van directamente a tu capitan y tripulacion.",
+    "yp.faq.q8": "Puedo llevar mi propia comida y bebidas?",
+    "yp.faq.a8":
+      "Por supuesto. Eres bienvenido a traer tu propia comida, bebidas y alcohol sin cargo adicional. Nosotros proporcionamos hielo, neveras y cristaleria. No botellas de vidrio a bordo — por favor usa latas o sirve en los vasos que proporcionamos. Tambien puedes agregar nuestros paquetes de catering.",
+    "yp.related.title": "Guias Relacionadas",
+    "yp.related.intro":
+      "Mas recursos para ayudarte a planificar la experiencia perfecta de yate en Miami.",
+    "yp.related.sandbar": "Experiencia Haulover Sandbar",
+    "yp.related.haulover": "Guia Completa de Haulover Sandbar",
+    "yp.related.sunset": "Experiencia Crucero al Atardecer",
+    "yp.related.book": "Reserva Tu Charter",
+    "yp.sample.title": "Ejemplo de Total",
+    "yp.sample.intro":
+      "Asi se ve un charter tipico de 4 horas todo incluido, para que puedas presupuestar con confianza.",
+    "yp.sample.base": "Charter de 4 horas: $2,500",
+    "yp.sample.sax": "Saxofonista en vivo: +$350",
+    "yp.sample.tip": "Propina (18%): ~$450",
+    "yp.sample.total": "Total: ~$3,300 para hasta 13 invitados",
+    "yp.finalCta.title": "Conoce el Precio. Ama la Experiencia.",
+    "yp.finalCta.text":
+      "Sin sorpresas, sin cargos ocultos. Solo una cotizacion transparente y una tripulacion lista para hacer tu dia en el agua inolvidable. Dinos que estas buscando.",
+    // Bachelorette article (ES)
+    "bach.category": "Experiencias",
+    "bach.readTime": "16 min de lectura",
+    "bach.heroTitle": "Despedida de Soltera en Yate en Miami",
+    "bach.intro1":
+      "Olvida el club lleno o el brunch caro. La despedida de soltera que tu grupo realmente recordara es en un yate privado — musica sonando, champagne fluyendo y el skyline de Miami detras de cada foto. Sin drama de vestimenta, sin estres de reservaciones, sin compartir el espacio con desconocidos.",
+    "bach.intro2":
+      "Esta guia cubre todo lo que necesitas para planificar la despedida de soltera perfecta en yate en Miami: itinerarios, precios, que traer, los mejores extras, consideraciones de grupo y consejos del equipo que hace esto cada fin de semana.",
+    "bach.guide.title": "Guia de Planificacion",
+    "bach.cta.book": "Planifica Tu Charter",
+    "bach.cta.explore": "Ver Experiencias",
+    "bach.quick.title": "Datos Rapidos",
+    "bach.quick.group": "Grupos de 2-25+ invitados (ideal: 8-15)",
+    "bach.quick.duration": "4-8 horas recomendadas para despedidas",
+    "bach.quick.route": "Star Island, Haulover Sandbar, Atardecer con Skyline",
+    "bach.quick.starting": "Desde $3,500 por 4 horas",
+    "bach.nav.whyYacht": "Por Que un Yate",
+    "bach.nav.planning": "Cronograma de Planificacion",
+    "bach.nav.itinerary": "El Itinerario Perfecto",
+    "bach.nav.included": "Que Incluye",
+    "bach.nav.addons": "Extras Populares",
+    "bach.nav.whatToBring": "Que Traer",
+    "bach.nav.pricing": "Tamano de Grupo y Precios",
+    "bach.nav.tips": "Consejos del Equipo",
+    "bach.nav.faq": "Preguntas Frecuentes",
+    "bach.why.title": "Por Que un Yate Supera Cualquier Otra Opcion",
+    "bach.why.p1":
+      "Un club nocturno tiene dos horas de espera, un restaurante tiene limite de tiempo y una casa de playa significa que alguien limpia despues. Un yate privado es el unico lugar donde no hay restricciones para que tu grupo la pase increible — tu musica, tus bebidas, tu horario y todo el oceano como fondo.",
+    "bach.why.p2":
+      "Cada foto parece portada de revista cuando disparas contra agua turquesa y el skyline de Miami. La luz en la hora dorada es irreal. Y cuando la musica rebota en el agua sin paredes alrededor, la energia se siente diferente.",
+    "bach.why.p3":
+      "Ademas, todo esta resuelto. Un capitan licenciado maneja, la tripulacion prepara y limpia todo, y lo unico que tienes que hacer es llegar. Esta es la despedida de soltera donde la dama de honor tambien puede disfrutar.",
+    "bach.why.privacy.title": "Privacidad Total",
+    "bach.why.privacy.text":
+      "Sin desconocidos, sin filas, sin quejas de ruido. El yate es exclusivamente tuyo — tu playlist, tus reglas, tu fiesta.",
+    "bach.why.views.title": "Fotos Inigualables",
+    "bach.why.views.text":
+      "Agua turquesa, mansiones de celebridades y el skyline de Miami. Cada angulo es una oportunidad fotografica que supera cualquier rooftop bar.",
+    "bach.why.freedom.title": "Tu Musica, a Todo Volumen",
+    "bach.why.freedom.text":
+      "Sistema de sonido Bluetooth premium a bordo. Conecta tu telefono y pon tu playlist tan fuerte como quieras — sin limites de ruido en mar abierto.",
+    "bach.why.tag1": "Yate Privado",
+    "bach.why.tag2": "Tripulacion Todo Incluido",
+    "bach.why.tag3": "Cero Limpieza",
+    "bach.plan.title": "Cuando Reservar y Como Planificar",
+    "bach.plan.p1":
+      "Empieza a planificar 3-6 meses antes de la boda. Los charters en Miami se reservan rapido en temporada alta (diciembre a abril) y fines de semana festivos. Un deposito de $500 asegura tu fecha y embarcacion — y es reembolsable hasta 14 dias antes del charter.",
+    "bach.plan.p2":
+      'Dos a tres meses antes: finaliza el numero de invitados, elige tus extras y decide entre crucero de dia o atardecer. Un mes antes: coordina outfits con el grupo, confirma necesidades dieteticas si agregas chef de sushi y comparte el itinerario. Una semana antes: confirma logistica de transporte y envia la lista de "que traer" a todas.',
+    "bach.plan.p3":
+      "Para reservas de ultimo momento, el verano y dias entre semana generalmente tienen disponibilidad con 3-4 semanas de anticipacion. Fines de semana en temporada alta? Reserva lo antes posible.",
+    "bach.plan.tip":
+      "Consejo pro: Los cruceros al atardecer (saliendo a las 4-5 PM) te dan lo mejor de ambos mundos — nadar de dia en el sandbar seguido de fotos con la hora dorada y el skyline.",
+    "bach.itin.title": "El Itinerario Perfecto",
+    "bach.itin.intro":
+      "Tres formas de hacerlo, dependiendo de la vibra de tu grupo. Mezcla y combina, o ve todo el dia.",
+    "bach.itin.morning.title": "Manana / Tarde",
+    "bach.itin.morning.text":
+      "Sal a media manana y navega hasta Haulover Sandbar o Nixon Sandbar. Ancla en las aguas poco profundas con colchonetas flotantes, nada y celebra en agua hasta la cintura con 200+ barcos los fines de semana. Pon tu playlist en el sistema de sonido premium mientras la tripulacion mantiene las bebidas frias. Este es el clasico dia de sandbar en Miami — y pega mas fuerte desde un yate privado.",
+    "bach.itin.sunset.title": "Crucero al Atardecer",
+    "bach.itin.sunset.text":
+      "Sal alrededor de las 4-5 PM y navega frente a Star Island, las Islas Venecianas y Millionaire's Row. Mira el sol ponerse sobre el skyline de Miami mientras la luz dorada hace que cada foto sea sin esfuerzo. Agrega un saxofonista en vivo y champagne para una experiencia elevada. Este es el itinerario de despedida mas popular que hacemos — es el que deja el chat del grupo en silencio porque todas estan ocupadas publicando.",
+    "bach.itin.evening.title": "Crucero Nocturno",
+    "bach.itin.evening.text":
+      "Sal despues del anochecer y ve el skyline de Miami iluminado desde el agua. Navega frente a las torres brillantes de Brickell, downtown y South Beach. La vibra cambia a energia de club — sistema de sonido nivel DJ, luces LED en cubierta y la ciudad como fondo. Perfecto como pre-fiesta antes de ir a los clubs, o como el evento principal.",
+    "bach.included.title": "Que Incluye Cada Charter",
+    "bach.included.intro":
+      "Todo lo que necesitas para una despedida de soltera sin estres esta a bordo desde el momento en que subes.",
+    "bach.included.label": "Incluido en Tu Charter",
+    "bach.included.captain.title": "Capitan Licenciado USCG",
+    "bach.included.captain.text":
+      "Capitan profesional que conoce cada ruta, sandbar y punto de atardecer en Miami. Tu relajate — ellos manejan.",
+    "bach.included.sound.title": "Sistema de Sonido Premium",
+    "bach.included.sound.text":
+      "Parlantes Bluetooth en todo el yate. Conecta tu telefono y pon tu playlist a todo volumen — sin limites de ruido en el agua.",
+    "bach.included.mats.title": "Colchonetas Flotantes y Lily Pads",
+    "bach.included.mats.text":
+      "Colchonetas flotantes grandes para descansar en el sandbar. Perfectas para fotos grupales y tomar sol en el agua.",
+    "bach.included.ice.title": "Hielo, Hieleras y Agua",
+    "bach.included.ice.text":
+      "Hieleras completamente equipadas con hielo y agua. Trae tus propias bebidas — nosotros mantenemos todo frio todo el dia.",
+    "bach.included.glass.title": "Copas y Vasos",
+    "bach.included.glass.text":
+      "Copas de champagne, copas de vino y vasos a bordo. No necesitas traer nada desechable — te tenemos cubierta.",
+    "bach.included.toys.title": "Juguetes Acuaticos",
+    "bach.included.toys.text":
+      "Fideos de piscina, flotadores y equipo de snorkel disponibles a bordo. Todo lo que necesitas para disfrutar el agua mas alla del yate.",
+    "bach.addon.title": "Extras Populares",
+    "bach.addon.intro":
+      "Mejora tu despedida de increible a inolvidable. Estos son los extras que nuestros grupos de despedida mas reservan.",
+    "bach.addon.sax.title": "Saxofon en Vivo",
+    "bach.addon.sax.text":
+      "Un saxofonista profesional pone el tono mientras navegas. Jazz suave sobre beats de house, energia de hora dorada y el tipo de ambiente que hace que todo el grupo baje sus telefonos. Luego los vuelven a levantar porque necesitan grabarlo.",
+    "bach.addon.sax.price": "Desde $350",
+    "bach.addon.sushi.title": "Chef de Sushi a Bordo",
+    "bach.addon.sushi.text":
+      "Un chef de sushi privado prepara rolls frescos en el yate. Salmon, atun, tempura de camaron — todo hecho a pedido mientras navegas. Es una experiencia gastronomica completa en el agua, y se ve increible en camara.",
+    "bach.addon.sushi.price": "Desde $500",
+    "bach.addon.jetski.title": "Alquiler de Jet Ski",
+    "bach.addon.jetski.text":
+      "Dos jet skis te esperan en el sandbar por una hora. No se necesita licencia en Florida para personas nacidas antes de 1988 — las demas toman un curso rapido en linea. Pura adrenalina entre el champagne.",
+    "bach.addon.jetski.price": "Desde $200",
+    "bach.addon.decor.title": "Decoraciones Personalizadas",
+    "bach.addon.decor.text":
+      'Globos dorado rosa, banners de "Bride", arreglos florales y temas de colores — todo montado antes de que abordes. Nuestro equipo se encarga de todo para que llegues a un yate completamente decorado.',
+    "bach.addon.decor.price": "Desde $250",
+    "bach.addon.photo.title": "Paquete de Fotografo",
+    "bach.addon.photo.text":
+      "Un fotografo profesional captura todo el charter — momentos espontaneos, fotos grupales y esos retratos de hora dorada. Recibes 100+ fotos editadas en 48 horas.",
+    "bach.addon.photo.price": "Desde $150",
+    "bach.addon.champagne.title": "Champagne y Servicio de Botellas",
+    "bach.addon.champagne.text":
+      "Champagne en hielo cuando abordes, mas servicio premium de botellas durante todo el crucero. Moet, Veuve o Dom — conseguimos lo que quieras y lo tenemos frio y listo.",
+    "bach.addon.champagne.price": "Desde $400",
+    "bach.bring.title": "Que Traer",
+    "bach.bring.intro":
+      "Dos listas — una para la novia y otra para el grupo. Reenvia esto al chat grupal.",
+    "bach.bring.bride": "La Novia",
+    "bach.bring.party": "El Grupo",
+    "bach.bride.outfit.title": "Outfit o Traje de Bano Blanco",
+    "bach.bride.outfit.text":
+      "Traje de bano blanco, cover-up o conjunto combinado. Necesitas destacar en cada foto — y lo haras.",
+    "bach.bride.sunglasses.title": "Banda de Novia y Lentes de Sol",
+    "bach.bride.sunglasses.text":
+      'Banda de "Bride", tiara o lentes de sol personalizados. Entre mas extra, mejores las fotos.',
+    "bach.bride.phone.title": "Funda Impermeable para Telefono",
+    "bach.bride.phone.text":
+      "Querras tu telefono contigo todo el dia. Una funda impermeable lo mantiene seguro en el sandbar y durante los momentos de splash.",
+    "bach.bride.touch.title": "Kit de Retoque",
+    "bach.bride.touch.text":
+      "Mascara resistente al agua, lip gloss y shampoo seco. El aire salado y el sol hacen lo suyo — un retoque rapido te mantiene lista para la camara.",
+    "bach.party.matching.title": "Outfits Coordinados",
+    "bach.party.matching.text":
+      "Coordinen un color — rosa fuerte, negro o neon. Trajes de bano o cover-ups iguales hacen que las fotos grupales destaquen.",
+    "bach.party.sunscreen.title": "Bloqueador Solar (Reef-Safe)",
+    "bach.party.sunscreen.text":
+      "SPF 50+, preferiblemente reef-safe. Reaplicar cada 2 horas. El sol de Miami en el agua no es broma — confien en nosotros.",
+    "bach.party.props.title": "Props y Carteles para Fotos",
+    "bach.party.props.text":
+      'Banner de "Last Sail Before the Veil", koozies personalizados, lentes divertidos. Los props dan mucho juego en las fotos del yate. Sin globos, brillantina ni confeti.',
+    "bach.party.cash.title": "Efectivo e Identificacion",
+    "bach.party.cash.text":
+      "Trae tu ID para abordar y efectivo para propinas. La propina de la tripulacion es costumbre (18-20%) y muy apreciada.",
+    "bach.price.title": "Tamano de Grupo y Precios",
+    "bach.price.intro":
+      "Cada charter es privado — tu grupo, tu yate. Los precios escalan con el tamano del grupo y tipo de embarcacion.",
+    "bach.price.intimate.title": "Intimo",
+    "bach.price.intimate.size": "2-8 invitados",
+    "bach.price.intimate.price": "$3,500+",
+    "bach.price.party.title": "El Punto Ideal",
+    "bach.price.party.size": "8-15 invitados",
+    "bach.price.party.price": "$4,500+",
+    "bach.price.big.title": "Grupo Grande",
+    "bach.price.big.size": "16-25+ invitados",
+    "bach.price.big.price": "$6,000+",
+    "bach.price.perHour": "Minimo de charter 4 horas",
+    "bach.price.note":
+      "Todos los precios incluyen capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo, hieleras y copas. Los extras son adicionales. Cotizaciones personalizadas para multiples dias o solicitudes especiales — solo pregunta.",
+    "bach.tips.label": "De Nuestro Equipo",
+    "bach.tips.title": "Consejos de Sasha",
+    "bach.tips.tip1":
+      "Reserva el crucero al atardecer. Lo digo siempre porque es verdad — las fotos de hora dorada desde el agua son imbatibles, y el cambio de energia de la luz del dia a las luces de la ciudad es magico. Es nuestro itinerario #1 para despedidas por algo.",
+    "bach.tips.tip2":
+      "Coordinen outfits, pero mantenganlo comodo. La cubierta del yate puede ser resbalosa cuando esta mojada, asi que solo zapatos planos o descalzas. Olviden los tacones — confien en mi, no los van a extranar cuando empiece la musica.",
+    "bach.tips.tip3":
+      "Agreguen el saxofonista. He visto 200+ despedidas de soltera en charter, y los grupos que agregan sax en vivo siempre dicen que fue lo mejor. Algo de un saxofon sobre beats de house en mar abierto simplemente funciona.",
+    "bach.tips.tip4":
+      "Traigan sus propias bebidas y guarden el presupuesto para los extras. Nosotros proveemos hielo, hieleras y copas — asi que compren su champagne y rose en Total Wine antes de venir. Luego gasten en el chef de sushi o el fotografo.",
+    "bach.tips.tip5":
+      "Designen a una persona como contacto de reserva. Demasiadas cocineras en el chat grupal hace la planificacion mas dificil. Una persona habla con nosotros, recolecta el pago del grupo y comparte los detalles.",
+    "bach.midCta.title": "Lista para empezar a planificar?",
+    "bach.midCta.text":
+      "Yate privado, capitan licenciado, colchonetas flotantes, sistema de sonido y toda la costa de Miami como tu escenario. Dinos tu fecha y tamano de grupo — armaremos el charter de despedida perfecto para ti.",
+    "bach.midCta.btn": "Ver Paquetes de Despedida",
+    "bach.faq.title": "Preguntas Frecuentes",
+    "bach.faq.q1": "Cuanto cuesta una despedida de soltera en yate en Miami?",
+    "bach.faq.a1":
+      "Un charter privado de despedida con Emerald Eyes empieza en $3,500 por 4 horas. Eso incluye capitan licenciado USCG, tripulacion profesional, sistema de sonido premium, colchonetas flotantes, hielo, hieleras y copas. Extras populares como saxofonista en vivo ($350), chef de sushi ($500) o jet skis ($200) estan disponibles. La mayoria de los grupos gastan $4,000-$6,000 por una experiencia completa de 4-6 horas.",
+    "bach.faq.q2": "Cuantas personas caben en un yate de despedida?",
+    "bach.faq.a2":
+      "Nuestros yates acomodan grupos de 2 a 25+ invitados. El punto ideal para despedidas es 8-15 personas — suficiente para una gran fiesta, intimo para que todas disfruten el yate. Grupos de mas de 13 pueden requerir una embarcacion mas grande con precios ajustados.",
+    "bach.faq.q3": "Podemos traer nuestro propio alcohol al yate?",
+    "bach.faq.a3":
+      "Si. Florida permite contenedores abiertos en barcos, asi que trae tus propias bebidas. Proveemos hielo, hieleras y copas. Sin botellas de vidrio — usen latas o plastico. Tambien puedes agregar un paquete de champagne o servicio de botellas. El capitan debe mantenerse bajo el limite de 0.08% BAC.",
+    "bach.faq.q4": "Cual es la mejor epoca para una despedida en yate?",
+    "bach.faq.a4":
+      "Miami es destino todo el ano. Octubre a abril ofrece el clima mas comodo con baja humedad y mar calmo. Verano (junio-septiembre) es mas caliente pero trae menos multitudes y precios mas bajos. Los cruceros al atardecer son increibles todo el ano. Reserva 2-3 meses antes en temporada alta.",
+    "bach.faq.q5": "Que debemos usar en el yate?",
+    "bach.faq.a5":
+      "Trajes de bano con cover-ups es lo estandar. Muchos grupos coordinan trajes de bano iguales — blanco para la novia, un color para el grupo. Trae un cambio de ropa si van a salir despues. Solo zapatos planos o descalzas a bordo — sin tacones.",
+    "bach.faq.q6": "Por donde navega el yate?",
+    "bach.faq.a6":
+      "La ruta mas popular pasa por Star Island y las mansiones de celebridades en Millionaire's Row, luego ancla en Haulover Sandbar o Nixon Sandbar para nadar. Los cruceros al atardecer terminan con el skyline de Miami brillando en la hora dorada. Tu capitan puede personalizar la ruta.",
+    "bach.faq.q7": "Con cuanta anticipacion debemos reservar?",
+    "bach.faq.a7":
+      "Reserva 2-3 meses antes para temporada alta (diciembre-abril) y fines de semana festivos. Para verano y dias entre semana, 3-4 semanas generalmente es suficiente. Un deposito de $500 asegura tu fecha.",
+    "bach.faq.q8": "Podemos traer decoraciones al yate?",
+    "bach.faq.a8":
+      "Si — banners, bandas, props para fotos, arreglos florales y carteles son bienvenidos. Sin globos, brillantina ni confeti, ya que estan prohibidos para proteger las aguas de Miami. Tambien ofrecemos un extra de decoraciones personalizadas donde nuestro equipo se encarga del montaje antes de que llegues.",
+    "bach.related.title": "Explorar Mas",
+    "bach.related.intro": "Mas guias y experiencias de Emerald Eyes Miami.",
+    "bach.related.experience": "Experiencia Despedida en Yate",
+    "bach.related.haulover": "Guia de Haulover Sandbar",
+    "bach.related.sunset": "Experiencia Crucero al Atardecer",
+    "bach.related.about": "Sobre Emerald Eyes Miami",
+    "bach.share.title": "Comparte con Tu Grupo",
+    "bach.share.text":
+      "Envia esta guia al chat grupal. Todas tendran los detalles que necesitan — que traer, que usar y que esperar.",
+    "bach.final.title": "Esta es la despedida que ella merece.",
+    "bach.final.text":
+      "Yate privado. Capitan licenciado. El skyline de Miami, hora dorada y un sistema de sonido lo suficientemente fuerte para que todo el sandbar escuche. Esta es la celebracion de la que tu novia hablara por siempre.",
   },
 
   pt: {

@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Private Party Yacht Miami | Emerald Eyes Miami",
   description:
     "Your boat. Your rules. Your playlist. Birthdays, celebrations, and private yacht parties in Miami. Full sound system, bottle service, and a crew that sets the vibe. From $3,500.",
-  keywords: ["private party yacht Miami", "birthday yacht rental", "party boat Miami", "private boat charter"],
+  keywords: [
+    "private party yacht Miami",
+    "birthday yacht rental",
+    "party boat Miami",
+    "private boat charter",
+  ],
   alternates: {
     canonical: "/experiences/private-party-yacht-miami",
   },
@@ -26,7 +32,44 @@ export const metadata: Metadata = {
       "Throw the party of the year on a private yacht. DJ, bottle service, and Miami's skyline as your backdrop.",
     url: "/experiences/private-party-yacht-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/party.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Private party yacht in Miami — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Party Yacht Miami | Emerald Eyes Miami",
+    description:
+      "Throw the party of the year on a private yacht. DJ, bottle service, and Miami's skyline as your backdrop.",
+    images: ["/images/party.jpg"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Private Party Yacht Miami",
+  description:
+    "Birthdays, celebrations, and private yacht parties in Miami with full sound system, bottle service, and a crew that sets the vibe.",
+  touristType: "Birthdays, groups, celebrations, milestone events",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "3500",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/private-party-yacht-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/party.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -91,5 +134,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function PrivatePartyPage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

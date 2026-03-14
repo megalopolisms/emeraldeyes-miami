@@ -5,7 +5,9 @@ import {
   Anchor,
   BookOpen,
   Compass,
+  DollarSign,
   FileText,
+  Heart,
   ShieldCheck,
   Users,
   Waves,
@@ -169,6 +171,84 @@ export default function BlogListContent() {
               </h3>
               <p className="mt-4 text-base leading-relaxed text-white/60">
                 {t("blog.js.excerpt")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                <BookOpen className="h-4 w-4" />
+                {t("blog.readArticle")}
+              </span>
+            </Link>
+
+            {/* First Time Yacht Rental */}
+            <Link
+              href="/blog/first-time-yacht-rental-miami"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                  <BookOpen className="h-3.5 w-3.5" />
+                  {t("blog.cat.guides")}
+                </span>
+                <span className="text-xs text-white/40">
+                  March 14, 2026 &middot; {t("blog.ft.readTime")}
+                </span>
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl leading-snug text-white transition-colors group-hover:text-[--color-emerald] md:text-3xl">
+                {t("blog.ft.title")}
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-white/60">
+                {t("blog.ft.excerpt")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                <BookOpen className="h-4 w-4" />
+                {t("blog.readArticle")}
+              </span>
+            </Link>
+
+            {/* Yacht Charter Prices */}
+            <Link
+              href="/blog/miami-yacht-charter-prices"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                  <DollarSign className="h-3.5 w-3.5" />
+                  {t("blog.cat.guides")}
+                </span>
+                <span className="text-xs text-white/40">
+                  March 14, 2026 &middot; {t("blog.yp.readTime")}
+                </span>
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl leading-snug text-white transition-colors group-hover:text-[--color-emerald] md:text-3xl">
+                {t("blog.yp.title")}
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-white/60">
+                {t("blog.yp.excerpt")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                <BookOpen className="h-4 w-4" />
+                {t("blog.readArticle")}
+              </span>
+            </Link>
+
+            {/* Bachelorette Party */}
+            <Link
+              href="/blog/bachelorette-party-yacht-miami"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                  <Heart className="h-3.5 w-3.5" />
+                  {t("blog.cat.guides")}
+                </span>
+                <span className="text-xs text-white/40">
+                  March 14, 2026 &middot; {t("blog.bach.readTime")}
+                </span>
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl leading-snug text-white transition-colors group-hover:text-[--color-emerald] md:text-3xl">
+                {t("blog.bach.title")}
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-white/60">
+                {t("blog.bach.excerpt")}
               </p>
               <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
                 <BookOpen className="h-4 w-4" />

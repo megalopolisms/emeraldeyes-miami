@@ -17,7 +17,14 @@ export const metadata: Metadata = {
   title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
   description:
     "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay. Chat with us to build your perfect day on the water.",
-  keywords: ["yacht rental Miami", "North Miami yacht charter", "sunset cruise Miami", "private yacht party", "bachelorette yacht Miami", "boat rental Haulover"],
+  keywords: [
+    "yacht rental Miami",
+    "North Miami yacht charter",
+    "sunset cruise Miami",
+    "private yacht party",
+    "bachelorette yacht Miami",
+    "boat rental Haulover",
+  ],
   alternates: {
     canonical: "/",
   },
@@ -27,6 +34,21 @@ export const metadata: Metadata = {
       "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
     url: "/",
     type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Emerald Eyes Miami — Luxury yacht rental in North Miami",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
+    description:
+      "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 

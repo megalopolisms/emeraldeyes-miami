@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   title: "Blog | Emerald Eyes Miami — Yacht Charter Guides & Tips",
   description:
     "Guides, tips, and insider knowledge about yacht charters in Miami. Safety, regulations, destinations, and how to plan the perfect day on the water.",
+  keywords: [
+    "Miami yacht charter blog",
+    "Miami boating guide",
+    "yacht safety tips Miami",
+    "bareboat charter rules",
+    "Miami boat rental tips",
+  ],
   alternates: {
     canonical: "/blog",
   },
@@ -24,12 +31,21 @@ export const metadata: Metadata = {
       "Yacht charter guides, safety tips, and Miami boating insights from the Emerald Eyes team.",
     url: "/blog",
     type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Emerald Eyes Miami blog — yacht charter guides",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Blog | Emerald Eyes Miami",
     description:
       "Yacht charter guides, safety tips, and Miami boating insights from the Emerald Eyes team.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 

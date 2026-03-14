@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     type: "article",
     images: [
       {
-        url: "/images/sax.jpg",
+        url: "/images/beach.jpg",
         width: 784,
         height: 1168,
-        alt: "Haulover Sandbar yacht charter Miami",
+        alt: "Haulover Sandbar yacht charter Miami — Emerald Eyes Miami",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Haulover Sandbar by Yacht: The Complete Miami Charter Guide",
     description:
       "Everything you need to know about visiting Haulover Sandbar by private yacht charter in Miami.",
-    images: ["/images/sax.jpg"],
+    images: ["/images/beach.jpg"],
   },
 };
 

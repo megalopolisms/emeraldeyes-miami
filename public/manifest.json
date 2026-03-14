@@ -1,0 +1,17 @@
+{
+  "name": "Emerald Eyes Miami",
+  "short_name": "Emerald Eyes",
+  "description": "Luxury yacht charters in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0D1B2A",
+  "theme_color": "#2EC4A5",
+  "icons": [
+    {
+      "src": "/images/emeraldeyes.jpg",
+      "sizes": "784x1168",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}

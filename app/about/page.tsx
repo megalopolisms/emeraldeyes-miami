@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "About | Emerald Eyes Miami",
   description:
     "Founded in North Miami. Premium yacht experiences curated from the Straits of Florida. Luxury without pretension, every detail handled.",
+  keywords: [
+    "about Emerald Eyes Miami",
+    "Miami yacht company",
+    "North Miami boat rental",
+    "yacht crew Miami",
+    "luxury yacht experiences",
+  ],
   alternates: {
     canonical: "/about",
   },
@@ -24,6 +31,22 @@ export const metadata: Metadata = {
     description:
       "Built by people who live on the water. Luxury yacht experiences from North Miami, FL.",
     url: "/about",
+    type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "About Emerald Eyes Miami",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Emerald Eyes Miami",
+    description:
+      "Built by people who live on the water. Luxury yacht experiences from North Miami, FL.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 
@@ -54,17 +77,18 @@ const VALUES = [
 const aboutSchema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  "name": "About Emerald Eyes Miami",
-  "description": "Emerald Eyes Miami was founded in North Miami with a simple idea: luxury yacht experiences should feel effortless, not exclusive.",
-  "publisher": {
+  name: "About Emerald Eyes Miami",
+  description:
+    "Emerald Eyes Miami was founded in North Miami with a simple idea: luxury yacht experiences should feel effortless, not exclusive.",
+  publisher: {
     "@type": "LocalBusiness",
-    "name": "Emerald Eyes Miami",
-    "address": {
+    name: "Emerald Eyes Miami",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "North Miami",
-      "addressRegion": "FL"
-    }
-  }
+      addressLocality: "North Miami",
+      addressRegion: "FL",
+    },
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -72,7 +96,7 @@ const aboutSchema = {
 // ---------------------------------------------------------------------------
 export default function AboutPage() {
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/AboutPage">
       <Script
         id="about-schema"
         type="application/ld+json"

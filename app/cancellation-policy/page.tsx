@@ -15,6 +15,16 @@ export const metadata: Metadata = {
   title: "Cancellation Policy | Emerald Eyes Miami",
   description:
     "Cancellation and refund policy for Emerald Eyes Miami yacht charters. Full refunds for weather cancellations.",
+  alternates: {
+    canonical: "/cancellation-policy",
+  },
+  openGraph: {
+    title: "Cancellation Policy | Emerald Eyes Miami",
+    description:
+      "Cancellation and refund policy for Emerald Eyes Miami yacht charters. Full refunds for weather cancellations.",
+    url: "/cancellation-policy",
+    type: "website",
+  },
 };
 
 // ---------------------------------------------------------------------------

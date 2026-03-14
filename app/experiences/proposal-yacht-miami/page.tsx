@@ -6,6 +6,7 @@
 // =============================================================================
 
 import type { Metadata } from "next";
+import Script from "next/script";
 import ExperienceDetailPage from "@/components/experiences/ExperienceDetailPage";
 import type { ExperienceDetailData } from "@/components/experiences/ExperienceDetailPage";
 
@@ -16,7 +17,12 @@ export const metadata: Metadata = {
   title: "Proposal Yacht Miami | Emerald Eyes Miami",
   description:
     "She'll say yes. The ocean guarantees it. Rose petals, hidden photographer, champagne on ice, and a sunset that sets the stage. From $3,000.",
-  keywords: ["proposal yacht Miami", "engagement boat rental Miami", "romantic yacht proposal", "Miami proposal packages"],
+  keywords: [
+    "proposal yacht Miami",
+    "engagement boat rental Miami",
+    "romantic yacht proposal",
+    "Miami proposal packages",
+  ],
   alternates: {
     canonical: "/experiences/proposal-yacht-miami",
   },
@@ -26,7 +32,44 @@ export const metadata: Metadata = {
       "The perfect proposal on a private yacht. Rose petals, champagne, and Miami's skyline at sunset.",
     url: "/experiences/proposal-yacht-miami",
     type: "website",
+    images: [
+      {
+        url: "/images/proposal.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Proposal on a yacht at sunset Miami — Emerald Eyes Miami",
+      },
+    ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Proposal Yacht Miami | Emerald Eyes Miami",
+    description:
+      "The perfect proposal on a private yacht. Rose petals, champagne, and Miami's skyline at sunset.",
+    images: ["/images/proposal.jpg"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  name: "Proposal Yacht Miami",
+  description:
+    "Rose petals, hidden photographer, champagne on ice, and a sunset that sets the stage. We've thought of everything.",
+  touristType: "Couples, proposals, anniversaries, romantic celebrations",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "Emerald Eyes Miami",
+    url: "https://emeraldeyesmiami.com",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "3000",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
+    url: "https://emeraldeyesmiami.com/experiences/proposal-yacht-miami",
+  },
+  image: "https://emeraldeyesmiami.com/images/proposal.jpg",
 };
 
 // ---------------------------------------------------------------------------
@@ -91,5 +134,14 @@ const data: ExperienceDetailData = {
 // Page Component
 // ---------------------------------------------------------------------------
 export default function ProposalYachtPage() {
-  return <ExperienceDetailPage data={data} />;
+  return (
+    <>
+      <Script
+        id="service-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ExperienceDetailPage data={data} />
+    </>
+  );
 }

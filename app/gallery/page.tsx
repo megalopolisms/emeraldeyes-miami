@@ -15,10 +15,37 @@ export const metadata: Metadata = {
   title: "Gallery | Emerald Eyes Miami",
   description:
     "See what's waiting for you on the water. Sunset cruises, champagne setups, sandbar vibes, and celebrations on private yachts in Miami.",
+  keywords: [
+    "Miami yacht gallery",
+    "yacht interior photos Miami",
+    "sunset cruise pictures",
+    "yacht party images",
+    "boat rental gallery",
+  ],
+  alternates: {
+    canonical: "/gallery",
+  },
   openGraph: {
     title: "Photo Gallery | Emerald Eyes Miami",
     description:
       "Golden hour, champagne, ocean views, and Miami's skyline. See what your charter will look like.",
+    url: "/gallery",
+    type: "website",
+    images: [
+      {
+        url: "/images/emeraldeyes.jpg",
+        width: 784,
+        height: 1168,
+        alt: "Emerald Eyes Miami yacht charter gallery",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Photo Gallery | Emerald Eyes Miami",
+    description:
+      "Golden hour, champagne, ocean views, and Miami's skyline. See what your charter will look like.",
+    images: ["/images/emeraldeyes.jpg"],
   },
 };
 
@@ -93,7 +120,7 @@ const GALLERY_ITEMS = [
 // ---------------------------------------------------------------------------
 export default function GalleryPage() {
   return (
-    <main>
+    <main itemScope itemType="http://schema.org/ImageGallery">
       {/* Hero */}
       <section className="relative flex items-center justify-center min-h-[40vh] px-6 py-28 bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
         <div className="text-center max-w-3xl mx-auto">
