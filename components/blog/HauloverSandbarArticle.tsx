@@ -240,8 +240,8 @@ export default function HauloverSandbarArticle() {
             <div className="relative mx-auto w-full max-w-md">
               <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_30px_80px_rgba(0,0,0,0.32)]">
                 <Image
-                  src={asset("/images/sax.jpg")}
-                  alt="Private yacht at Haulover Sandbar Miami with live saxophone"
+                  src={asset("/images/beach.jpg")}
+                  alt="Haulover Sandbar beach scene — Emerald Eyes Miami"
                   width={784}
                   height={1168}
                   sizes="(max-width: 768px) 100vw, 448px"
@@ -779,8 +779,8 @@ export default function HauloverSandbarArticle() {
       {/* ── Final CTA ────────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
         <Image
-          src={asset("/images/sax.jpg")}
-          alt="Live sax on yacht at Haulover Sandbar — Emerald Eyes Miami"
+          src={asset("/images/beach.jpg")}
+          alt="Beach view at Haulover Sandbar — Emerald Eyes Miami"
           fill
           className="object-cover object-bottom"
         />
