@@ -36,7 +36,7 @@ export default function BlogListContent() {
   const PostIcon = POST.icon;
 
   return (
-    <main>
+    <main itemScope itemType="https://schema.org/Blog">
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0"
@@ -45,13 +45,13 @@ export default function BlogListContent() {
               "radial-gradient(circle at top left, rgba(46, 196, 165, 0.18), transparent 32%), radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.14), transparent 28%), linear-gradient(180deg, #0d1b2a 0%, #132436 100%)",
           }}
         />
-        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-28 md:px-6 md:pb-24 md:pt-36">
-          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+        <div className="relative mx-auto max-w-6xl px-5 pb-14 pt-20 md:px-6 md:pb-24 md:pt-36">
+          <div className="grid gap-6 md:gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div className="max-w-xl">
               <span className="inline-flex items-center rounded-full border border-[--color-gold]/25 bg-[--color-gold]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
                 {t("blog.featured")}
               </span>
-              <h1 className="mt-6 font-[family-name:var(--font-heading)] text-5xl leading-none text-white md:text-6xl">
+              <h1 className="mt-6 font-[family-name:var(--font-heading)] text-3xl leading-none text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 {t("blog.title")}
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-white/68">
@@ -74,7 +74,7 @@ export default function BlogListContent() {
               href={`/blog/${POST.slug}`}
               className="group block rounded-[2rem] border border-white/10 bg-white/[0.04] p-1 shadow-[0_30px_90px_rgba(0,0,0,0.32)] transition-all duration-300 hover:-translate-y-1 hover:border-[--color-emerald]/35"
             >
-              <div className="rounded-[calc(2rem-1px)] border border-white/6 bg-[--color-navy-light]/80 p-8 md:p-10 backdrop-blur">
+              <div className="rounded-[calc(2rem-1px)] border border-white/6 bg-[--color-navy-light]/80 p-5 sm:p-6 md:p-8 lg:p-10 backdrop-blur">
                 <div className="flex flex-wrap items-center gap-3 text-sm">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
                     <PostIcon className="h-3.5 w-3.5" />
@@ -85,7 +85,7 @@ export default function BlogListContent() {
                   </span>
                 </div>
 
-                <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl leading-tight text-white transition-colors group-hover:text-[--color-emerald] md:text-4xl">
+                <h2 className="mt-4 font-[family-name:var(--font-heading)] text-2xl leading-tight text-white transition-colors group-hover:text-[--color-emerald] sm:mt-6 sm:text-3xl md:text-4xl">
                   {t(POST.titleKey)}
                 </h2>
                 <p className="mt-5 text-base leading-relaxed text-white/62">
@@ -127,7 +127,7 @@ export default function BlogListContent() {
             {/* Haulover Sandbar */}
             <Link
               href="/blog/haulover-sandbar-yacht-charter-miami"
-              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
             >
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
@@ -153,7 +153,7 @@ export default function BlogListContent() {
             {/* Jet Ski License */}
             <Link
               href="/blog/jet-ski-license-miami"
-              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
             >
               <div className="flex flex-wrap items-center gap-3 mb-5">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
@@ -183,7 +183,7 @@ export default function BlogListContent() {
         <div className="mx-auto max-w-3xl py-8 text-center">
           <div className="mb-4 flex items-center justify-center gap-3">
             <Anchor className="h-6 w-6 text-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl">
               {t("blog.ctaTitle")}
             </h2>
           </div>

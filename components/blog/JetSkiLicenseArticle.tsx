@@ -115,12 +115,12 @@ export default function JetSkiLicenseArticle() {
   const { t } = useLanguage();
 
   return (
-    <main>
+    <article itemScope itemType="http://schema.org/Article">
       {/* ================================================================= */}
       {/* HERO — split layout: title LEFT, lifestyle photo RIGHT            */}
       {/* ================================================================= */}
       <section className="bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
-        <div className="mx-auto max-w-5xl px-5 py-16 md:py-24 grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
+        <div className="mx-auto max-w-5xl px-5 pt-20 pb-12 md:py-24 grid items-center gap-6 md:gap-12 md:grid-cols-[1.3fr_1fr]">
           {/* Title + metadata */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -133,16 +133,34 @@ export default function JetSkiLicenseArticle() {
             >
               &larr; {t("blog.backToBlog")}
             </Link>
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3 mb-5 flex-wrap">
               <span className="inline-flex items-center gap-1.5 text-[--color-emerald] bg-[--color-emerald]/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-widest">
                 <Waves className="w-3.5 h-3.5" />
                 {t("blog.cat.guides")}
               </span>
               <span className="text-xs text-white/50">
-                March 14, 2026 &middot; {t("blog.js.readTime")}
+                <time itemProp="datePublished" dateTime="2026-03-14">
+                  March 14, 2026
+                </time>{" "}
+                &middot; {t("blog.js.readTime")}
+              </span>
+              <span
+                className="text-xs text-white/50 border-l border-white/20 pl-3 ml-1"
+                itemProp="author"
+                itemScope
+                itemType="http://schema.org/Person"
+              >
+                By{" "}
+                <span itemProp="name" className="font-semibold text-white/80">
+                  Sasha
+                </span>
+                , Director of Operations
               </span>
             </div>
-            <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6">
+            <h1
+              itemProp="headline"
+              className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-6"
+            >
               {t("js.heroTitle")}
             </h1>
             <p className="text-white/60 text-base leading-relaxed max-w-lg">
@@ -279,7 +297,7 @@ export default function JetSkiLicenseArticle() {
       <Section>
         <div className="mb-12 text-center">
           <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             {t("js.cert.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/50 text-base leading-relaxed">
@@ -315,17 +333,17 @@ export default function JetSkiLicenseArticle() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}
-              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-8 text-center"
+              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 text-center"
             >
               <div
-                className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full mb-5 ${
+                className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full mb-4 sm:h-16 sm:w-16 sm:mb-5 ${
                   card.accent === "gold"
                     ? "border border-[--color-gold]/30 bg-[--color-gold]/10"
                     : "border border-[--color-emerald]/30 bg-[--color-emerald]/10"
                 }`}
               >
                 <card.icon
-                  className={`w-7 h-7 ${
+                  className={`w-5 h-5 sm:w-7 sm:h-7 ${
                     card.accent === "gold"
                       ? "text-[--color-gold]"
                       : "text-[--color-emerald]"
@@ -350,7 +368,7 @@ export default function JetSkiLicenseArticle() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
               {t("js.checklist.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-md text-white/45 text-sm leading-relaxed">
@@ -392,7 +410,7 @@ export default function JetSkiLicenseArticle() {
       <Section>
         <div className="mb-12 text-center">
           <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+          <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             {t("js.rules.title")}
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-white/50 text-base leading-relaxed">
@@ -409,17 +427,17 @@ export default function JetSkiLicenseArticle() {
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}
-              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-8 text-center"
+              className="rounded-xl border border-white/5 bg-[--color-navy-light]/60 p-5 sm:p-6 md:p-8 text-center"
             >
               <div
-                className={`mx-auto flex h-16 w-16 items-center justify-center rounded-full mb-5 ${
+                className={`mx-auto flex h-12 w-12 items-center justify-center rounded-full mb-4 sm:h-16 sm:w-16 sm:mb-5 ${
                   card.accent === "gold"
                     ? "border border-[--color-gold]/30 bg-[--color-gold]/10"
                     : "border border-[--color-emerald]/30 bg-[--color-emerald]/10"
                 }`}
               >
                 <card.icon
-                  className={`w-7 h-7 ${
+                  className={`w-5 h-5 sm:w-7 sm:h-7 ${
                     card.accent === "gold"
                       ? "text-[--color-gold]"
                       : "text-[--color-emerald]"
@@ -494,7 +512,7 @@ export default function JetSkiLicenseArticle() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
               {t("js.spots.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-md text-white/45 text-sm leading-relaxed">
@@ -637,20 +655,20 @@ export default function JetSkiLicenseArticle() {
             custom={0}
           >
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
               {t("js.safety.title")}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/75 max-w-2xl mx-auto">
               {t("js.safety.p1")}
             </p>
-            <div className="mt-8 grid grid-cols-3 gap-6">
+            <div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6">
               {[
                 { num: "#1", labelKey: "js.safety.stat1" },
                 { num: "69%", labelKey: "js.safety.stat2" },
                 { num: "$9", labelKey: "js.safety.stat3" },
               ].map((stat) => (
                 <div key={stat.num}>
-                  <p className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl text-[--color-emerald] font-bold">
+                  <p className="font-[family-name:var(--font-heading)] text-2xl text-[--color-emerald] font-bold sm:text-3xl md:text-4xl">
                     {stat.num}
                   </p>
                   <p className="text-white/50 text-xs mt-1">
@@ -673,7 +691,7 @@ export default function JetSkiLicenseArticle() {
         <div className="max-w-4xl mx-auto">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl font-bold text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl font-bold text-white sm:text-4xl md:text-5xl">
               {t("js.faq.title")}
             </h2>
           </div>
@@ -797,7 +815,7 @@ export default function JetSkiLicenseArticle() {
           className="object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/80 via-[--color-navy]/50 to-[--color-navy]/30" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
+        <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 text-center md:px-6 md:py-28">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -805,8 +823,8 @@ export default function JetSkiLicenseArticle() {
             variants={fadeUp}
             custom={0}
           >
-            <Anchor className="w-12 h-12 text-[--color-emerald] mx-auto mb-5 drop-shadow-lg" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl text-white mb-5 drop-shadow-lg">
+            <Anchor className="w-10 h-10 text-[--color-emerald] mx-auto mb-5 drop-shadow-lg md:w-12 md:h-12" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl sm:text-3xl md:text-5xl text-white mb-5 drop-shadow-lg">
               {t("js.cta.title")}
             </h2>
             <p className="text-white/90 text-lg mb-10 max-w-xl mx-auto leading-relaxed drop-shadow-md">
@@ -823,6 +841,6 @@ export default function JetSkiLicenseArticle() {
           </motion.div>
         </div>
       </section>
-    </main>
+    </article>
   );
 }

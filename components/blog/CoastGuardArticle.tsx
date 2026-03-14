@@ -134,7 +134,7 @@ export default function CoastGuardArticle() {
               "radial-gradient(circle at top left, rgba(46, 196, 165, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.14), transparent 28%), linear-gradient(180deg, #0d1b2a 0%, #132436 100%)",
           }}
         />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 pb-16 pt-28 md:px-6 md:pb-20 md:pt-36 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+        <div className="relative mx-auto grid max-w-6xl gap-6 px-5 pb-12 pt-20 md:gap-10 md:px-6 md:pb-20 md:pt-36 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
           <div className="max-w-2xl">
             <Link
               href="/blog"
@@ -151,7 +151,7 @@ export default function CoastGuardArticle() {
                 March 13, 2026 &middot; {t("blog.cg.readTime")}
               </span>
             </div>
-            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-4xl leading-tight text-white md:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-2xl leading-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
               {t("cg.heroTitle")}
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-white/72">
@@ -214,7 +214,10 @@ export default function CoastGuardArticle() {
         </div>
       </section>
 
-      <Section dark className="border-y border-white/5 bg-[--color-navy-light]/60">
+      <Section
+        dark
+        className="border-y border-white/5 bg-[--color-navy-light]/60"
+      >
         <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
           {[
             {
@@ -251,9 +254,9 @@ export default function CoastGuardArticle() {
 
       <Section id="guide" className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
-          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-8 md:p-10">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8 lg:p-10">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("cg.quick.title")}
             </h2>
             <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/70">
@@ -302,7 +305,7 @@ export default function CoastGuardArticle() {
       </Section>
 
       <Section id="basics" dark className="scroll-mt-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_26px_70px_rgba(0,0,0,0.26)]">
               <Image
@@ -352,7 +355,7 @@ export default function CoastGuardArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
               {t("cg.s3.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
@@ -419,7 +422,9 @@ export default function CoastGuardArticle() {
                       },
                     ].map((item) => (
                       <div key={item.count} className="flex items-start gap-2">
-                        <span className={`${item.color} shrink-0 text-xs font-bold`}>
+                        <span
+                          className={`${item.color} shrink-0 text-xs font-bold`}
+                        >
                           {t(item.count)}
                         </span>
                         <p className="text-xs leading-relaxed text-white/50">
@@ -439,7 +444,7 @@ export default function CoastGuardArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
               {t("cg.equip.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
@@ -472,7 +477,7 @@ export default function CoastGuardArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-4xl text-white md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
               {t("cg.rules.title")}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-white/50">
@@ -521,7 +526,7 @@ export default function CoastGuardArticle() {
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
           <div
             id="pass"
-            className="scroll-mt-28 rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8"
+            className="scroll-mt-28 rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
             <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
@@ -549,7 +554,7 @@ export default function CoastGuardArticle() {
 
           <div
             id="red-flags"
-            className="scroll-mt-28 rounded-[2rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-8"
+            className="scroll-mt-28 rounded-[2rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
             <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold] md:text-4xl">
@@ -578,7 +583,7 @@ export default function CoastGuardArticle() {
       </Section>
 
       <Section id="client" className="scroll-mt-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-2xl">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
@@ -619,9 +624,9 @@ export default function CoastGuardArticle() {
 
       <Section id="references" dark className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold]">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold] sm:text-3xl">
               {t("cg.ref.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -642,9 +647,9 @@ export default function CoastGuardArticle() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-8">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl">
               {t("cg.related.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -675,9 +680,9 @@ export default function CoastGuardArticle() {
           className="object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/85 via-[--color-navy]/55 to-[--color-navy]/35" />
-        <div className="relative z-10 mx-auto max-w-3xl px-6 py-28 text-center">
-          <Anchor className="mx-auto mb-5 h-12 w-12 text-[--color-emerald] drop-shadow-lg" />
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white drop-shadow-lg md:text-5xl">
+        <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 text-center md:px-6 md:py-28">
+          <Anchor className="mx-auto mb-5 h-10 w-10 text-[--color-emerald] drop-shadow-lg md:h-12 md:w-12" />
+          <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white drop-shadow-lg sm:text-3xl md:text-5xl">
             {t("cg.cta.title")}
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/88 drop-shadow-md">
