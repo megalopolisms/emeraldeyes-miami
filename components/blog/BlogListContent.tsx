@@ -1,137 +1,196 @@
-// =============================================================================
-// EMERALD EYES MIAMI — Blog Listing Content (Client Component)
-// =============================================================================
-// Animated blog listing with i18n support. Imported by app/blog/page.tsx.
-// =============================================================================
-
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { BookOpen, ShieldCheck, Anchor } from "lucide-react";
+import {
+  Anchor,
+  BookOpen,
+  Compass,
+  FileText,
+  ShieldCheck,
+  Users,
+  Waves,
+} from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
 import { useLanguage } from "@/lib/language-context";
 
-// ---------------------------------------------------------------------------
-// Animation Variant
-// ---------------------------------------------------------------------------
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
-  }),
+const POST = {
+  slug: "coast-guard-inspection-bareboat-charter",
+  titleKey: "blog.cg.title",
+  excerptKey: "blog.cg.excerpt",
+  date: "March 13, 2026",
+  readTimeKey: "blog.cg.readTime",
+  categoryKey: "blog.cat.safety",
+  icon: ShieldCheck,
 };
 
-// ---------------------------------------------------------------------------
-// Posts Data
-// ---------------------------------------------------------------------------
-const POSTS = [
-  {
-    slug: "coast-guard-inspection-bareboat-charter",
-    titleKey: "blog.cg.title",
-    excerptKey: "blog.cg.excerpt",
-    date: "March 13, 2026",
-    readTimeKey: "blog.cg.readTime",
-    categoryKey: "blog.cat.safety",
-    icon: ShieldCheck,
-  },
+const FEATURE_POINTS = [
+  { icon: Users, titleKey: "cg.step2.title" },
+  { icon: FileText, titleKey: "cg.step3.title" },
+  { icon: ShieldCheck, titleKey: "cg.step6.title" },
+  { icon: Anchor, titleKey: "cg.pass.title" },
 ];
 
-// ---------------------------------------------------------------------------
-// Component
-// ---------------------------------------------------------------------------
 export default function BlogListContent() {
   const { t } = useLanguage();
+  const PostIcon = POST.icon;
 
   return (
     <main>
-      {/* Hero */}
-      <section className="relative flex items-center justify-center min-h-[45vh] px-6 py-28 bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-          <h1 className="font-[family-name:var(--font-heading)] text-5xl md:text-6xl text-white mb-4">
-            {t("blog.title")}
-          </h1>
-          <p className="text-white/60 text-lg max-w-xl mx-auto">
-            {t("blog.subtitle")}
-          </p>
-        </motion.div>
+      <section className="relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(circle at top left, rgba(46, 196, 165, 0.18), transparent 32%), radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.14), transparent 28%), linear-gradient(180deg, #0d1b2a 0%, #132436 100%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-6xl px-5 pb-20 pt-28 md:px-6 md:pb-24 md:pt-36">
+          <div className="grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
+            <div className="max-w-xl">
+              <span className="inline-flex items-center rounded-full border border-[--color-gold]/25 bg-[--color-gold]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+                {t("blog.featured")}
+              </span>
+              <h1 className="mt-6 font-[family-name:var(--font-heading)] text-5xl leading-none text-white md:text-6xl">
+                {t("blog.title")}
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed text-white/68">
+                {t("blog.subtitle")}
+              </p>
+              <p className="mt-4 text-base leading-relaxed text-white/52">
+                {t("blog.cornerstone")}
+              </p>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Button href={`/blog/${POST.slug}`} size="lg">
+                  {t("blog.readArticle")}
+                </Button>
+                <Button href="/book" variant="secondary" size="lg">
+                  {t("blog.ctaBook")}
+                </Button>
+              </div>
+            </div>
+
+            <Link
+              href={`/blog/${POST.slug}`}
+              className="group block rounded-[2rem] border border-white/10 bg-white/[0.04] p-1 shadow-[0_30px_90px_rgba(0,0,0,0.32)] transition-all duration-300 hover:-translate-y-1 hover:border-[--color-emerald]/35"
+            >
+              <div className="rounded-[calc(2rem-1px)] border border-white/6 bg-[--color-navy-light]/80 p-8 md:p-10 backdrop-blur">
+                <div className="flex flex-wrap items-center gap-3 text-sm">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                    <PostIcon className="h-3.5 w-3.5" />
+                    {t(POST.categoryKey)}
+                  </span>
+                  <span className="text-white/40">
+                    {POST.date} &middot; {t(POST.readTimeKey)}
+                  </span>
+                </div>
+
+                <h2 className="mt-6 font-[family-name:var(--font-heading)] text-3xl leading-tight text-white transition-colors group-hover:text-[--color-emerald] md:text-4xl">
+                  {t(POST.titleKey)}
+                </h2>
+                <p className="mt-5 text-base leading-relaxed text-white/62">
+                  {t(POST.excerptKey)}
+                </p>
+
+                <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                  {FEATURE_POINTS.map((point) => (
+                    <div
+                      key={point.titleKey}
+                      className="rounded-2xl border border-white/8 bg-[--color-navy]/80 p-4 transition-colors group-hover:border-[--color-emerald]/20"
+                    >
+                      <point.icon className="h-5 w-5 text-[--color-emerald]" />
+                      <p className="mt-3 text-sm leading-relaxed text-white/72">
+                        {t(point.titleKey)}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                  <BookOpen className="h-4 w-4" />
+                  {t("blog.readArticle")}
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* Posts Grid */}
+      {/* More Articles */}
       <Section>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 gap-8">
-          {POSTS.map((post, i) => {
-            const Icon = post.icon;
-            return (
-              <motion.div
-                key={post.slug}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-40px" }}
-                variants={fadeUp}
-              >
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group block bg-[--color-navy-light] rounded-2xl border border-white/10 hover:border-[--color-emerald]/30 transition-all duration-300 overflow-hidden"
-                >
-                  <div className="p-8 md:p-10">
-                    <div className="flex items-center gap-3 mb-5">
-                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald] bg-[--color-emerald]/10 px-3 py-1.5 rounded-full">
-                        <Icon className="w-3.5 h-3.5" />
-                        {t(post.categoryKey)}
-                      </span>
-                      <span className="text-xs text-white/40">
-                        {post.date} &middot; {t(post.readTimeKey)}
-                      </span>
-                    </div>
-                    <h2 className="font-[family-name:var(--font-heading)] text-2xl md:text-3xl text-white group-hover:text-[--color-emerald] transition-colors mb-4 leading-snug">
-                      {t(post.titleKey)}
-                    </h2>
-                    <p className="text-white/60 text-base leading-relaxed mb-6">
-                      {t(post.excerptKey)}
-                    </p>
-                    <span className="inline-flex items-center gap-2 text-[--color-emerald] text-sm font-semibold group-hover:underline underline-offset-4">
-                      <BookOpen className="w-4 h-4" />
-                      {t("blog.readArticle")}
-                    </span>
-                  </div>
-                </Link>
-              </motion.div>
-            );
-          })}
+        <div className="mx-auto max-w-4xl">
+          <h2 className="mb-8 font-[family-name:var(--font-heading)] text-3xl text-white">
+            {t("blog.moreArticles")}
+          </h2>
+
+          <div className="space-y-5">
+            {/* Haulover Sandbar */}
+            <Link
+              href="/blog/haulover-sandbar-yacht-charter-miami"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                  <Compass className="h-3.5 w-3.5" />
+                  {t("blog.cat.destinations")}
+                </span>
+                <span className="text-xs text-white/40">
+                  March 14, 2026 &middot; {t("blog.hs.readTime")}
+                </span>
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl leading-snug text-white transition-colors group-hover:text-[--color-emerald] md:text-3xl">
+                {t("blog.hs.title")}
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-white/60">
+                {t("blog.hs.excerpt")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                <BookOpen className="h-4 w-4" />
+                {t("blog.readArticle")}
+              </span>
+            </Link>
+
+            {/* Jet Ski License */}
+            <Link
+              href="/blog/jet-ski-license-miami"
+              className="group block rounded-2xl border border-white/10 bg-[--color-navy-light]/60 p-8 transition-all duration-300 hover:border-[--color-emerald]/30"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-[--color-emerald]/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                  <Waves className="h-3.5 w-3.5" />
+                  {t("blog.cat.guides")}
+                </span>
+                <span className="text-xs text-white/40">
+                  March 14, 2026 &middot; {t("blog.js.readTime")}
+                </span>
+              </div>
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl leading-snug text-white transition-colors group-hover:text-[--color-emerald] md:text-3xl">
+                {t("blog.js.title")}
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-white/60">
+                {t("blog.js.excerpt")}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] group-hover:underline underline-offset-4">
+                <BookOpen className="h-4 w-4" />
+                {t("blog.readArticle")}
+              </span>
+            </Link>
+          </div>
         </div>
       </Section>
 
-      {/* CTA Strip */}
       <Section dark>
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          custom={0}
-          className="text-center py-8"
-        >
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <Anchor className="w-6 h-6 text-[--color-emerald]" />
+        <div className="mx-auto max-w-3xl py-8 text-center">
+          <div className="mb-4 flex items-center justify-center gap-3">
+            <Anchor className="h-6 w-6 text-[--color-emerald]" />
             <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white">
               {t("blog.ctaTitle")}
             </h2>
           </div>
-          <p className="text-white/60 text-lg mb-8 max-w-xl mx-auto">
+          <p className="mx-auto mb-8 max-w-2xl text-lg leading-relaxed text-white/60">
             {t("blog.ctaText")}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/book" size="lg">
               {t("blog.ctaBook")}
             </Button>
@@ -139,7 +198,7 @@ export default function BlogListContent() {
               {t("blog.ctaExperiences")}
             </Button>
           </div>
-        </motion.div>
+        </div>
       </Section>
     </main>
   );
