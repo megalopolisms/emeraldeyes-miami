@@ -1,9 +1,5 @@
-# *
-User-agent: *
+User-Agent: *
 Allow: /
+Disallow: /api/
 
-# Host
-Host: https://emeraldeyesmiami.com
-
-# Sitemaps
 Sitemap: https://emeraldeyesmiami.com/sitemap.xml
