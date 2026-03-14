@@ -14,16 +14,20 @@ import BelowFold from "@/components/home/BelowFold";
 // SEO Metadata
 // ---------------------------------------------------------------------------
 export const metadata: Metadata = {
-  title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
+  title: "Miami Yacht Charters & Rentals | Emerald Eyes Miami",
   description:
-    "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay. Chat with us to build your perfect day on the water.",
+    "Book a luxury yacht charter in Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay. Chat with us to build your perfect day on the water.",
   keywords: [
     "yacht rental Miami",
-    "North Miami yacht charter",
+    "Miami yacht charters",
+    "boat rental Miami",
+    "luxury yacht rentals in Florida",
+    "party boat charters Miami",
+    "yacht rental Miami for party",
+    "Miami yacht rental with Captain",
     "sunset cruise Miami",
     "private yacht party",
     "bachelorette yacht Miami",
-    "boat rental Haulover",
   ],
   alternates: {
     canonical: "/",
@@ -38,9 +42,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",
+    title: "Miami Yacht Charters & Rentals | Emerald Eyes Miami",
     description:
-      "Book a luxury yacht charter in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
+      "Book a luxury yacht charter in Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate outings on Biscayne Bay.",
     url: "/",
     type: "website",
     images: [

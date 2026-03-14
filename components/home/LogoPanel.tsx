@@ -39,12 +39,11 @@ export default function LogoPanel() {
 
         <div className="mt-6 max-w-xl text-center">
           <h1 className="font-[family-name:var(--font-heading)] text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
-            Luxury Yacht Charters in North Miami
+            Miami Yacht Charters & Rentals
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
-            Private yacht rentals for sunset cruises, birthday parties,
-            bachelorettes, proposals, corporate outings, and Haulover Sandbar
-            days across Biscayne Bay.
+            Luxury yacht rentals for sunset cruises, birthday parties,
+            bachelorettes, and corporate events on Biscayne Bay.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">

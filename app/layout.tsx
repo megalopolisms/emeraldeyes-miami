@@ -40,9 +40,9 @@ const siteUrl = BUSINESS.siteUrl;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Emerald Eyes Miami | Luxury Yacht Rental",
+  title: "Miami Yacht Charters & Rentals | Emerald Eyes Miami",
   description:
-    "Premium yacht charters in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate charters on Biscayne Bay and beyond.",
+    "Premium yacht charters in Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate charters on Biscayne Bay and beyond.",
   alternates: {
     canonical: "/",
     languages: {
