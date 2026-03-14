@@ -5,12 +5,15 @@ import Image from "next/image";
 import {
   Anchor,
   Award,
+  Calendar,
   Camera,
   CheckCircle,
   ChevronRight,
   Clock,
+  CloudSun,
   Compass,
   Crown,
+  DollarSign,
   Gift,
   Heart,
   MapPin,
@@ -69,18 +72,24 @@ const ITINERARY_CARDS = [
   {
     titleKey: "bach.itin.morning.title",
     textKey: "bach.itin.morning.text",
+    scheduleKey: "bach.itin.morning.schedule",
+    timeKeys: ["bach.itin.morning.time", "bach.itin.morning.time2"],
     icon: Sun,
     accent: "emerald" as const,
   },
   {
     titleKey: "bach.itin.sunset.title",
     textKey: "bach.itin.sunset.text",
+    scheduleKey: "bach.itin.sunset.schedule",
+    timeKeys: ["bach.itin.sunset.time", "bach.itin.sunset.time2"],
     icon: Heart,
     accent: "gold" as const,
   },
   {
     titleKey: "bach.itin.evening.title",
     textKey: "bach.itin.evening.text",
+    scheduleKey: "bach.itin.evening.schedule",
+    timeKeys: ["bach.itin.evening.time", "bach.itin.evening.time2"],
     icon: Sparkles,
     accent: "emerald" as const,
   },
@@ -190,10 +199,49 @@ const RELATED_LINKS = [
     labelKey: "bach.related.haulover",
   },
   {
+    href: "/blog/miami-yacht-charter-prices",
+    labelKey: "bach.related.yachtPrices",
+  },
+  {
+    href: "/blog/first-time-yacht-rental-miami",
+    labelKey: "bach.related.firstTimer",
+  },
+  {
+    href: "/blog/coast-guard-inspection-bareboat-charter",
+    labelKey: "bach.related.coastGuard",
+  },
+  {
+    href: "/blog/jet-ski-license-miami",
+    labelKey: "bach.related.jetSki",
+  },
+  {
     href: "/experiences/sunset-cruise-miami",
     labelKey: "bach.related.sunset",
   },
   { href: "/about", labelKey: "bach.related.about" },
+];
+
+const CROSS_LINKS = [
+  {
+    href: "/blog/miami-yacht-charter-prices",
+    labelKey: "bach.crosslink.pricing",
+  },
+  {
+    href: "/blog/first-time-yacht-rental-miami",
+    labelKey: "bach.crosslink.firstTimer",
+  },
+  {
+    href: "/blog/haulover-sandbar-yacht-charter-miami",
+    labelKey: "bach.crosslink.haulover",
+  },
+  {
+    href: "/blog/coast-guard-inspection-bareboat-charter",
+    labelKey: "bach.crosslink.coastGuard",
+  },
+  {
+    href: "/blog/jet-ski-license-miami",
+    labelKey: "bach.crosslink.jetSki",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -213,7 +261,7 @@ export default function BacheloretteArticle() {
               "radial-gradient(circle at top left, rgba(46, 196, 165, 0.18), transparent 30%), radial-gradient(circle at bottom right, rgba(212, 168, 67, 0.14), transparent 28%), linear-gradient(180deg, #0d1b2a 0%, #132436 100%)",
           }}
         />
-        <div className="relative mx-auto grid max-w-6xl gap-6 px-5 pb-12 pt-20 md:gap-10 md:px-6 md:pb-20 md:pt-36 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+        <div className="relative mx-auto grid max-w-6xl gap-6 px-5 pb-12 pt-20 sm:px-6 md:gap-10 md:pb-20 md:pt-36 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
           <div className="max-w-2xl">
             <Link
               href="/blog"
@@ -239,10 +287,10 @@ export default function BacheloretteArticle() {
             >
               {t("bach.heroTitle")}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/72">
+            <p className="mt-6 text-base leading-relaxed text-white/72 sm:text-lg">
               {t("bach.intro1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/58">
+            <p className="mt-4 text-sm leading-relaxed text-white/58 sm:text-base">
               {t("bach.intro2")}
             </p>
             <div
@@ -259,7 +307,7 @@ export default function BacheloretteArticle() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#guide"
-                className="inline-flex items-center justify-center rounded-full border border-[--color-emerald] bg-transparent px-8 py-3.5 text-lg text-[--color-emerald] transition-colors hover:bg-[--color-emerald-dim]"
+                className="inline-flex items-center justify-center rounded-full border border-[--color-emerald] bg-transparent px-8 py-3.5 text-base text-[--color-emerald] transition-colors hover:bg-[--color-emerald-dim] sm:text-lg"
               >
                 {t("bach.guide.title")}
               </a>
@@ -287,7 +335,7 @@ export default function BacheloretteArticle() {
             </div>
 
             {/* Quick Facts Card */}
-            <div className="rounded-[2rem] border border-white/10 bg-[--color-navy]/80 p-6 shadow-[0_24px_60px_rgba(0,0,0,0.25)] backdrop-blur">
+            <div className="rounded-[2rem] border border-white/10 bg-[--color-navy]/80 p-5 shadow-[0_24px_60px_rgba(0,0,0,0.25)] backdrop-blur sm:p-6">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
                 {t("bach.quick.title")}
               </p>
@@ -317,7 +365,7 @@ export default function BacheloretteArticle() {
         dark
         className="border-y border-white/5 bg-[--color-navy-light]/60"
       >
-        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-3">
+        <div className="mx-auto grid max-w-5xl gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
             {
               icon: ShieldCheck,
@@ -359,7 +407,7 @@ export default function BacheloretteArticle() {
             className="scroll-mt-28 rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8 lg:p-10"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("bach.why.title")}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/75">
@@ -372,11 +420,20 @@ export default function BacheloretteArticle() {
               {t("bach.why.p3")}
             </p>
 
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {/* Cross-link: First Timer */}
+            <Link
+              href="/blog/first-time-yacht-rental-miami"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-[--color-emerald] transition-colors hover:text-[--color-emerald]/80 hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("bach.crosslink.firstTimer")}
+            </Link>
+
+            <div className="mt-8 grid gap-5 sm:grid-cols-2 md:grid-cols-3">
               {WHY_CARDS.map((card) => (
                 <div
                   key={card.titleKey}
-                  className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-6"
+                  className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6"
                 >
                   <card.icon
                     className={`h-8 w-8 ${
@@ -385,7 +442,7 @@ export default function BacheloretteArticle() {
                         : "text-[--color-emerald]"
                     }`}
                   />
-                  <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                     {t(card.titleKey)}
                   </h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/60">
@@ -407,10 +464,30 @@ export default function BacheloretteArticle() {
                 ),
               )}
             </div>
+
+            {/* "What It Costs" quick reference callout */}
+            <div className="mt-8 rounded-2xl border border-[--color-gold]/25 bg-[--color-gold]/5 p-5 sm:p-6">
+              <div className="flex items-center gap-2">
+                <DollarSign className="h-5 w-5 text-[--color-gold]" />
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+                  {t("bach.costRef.title")}
+                </p>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-white/70">
+                {t("bach.costRef.text")}
+              </p>
+              <Link
+                href="/blog/miami-yacht-charter-prices"
+                className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[--color-gold] transition-colors hover:text-[--color-gold]/80 hover:underline underline-offset-4"
+              >
+                <ChevronRight className="h-3.5 w-3.5" />
+                {t("bach.costRef.link")}
+              </Link>
+            </div>
           </div>
 
           {/* Sidebar Nav */}
-          <aside className="self-start rounded-[2rem] border border-white/8 bg-[--color-navy-light]/80 p-6 lg:sticky lg:top-24">
+          <aside className="self-start rounded-[2rem] border border-white/8 bg-[--color-navy-light]/80 p-5 sm:p-6 lg:sticky lg:top-24">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
               {t("bach.guide.title")}
             </p>
@@ -419,7 +496,7 @@ export default function BacheloretteArticle() {
                 <a
                   key={section.id}
                   href={`#${section.id}`}
-                  className="group flex items-center gap-3 rounded-2xl px-4 py-3 text-sm text-white/65 transition-colors hover:bg-[--color-navy]/80 hover:text-[--color-emerald]"
+                  className="group flex items-center gap-3 rounded-2xl px-3 py-2.5 text-sm text-white/65 transition-colors hover:bg-[--color-navy]/80 hover:text-[--color-emerald] sm:px-4 sm:py-3"
                 >
                   <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
                   {t(section.titleKey)}
@@ -453,7 +530,7 @@ export default function BacheloretteArticle() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
               {t("bach.category")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("bach.plan.title")}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-white/75">
@@ -479,19 +556,19 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.itin.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               {t("bach.itin.intro")}
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-10 md:grid-cols-3">
             {ITINERARY_CARDS.map((card) => (
               <div
                 key={card.titleKey}
-                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6"
               >
                 <card.icon
                   className={`h-8 w-8 ${
@@ -500,14 +577,46 @@ export default function BacheloretteArticle() {
                       : "text-[--color-emerald]"
                   }`}
                 />
-                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                   {t(card.titleKey)}
                 </h3>
+
+                {/* Specific timing milestones */}
+                <div className="mt-3 space-y-1.5">
+                  {card.timeKeys.map((tk) => (
+                    <div
+                      key={tk}
+                      className="flex items-center gap-2 text-xs font-medium text-[--color-emerald]"
+                    >
+                      <Clock className="h-3 w-3 shrink-0" />
+                      <span>{t(tk)}</span>
+                    </div>
+                  ))}
+                </div>
+
                 <p className="mt-3 text-sm leading-relaxed text-white/60">
                   {t(card.textKey)}
                 </p>
+
+                {/* Full schedule line */}
+                <div className="mt-3 rounded-xl border border-white/6 bg-[--color-navy]/50 px-3 py-2">
+                  <p className="text-xs leading-relaxed text-white/45">
+                    {t(card.scheduleKey)}
+                  </p>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Cross-link: Haulover Sandbar */}
+          <div className="mt-6 text-center">
+            <Link
+              href="/blog/haulover-sandbar-yacht-charter-miami"
+              className="inline-flex items-center gap-2 text-sm text-[--color-emerald] transition-colors hover:text-[--color-emerald]/80 hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("bach.crosslink.haulover")}
+            </Link>
           </div>
         </div>
       </Section>
@@ -517,7 +626,7 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.included.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
@@ -548,6 +657,17 @@ export default function BacheloretteArticle() {
               ))}
             </div>
           </div>
+
+          {/* Cross-link: Coast Guard */}
+          <div className="mt-6 text-center">
+            <Link
+              href="/blog/coast-guard-inspection-bareboat-charter"
+              className="inline-flex items-center gap-2 text-sm text-[--color-emerald] transition-colors hover:text-[--color-emerald]/80 hover:underline underline-offset-4"
+            >
+              <ShieldCheck className="h-3.5 w-3.5" />
+              {t("bach.crosslink.coastGuard")}
+            </Link>
+          </div>
         </div>
       </Section>
 
@@ -556,22 +676,22 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold] sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold] sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.addon.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
               {t("bach.addon.intro")}
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-10 sm:grid-cols-2 lg:grid-cols-3">
             {ADDON_ITEMS.map((addon) => (
               <div
                 key={addon.titleKey}
-                className="rounded-[1.5rem] border border-[--color-gold]/20 bg-[--color-navy-light]/55 p-6"
+                className="rounded-[1.5rem] border border-[--color-gold]/20 bg-[--color-navy-light]/55 p-5 sm:p-6"
               >
                 <addon.icon className="h-7 w-7 text-[--color-gold]" />
-                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                   {t(addon.titleKey)}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/60">
@@ -583,6 +703,17 @@ export default function BacheloretteArticle() {
               </div>
             ))}
           </div>
+
+          {/* Cross-link: Jet Ski License (relevant to Jet Ski add-on) */}
+          <div className="mt-6 text-center">
+            <Link
+              href="/blog/jet-ski-license-miami"
+              className="inline-flex items-center gap-2 text-sm text-[--color-gold] transition-colors hover:text-[--color-gold]/80 hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("bach.crosslink.jetSki")}
+            </Link>
+          </div>
         </div>
       </Section>
 
@@ -591,7 +722,7 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.bring.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
@@ -664,30 +795,30 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.price.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               {t("bach.price.intro")}
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:mt-10 md:grid-cols-3">
             {PRICING_TIERS.map((tier) => (
               <div
                 key={tier.titleKey}
-                className={`rounded-[1.75rem] border p-6 ${
+                className={`rounded-[1.75rem] border p-5 sm:p-6 ${
                   tier.accent === "gold"
                     ? "border-[--color-gold]/30 bg-[--color-gold]/5"
                     : "border-white/8 bg-[--color-navy-light]/55"
                 }`}
               >
-                <h3 className="font-[family-name:var(--font-heading)] text-xl text-white">
+                <h3 className="font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                   {t(tier.titleKey)}
                 </h3>
                 <p className="mt-2 text-sm text-white/55">{t(tier.sizeKey)}</p>
                 <p
-                  className={`mt-4 font-[family-name:var(--font-heading)] text-3xl ${
+                  className={`mt-4 font-[family-name:var(--font-heading)] text-2xl sm:text-3xl ${
                     tier.accent === "gold"
                       ? "text-[--color-gold]"
                       : "text-[--color-emerald]"
@@ -702,10 +833,34 @@ export default function BacheloretteArticle() {
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4 text-center">
+          {/* Per-Person Math callout */}
+          <div className="mt-6 rounded-2xl border border-[--color-gold]/25 bg-[--color-gold]/5 px-5 py-4 sm:px-6">
+            <div className="flex items-center gap-2">
+              <Users className="h-4 w-4 text-[--color-gold]" />
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[--color-gold]">
+                {t("bach.perPerson.label")}
+              </p>
+            </div>
+            <p className="mt-2 text-sm font-medium leading-relaxed text-white/80 sm:text-base">
+              {t("bach.perPerson.text")}
+            </p>
+          </div>
+
+          <div className="mt-4 rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4 text-center">
             <p className="text-sm font-medium text-[--color-emerald]">
               {t("bach.price.note")}
             </p>
+          </div>
+
+          {/* Cross-link: Full pricing guide */}
+          <div className="mt-4 text-center">
+            <Link
+              href="/blog/miami-yacht-charter-prices"
+              className="inline-flex items-center gap-2 text-sm text-[--color-emerald] transition-colors hover:text-[--color-emerald]/80 hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("bach.crosslink.pricing")}
+            </Link>
           </div>
         </div>
       </Section>
@@ -718,21 +873,23 @@ export default function BacheloretteArticle() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
               {t("bach.tips.label")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("bach.tips.title")}
             </h2>
             <div className="mt-6 space-y-5">
               {[
-                "bach.tips.tip1",
-                "bach.tips.tip2",
-                "bach.tips.tip3",
-                "bach.tips.tip4",
-                "bach.tips.tip5",
-              ].map((key) => (
-                <div key={key} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+                { key: "bach.tips.tip1", icon: CheckCircle },
+                { key: "bach.tips.tip2", icon: CheckCircle },
+                { key: "bach.tips.tip3", icon: CheckCircle },
+                { key: "bach.tips.tip4", icon: CheckCircle },
+                { key: "bach.tips.tip5", icon: CheckCircle },
+                { key: "bach.tips.tip6", icon: Calendar },
+                { key: "bach.tips.tip7", icon: CloudSun },
+              ].map((tip) => (
+                <div key={tip.key} className="flex items-start gap-3">
+                  <tip.icon className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
                   <p className="text-sm leading-relaxed text-white/65">
-                    {t(key)}
+                    {t(tip.key)}
                   </p>
                 </div>
               ))}
@@ -764,10 +921,10 @@ export default function BacheloretteArticle() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
               {t("bach.category")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("bach.midCta.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/72">
+            <p className="mt-6 text-sm leading-relaxed text-white/72 sm:text-base">
               {t("bach.midCta.text")}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -802,7 +959,7 @@ export default function BacheloretteArticle() {
         <div className="mx-auto max-w-3xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("bach.faq.title")}
             </h2>
           </div>
@@ -811,9 +968,9 @@ export default function BacheloretteArticle() {
             {FAQ_ITEMS.map((faq) => (
               <div
                 key={faq.qKey}
-                className="rounded-[1.5rem] border border-white/8 bg-[--color-navy]/70 p-6"
+                className="rounded-[1.5rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6"
               >
-                <h3 className="font-[family-name:var(--font-heading)] text-lg text-white">
+                <h3 className="font-[family-name:var(--font-heading)] text-base text-white sm:text-lg">
                   {t(faq.qKey)}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/65">
@@ -825,12 +982,35 @@ export default function BacheloretteArticle() {
         </div>
       </Section>
 
-      {/* -- Related + Links ---------------------------------------------- */}
+      {/* -- Cross-Links Strip -------------------------------------------- */}
       <Section className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-6 text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
+              {t("bach.related.title")}
+            </p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {CROSS_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="group flex items-center gap-3 rounded-2xl border border-white/8 bg-[--color-navy-light]/55 px-4 py-3.5 text-sm text-white/60 transition-all hover:border-[--color-emerald]/20 hover:bg-[--color-navy] hover:text-[--color-emerald] sm:px-5 sm:py-4"
+              >
+                <ChevronRight className="h-4 w-4 shrink-0 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
+                <span className="leading-snug">{t(link.labelKey)}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* -- Related + Links ---------------------------------------------- */}
+      <Section dark className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-xl text-white sm:text-2xl md:text-3xl lg:text-4xl">
               {t("bach.related.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -841,7 +1021,7 @@ export default function BacheloretteArticle() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="group flex items-center gap-3 rounded-2xl border border-transparent px-4 py-3 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy] hover:text-[--color-emerald]"
+                  className="group flex items-center gap-3 rounded-2xl border border-transparent px-3 py-2.5 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy] hover:text-[--color-emerald] sm:px-4 sm:py-3"
                 >
                   <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
                   {t(link.labelKey)}
@@ -852,7 +1032,7 @@ export default function BacheloretteArticle() {
 
           <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-xl text-white sm:text-2xl md:text-3xl">
               {t("bach.share.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -879,12 +1059,12 @@ export default function BacheloretteArticle() {
           className="object-cover object-bottom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/85 via-[--color-navy]/55 to-[--color-navy]/35" />
-        <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 text-center md:px-6 md:py-28">
+        <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 text-center sm:px-6 md:py-28">
           <Heart className="mx-auto mb-5 h-10 w-10 text-[--color-emerald] drop-shadow-lg md:h-12 md:w-12" />
           <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white drop-shadow-lg sm:text-3xl md:text-5xl">
             {t("bach.final.title")}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/88 drop-shadow-md">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/88 drop-shadow-md sm:text-lg">
             {t("bach.final.text")}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

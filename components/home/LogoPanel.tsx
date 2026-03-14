@@ -8,6 +8,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { asset } from "@/lib/constants";
 
@@ -21,7 +22,7 @@ export default function LogoPanel() {
       {/* Logo with Entrance Animation                                      */}
       {/* ----------------------------------------------------------------- */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
+        initial={false}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex flex-col items-center"
@@ -35,6 +36,32 @@ export default function LogoPanel() {
           priority
           className="h-auto w-72 object-contain sm:w-80 md:w-[22rem] lg:w-[28rem] xl:w-[32rem]"
         />
+
+        <div className="mt-6 max-w-xl text-center">
+          <h1 className="font-[family-name:var(--font-heading)] text-3xl leading-tight text-white sm:text-4xl lg:text-5xl">
+            Luxury Yacht Charters in North Miami
+          </h1>
+          <p className="mt-4 text-sm leading-relaxed text-white/70 sm:text-base">
+            Private yacht rentals for sunset cruises, birthday parties,
+            bachelorettes, proposals, corporate outings, and Haulover Sandbar
+            days across Biscayne Bay.
+          </p>
+
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <Link
+              href="/experiences"
+              className="rounded-full border border-[--color-emerald]/35 bg-[--color-emerald]/12 px-4 py-2 text-sm font-semibold text-[--color-emerald] transition-colors hover:bg-[--color-emerald]/20"
+            >
+              Explore Experiences
+            </Link>
+            <Link
+              href="/blog"
+              className="rounded-full border border-white/12 px-4 py-2 text-sm font-semibold text-white/80 transition-colors hover:border-white/20 hover:bg-white/6 hover:text-white"
+            >
+              Read Charter Guides
+            </Link>
+          </div>
+        </div>
       </motion.div>
 
       {/* ----------------------------------------------------------------- */}

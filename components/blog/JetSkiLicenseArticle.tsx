@@ -22,7 +22,6 @@ import {
   Waves,
   AlertTriangle,
   BookOpen,
-  Ship,
   Gauge,
   Fish,
   Wine,

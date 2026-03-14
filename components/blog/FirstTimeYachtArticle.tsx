@@ -399,6 +399,22 @@ export default function FirstTimeYachtArticle() {
                 ),
               )}
             </div>
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row sm:gap-4">
+              <Link
+                href="/blog/haulover-sandbar-yacht-charter-miami"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                <ChevronRight className="h-3.5 w-3.5" />
+                {t("ft.expect.linkHaulover")}
+              </Link>
+              <Link
+                href="/blog/bachelorette-party-yacht-miami"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                <ChevronRight className="h-3.5 w-3.5" />
+                {t("ft.expect.linkBach")}
+              </Link>
+            </div>
           </div>
 
           {/* Sidebar Nav */}
@@ -661,6 +677,23 @@ export default function FirstTimeYachtArticle() {
               </div>
             ))}
           </div>
+
+          <div className="mt-6 flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-6">
+            <Link
+              href="/blog/jet-ski-license-miami"
+              className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("ft.booking.linkJetski")}
+            </Link>
+            <Link
+              href="/blog/miami-yacht-charter-prices"
+              className="inline-flex items-center gap-1.5 text-sm text-[--color-gold] hover:underline underline-offset-4"
+            >
+              <ChevronRight className="h-3.5 w-3.5" />
+              {t("ft.booking.linkPrices")}
+            </Link>
+          </div>
         </div>
       </Section>
 
@@ -824,7 +857,7 @@ export default function FirstTimeYachtArticle() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {MISTAKE_CARDS.map((card) => (
               <div
                 key={card.titleKey}
@@ -843,8 +876,77 @@ export default function FirstTimeYachtArticle() {
         </div>
       </Section>
 
+      {/* -- Seasickness Tips ---------------------------------------------- */}
+      <Section id="seasickness" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+              {t("ft.seasick.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+              {t("ft.seasick.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {[
+              {
+                titleKey: "ft.seasick.deck.title",
+                textKey: "ft.seasick.deck.text",
+                icon: Waves,
+                accent: "emerald" as const,
+              },
+              {
+                titleKey: "ft.seasick.horizon.title",
+                textKey: "ft.seasick.horizon.text",
+                icon: Compass,
+                accent: "gold" as const,
+              },
+              {
+                titleKey: "ft.seasick.ginger.title",
+                textKey: "ft.seasick.ginger.text",
+                icon: Heart,
+                accent: "emerald" as const,
+              },
+              {
+                titleKey: "ft.seasick.meals.title",
+                textKey: "ft.seasick.meals.text",
+                icon: AlertTriangle,
+                accent: "gold" as const,
+              },
+            ].map((card) => (
+              <div
+                key={card.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-6"
+              >
+                <card.icon
+                  className={`h-7 w-7 ${
+                    card.accent === "gold"
+                      ? "text-[--color-gold]"
+                      : "text-[--color-emerald]"
+                  }`}
+                />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t(card.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                  {t(card.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4">
+            <p className="text-sm font-medium text-[--color-emerald]">
+              {t("ft.seasick.note")}
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* -- Safety On Board ---------------------------------------------- */}
-      <Section id="safety" dark className="scroll-mt-28">
+      <Section id="safety" className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />

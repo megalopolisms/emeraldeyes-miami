@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "Terms of Service | Emerald Eyes Miami",
   description:
     "Terms of service for Emerald Eyes Miami yacht charter services in North Miami, Florida.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/terms",
   },

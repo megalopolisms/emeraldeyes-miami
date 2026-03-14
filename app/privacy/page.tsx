@@ -14,6 +14,10 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Emerald Eyes Miami",
   description:
     "Privacy policy for Emerald Eyes Miami yacht charter services in North Miami, Florida.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/privacy",
   },

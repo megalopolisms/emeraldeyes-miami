@@ -874,7 +874,7 @@ export default function HauloverSandbarArticle() {
             <p className="mb-5 text-center text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
               {t("hs.addon.title")}
             </p>
-            <div className="grid gap-4 md:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
               {ADDONS.map((addon) => (
                 <div
                   key={addon.titleKey}
@@ -889,12 +889,75 @@ export default function HauloverSandbarArticle() {
                 </div>
               ))}
             </div>
+            {/* Jet ski cross-link */}
+            <div className="mt-6 text-center">
+              <Link
+                href="/blog/jet-ski-license-miami"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-gold] hover:underline underline-offset-4"
+              >
+                <Waves className="h-4 w-4" />
+                {t("hs.addon.jetskiLink")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── Emerald Eyes Advantage ──────────────────────────────── */}
+      <Section id="why-emerald-eyes" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("hs.advantage.label")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              {t("hs.advantage.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+              {t("hs.advantage.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {ADVANTAGE_ITEMS.map((item) => (
+              <div
+                key={item.titleKey}
+                className="rounded-[1.75rem] border border-[--color-emerald]/15 bg-[--color-navy]/70 p-5 sm:p-6"
+              >
+                <item.icon className="h-7 w-7 text-[--color-emerald]" />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
+                  {t(item.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {t(item.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 text-center">
+            <p className="text-sm leading-relaxed text-white/50">
+              {t("hs.advantage.closing")}
+            </p>
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button href="/book" size="lg">
+                {t("hs.cta.book")}
+              </Button>
+              <Link
+                href="/blog/miami-yacht-charter-prices"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                <DollarSign className="h-4 w-4" />
+                {t("hs.cost.priceLink")}
+              </Link>
+            </div>
           </div>
         </div>
       </Section>
 
       {/* ── Mid CTA ──────────────────────────────────────────────── */}
-      <Section dark>
+      <Section>
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-2xl">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />

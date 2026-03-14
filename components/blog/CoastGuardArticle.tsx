@@ -6,12 +6,19 @@ import {
   AlertTriangle,
   Anchor,
   Award,
+  Ban,
   CheckCircle,
   ChevronRight,
   FileText,
+  Gavel,
+  Heart,
   MapPin,
+  ShieldAlert,
   ShieldCheck,
+  Ship,
+  Star,
   Users,
+  XCircle,
 } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -70,9 +77,12 @@ const GUIDE_SECTIONS = [
   { id: "basics", titleKey: "cg.s1.title" },
   { id: "boarding", titleKey: "cg.s3.title" },
   { id: "equipment", titleKey: "cg.equip.title" },
+  { id: "checklist", titleKey: "cg.checklist.navTitle" },
   { id: "rules", titleKey: "cg.rules.title" },
   { id: "pass", titleKey: "cg.pass.title" },
   { id: "red-flags", titleKey: "cg.red.title" },
+  { id: "fail-consequences", titleKey: "cg.fail.navTitle" },
+  { id: "emerald-eyes-difference", titleKey: "cg.ee.navTitle" },
   { id: "client", titleKey: "cg.client.title" },
   { id: "references", titleKey: "cg.ref.title" },
 ];
@@ -105,6 +115,64 @@ const RED_FLAGS = [
   "cg.red.li7",
 ];
 
+const CHECKLIST_ITEMS = [
+  { key: "pfd", emoji: "\u{1F9BA}" },
+  { key: "fire", emoji: "\u{1F9EF}" },
+  { key: "ring", emoji: "\u{1F534}" },
+  { key: "vds", emoji: "\u{1F6A8}" },
+  { key: "sound", emoji: "\u{1F50A}" },
+  { key: "nav", emoji: "\u{1F4A1}" },
+  { key: "placard", emoji: "\u{1F4CB}" },
+  { key: "engine", emoji: "\u{2699}\u{FE0F}" },
+  { key: "contract", emoji: "\u{1F4DD}" },
+];
+
+const FAIL_ITEMS = [
+  { key: "terminate", icon: Ban },
+  { key: "fine", icon: Gavel },
+  { key: "seize", icon: Ship },
+  { key: "criminal", icon: ShieldAlert },
+  { key: "captain", icon: XCircle },
+  { key: "insurance", icon: AlertTriangle },
+];
+
+const EE_ITEMS = [
+  { key: "inspect", icon: ShieldCheck },
+  { key: "captains", icon: Award },
+  { key: "contract", icon: FileText },
+  { key: "briefing", icon: Users },
+  { key: "equipment", icon: Star },
+  { key: "record", icon: Heart },
+];
+
+const CROSS_LINKS = [
+  {
+    href: "/blog/miami-yacht-charter-prices",
+    labelKey: "cg.related.yachtPrices",
+    descKey: "cg.xlink.pricing",
+  },
+  {
+    href: "/blog/bachelorette-party-yacht-miami",
+    labelKey: "cg.related.bachelorette",
+    descKey: "cg.xlink.bachelorette",
+  },
+  {
+    href: "/blog/first-time-yacht-rental-miami",
+    labelKey: "cg.related.firstTimer",
+    descKey: "cg.xlink.firstTimer",
+  },
+  {
+    href: "/blog/haulover-sandbar-yacht-charter-miami",
+    labelKey: "cg.related.haulover",
+    descKey: "cg.xlink.haulover",
+  },
+  {
+    href: "/blog/jet-ski-license-miami",
+    labelKey: "cg.related.jetSki",
+    descKey: "cg.xlink.jetSki",
+  },
+];
+
 const RELATED_LINKS = [
   {
     href: "/experiences/sunset-cruise-miami",
@@ -126,6 +194,7 @@ export default function CoastGuardArticle() {
 
   return (
     <main>
+      {/* Hero */}
       <section className="relative overflow-hidden">
         <div
           className="absolute inset-0"
@@ -151,19 +220,19 @@ export default function CoastGuardArticle() {
                 March 13, 2026 &middot; {t("blog.cg.readTime")}
               </span>
             </div>
-            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-2xl leading-tight text-white sm:text-3xl md:text-5xl lg:text-6xl">
+            <h1 className="mt-6 font-[family-name:var(--font-heading)] text-2xl leading-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("cg.heroTitle")}
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-white/72">
+            <p className="mt-6 text-base leading-relaxed text-white/72 sm:text-lg">
               {t("cg.intro1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/58">
+            <p className="mt-4 text-sm leading-relaxed text-white/58 sm:text-base">
               {t("cg.intro2")}
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#guide"
-                className="inline-flex items-center justify-center rounded-full border border-[--color-emerald] bg-transparent px-8 py-3.5 text-lg text-[--color-emerald] transition-colors hover:bg-[--color-emerald-dim]"
+                className="inline-flex items-center justify-center rounded-full border border-[--color-emerald] bg-transparent px-8 py-3.5 text-base text-[--color-emerald] transition-colors hover:bg-[--color-emerald-dim] sm:text-lg"
               >
                 {t("cg.guide.title")}
               </a>
@@ -214,6 +283,7 @@ export default function CoastGuardArticle() {
         </div>
       </section>
 
+      {/* Trust strip */}
       <Section
         dark
         className="border-y border-white/5 bg-[--color-navy-light]/60"
@@ -241,7 +311,7 @@ export default function CoastGuardArticle() {
               className="rounded-[2rem] border border-white/8 bg-[--color-navy]/45 p-5"
             >
               <item.icon className="h-7 w-7 text-[--color-emerald]" />
-              <h2 className="mt-4 text-lg font-medium text-white">
+              <h2 className="mt-4 text-base font-medium text-white sm:text-lg">
                 {item.label}
               </h2>
               <p className="mt-1 text-sm leading-relaxed text-white/60">
@@ -252,6 +322,7 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
+      {/* Guide overview + sidebar nav */}
       <Section id="guide" className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[minmax(0,1fr)_18rem]">
           <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8 lg:p-10">
@@ -259,7 +330,7 @@ export default function CoastGuardArticle() {
             <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("cg.quick.title")}
             </h2>
-            <p className="mt-4 max-w-3xl text-base leading-relaxed text-white/70">
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-white/70 sm:text-base">
               {t("blog.cg.excerpt")}
             </p>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -271,7 +342,7 @@ export default function CoastGuardArticle() {
                   <div className="flex items-start gap-3">
                     <item.icon className="mt-0.5 h-5 w-5 text-[--color-emerald]" />
                     <div>
-                      <h3 className="font-[family-name:var(--font-heading)] text-xl text-white">
+                      <h3 className="font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                         {t(item.titleKey)}
                       </h3>
                       <p className="mt-2 text-sm leading-relaxed text-white/60">
@@ -304,6 +375,7 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
+      {/* Basics: What is a bareboat charter? */}
       <Section id="basics" dark className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative mx-auto w-full max-w-md">
@@ -325,16 +397,16 @@ export default function CoastGuardArticle() {
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
               {t("blog.cat.safety")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("cg.s1.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/75">
+            <p className="mt-6 text-sm leading-relaxed text-white/75 sm:text-base">
               {t("cg.s1.p1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/72">
+            <p className="mt-4 text-sm leading-relaxed text-white/72 sm:text-base">
               {t("cg.s1.p2")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/72">
+            <p className="mt-4 text-sm leading-relaxed text-white/72 sm:text-base">
               {t("cg.s1.p3")}
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-xs">
@@ -347,18 +419,27 @@ export default function CoastGuardArticle() {
                 </span>
               ))}
             </div>
+            {/* Cross-link: first-timer */}
+            <Link
+              href="/blog/first-time-yacht-rental-miami"
+              className="mt-6 flex items-start gap-3 rounded-2xl border border-white/8 bg-white/[0.03] p-4 text-sm text-white/60 transition-all hover:border-[--color-emerald]/30 hover:text-[--color-emerald]"
+            >
+              <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+              <span>{t("cg.xlink.firstTimer")}</span>
+            </Link>
           </div>
         </div>
       </Section>
 
+      {/* Boarding steps */}
       <Section id="boarding" className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("cg.s3.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50 sm:text-base">
               {t("cg.s3.intro")}
             </p>
           </div>
@@ -374,7 +455,7 @@ export default function CoastGuardArticle() {
                     {step}
                   </div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="font-[family-name:var(--font-heading)] text-xl text-white">
+                    <h3 className="font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                       {t(`cg.step${step}.title`)}
                     </h3>
                     <p className="mt-2 text-sm leading-relaxed text-white/60">
@@ -437,14 +518,24 @@ export default function CoastGuardArticle() {
               </div>
             ))}
           </div>
+
+          {/* Cross-link: haulover sandbar */}
+          <Link
+            href="/blog/haulover-sandbar-yacht-charter-miami"
+            className="mt-8 flex items-start gap-3 rounded-2xl border border-white/8 bg-[--color-navy-light]/55 p-5 text-sm text-white/60 transition-all hover:border-[--color-emerald]/30 hover:text-[--color-emerald]"
+          >
+            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+            <span>{t("cg.xlink.haulover")}</span>
+          </Link>
         </div>
       </Section>
 
+      {/* Safety equipment overview */}
       <Section id="equipment" dark className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
           <div className="mb-10 text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("cg.equip.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/50">
@@ -473,14 +564,66 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
-      <Section id="rules" className="scroll-mt-28">
+      {/* NEW: Full Inspection Checklist with pass/fail detail */}
+      <Section id="checklist" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              {t("cg.checklist.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
+              {t("cg.checklist.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-5">
+            {CHECKLIST_ITEMS.map((item) => (
+              <div
+                key={item.key}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="shrink-0 text-2xl">{item.emoji}</span>
+                  <h3 className="font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
+                    {t(`cg.check.${item.key}.title`)}
+                  </h3>
+                </div>
+                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                  <div className="rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 p-4">
+                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[--color-emerald]">
+                      <CheckCircle className="h-3.5 w-3.5" />
+                      Pass
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-white/65">
+                      {t(`cg.check.${item.key}.pass`)}
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border border-[--color-gold]/20 bg-[--color-gold]/5 p-4">
+                    <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[--color-gold]">
+                      <XCircle className="h-3.5 w-3.5" />
+                      Fail
+                    </div>
+                    <p className="mt-2 text-sm leading-relaxed text-white/65">
+                      {t(`cg.check.${item.key}.fail`)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
+      {/* Rules */}
+      <Section id="rules" dark className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("cg.rules.title")}
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-white/50">
+            <p className="mt-4 text-sm leading-relaxed text-white/50 sm:text-base">
               {t("cg.rules.intro")}
             </p>
           </div>
@@ -501,7 +644,7 @@ export default function CoastGuardArticle() {
                   >
                     {rule.num}
                   </div>
-                  <h3 className="font-[family-name:var(--font-heading)] text-2xl text-white">
+                  <h3 className="font-[family-name:var(--font-heading)] text-lg text-white sm:text-2xl">
                     {t(rule.titleKey)}
                   </h3>
                 </div>
@@ -519,17 +662,27 @@ export default function CoastGuardArticle() {
               </div>
             ))}
           </div>
+
+          {/* Cross-link: jet ski license */}
+          <Link
+            href="/blog/jet-ski-license-miami"
+            className="mt-8 flex items-start gap-3 rounded-2xl border border-white/8 bg-[--color-navy]/70 p-5 text-sm text-white/60 transition-all hover:border-[--color-emerald]/30 hover:text-[--color-emerald]"
+          >
+            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+            <span>{t("cg.xlink.jetSki")}</span>
+          </Link>
         </div>
       </Section>
 
-      <Section dark className="scroll-mt-28">
+      {/* Pass / Red flags side-by-side */}
+      <Section className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-2">
           <div
             id="pass"
             className="scroll-mt-28 rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("cg.pass.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -557,7 +710,7 @@ export default function CoastGuardArticle() {
             className="scroll-mt-28 rounded-[2rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8"
           >
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-[--color-gold] md:text-4xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold] sm:text-3xl md:text-4xl">
               {t("cg.red.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -582,26 +735,113 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
-      <Section id="client" className="scroll-mt-28">
+      {/* NEW: What Happens If You Fail */}
+      <Section id="fail-consequences" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold] sm:text-3xl md:text-4xl lg:text-5xl">
+              {t("cg.fail.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
+              {t("cg.fail.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FAIL_ITEMS.map((item) => (
+              <div
+                key={item.key}
+                className="rounded-[1.75rem] border border-[--color-gold]/15 bg-[--color-navy]/70 p-5 sm:p-6"
+              >
+                <item.icon className="h-6 w-6 text-[--color-gold]" />
+                <h3 className="mt-3 font-[family-name:var(--font-heading)] text-lg text-white">
+                  {t(`cg.fail.${item.key}.title`)}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  {t(`cg.fail.${item.key}.text`)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-white/55 sm:text-base">
+            {t("cg.fail.closing")}
+          </p>
+
+          {/* Cross-link: yacht prices */}
+          <Link
+            href="/blog/miami-yacht-charter-prices"
+            className="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-2xl border border-white/8 bg-[--color-navy-light]/55 p-5 text-sm text-white/60 transition-all hover:border-[--color-emerald]/30 hover:text-[--color-emerald]"
+          >
+            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+            <span>{t("cg.xlink.pricing")}</span>
+          </Link>
+        </div>
+      </Section>
+
+      {/* NEW: What Emerald Eyes Does Differently */}
+      <Section id="emerald-eyes-difference" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              {t("cg.ee.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
+              {t("cg.ee.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {EE_ITEMS.map((item) => (
+              <div
+                key={item.key}
+                className="rounded-[1.75rem] border border-[--color-emerald]/20 bg-[--color-navy-light]/55 p-5 sm:p-6"
+              >
+                <item.icon className="h-6 w-6 text-[--color-emerald]" />
+                <h3 className="mt-3 font-[family-name:var(--font-heading)] text-lg text-white">
+                  {t(`cg.ee.${item.key}.title`)}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  {t(`cg.ee.${item.key}.text`)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Cross-link: bachelorette */}
+          <Link
+            href="/blog/bachelorette-party-yacht-miami"
+            className="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-2xl border border-white/8 bg-[--color-navy-light]/55 p-5 text-sm text-white/60 transition-all hover:border-[--color-emerald]/30 hover:text-[--color-emerald]"
+          >
+            <ChevronRight className="mt-0.5 h-4 w-4 shrink-0 text-[--color-emerald]" />
+            <span>{t("cg.xlink.bachelorette")}</span>
+          </Link>
+        </div>
+      </Section>
+
+      {/* What this means for you */}
+      <Section id="client" dark className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[1.02fr_0.98fr]">
           <div className="max-w-2xl">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-emerald]">
               {t("blog.cat.safety")}
             </p>
-            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white md:text-4xl">
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl">
               {t("cg.client.title")}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/72">
+            <p className="mt-6 text-sm leading-relaxed text-white/72 sm:text-base">
               {t("cg.client.p1")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/68">
+            <p className="mt-4 text-sm leading-relaxed text-white/68 sm:text-base">
               {t("cg.client.p2")}
             </p>
-            <p className="mt-4 text-base leading-relaxed text-white/68">
+            <p className="mt-4 text-sm leading-relaxed text-white/68 sm:text-base">
               {t("cg.client.p3")}
             </p>
-            <p className="mt-5 font-[family-name:var(--font-heading)] text-2xl italic leading-relaxed text-white/90">
+            <p className="mt-5 font-[family-name:var(--font-heading)] text-xl italic leading-relaxed text-white/90 sm:text-2xl">
               &ldquo;{t("cg.client.p4")}&rdquo;
             </p>
           </div>
@@ -622,11 +862,12 @@ export default function CoastGuardArticle() {
         </div>
       </Section>
 
-      <Section id="references" dark className="scroll-mt-28">
+      {/* References + Related links + Cross-links */}
+      <Section id="references" className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
+          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8">
             <div className="mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[--color-gold] sm:text-3xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-xl text-[--color-gold] sm:text-2xl md:text-3xl">
               {t("cg.ref.title")}
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-white/55">
@@ -647,31 +888,49 @@ export default function CoastGuardArticle() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
-            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl">
-              {t("cg.related.title")}
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-white/55">
-              {t("cg.client.p4")}
-            </p>
+          <div className="space-y-6">
+            <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8">
+              <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+              <h2 className="font-[family-name:var(--font-heading)] text-xl text-white sm:text-2xl md:text-3xl">
+                {t("cg.related.title")}
+              </h2>
 
-            <div className="mt-6 space-y-2">
-              {RELATED_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="group flex items-center gap-3 rounded-2xl border border-transparent px-4 py-3 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy-light] hover:text-[--color-emerald]"
-                >
-                  <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
-                  {t(link.labelKey)}
-                </Link>
-              ))}
+              <div className="mt-4 space-y-2">
+                {CROSS_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="group flex items-center gap-3 rounded-2xl border border-transparent px-4 py-3 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy]/80 hover:text-[--color-emerald]"
+                  >
+                    <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
+                    {t(link.labelKey)}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6 md:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+                Experiences
+              </p>
+              <div className="mt-4 space-y-2">
+                {RELATED_LINKS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="group flex items-center gap-3 rounded-2xl border border-transparent px-4 py-3 text-sm text-white/60 transition-all hover:border-white/8 hover:bg-[--color-navy]/80 hover:text-[--color-emerald]"
+                  >
+                    <ChevronRight className="h-4 w-4 text-[--color-emerald] transition-transform group-hover:translate-x-1" />
+                    {t(link.labelKey)}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </Section>
 
+      {/* Final CTA */}
       <section className="relative overflow-hidden">
         <Image
           src={asset("/images/sax.jpg")}
@@ -682,10 +941,10 @@ export default function CoastGuardArticle() {
         <div className="absolute inset-0 bg-gradient-to-t from-[--color-navy]/85 via-[--color-navy]/55 to-[--color-navy]/35" />
         <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 text-center md:px-6 md:py-28">
           <Anchor className="mx-auto mb-5 h-10 w-10 text-[--color-emerald] drop-shadow-lg md:h-12 md:w-12" />
-          <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white drop-shadow-lg sm:text-3xl md:text-5xl">
+          <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white drop-shadow-lg sm:text-3xl md:text-4xl lg:text-5xl">
             {t("cg.cta.title")}
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-white/88 drop-shadow-md">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/88 drop-shadow-md sm:text-lg">
             {t("cg.cta.text")}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">

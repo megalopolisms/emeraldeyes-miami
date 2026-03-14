@@ -15,7 +15,11 @@ import {
   MapPin,
   Award,
 } from "lucide-react";
-import { EXPERIENCES, asset } from "@/lib/constants";
+import {
+  EXPERIENCES,
+  ROUTABLE_EXPERIENCE_SLUGS,
+  asset,
+} from "@/lib/constants";
 import Section from "@/components/ui/Section";
 import { useLanguage } from "@/lib/language-context";
 
@@ -44,6 +48,10 @@ const experienceEmojis: Record<string, string> = {
   "live-sax-yacht-miami": "🎷",
 };
 
+const linkedExperiences = EXPERIENCES.filter((exp) =>
+  ROUTABLE_EXPERIENCE_SLUGS.has(exp.slug),
+);
+
 function ExperiencesSection() {
   const { t } = useLanguage();
   return (
@@ -59,11 +67,11 @@ function ExperiencesSection() {
       </div>
 
       <div className="mx-auto max-w-3xl divide-y divide-white/5">
-        {EXPERIENCES.map((exp, i) => (
+        {linkedExperiences.map((exp, i) => (
           <motion.div
             key={exp.slug}
             custom={i}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true, margin: "-40px" }}
             variants={fadeUp}
@@ -138,7 +146,7 @@ function SashaSection() {
     <Section id="meet-sasha">
       <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -159,7 +167,7 @@ function SashaSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
@@ -216,7 +224,7 @@ function LiveSaxSection() {
     <Section id="live-sax" dark>
       <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1.3fr_1fr]">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -257,7 +265,7 @@ function LiveSaxSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
@@ -290,7 +298,7 @@ function SushiSection() {
     <Section id="sushi-chef">
       <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut" }}
@@ -311,7 +319,7 @@ function SushiSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
@@ -377,7 +385,7 @@ function WhySection() {
           <motion.div
             key={i}
             custom={i}
-            initial="hidden"
+            initial={false}
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={fadeUp}
@@ -423,7 +431,7 @@ function HowItWorksSection() {
             <motion.div
               key={i}
               custom={i}
-              initial="hidden"
+              initial={false}
               whileInView="visible"
               viewport={{ once: true, margin: "-60px" }}
               variants={fadeUp}

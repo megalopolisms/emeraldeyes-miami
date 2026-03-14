@@ -143,6 +143,15 @@ export const NAV_LINKS: readonly {
   { href: "/book", label: "Book Now", cta: true },
 ];
 
+export const ROUTABLE_EXPERIENCE_SLUGS = new Set([
+  "sunset-cruise-miami",
+  "private-party-yacht-miami",
+  "corporate-yacht-charter-miami",
+  "bachelorette-yacht-miami",
+  "proposal-yacht-miami",
+  "haulover-sandbar-yacht-miami",
+]);
+
 // ---------------------------------------------------------------------------
 // Experience Pages Data
 // ---------------------------------------------------------------------------

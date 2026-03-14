@@ -7,6 +7,7 @@
 
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 import { BUSINESS, BASE_PATH } from "@/lib/constants";
@@ -177,6 +178,7 @@ export default function RootLayout({
           {/* Floating chat button (hidden on homepage) */}
           <FloatingButton />
         </LanguageProvider>
+        <GoogleAnalytics gaId="G-377706558" />
       </body>
     </html>
   );

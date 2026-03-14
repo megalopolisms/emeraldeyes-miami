@@ -30,10 +30,12 @@ import { asset } from "@/lib/constants";
 const GUIDE_SECTIONS = [
   { id: "short-answer", titleKey: "yp.nav.shortAnswer" },
   { id: "whats-included", titleKey: "yp.nav.included" },
+  { id: "captain-crew", titleKey: "yp.nav.captain" },
   { id: "duration-pricing", titleKey: "yp.nav.duration" },
   { id: "add-ons", titleKey: "yp.nav.addons" },
   { id: "price-factors", titleKey: "yp.nav.factors" },
   { id: "save-money", titleKey: "yp.nav.save" },
+  { id: "tipping-guide", titleKey: "yp.nav.tipping" },
   { id: "faq", titleKey: "yp.nav.faq" },
 ];
 
@@ -111,6 +113,18 @@ const ADDON_CARDS = [
     priceKey: "yp.addon.photo.price",
     descKey: "yp.addon.photo.desc",
     icon: Sun,
+  },
+  {
+    titleKey: "yp.addon.hookah.title",
+    priceKey: "yp.addon.hookah.price",
+    descKey: "yp.addon.hookah.desc",
+    icon: Waves,
+  },
+  {
+    titleKey: "yp.addon.decor.title",
+    priceKey: "yp.addon.decor.price",
+    descKey: "yp.addon.decor.desc",
+    icon: Award,
   },
 ];
 
@@ -442,6 +456,66 @@ export default function YachtPricesArticle() {
         </div>
       </Section>
 
+      {/* -- Your Captain & Crew ------------------------------------------ */}
+      <Section id="captain-crew" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("yp.captain.label")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+              {t("yp.captain.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+              {t("yp.captain.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: ShieldCheck,
+                titleKey: "yp.captain.captain.title",
+                textKey: "yp.captain.captain.text",
+                accent: "emerald",
+              },
+              {
+                icon: Users,
+                titleKey: "yp.captain.crew.title",
+                textKey: "yp.captain.crew.text",
+                accent: "emerald",
+              },
+              {
+                icon: DollarSign,
+                titleKey: "yp.captain.cost.title",
+                textKey: "yp.captain.cost.text",
+                accent: "gold",
+              },
+            ].map((item) => (
+              <div
+                key={item.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
+              >
+                <item.icon
+                  className={`h-8 w-8 ${
+                    item.accent === "gold"
+                      ? "text-[--color-gold]"
+                      : "text-[--color-emerald]"
+                  }`}
+                />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t(item.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {t(item.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* -- Charter Duration & Pricing ----------------------------------- */}
       <Section id="duration-pricing" className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
@@ -601,6 +675,63 @@ export default function YachtPricesArticle() {
         </div>
       </Section>
 
+      {/* -- Tipping Guide ------------------------------------------------ */}
+      <Section id="tipping-guide" className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+              {t("yp.tipping.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+              {t("yp.tipping.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                icon: DollarSign,
+                titleKey: "yp.tipping.standard.title",
+                textKey: "yp.tipping.standard.text",
+                accent: "emerald",
+              },
+              {
+                icon: CheckCircle,
+                titleKey: "yp.tipping.example.title",
+                textKey: "yp.tipping.example.text",
+                accent: "emerald",
+              },
+              {
+                icon: Users,
+                titleKey: "yp.tipping.how.title",
+                textKey: "yp.tipping.how.text",
+                accent: "emerald",
+              },
+            ].map((item) => (
+              <div
+                key={item.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
+              >
+                <item.icon className="h-8 w-8 text-[--color-emerald]" />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t(item.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {t(item.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4 text-center">
+            <p className="text-sm font-medium text-[--color-emerald]">
+              {t("yp.tipping.note")}
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {/* -- Mid CTA ------------------------------------------------------ */}
       <Section>
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[1.02fr_0.98fr]">
@@ -723,6 +854,14 @@ export default function YachtPricesArticle() {
                 {
                   icon: CheckCircle,
                   textKey: "yp.sample.total",
+                },
+                {
+                  icon: Users,
+                  textKey: "yp.sample.perPerson",
+                },
+                {
+                  icon: Users,
+                  textKey: "yp.sample.perPersonBase",
                 },
               ].map((item) => (
                 <div

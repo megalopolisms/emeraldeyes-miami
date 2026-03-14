@@ -1,6 +1,12 @@
 "use client";
 
-import { createContext, useContext, useState, type ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  type ReactNode,
+} from "react";
 
 export type Lang = "en" | "es" | "pt" | "de" | "fr" | "zh" | "ja";
 
@@ -24,6 +30,12 @@ const VALID_LANGS: Lang[] = ["en", "es", "pt", "de", "fr", "zh", "ja"];
 
 function getInitialLang(): Lang {
   if (typeof window === "undefined") return "en";
+  // Detect language from URL path prefix (e.g. /es/experiences)
+  const pathLang = window.location.pathname.split("/")[1] as Lang;
+  if (pathLang && VALID_LANGS.includes(pathLang) && pathLang !== "en") {
+    return pathLang;
+  }
+  // Fallback: ?lang= query param
   const params = new URLSearchParams(window.location.search);
   const urlLang = params.get("lang") as Lang | null;
   if (urlLang && VALID_LANGS.includes(urlLang)) return urlLang;
@@ -32,6 +44,11 @@ function getInitialLang(): Lang {
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(getInitialLang);
+
+  // Keep <html lang> attribute in sync
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   const t = (key: string): string => {
     const dict = translations[lang] ?? translations.en;
@@ -579,6 +596,77 @@ const translations: Record<Lang, Record<string, string>> = {
       "That\u2019s how it should work. That\u2019s how it works with us.",
     // Reference table
     "cg.ref.title": "Quick Reference: Key Federal Regulations",
+    "cg.related.yachtPrices": "How Much Does a Yacht Charter Cost?",
+    "cg.related.bachelorette": "Bachelorette Party on a Yacht",
+    "cg.related.firstTimer": "First-Time Yacht Rental Guide",
+    "cg.related.jetSki": "Jet Ski License Requirements",
+    "cg.related.haulover": "Haulover Sandbar by Yacht",
+    "cg.xlink.pricing": "Wondering how much a fully compliant charter costs? Our pricing guide breaks down exactly what you pay for.",
+    "cg.xlink.bachelorette": "Planning a group event? See how we handle Coast Guard compliance for bachelorette parties and large groups.",
+    "cg.xlink.firstTimer": "Never rented a yacht before? Our first-timer guide covers everything from booking to boarding.",
+    "cg.xlink.jetSki": "Curious about watercraft licensing in Florida? Our jet ski guide explains the Boating Safety Education Card requirement.",
+    "cg.xlink.haulover": "Heading to Haulover Sandbar? Learn what to expect on one of Miami's most popular charter routes.",
+    "cg.checklist.title": "The Full Inspection Checklist",
+    "cg.checklist.intro": "Coast Guard officers follow a systematic protocol during every boarding. Here is everything they physically verify, check, and document — and what specifically causes a vessel to fail.",
+    "cg.check.pfd.title": "Life Jackets (PFDs)",
+    "cg.check.pfd.pass": "One USCG-approved Type I, II, or III PFD per person on board, including crew. Child-sized PFDs required for anyone under 13. Must be in serviceable condition — no rips, broken buckles, or missing straps.",
+    "cg.check.pfd.fail": "Wrong count, wrong size for children, damaged PFDs with torn fabric or non-functional closures, or PFDs stored in sealed packaging (must be readily accessible).",
+    "cg.check.fire.title": "Fire Extinguishers",
+    "cg.check.fire.pass": "Correct number for vessel length (one B-I for under 26 ft, two B-I or one B-II for 26–40 ft, three B-I for 40–65 ft). Gauge in the green. Inspection tag current. Nozzle clear and pin intact.",
+    "cg.check.fire.fail": "Expired inspection date, gauge in the red or missing, discharged or partially discharged units, corroded cylinder, broken handle or missing safety pin.",
+    "cg.check.ring.title": "Throwable Device (Type IV PFD)",
+    "cg.check.ring.pass": "One Type IV throwable — ring buoy or throwable cushion — required for vessels 16 ft and over. Must be immediately accessible, not stored under equipment or in a locked compartment.",
+    "cg.check.ring.fail": "Ring buoy buried under coolers or gear. Throwable cushion with waterlogged foam or torn covering. No throwable device on board at all.",
+    "cg.check.vds.title": "Visual Distress Signals",
+    "cg.check.vds.pass": "Three USCG-approved day/night pyrotechnic signals (flares) with current expiration dates, OR one electric SOS distress light plus three day signals. Required on coastal waters for vessels 16 ft and over.",
+    "cg.check.vds.fail": "Expired flares (check the stamped date — they expire 42 months after manufacture). Fewer than three signals. Electric light with dead batteries. No signals on board.",
+    "cg.check.sound.title": "Sound-Producing Device",
+    "cg.check.sound.pass": "A whistle or horn audible for at least half a nautical mile. Vessels 39.4 ft (12 m) and over also require a bell. Air horns must have a full charge.",
+    "cg.check.sound.fail": "No horn or whistle on board. Empty air horn canister. Bell missing on vessels over 39.4 ft.",
+    "cg.check.nav.title": "Navigation Lights",
+    "cg.check.nav.pass": "Functional red/green sidelights, white stern light, and masthead light. Tested during boarding if operating after sunset or in restricted visibility. Lenses clean and properly colored.",
+    "cg.check.nav.fail": "Burned-out bulbs, cracked lenses, incorrect color filters, or lights wired incorrectly. Missing all-round white light on vessels under 39.4 ft operating at night.",
+    "cg.check.placard.title": "Required Placards & Documentation",
+    "cg.check.placard.pass": "MARPOL trash placard (vessels 26 ft+), oil discharge placard (vessels with machinery), navigation rules summary, and FCC radio license if VHF is installed. Vessel registration or USCG Certificate of Documentation on board and current.",
+    "cg.check.placard.fail": "Missing required placards, expired vessel registration, documentation that does not match the vessel name or HIN, or no registration on board.",
+    "cg.check.engine.title": "Engine Compartment & Bilge",
+    "cg.check.engine.pass": "No fuel leaks or fuel odor. Bilge clean and reasonably dry. Ventilation system functional (blowers operable on gas-powered inboard vessels). Hoses and clamps in serviceable condition. Backfire flame arrestor present and clean on gasoline engines.",
+    "cg.check.engine.fail": "Visible fuel in the bilge, strong fuel odor, non-functional blower, missing or fouled backfire flame arrestor, corroded fuel lines, or excessive oil accumulation.",
+    "cg.check.contract.title": "Charter Contract & Credentials",
+    "cg.check.contract.pass": "Signed bareboat charter agreement with all parties' signatures. Vessel name, HIN, and dates match the actual situation. Captain's USCG credential (OUPV or Master) on board and current. Drug testing enrollment documentation available.",
+    "cg.check.contract.fail": "Unsigned or missing charter contract. Captain cannot produce a valid credential. Credential is expired. Contract vessel name does not match the boat. No evidence of drug testing compliance under 46 C.F.R. Part 16.",
+    "cg.fail.title": "What Happens If You Fail an Inspection",
+    "cg.fail.intro": "A failed Coast Guard inspection is not a slap on the wrist. The consequences are immediate, and they escalate depending on the severity of the violations found.",
+    "cg.fail.terminate.title": "Voyage Termination",
+    "cg.fail.terminate.text": "The Coast Guard can order the vessel to return to port immediately. Your charter is over. There is no fix-it-and-keep-going option on the water. If passenger count exceeds limits or the bareboat structure is a sham, the trip ends right there.",
+    "cg.fail.fine.title": "Civil Penalties & Fines",
+    "cg.fail.fine.text": "Operating an uninspected passenger vessel illegally can result in civil penalties up to $25,000 per violation under 46 U.S.C. § 3718. Safety equipment violations carry fines from $1,000 to $10,000. Both the captain and vessel owner can be fined independently.",
+    "cg.fail.seize.title": "Vessel Detention or Seizure",
+    "cg.fail.seize.text": "For serious violations — particularly operating a passenger vessel without a Certificate of Inspection when one is required — the Coast Guard can detain the vessel at the dock until all deficiencies are corrected and re-inspected. Repeat offenders risk permanent seizure.",
+    "cg.fail.criminal.title": "Criminal Prosecution",
+    "cg.fail.criminal.text": "In cases involving willful negligence, repeat violations, or incidents resulting in injury, the vessel operator and owner can face criminal charges under 46 U.S.C. § 3718, including fines and imprisonment.",
+    "cg.fail.captain.title": "Captain Credential Suspension",
+    "cg.fail.captain.text": "If the captain is found operating without valid credentials, with expired drug testing, or under the influence, the USCG can initiate suspension and revocation proceedings against their license. This can end a career.",
+    "cg.fail.insurance.title": "Insurance Implications",
+    "cg.fail.insurance.text": "A documented Coast Guard violation can void marine insurance coverage. If an accident occurs during an illegal charter operation, neither the owner nor the charterer may have liability coverage — exposing everyone on board to personal financial liability.",
+    "cg.fail.closing": "The bottom line: failing a Coast Guard inspection is not just an inconvenience. It can mean fines, criminal charges, career-ending consequences for the captain, and total loss of insurance coverage. This is exactly why choosing a compliant charter operator matters.",
+    "cg.ee.title": "What Emerald Eyes Does Differently",
+    "cg.ee.intro": "Most charter companies claim to be fully compliant. At Emerald Eyes, compliance is not a checkbox — it is the foundation of every trip we run. Here is exactly what sets us apart.",
+    "cg.ee.inspect.title": "Every Vessel Is Coast Guard Inspected",
+    "cg.ee.inspect.text": "Our vessels undergo regular Coast Guard safety inspections and are maintained to exceed federal requirements. Safety equipment is checked before every single departure — not once a season, not once a month. Every trip.",
+    "cg.ee.captains.title": "USCG-Licensed & Drug-Tested Captains",
+    "cg.ee.captains.text": "Every Emerald Eyes captain holds a valid USCG credential (OUPV or Master license) and is enrolled in a random drug and alcohol testing program as required by 46 C.F.R. Part 16. We verify credentials quarterly, not just at hire.",
+    "cg.ee.contract.title": "Bulletproof Bareboat Documentation",
+    "cg.ee.contract.text": "Our charter contracts are drafted to withstand Coast Guard scrutiny. Every agreement clearly establishes the bareboat structure, identifies the charterer as the temporary owner, and is fully executed before the vessel leaves the dock.",
+    "cg.ee.briefing.title": "Pre-Departure Safety Briefing",
+    "cg.ee.briefing.text": "Before every charter, our captain conducts a full safety briefing covering life jacket locations, fire extinguisher positions, man-overboard procedures, and emergency protocols. You will know your captain's name — because you chose them.",
+    "cg.ee.equipment.title": "Equipment That Exceeds Standards",
+    "cg.ee.equipment.text": "We carry more than the minimum required safety equipment. Extra PFDs, current flares, fully charged extinguishers, and first aid kits on every vessel. Our navigation lights are LED-upgraded for maximum visibility.",
+    "cg.ee.record.title": "Zero Failed Inspections",
+    "cg.ee.record.text": "Emerald Eyes has never failed a Coast Guard inspection. Not once. We welcome boardings because we know exactly what the officers are looking for, and everything is already in order before we leave the dock.",
+    "cg.checklist.navTitle": "Full Inspection Checklist",
+    "cg.fail.navTitle": "If You Fail",
+    "cg.ee.navTitle": "Emerald Eyes Difference",
     "cg.reg.nvic": "Coast Guard guidance on bareboat charter analysis",
     "cg.reg.cfr25":
       "Safety equipment requirements (PFDs, extinguishers, signals)",
@@ -669,11 +757,33 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.rules.bui.title": "BUI = Same as DUI",
     "js.rules.bui.text":
       "Boating Under the Influence carries the same 0.08% BAC limit as driving. First offense: $500\u2013$1,000 fine, up to 6 months jail. Under 21: zero-tolerance at 0.02%. FWC officers actively patrol Miami waterways.",
+    "js.rules.speed.title": "Speed Zones Near Shore",
+    "js.rules.speed.text":
+      "Within 300 feet of shore, swimmers, docks, piers, or anchored vessels, Florida law requires idle speed / no wake. In marked channels and the Intracoastal Waterway, slow-speed minimum-wake zones are strictly enforced. Fines start at $50 and can exceed $500 for reckless operation near shore.",
+    "js.rules.wildlife.title": "Wildlife Protection Zones",
+    "js.rules.wildlife.text":
+      "Biscayne Bay has federally protected manatee zones with seasonal slow-speed restrictions (typically November through March). Harassing marine mammals \u2014 including chasing dolphins or approaching manatees \u2014 violates the Marine Mammal Protection Act with fines up to $11,000 per incident.",
+    "js.rules.buiPenalties.title": "BUI Penalties in Detail",
+    "js.rules.buiPenalties.text":
+      "Second BUI offense: $1,000\u2013$2,000 fine, up to 9 months jail, mandatory 10-day vessel impoundment. Third offense within 10 years is a third-degree felony: up to 5 years prison, $5,000 fine. Refusing a breathalyzer results in automatic $500 civil penalty and can be used as evidence against you in court.",
     // Jet Ski article — Mid CTA
     "js.midCta.title": "Want the View Without the Rules?",
     "js.midCta.text":
       "Love the idea of cruising past Star Island mansions and watching the Miami skyline from the water \u2014 but don\u2019t want to deal with certifications, life jacket rules, and sunset curfews? An Emerald Eyes Miami private yacht charter handles everything. Our captain navigates. Our crew handles the details. You just step aboard with a drink in hand. No license, no card, no hassle \u2014 just the best views in Miami.",
     "js.midCta.btn": "Plan Your Charter",
+    // Jet Ski article — Jet Skis from Your Yacht
+    "js.yacht.eyebrow": "Yacht + Jet Ski Add-On",
+    "js.yacht.title": "Jet Skis Delivered to Your Yacht",
+    "js.yacht.p1":
+      "Here\u2019s what most people don\u2019t know: you can add jet skis directly to your Emerald Eyes Miami yacht charter. We arrange delivery right to your yacht at Haulover Sandbar or anywhere on Biscayne Bay \u2014 no separate rental, no driving to a marina, no waiting in line.",
+    "js.yacht.p2":
+      "The add-on runs $200 per hour per jet ski, delivered and picked up at your yacht\u2019s location. Your captain coordinates the timing so the jet skis arrive exactly when you want them. Ride for an hour, hand them back, and go back to lounging on deck with a drink. No certification hassle, no deposit drama \u2014 we handle the logistics.",
+    "js.yacht.p3":
+      "It\u2019s the best of both worlds: the freedom of jet skiing on Biscayne Bay with the comfort of a private yacht as your floating home base. Popular with bachelorette parties, birthdays, and corporate groups who want variety without the stress.",
+    "js.yacht.tag1": "$200/hr per jet ski",
+    "js.yacht.tag2": "Delivered to your yacht",
+    "js.yacht.pricingLink": "See full yacht charter pricing",
+    "js.yacht.sandbarLink": "Haulover Sandbar guide",
     // Jet Ski article — Best Spots
     "js.spots.title": "Where to Ride in Miami",
     "js.spots.intro":
@@ -716,6 +826,8 @@ const translations: Record<Lang, Record<string, string>> = {
       "Most operators use Yamaha VX Deluxe or Sea-Doo models and launch from Miami Beach Marina, Bayside Marketplace, or Rickenbacker Causeway. Security deposits range from $200\u2013$500 (credit card hold, not charged unless there\u2019s damage).",
     "js.pricing.p3":
       "For groups, consider the math: a jet ski fits 1\u20132 people at $150/hour each. An Emerald Eyes Miami yacht charter for 6\u201312 guests starts around $2,500 \u2014 often a better per-person value with drinks, music, a professional captain, and zero certification hassle.",
+    "js.pricing.yachtPricesLink": "Full yacht charter pricing breakdown",
+    "js.pricing.bacheloretteLink": "Bachelorette party packages",
     // Jet Ski article — Safety
     "js.safety.title": "Why the Card Matters",
     "js.safety.p1":
@@ -725,6 +837,15 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.safety.stat3": "for a 30-min temp certificate",
     "js.safety.p2":
       "The number that matters most: according to the 2024 USCG Recreational Boating Statistics report, 69% of deaths occurred on boats where the operator had no boating safety education. The temporary certificate covers right-of-way rules, navigation basics, and emergency procedures. It\u2019s 30 minutes that could save your life on Biscayne Bay.",
+    "js.safety.coastGuardLink": "Learn what a Coast Guard inspection covers",
+    // Jet Ski article — Book Add-On CTA
+    "js.bookAddon.title": "Add Jet Skis to Your Charter",
+    "js.bookAddon.p1":
+      "Book an Emerald Eyes Miami yacht charter and add jet skis as a $200/hr add-on. We deliver them right to your yacht at the sandbar \u2014 you ride, we handle everything else.",
+    "js.bookAddon.p2":
+      "No separate rental. No certification stress. No deposit drama. Just tell us when you book and we\u2019ll coordinate the delivery with your captain.",
+    "js.bookAddon.btn": "Book Your Charter + Jet Skis",
+    "js.bookAddon.firstTimeLink": "First-time yacht rental guide",
     // Jet Ski article — FAQ
     "js.faq.title": "Frequently Asked Questions",
     "js.faq.license.q": "Do you need a license to ride a jet ski in Miami?",
@@ -767,10 +888,11 @@ const translations: Record<Lang, Record<string, string>> = {
       "Tourists: $9 temporary certificate online, valid 90 days. Or bring your home state\u2019s card.",
     // Jet Ski article — Related
     "js.related.title": "Explore More",
+    "js.related.yachtPrices": "Miami Yacht Charter Prices: 2026 Cost Guide",
+    "js.related.sandbar": "Haulover Sandbar Yacht Trip: Complete Guide",
+    "js.related.firstTime": "First-Time Yacht Rental: What to Expect",
+    "js.related.bachelorette": "Bachelorette Party on a Yacht in Miami",
     "js.related.coastGuard": "What Happens During a Coast Guard Inspection?",
-    "js.related.sunset": "Sunset Cruise Experience",
-    "js.related.sandbar": "Haulover Sandbar Yacht Trip",
-    "js.related.fleet": "Our Fleet",
     "js.related.book": "Book Your Charter",
     // Jet Ski article — Final CTA
     "js.cta.title": "Skip the jet ski hassle.",
@@ -981,6 +1103,77 @@ const translations: Record<Lang, Record<string, string>> = {
       "Private yacht. Licensed captain. Floating mats, music, and room for up to 12. Pull up to Haulover Sandbar the way it was meant to be experienced \u2014 and let us handle the rest.",
     "hs.cta.book": "Plan Your Charter",
     "hs.cta.explore": "Browse Experiences",
+    // Haulover Sandbar article — The Sandbar Experience (new section)
+    "hs.exp.navTitle": "The Experience",
+    "hs.exp.title": "What the Sandbar Is Actually Like",
+    "hs.exp.intro":
+      "Reading about Haulover Sandbar and being there are two different things. Here’s what a typical day actually looks like — from the moment you anchor to the moment you cruise home.",
+    "hs.exp.anchor.title": "Anchoring Up",
+    "hs.exp.anchor.text":
+      "Your captain positions the yacht on the south side of the sandbar, where the water is calmest and the sand is firmest. The bow anchor goes in first, then the stern line keeps the boat from swinging. Within five minutes you’re set — floating mats in the water, music on, and the swim platform down. Most groups are wading within seconds of anchoring.",
+    "hs.exp.wade.title": "Wading & Hanging Out",
+    "hs.exp.wade.text":
+      "The water is knee-to-waist deep on the flats. The sand is soft, the water is warm year-round (75–85°F), and the visibility is usually 10–15 feet. People walk between boats, float on mats, toss footballs, and just stand around in the water talking. It’s relaxed — like a pool party without walls.",
+    "hs.exp.vendors.title": "Floating Food & Vendors",
+    "hs.exp.vendors.text":
+      "On weekends, a fleet of kayak and jet ski vendors paddle through the boats selling fresh ceviche, fish tacos, açaí bowls, pizza slices, and cold drinks. Prices run $8–15 per item. Cash only — bring small bills. Some vendors also sell snorkel gear and inflatables. It’s one of the most fun and uniquely Miami things you’ll experience.",
+    "hs.exp.party.title": "The Party Scene",
+    "hs.exp.party.text":
+      "On weekends, the north side of the sandbar turns into a floating music festival. DJs play from anchored boats, people raft their vessels together, and the energy builds from late morning through sunset. The south side stays mellower — families, smaller groups, and people who just want to float. Your captain can position you on whichever side matches your vibe.",
+    "hs.exp.firstTimerLink":
+      "First time chartering? Read our complete beginner’s guide →",
+    // Haulover Sandbar article — Expanded timing
+    "hs.time.season.title": "Best Season (Nov–May)",
+    "hs.time.season.text":
+      "South Florida’s dry season runs November through May — less rain, lower humidity, and the calmest bay conditions. Summer works too, but expect afternoon thunderstorms (usually clearing by 4 PM) and slightly choppier water. The sandbar is open year-round.",
+    "hs.time.arrival.title": "Ideal Arrival Window",
+    "hs.time.arrival.text":
+      "Aim to anchor between 10 AM and 11:30 AM. You get the best spots before the crowd, the sun is high enough for that turquoise water color, and you have the full afternoon ahead. Golden hour (4–6 PM) is the best light for photos. Departing around sunset makes for a perfect cruise home.",
+    "hs.time.tideDetail":
+      "🌊 Tide tip: Check the NOAA tide chart for Haulover Inlet (Station 8723178) the morning of your trip. Incoming tide brings the clearest water and calmest conditions. During a strong outgoing tide, currents near the inlet pick up — your captain will adjust anchoring accordingly.",
+    "hs.time.bachLink": "Planning a bachelorette? See our yacht party guide →",
+    // Haulover Sandbar article — How Much Does It Cost
+    "hs.cost.navTitle": "Pricing",
+    "hs.cost.title": "How Much Does It Cost?",
+    "hs.cost.p1":
+      "A private yacht charter to Haulover Sandbar starts at $2,500 for a 4-hour trip with Emerald Eyes Miami. That includes the yacht, a USCG-licensed captain, fuel, floating mats, a premium sound system, ice, coolers, and bottled water. You bring the food, drinks, and your crew — up to 12 guests.",
+    "hs.cost.p2":
+      "Longer trips (6–8 hours), premium add-ons like a live saxophonist or private sushi chef, and larger vessels are available at higher price points. No hidden fees, no fuel surcharges, no bait-and-switch.",
+    "hs.cost.priceLink": "See full pricing breakdown →",
+    // Haulover Sandbar article — Emerald Eyes Advantage
+    "hs.advantage.navTitle": "Why Emerald Eyes",
+    "hs.advantage.label": "The Emerald Eyes Difference",
+    "hs.advantage.title": "Why Charter with Us?",
+    "hs.advantage.intro":
+      "You can rent any boat and motor to the sandbar. But the experience gap between a random rental and an Emerald Eyes charter is enormous. Here’s what you actually get.",
+    "hs.advantage.captain.title": "USCG-Licensed Captains",
+    "hs.advantage.captain.text":
+      "Every Emerald Eyes charter includes a captain who’s logged hundreds of trips to Haulover Sandbar. They know where the sand is firmest, where the current is weakest, and exactly when to arrive for the best positioning. You don’t navigate, anchor, or worry.",
+    "hs.advantage.gear.title": "Everything on Board",
+    "hs.advantage.gear.text":
+      "Floating mats, premium Bluetooth sound system, ice-stocked coolers, real glassware, bottled water, and water toys. Most rental companies give you a boat and a gas tank. We give you the full experience.",
+    "hs.advantage.spot.title": "Prime Anchoring Spots",
+    "hs.advantage.spot.text":
+      "Our captains arrive early and know the exact spots where the water is clearest, the sand is smoothest, and the current is minimal. On a busy weekend, positioning is everything — and it’s the first thing amateurs get wrong.",
+    "hs.advantage.vip.title": "VIP Without the Velvet Rope",
+    "hs.advantage.vip.text":
+      "Pull up on a private yacht with music playing while everyone else circles looking for a spot. There’s no line, no wait, no reservation. Just your group, your yacht, and the best seat at the sandbar.",
+    "hs.advantage.group.title": "Groups Up to 12",
+    "hs.advantage.group.text":
+      "Birthdays, bachelorettes, corporate outings, or just a weekend with friends. Our vessels are designed for groups, with open decks, swim platforms, and plenty of shade. Everyone fits comfortably.",
+    "hs.advantage.stress.title": "Zero Logistics",
+    "hs.advantage.stress.text":
+      "No trailer, no ramp, no parking, no navigation, no fuel stops, no anchor drama. Show up at the marina with your cooler. We handle the rest. That’s the entire point.",
+    "hs.advantage.closing":
+      "The sandbar is free. Getting there the right way is what you’re paying for.",
+    // Haulover Sandbar article — Jet ski cross-link
+    "hs.addon.jetskiLink":
+      "Do you need a license to ride a jet ski in Miami? Read our guide →",
+    // Haulover Sandbar article — Additional related links
+    "hs.related.prices": "Miami Yacht Charter Prices Guide",
+    "hs.related.bachelorette": "Bachelorette Party on a Yacht",
+    "hs.related.firstTimer": "First-Timer’s Guide to Yacht Rental",
+    "hs.related.jetski": "Jet Ski License Guide",
     // Blog listing — First Time Yacht Rental card
     "blog.ft.title":
       "First Time Renting a Yacht in Miami? Everything You Need to Know",
@@ -1029,6 +1222,21 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.expect.tag1": "No experience needed",
     "ft.expect.tag2": "Captain included",
     "ft.expect.tag3": "All ages welcome",
+    "ft.expect.linkHaulover": "Popular route: Haulover Sandbar guide",
+    "ft.expect.linkBach": "Planning a bachelorette? Read our guide",
+    // First Time — How Much Does It Cost?
+    "ft.pricing.title": "How Much Does It Cost?",
+    "ft.pricing.intro":
+      "The number one question first-timers ask. Here\u2019s a quick answer \u2014 with a link to the full pricing breakdown.",
+    "ft.pricing.starting.title": "$2,500 starting for 4 hours",
+    "ft.pricing.starting.text":
+      "That\u2019s for a private yacht with captain, crew, sound system, floating mats, ice, and coolers \u2014 everything included. No hidden fees, no surprise charges. Shorter 2-hour sunset cruises start lower, and full-day adventures go higher depending on yacht size and add-ons.",
+    "ft.pricing.includes.captain": "USCG-licensed captain",
+    "ft.pricing.includes.crew": "Professional crew",
+    "ft.pricing.includes.gear": "All equipment included",
+    "ft.pricing.detail":
+      "Add-ons like a live sax player, sushi chef, jet skis, or bottle service are priced separately. Most groups spend $2,500\u2013$5,000 total for a full afternoon on the water. Weekend and holiday pricing may vary.",
+    "ft.pricing.link": "See the full pricing breakdown",
     // First Time — Bareboat vs Crewed
     "ft.charter.label": "Know the Difference",
     "ft.charter.title": "Bareboat vs. Crewed Charter",
@@ -1040,6 +1248,31 @@ const translations: Record<Lang, Record<string, string>> = {
       "Bottom line: you don\u2019t need a boating license, you don\u2019t need experience, and you don\u2019t need to worry about navigation or docking. Just show up.",
     "ft.charter.note":
       "Every Emerald Eyes charter includes a USCG-licensed captain and trained crew \u2014 no matter the package.",
+    // First Time — Your Captain Handles Everything
+    "ft.captain.title": "Your Captain Handles Everything",
+    "ft.captain.intro":
+      "First-timers often wonder what they’re responsible for on the water. The answer is simple: nothing. Your USCG-licensed captain and professional crew handle every detail so you can relax.",
+    "ft.captain.nav.title": "Navigation & Route",
+    "ft.captain.nav.text":
+      "Your captain plans and drives the entire route — from departure to Haulover Sandbar, Star Island, or wherever you want to go. They know the channels, the no-wake zones, and the best spots to anchor.",
+    "ft.captain.anchor.title": "Anchoring & Docking",
+    "ft.captain.anchor.text":
+      "Setting the anchor at the sandbar, repositioning for sunset, and docking back at the marina — all handled by the captain. You never touch a line or a cleat.",
+    "ft.captain.weather.title": "Weather Monitoring",
+    "ft.captain.weather.text":
+      "Your captain checks marine forecasts before departure and monitors conditions throughout the trip. If weather changes, they’ll adjust the route or find a sheltered spot — no decision needed from you.",
+    "ft.captain.safety.title": "Safety & Compliance",
+    "ft.captain.safety.text":
+      "Pre-departure safety briefing, life jacket inventory, emergency protocols, and full Coast Guard compliance. Your captain is drug-tested, USCG-licensed, and experienced in Miami waters.",
+    "ft.captain.crew.title": "Crew Service",
+    "ft.captain.crew.text":
+      "The crew keeps the music going, serves drinks, sets out floating mats and water toys, and makes sure every guest is comfortable. Think of them as your personal hospitality team on the water.",
+    "ft.captain.local.title": "Local Knowledge",
+    "ft.captain.local.text":
+      "The best sandbars, the quietest anchorages, the perfect sunset angle — your captain knows Miami’s waters inside out. They’ll tailor the route to your group’s vibe and make real-time suggestions.",
+    "ft.captain.note":
+      "Every charter includes captain and crew. You don’t need boating experience, a license, or even a plan — just show up and enjoy.",
+    "ft.captain.cgLink": "Learn more: How Coast Guard inspections protect you",
     // First Time — Booking Process
     "ft.booking.title": "The Booking Process",
     "ft.booking.intro":
@@ -1056,6 +1289,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.booking.step4.title": "Show Up & Enjoy",
     "ft.booking.step4.text":
       "Arrive at the marina 15 minutes early, meet your captain, get a quick safety briefing, and you\u2019re off. We handle the rest \u2014 you just have fun.",
+    "ft.booking.linkJetski": "Adding jet skis? Check if you need a license",
+    "ft.booking.linkPrices": "See full pricing breakdown",
     // First Time — What to Bring
     "ft.bring.title": "What to Bring (and What We Provide)",
     "ft.bring.intro":
@@ -1124,7 +1359,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time — Common Mistakes
     "ft.mistakes.title": "Common Mistakes to Avoid",
     "ft.mistakes.intro":
-      "We\u2019ve seen it all. Here are the top four first-timer mistakes \u2014 and how to avoid them.",
+      "We\u2019ve seen it all. Here are the most common first-timer mistakes \u2014 and how to avoid them.",
     "ft.mistakes.short.title": "Booking Too Short",
     "ft.mistakes.short.text":
       "A 2-hour charter sounds fine on paper, but by the time you board, cruise out, anchor, and enjoy the water, it\u2019s time to head back. For a sandbar day or party, 4 hours is the sweet spot. 6\u20138 hours if you want to really unwind.",
@@ -1137,6 +1372,30 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.mistakes.glass.title": "Bringing Glass Bottles",
     "ft.mistakes.glass.text":
       "Glass on a boat is a safety hazard. Broken glass on a wet deck is dangerous, and shards in the water are worse. Transfer drinks to cans or plastic before boarding. Most yacht companies won\u2019t allow glass on board.",
+    "ft.mistakes.weather.title": "Not Checking the Weather",
+    "ft.mistakes.weather.text":
+      "Miami weather changes fast. Don’t wait until you’re at the marina to check the forecast. Look at marine conditions the day before and the morning of. Your captain monitors weather too — but if conditions look rough, reach out early so we can reschedule before you drive to the dock.",
+    "ft.mistakes.headcount.title": "Not Confirming Headcount",
+    "ft.mistakes.headcount.text":
+      "Every yacht has a strict Coast Guard passenger limit. If your group shows up with more people than you booked for, someone stays on the dock. Confirm your final headcount 48 hours before departure and let us know about any changes — we can sometimes accommodate on a larger vessel.",
+    // First Time — Seasickness Tips
+    "ft.seasick.title": "Seasickness Tips",
+    "ft.seasick.intro":
+      "Worried about getting seasick? It’s more common than people admit — but it’s also easy to prevent. Here’s what works.",
+    "ft.seasick.deck.title": "Stay Above Deck",
+    "ft.seasick.deck.text":
+      "Fresh air and an open horizon are the best prevention. Stay on the upper deck or the bow where you can feel the breeze. Avoid going below deck for extended periods — the enclosed space and lack of visual reference makes it worse.",
+    "ft.seasick.horizon.title": "Watch the Horizon",
+    "ft.seasick.horizon.text":
+      "Your inner ear senses the motion, but your eyes need a fixed reference point to match. Look at the horizon or the shoreline — not your phone. Scrolling on a screen while the boat rocks is a fast track to feeling queasy.",
+    "ft.seasick.ginger.title": "Ginger & Remedies",
+    "ft.seasick.ginger.text":
+      "Ginger candies, ginger ale, or ginger chews are a natural remedy that actually works. Dramamine or Bonine taken 30–60 minutes before boarding are the go-to over-the-counter options. Sea-Bands (acupressure wristbands) also help some people.",
+    "ft.seasick.meals.title": "Avoid Heavy Meals Before",
+    "ft.seasick.meals.text":
+      "Don’t board on an empty stomach, but don’t eat a huge meal either. A light, non-greasy meal about an hour before departure is ideal. Skip the spicy food and heavy dairy. Stay hydrated — dehydration amplifies seasickness symptoms.",
+    "ft.seasick.note":
+      "Most guests on day charters in Miami never get seasick — the waters in Biscayne Bay are calm and protected. But if you’re prone to motion sickness, these tips make a real difference.",
     // First Time — Safety
     "ft.safety.title": "Safety on Board",
     "ft.safety.intro":
@@ -1190,6 +1449,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "More guides to help you plan the perfect day on the water.",
     "ft.related.coastGuard":
       "Coast Guard Safety & Bareboat Charter Inspections",
+    "ft.related.bachelorette": "Bachelorette Party on a Yacht: Planning Guide",
     "ft.related.haulover": "Haulover Sandbar by Yacht: The Complete Guide",
     "ft.related.jetski": "Do You Need a License to Ride a Jet Ski in Miami?",
     "ft.related.prices": "Miami Yacht Charter Prices: What to Expect",
@@ -1218,8 +1478,10 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.nav.included": "What's Included",
     "yp.nav.duration": "Duration & Pricing",
     "yp.nav.addons": "Add-On Costs",
+    "yp.nav.captain": "Your Captain & Crew",
     "yp.nav.factors": "Factors That Affect Price",
     "yp.nav.save": "How to Save",
+    "yp.nav.tipping": "Tipping Guide",
     "yp.nav.faq": "FAQ",
     "yp.short.title": "The Short Answer",
     "yp.short.p1":
@@ -1258,6 +1520,19 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.inc.glass.title": "Glassware & Cups",
     "yp.inc.glass.text":
       "Reusable cups and glassware so you can bring your own drinks in style.",
+    "yp.captain.label": "Your Crew",
+    "yp.captain.title": "Your Captain & Crew",
+    "yp.captain.intro":
+      "Every Emerald Eyes charter comes with a professional team — and their cost is already included in your base price. No extra fees, no surprises.",
+    "yp.captain.captain.title": "USCG-Licensed Captain",
+    "yp.captain.captain.text":
+      "Your captain holds a United States Coast Guard license and knows every channel, sandbar, and no-wake zone in Biscayne Bay. They handle navigation, anchoring, docking, and all safety protocols so you can focus on enjoying the ride.",
+    "yp.captain.crew.title": "Professional Crew",
+    "yp.captain.crew.text":
+      "Your crew handles hospitality — serving drinks, setting up water toys, managing the sound system, and keeping everything running smoothly. For larger groups (10+), we add an additional crew member at no extra charge.",
+    "yp.captain.cost.title": "What Does This Cost?",
+    "yp.captain.cost.text":
+      "Nothing extra. Your captain and crew are included in the base charter price. The only additional cost you should budget for is gratuity, which is always at your discretion.",
     "yp.dur.title": "Charter Duration & Pricing",
     "yp.dur.intro":
       "Longer charters offer better per-hour value and let you explore more of Miami's coastline. Here's how our rates break down.",
@@ -1305,6 +1580,14 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.addon.photo.price": "From $150",
     "yp.addon.photo.desc":
       "A professional photographer captures every moment. Drone shots, candid party photos, and golden-hour portraits. Edited gallery within 48 hours.",
+    "yp.addon.hookah.title": "Hookah",
+    "yp.addon.hookah.price": "From $150",
+    "yp.addon.hookah.desc":
+      "A premium hookah setup with a selection of flavors, delivered and managed on board. Popular for sunset cruises and group celebrations.",
+    "yp.addon.decor.title": "Custom Decorations",
+    "yp.addon.decor.price": "From $250",
+    "yp.addon.decor.desc":
+      "Balloons, banners, flower arrangements, and themed setups for birthdays, proposals, and bachelorettes. Send us your vision and we handle the rest.",
     "yp.factors.title": "What Affects the Price",
     "yp.factors.intro":
       "Not every charter costs the same. Here are the four main variables that determine your final price.",
@@ -1335,6 +1618,20 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.save.longer.title": "Book a Longer Charter",
     "yp.save.longer.text":
       "The per-hour cost drops on longer charters. An 8-hour full day is significantly better value per hour than two separate 4-hour trips. Plus, you get the full Miami experience without rushing.",
+    "yp.tipping.title": "Tipping Your Captain & Crew",
+    "yp.tipping.intro":
+      "Gratuity is the only cost beyond your quoted price. Here's everything you need to know so there are zero surprises.",
+    "yp.tipping.standard.title": "Industry Standard: 15-20%",
+    "yp.tipping.standard.text":
+      "The standard gratuity for yacht charters in Miami is 15-20% of the base charter fee. This is consistent across the industry, similar to tipping at a high-end restaurant.",
+    "yp.tipping.example.title": "What That Looks Like",
+    "yp.tipping.example.text":
+      "On a $2,500 half-day charter, a typical tip is $375-$500. On a $5,000 full-day charter, $750-$1,000. The amount is always at your discretion based on your experience.",
+    "yp.tipping.how.title": "How to Tip",
+    "yp.tipping.how.text":
+      "Cash is preferred and is given directly to the captain at the end of the trip. The captain splits the tip with the crew. Venmo and Zelle are also accepted if you prefer digital.",
+    "yp.tipping.note":
+      "Gratuity is never included in our pricing and never expected — but it is deeply appreciated. Your crew works hard to make every charter special.",
     "yp.midCta.label": "Ready to Book?",
     "yp.midCta.title": "Get Your Custom Quote in Minutes",
     "yp.midCta.text":
@@ -1380,6 +1677,8 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.sample.sax": "Live sax player: +$350",
     "yp.sample.tip": "Gratuity (18%): ~$450",
     "yp.sample.total": "Total: ~$3,300 for up to 13 guests",
+    "yp.sample.perPerson": "Per person with add-ons (13 guests): ~$254",
+    "yp.sample.perPersonBase": "Per person without add-ons: ~$192",
     "yp.finalCta.title": "Know the Price. Love the Experience.",
     "yp.finalCta.text":
       "No surprises, no hidden fees. Just a transparent quote and a crew that's ready to make your day on the water unforgettable. Tell us what you're looking for.",
@@ -2065,6 +2364,118 @@ const translations: Record<Lang, Record<string, string>> = {
       "Requisitos de equipo de seguridad (PFDs, extintores, senales)",
     "cg.reg.175":
       "Aplicabilidad del Subcapitulo T (embarcaciones con >6 pasajeros)",
+    "cg.related.yachtPrices": "¿Cuanto Cuesta un Charter de Yate?",
+    "cg.related.bachelorette": "Despedida de Soltera en Yate",
+    "cg.related.firstTimer": "Guia para Principiantes en Yates",
+    "cg.related.jetSki": "Requisitos de Licencia para Jet Ski",
+    "cg.related.haulover": "Haulover Sandbar en Yate",
+    "cg.xlink.pricing":
+      "¿Cuanto cuesta un charter que cumple con todas las normas? Nuestra guia de precios explica exactamente por que pagas.",
+    "cg.xlink.bachelorette":
+      "¿Planeas un evento grupal? Mira como manejamos el cumplimiento del Coast Guard para despedidas de soltera y grupos grandes.",
+    "cg.xlink.firstTimer":
+      "¿Nunca has alquilado un yate? Nuestra guia para principiantes cubre todo, desde la reserva hasta el embarque.",
+    "cg.xlink.jetSki":
+      "¿Curioso sobre licencias de embarcaciones en Florida? Nuestra guia de jet ski explica el requisito de la Tarjeta de Educacion de Seguridad Nautica.",
+    "cg.xlink.haulover":
+      "¿Vas a Haulover Sandbar? Descubre que esperar en una de las rutas de charter mas populares de Miami.",
+    "cg.checklist.title": "La Lista Completa de Inspeccion",
+    "cg.checklist.intro":
+      "Los oficiales del Coast Guard siguen un protocolo sistematico durante cada abordaje. Aqui esta todo lo que verifican fisicamente, revisan y documentan — y que especificamente causa que una embarcacion falle.",
+    "cg.check.pfd.title": "Chalecos Salvavidas (PFDs)",
+    "cg.check.pfd.pass":
+      "Un PFD Tipo I, II o III aprobado por USCG por cada persona a bordo, incluyendo tripulacion. PFDs de tamano infantil requeridos para menores de 13.",
+    "cg.check.pfd.fail":
+      "Conteo incorrecto, tamano incorrecto para ninos, PFDs danados o almacenados en empaques sellados.",
+    "cg.check.fire.title": "Extintores",
+    "cg.check.fire.pass":
+      "Numero correcto segun eslora. Indicador en verde. Etiqueta de inspeccion vigente. Boquilla limpia y pasador intacto.",
+    "cg.check.fire.fail":
+      "Fecha de inspeccion vencida, indicador en rojo o faltante, unidades descargadas, cilindro corroido o pasador faltante.",
+    "cg.check.ring.title": "Dispositivo Arrojadizo (PFD Tipo IV)",
+    "cg.check.ring.pass":
+      "Un dispositivo arrojadizo Tipo IV — aro salvavidas o cojin arrojadizo — requerido para embarcaciones de 16 pies o mas. Debe ser inmediatamente accesible.",
+    "cg.check.ring.fail":
+      "Aro salvavidas enterrado bajo equipo. Cojin arrojadizo con espuma empapada. Sin dispositivo arrojadizo a bordo.",
+    "cg.check.vds.title": "Senales de Socorro Visual",
+    "cg.check.vds.pass":
+      "Tres senales pirotecnicas dia/noche con fechas vigentes, O una luz electrica SOS mas tres senales diurnas.",
+    "cg.check.vds.fail":
+      "Bengalas vencidas (vencen 42 meses despues de fabricacion). Menos de tres senales. Sin senales a bordo.",
+    "cg.check.sound.title": "Dispositivo Sonoro",
+    "cg.check.sound.pass":
+      "Un silbato o bocina audible a media milla nautica. Embarcaciones de 39.4 pies o mas tambien requieren una campana.",
+    "cg.check.sound.fail":
+      "Sin bocina o silbato a bordo. Bote de bocina de aire vacio. Campana faltante en embarcaciones grandes.",
+    "cg.check.nav.title": "Luces de Navegacion",
+    "cg.check.nav.pass":
+      "Luces laterales roja/verde funcionales, luz de popa blanca y luz de tope. Lentes limpios y de color correcto.",
+    "cg.check.nav.fail":
+      "Bombillas quemadas, lentes agrietados, filtros de color incorrectos o luces mal cableadas.",
+    "cg.check.placard.title": "Carteles y Documentacion Requeridos",
+    "cg.check.placard.pass":
+      "Cartel MARPOL de basura, cartel de descarga de aceite, resumen de reglas de navegacion. Registro o Certificado de Documentacion USCG a bordo y vigente.",
+    "cg.check.placard.fail":
+      "Carteles faltantes, registro vencido, documentacion que no coincide con el nombre o HIN de la embarcacion.",
+    "cg.check.engine.title": "Compartimiento de Motor y Sentina",
+    "cg.check.engine.pass":
+      "Sin fugas de combustible. Sentina limpia y seca. Ventilacion funcional. Arrestallamas presente y limpio en motores de gasolina.",
+    "cg.check.engine.fail":
+      "Combustible visible en la sentina, soplador no funcional, arrestallamas faltante, lineas de combustible corroidas.",
+    "cg.check.contract.title": "Contrato de Charter y Credenciales",
+    "cg.check.contract.pass":
+      "Contrato firmado con firmas de todas las partes. Credencial USCG del capitan a bordo y vigente. Documentacion de pruebas de drogas disponible.",
+    "cg.check.contract.fail":
+      "Contrato sin firmar o faltante. Credencial vencida. Nombre en contrato no coincide con el barco. Sin cumplimiento de pruebas de drogas.",
+    "cg.fail.title": "Que Pasa Si Fallas una Inspeccion",
+    "cg.fail.intro":
+      "Fallar una inspeccion del Coast Guard no es un simple regano. Las consecuencias son inmediatas y escalan segun la gravedad de las violaciones encontradas.",
+    "cg.fail.terminate.title": "Terminacion del Viaje",
+    "cg.fail.terminate.text":
+      "El Coast Guard puede ordenar que la embarcacion regrese a puerto inmediatamente. Tu charter se acabo. No hay opcion de corregirlo y seguir en el agua.",
+    "cg.fail.fine.title": "Multas y Penalidades Civiles",
+    "cg.fail.fine.text":
+      "Penalidades civiles de hasta $25,000 por violacion bajo 46 U.S.C. § 3718. Multas de equipo de seguridad de $1,000 a $10,000. Capitan y propietario pueden ser multados independientemente.",
+    "cg.fail.seize.title": "Detencion o Confiscacion de la Embarcacion",
+    "cg.fail.seize.text":
+      "Para violaciones serias, el Coast Guard puede detener la embarcacion en el muelle hasta que todas las deficiencias sean corregidas y reinspeccionadas.",
+    "cg.fail.criminal.title": "Procesamiento Penal",
+    "cg.fail.criminal.text":
+      "En casos de negligencia intencional o incidentes con lesiones, el operador puede enfrentar cargos penales bajo 46 U.S.C. § 3718, incluyendo multas y encarcelamiento.",
+    "cg.fail.captain.title": "Suspension de Credencial del Capitan",
+    "cg.fail.captain.text":
+      "Si el capitan opera sin credenciales validas o bajo la influencia, el USCG puede iniciar suspension y revocacion de su licencia. Esto puede terminar una carrera.",
+    "cg.fail.insurance.title": "Implicaciones de Seguro",
+    "cg.fail.insurance.text":
+      "Una violacion documentada puede anular la cobertura de seguro maritimo, exponiendo a todos a bordo a responsabilidad financiera personal.",
+    "cg.fail.closing":
+      "Fallar una inspeccion puede significar multas, cargos penales, consecuencias que terminan carreras y perdida total de cobertura de seguro. Por eso importa elegir un operador que cumpla.",
+    "cg.ee.title": "Lo Que Emerald Eyes Hace Diferente",
+    "cg.ee.intro":
+      "La mayoria de las empresas de charter dicen ser totalmente conformes. En Emerald Eyes, el cumplimiento no es una casilla — es la base de cada viaje que operamos.",
+    "cg.ee.inspect.title":
+      "Cada Embarcacion es Inspeccionada por el Coast Guard",
+    "cg.ee.inspect.text":
+      "Nuestras embarcaciones pasan inspecciones regulares de seguridad del Coast Guard y se mantienen para exceder los requisitos federales. El equipo de seguridad se verifica antes de cada salida — cada viaje.",
+    "cg.ee.captains.title":
+      "Capitanes Licenciados por USCG y con Pruebas de Drogas",
+    "cg.ee.captains.text":
+      "Cada capitan de Emerald Eyes tiene una credencial valida del USCG y esta inscrito en un programa de pruebas aleatorias de drogas y alcohol segun 46 C.F.R. Part 16.",
+    "cg.ee.contract.title": "Documentacion Bareboat a Prueba de Balas",
+    "cg.ee.contract.text":
+      "Nuestros contratos estan redactados para resistir el escrutinio del Coast Guard. Cada acuerdo establece claramente la estructura bareboat y esta completamente ejecutado antes de salir del muelle.",
+    "cg.ee.briefing.title": "Briefing de Seguridad Pre-Salida",
+    "cg.ee.briefing.text":
+      "Antes de cada charter, nuestro capitan realiza un briefing completo de seguridad cubriendo ubicaciones de chalecos, extintores, procedimientos de hombre al agua y protocolos de emergencia.",
+    "cg.ee.equipment.title": "Equipo Que Supera los Estandares",
+    "cg.ee.equipment.text":
+      "Llevamos mas del equipo minimo requerido. PFDs extra, bengalas vigentes, extintores completamente cargados y botiquines en cada embarcacion.",
+    "cg.ee.record.title": "Cero Inspecciones Fallidas",
+    "cg.ee.record.text":
+      "Emerald Eyes nunca ha fallado una inspeccion del Coast Guard. Ni una vez. Damos la bienvenida a los abordajes porque todo ya esta en orden antes de salir del muelle.",
+    "cg.checklist.navTitle": "Lista Completa de Inspeccion",
+    "cg.fail.navTitle": "Si Fallas",
+    "cg.ee.navTitle": "Diferencia Emerald Eyes",
     "cg.reg.176": "Requisito de Certificado de Inspeccion",
     "cg.reg.2101":
       "Definiciones: embarcacion pequena de pasajeros, embarcacion de pasajeros no inspeccionada",
@@ -2161,13 +2572,35 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.rules.bui.title": "BUI = Igual que DUI",
     "js.rules.bui.text":
       "Navegar Bajo la Influencia tiene el mismo límite de 0.08% BAC que conducir. Primera infracción: multa de $500–$1,000, hasta 6 meses de cárcel. Menores de 21: tolerancia cero al 0.02%. Los oficiales de FWC patrullan activamente las vías navegables de Miami.",
+    "js.rules.speed.title": "Zonas de Velocidad Cerca de la Costa",
+    "js.rules.speed.text":
+      "Dentro de 300 pies de la costa, nadadores, muelles, embarcaderos o embarcaciones ancladas, la ley de Florida requiere velocidad m\u00EDnima / sin oleaje. En canales marcados y la V\u00EDa Intracostera, las zonas de velocidad lenta son estrictamente aplicadas. Las multas comienzan en $50 y pueden superar $500 por operaci\u00F3n imprudente cerca de la costa.",
+    "js.rules.wildlife.title": "Zonas de Protecci\u00F3n de Vida Silvestre",
+    "js.rules.wildlife.text":
+      "La Bah\u00EDa de Biscayne tiene zonas federales protegidas de manat\u00EDes con restricciones de velocidad estacionales (t\u00EDpicamente de noviembre a marzo). Acosar mam\u00EDferos marinos \u2014 incluyendo perseguir delfines o acercarse a manat\u00EDes \u2014 viola la Ley de Protecci\u00F3n de Mam\u00EDferos Marinos con multas de hasta $11,000 por incidente.",
+    "js.rules.buiPenalties.title": "Penalidades BUI en Detalle",
+    "js.rules.buiPenalties.text":
+      "Segunda infracci\u00F3n BUI: multa de $1,000\u2013$2,000, hasta 9 meses de c\u00E1rcel, confiscaci\u00F3n obligatoria de embarcaci\u00F3n por 10 d\u00EDas. Tercera infracci\u00F3n dentro de 10 a\u00F1os es delito grave de tercer grado: hasta 5 a\u00F1os de prisi\u00F3n, multa de $5,000. Rechazar la prueba de alcoholemia resulta en penalidad civil autom\u00E1tica de $500 y puede usarse como evidencia en tu contra.",
     // Jet Ski article — Mid CTA
     "js.midCta.title": "¿Quieres la Vista Sin las Reglas?",
     "js.midCta.text":
       "¿Te encanta la idea de navegar frente a las mansiones de Star Island y ver el skyline de Miami desde el agua — pero no quieres lidiar con certificaciones, reglas de chalecos salvavidas y toques de queda al atardecer? Un charter privado de Emerald Eyes Miami se encarga de todo. Nuestro capitán navega. Nuestra tripulación maneja los detalles. Tú solo subes a bordo con un trago en la mano. Sin licencia, sin tarjeta, sin complicaciones — solo las mejores vistas de Miami.",
     "js.midCta.btn": "Planifica Tu Charter",
-    // Jet Ski article — Best Spots
-    "js.spots.title": "Dónde Navegar en Miami",
+    // Jet Ski article — Jet Skis from Your Yacht (ES)
+    "js.yacht.eyebrow": "Yate + Jet Ski como Extra",
+    "js.yacht.title": "Jet Skis Entregados a Tu Yate",
+    "js.yacht.p1":
+      "Esto es lo que la mayor\u00EDa no sabe: puedes agregar jet skis directamente a tu charter de Emerald Eyes Miami. Organizamos la entrega directo a tu yate en Haulover Sandbar o en cualquier lugar de la Bah\u00EDa de Biscayne \u2014 sin alquiler separado, sin manejar a una marina, sin esperar en fila.",
+    "js.yacht.p2":
+      "El extra cuesta $200 por hora por jet ski, entregado y recogido en la ubicaci\u00F3n de tu yate. Tu capit\u00E1n coordina los tiempos para que los jet skis lleguen exactamente cuando los quieras. Navega por una hora, dev\u00FAlvelos, y vuelve a relajarte en cubierta con un trago. Sin complicaciones de certificaci\u00F3n, sin drama de dep\u00F3sito \u2014 nosotros manejamos la log\u00EDstica.",
+    "js.yacht.p3":
+      "Es lo mejor de ambos mundos: la libertad del jet ski en la Bah\u00EDa de Biscayne con la comodidad de un yate privado como tu base flotante. Popular para despedidas de soltera, cumplea\u00F1os y grupos corporativos que quieren variedad sin el estr\u00E9s.",
+    "js.yacht.tag1": "$200/hr por jet ski",
+    "js.yacht.tag2": "Entregado a tu yate",
+    "js.yacht.pricingLink": "Ver precios completos de charter",
+    "js.yacht.sandbarLink": "Gu\u00EDa de Haulover Sandbar",
+    // Jet Ski article — Best Spots (ES)
+    "js.spots.title": "D\u00F3nde Navegar en Miami",
     "js.spots.intro":
       "Miami tiene algunas de las mejores aguas para jet ski del país. Estos son los lugares que hacen que valga la pena el viaje.",
     "js.spot.biscayne.title": "Bahía de Biscayne",
@@ -2207,17 +2640,29 @@ const translations: Record<Lang, Record<string, string>> = {
     "js.pricing.p2":
       "La mayoría de los operadores usan modelos Yamaha VX Deluxe o Sea-Doo y salen desde Miami Beach Marina, Bayside Marketplace o Rickenbacker Causeway. Los depósitos de seguridad van de $200–$500 (retención en tarjeta de crédito, no se cobra a menos que haya daños).",
     "js.pricing.p3":
-      "Para grupos, considera las cuentas: un jet ski cabe 1–2 personas a $150/hora cada uno. Un charter de Emerald Eyes Miami para 6–12 invitados empieza en alrededor de $2,500 — a menudo un mejor valor por persona con bebidas, música, un capitán profesional y cero complicaciones de certificación.",
-    // Jet Ski article — Safety
-    "js.safety.title": "Por Qué Importa la Tarjeta",
+      "Para grupos, considera las cuentas: un jet ski cabe 1\u20132 personas a $150/hora cada uno. Un charter de Emerald Eyes Miami para 6\u201312 invitados empieza en alrededor de $2,500 \u2014 a menudo un mejor valor por persona con bebidas, m\u00FAsica, un capit\u00E1n profesional y cero complicaciones de certificaci\u00F3n.",
+    "js.pricing.yachtPricesLink": "Desglose completo de precios de charter",
+    "js.pricing.bacheloretteLink": "Paquetes de despedida de soltera",
+    // Jet Ski article — Safety (ES)
+    "js.safety.title": "Por Qu\u00E9 Importa la Tarjeta",
     "js.safety.p1":
       "Esto no es solo papeleo. Según la USCG y la FWC, Florida lidera consistentemente la nación en incidentes náuticos, con motos acuáticas representando una porción significativa. El condado de Miami-Dade regularmente se ubica entre los principales condados en incidentes de PWC. Más de la mitad son colisiones con otra embarcación.",
     "js.safety.stat1": "FL lidera la nación en incidentes náuticos",
     "js.safety.stat2": "de los operadores fatales sin educación náutica",
     "js.safety.stat3": "por un certificado temporal de 30 min",
     "js.safety.p2":
-      "El número que más importa: según el informe de Estadísticas de Navegación Recreativa 2024 de la USCG, el 69% de las muertes ocurrieron en embarcaciones donde el operador no tenía educación de seguridad náutica. El certificado temporal cubre reglas de derecho de paso, fundamentos de navegación y procedimientos de emergencia. Son 30 minutos que podrían salvar tu vida en la Bahía de Biscayne.",
-    // Jet Ski article — FAQ
+      "El n\u00FAmero que m\u00E1s importa: seg\u00FAn el informe de Estad\u00EDsticas de Navegaci\u00F3n Recreativa 2024 de la USCG, el 69% de las muertes ocurrieron en embarcaciones donde el operador no ten\u00EDa educaci\u00F3n de seguridad n\u00E1utica. El certificado temporal cubre reglas de derecho de paso, fundamentos de navegaci\u00F3n y procedimientos de emergencia. Son 30 minutos que podr\u00EDan salvar tu vida en la Bah\u00EDa de Biscayne.",
+    "js.safety.coastGuardLink":
+      "Aprende qu\u00E9 cubre una inspecci\u00F3n del Coast Guard",
+    // Jet Ski article — Book Add-On CTA (ES)
+    "js.bookAddon.title": "Agrega Jet Skis a Tu Charter",
+    "js.bookAddon.p1":
+      "Reserva un charter de Emerald Eyes Miami y agrega jet skis como extra por $200/hr. Los entregamos directo a tu yate en el banco de arena \u2014 t\u00FA navegas, nosotros nos encargamos de todo lo dem\u00E1s.",
+    "js.bookAddon.p2":
+      "Sin alquiler separado. Sin estr\u00E9s de certificaci\u00F3n. Sin drama de dep\u00F3sito. Solo d\u00EDnos al reservar y coordinaremos la entrega con tu capit\u00E1n.",
+    "js.bookAddon.btn": "Reserva Tu Charter + Jet Skis",
+    "js.bookAddon.firstTimeLink": "Gu\u00EDa para primer alquiler de yate",
+    // Jet Ski article — FAQ (ES)
     "js.faq.title": "Preguntas Frecuentes",
     "js.faq.license.q": "¿Necesitas licencia para montar jet ski en Miami?",
     "js.faq.license.a":
@@ -2260,16 +2705,18 @@ const translations: Record<Lang, Record<string, string>> = {
       "BUI: Igual que DUI. Límite de 0.08% BAC. Multa de $500–$1,000 por primera infracción.",
     "js.ref.tourist":
       "Turistas: Certificado temporal de $9 en línea, válido 90 días. O trae la tarjeta de tu estado.",
-    // Jet Ski article — Related
-    "js.related.title": "Explorar Más",
+    // Jet Ski article — Related (ES)
+    "js.related.title": "Explorar M\u00E1s",
+    "js.related.yachtPrices":
+      "Precios de Charter de Yate en Miami: Gu\u00EDa de Costos 2026",
+    "js.related.sandbar": "Haulover Sandbar en Yate: Gu\u00EDa Completa",
+    "js.related.firstTime": "Primer Alquiler de Yate: Qu\u00E9 Esperar",
+    "js.related.bachelorette": "Despedida de Soltera en Yate en Miami",
     "js.related.coastGuard":
-      "¿Qué Pasa Durante una Inspección del Coast Guard?",
-    "js.related.sunset": "Experiencia Crucero al Atardecer",
-    "js.related.sandbar": "Viaje al Banco de Arena de Haulover",
-    "js.related.fleet": "Nuestra Flota",
+      "\u00BFQu\u00E9 Pasa Durante una Inspecci\u00F3n del Coast Guard?",
     "js.related.book": "Reserva Tu Charter",
-    // Jet Ski article — Final CTA
-    "js.cta.title": "Olvídate de las complicaciones del jet ski.",
+    // Jet Ski article — Final CTA (ES)
+    "js.cta.title": "Olv\u00EDdate de las complicaciones del jet ski.",
     "js.cta.text":
       "Las mismas vistas de la Bahía de Biscayne. Las mismas mansiones de Star Island. El mismo atardecer de Miami. Pero desde un yate privado de Emerald Eyes Miami con música, bebidas y espacio para relajarte — nuestro capitán se encarga de todo. Sin licencia necesaria. Sin certificación. Solo tú y el agua.",
     "js.cta.book": "Planifica Tu Charter",
@@ -2279,7 +2726,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.hs.title": "Haulover Sandbar en Yate: La Guia Completa de Miami",
     "blog.hs.excerpt":
       "Todo lo que necesitas saber sobre visitar Haulover Sandbar en yate privado \u2014 mejores horarios, que traer, consejos de seguridad, reglas y como llegar con estilo.",
-    "blog.hs.readTime": "14 min de lectura",
+    "blog.hs.readTime": "18 min de lectura",
     // Haulover Sandbar article — Hero
     "hs.heroTitle": "Haulover Sandbar en Yate: La Guia Completa de Miami",
     "hs.intro1":
@@ -2469,6 +2916,78 @@ const translations: Record<Lang, Record<string, string>> = {
       "Yate privado. Capitan licenciado. Colchonetas flotantes, musica y espacio para hasta 12. Llega a Haulover Sandbar como fue pensado \u2014 y dejanos encargarnos del resto.",
     "hs.cta.book": "Planifica Tu Charter",
     "hs.cta.explore": "Ver Experiencias",
+    // Haulover Sandbar article — The Sandbar Experience (ES)
+    "hs.exp.navTitle": "La Experiencia",
+    "hs.exp.title": "Como Es Realmente el Sandbar",
+    "hs.exp.intro":
+      "Leer sobre Haulover Sandbar y estar ahi son dos cosas diferentes. Asi es como se ve un dia tipico — desde el momento en que anclas hasta que navegas de regreso a casa.",
+    "hs.exp.anchor.title": "Anclando",
+    "hs.exp.anchor.text":
+      "Tu capitan posiciona el yate en el lado sur del sandbar, donde el agua esta mas tranquila y la arena mas firme. El ancla de proa entra primero, luego la linea de popa mantiene el barco fijo. En cinco minutos ya estas listo — colchonetas en el agua, musica encendida y la plataforma de natacion abajo. La mayoria de los grupos estan caminando en el agua segundos despues de anclar.",
+    "hs.exp.wade.title": "Caminar y Socializar",
+    "hs.exp.wade.text":
+      "El agua llega de la rodilla a la cintura en los bajos. La arena es suave, el agua es calida todo el ano (24–29°C), y la visibilidad suele ser de 3–5 metros. La gente camina entre barcos, flota en colchonetas, lanza balones y simplemente se queda de pie en el agua platicando. Es relajado — como una fiesta de alberca sin paredes.",
+    "hs.exp.vendors.title": "Comida y Vendedores Flotantes",
+    "hs.exp.vendors.text":
+      "Los fines de semana, una flota de vendedores en kayaks y jet skis pasan entre los barcos vendiendo ceviche fresco, tacos de pescado, acai bowls, rebanadas de pizza y bebidas frias. Los precios van de $8–15 por producto. Solo efectivo — trae billetes chicos. Algunos vendedores tambien venden equipo de snorkel e inflables. Es una de las cosas mas divertidas y unicamente de Miami que experimentaras.",
+    "hs.exp.party.title": "La Escena de Fiesta",
+    "hs.exp.party.text":
+      "Los fines de semana, el lado norte del sandbar se convierte en un festival de musica flotante. DJs tocan desde barcos anclados, la gente junta sus embarcaciones, y la energia crece desde la manana hasta el atardecer. El lado sur se mantiene mas tranquilo — familias, grupos pequenos y gente que solo quiere flotar. Tu capitan puede posicionarte en el lado que combine con tu vibra.",
+    "hs.exp.firstTimerLink":
+      "Primera vez en charter? Lee nuestra guia completa para principiantes →",
+    // Haulover Sandbar article — Expanded timing (ES)
+    "hs.time.season.title": "Mejor Temporada (Nov–May)",
+    "hs.time.season.text":
+      "La temporada seca del sur de Florida va de noviembre a mayo — menos lluvia, menos humedad y las condiciones mas tranquilas de la bahia. El verano tambien funciona, pero espera tormentas por la tarde (que usualmente se despejan a las 4 PM) y agua ligeramente mas agitada. El sandbar esta abierto todo el ano.",
+    "hs.time.arrival.title": "Hora Ideal de Llegada",
+    "hs.time.arrival.text":
+      "Apunta a anclar entre las 10 AM y las 11:30 AM. Consigues los mejores lugares antes de la multitud, el sol esta lo suficientemente alto para ese color turquesa del agua, y tienes toda la tarde por delante. La hora dorada (4–6 PM) es la mejor luz para fotos. Salir alrededor del atardecer hace un regreso perfecto.",
+    "hs.time.tideDetail":
+      "🌊 Tip de mareas: Revisa la tabla de mareas de NOAA para Haulover Inlet (Estacion 8723178) la manana de tu viaje. La marea entrante trae el agua mas clara y las condiciones mas tranquilas. Durante una marea saliente fuerte, las corrientes cerca del inlet aumentan — tu capitan ajustara el anclaje segun corresponda.",
+    "hs.time.bachLink":
+      "Planeas una despedida de soltera? Ve nuestra guia de fiestas en yate →",
+    // Haulover Sandbar article — How Much Does It Cost (ES)
+    "hs.cost.navTitle": "Precios",
+    "hs.cost.title": "Cuanto Cuesta?",
+    "hs.cost.p1":
+      "Un charter de yate privado a Haulover Sandbar comienza en $2,500 por un viaje de 4 horas con Emerald Eyes Miami. Eso incluye el yate, un capitan con licencia USCG, combustible, colchonetas flotantes, sistema de sonido premium, hielo, hieleras y agua embotellada. Tu traes la comida, las bebidas y tu grupo — hasta 12 invitados.",
+    "hs.cost.p2":
+      "Viajes mas largos (6–8 horas), extras premium como un saxofonista en vivo o chef de sushi privado, y embarcaciones mas grandes estan disponibles a precios mas altos. Sin cargos ocultos, sin recargos de combustible, sin sorpresas.",
+    "hs.cost.priceLink": "Ver desglose completo de precios →",
+    // Haulover Sandbar article — Emerald Eyes Advantage (ES)
+    "hs.advantage.navTitle": "Por Que Emerald Eyes",
+    "hs.advantage.label": "La Diferencia Emerald Eyes",
+    "hs.advantage.title": "Por Que Charterear con Nosotros?",
+    "hs.advantage.intro":
+      "Puedes alquilar cualquier barco e ir al sandbar. Pero la diferencia de experiencia entre un alquiler cualquiera y un charter de Emerald Eyes es enorme. Esto es lo que realmente obtienes.",
+    "hs.advantage.captain.title": "Capitanes con Licencia USCG",
+    "hs.advantage.captain.text":
+      "Cada charter de Emerald Eyes incluye un capitan que ha hecho cientos de viajes a Haulover Sandbar. Saben donde la arena es mas firme, donde la corriente es mas debil, y exactamente cuando llegar para el mejor posicionamiento. Tu no navegas, no anclas, no te preocupas.",
+    "hs.advantage.gear.title": "Todo a Bordo",
+    "hs.advantage.gear.text":
+      "Colchonetas flotantes, sistema de sonido Bluetooth premium, hieleras con hielo, cristaleria real, agua embotellada y juguetes acuaticos. La mayoria de las companias de alquiler te dan un barco y un tanque de gasolina. Nosotros te damos la experiencia completa.",
+    "hs.advantage.spot.title": "Mejores Lugares para Anclar",
+    "hs.advantage.spot.text":
+      "Nuestros capitanes llegan temprano y conocen los lugares exactos donde el agua es mas clara, la arena mas suave y la corriente minima. En un fin de semana concurrido, el posicionamiento lo es todo — y es lo primero que los novatos hacen mal.",
+    "hs.advantage.vip.title": "VIP Sin Cuerda de Terciopelo",
+    "hs.advantage.vip.text":
+      "Llega en un yate privado con musica sonando mientras todos los demas dan vueltas buscando un lugar. No hay fila, no hay espera, no hay reservacion. Solo tu grupo, tu yate y el mejor asiento en el sandbar.",
+    "hs.advantage.group.title": "Grupos Hasta 12",
+    "hs.advantage.group.text":
+      "Cumpleanos, despedidas de soltera, salidas corporativas o simplemente un fin de semana con amigos. Nuestras embarcaciones estan disenadas para grupos, con cubiertas abiertas, plataformas de natacion y mucha sombra. Todos caben comodamente.",
+    "hs.advantage.stress.title": "Cero Logistica",
+    "hs.advantage.stress.text":
+      "Sin trailer, sin rampa, sin estacionamiento, sin navegacion, sin paradas de combustible, sin drama de ancla. Llega a la marina con tu hielera. Nosotros nos encargamos del resto. Ese es todo el punto.",
+    "hs.advantage.closing":
+      "El sandbar es gratis. Llegar de la forma correcta es por lo que estas pagando.",
+    // Haulover Sandbar article — Jet ski cross-link (ES)
+    "hs.addon.jetskiLink":
+      "Necesitas licencia para andar en moto de agua en Miami? Lee nuestra guia →",
+    // Haulover Sandbar article — Additional related links (ES)
+    "hs.related.prices": "Guia de Precios de Yate en Miami",
+    "hs.related.bachelorette": "Despedida de Soltera en Yate",
+    "hs.related.firstTimer": "Guia para Primerizos de Alquiler de Yate",
+    "hs.related.jetski": "Guia de Licencia de Moto de Agua",
     // Blog listing — First Time Yacht Rental card (ES)
     "blog.ft.title":
       "Primera Vez Alquilando un Yate en Miami? Todo lo que Necesitas Saber",
@@ -2518,6 +3037,21 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.expect.tag1": "Sin experiencia necesaria",
     "ft.expect.tag2": "Capitan incluido",
     "ft.expect.tag3": "Todas las edades",
+    "ft.expect.linkHaulover": "Ruta popular: Guia de Haulover Sandbar",
+    "ft.expect.linkBach": "Planeas una despedida de soltera? Lee nuestra guia",
+    // First Time (ES) — How Much Does It Cost?
+    "ft.pricing.title": "Cuanto Cuesta?",
+    "ft.pricing.intro":
+      "La pregunta numero uno de los principiantes. Aqui tienes una respuesta rapida — con enlace al desglose completo de precios.",
+    "ft.pricing.starting.title": "Desde ,500 por 4 horas",
+    "ft.pricing.starting.text":
+      "Eso incluye yate privado con capitan, tripulacion, sistema de sonido, colchonetas flotantes, hielo y hieleras — todo incluido. Sin cargos ocultos, sin sorpresas. Cruceros de 2 horas al atardecer empiezan mas bajo, y aventuras de dia completo van mas alto dependiendo del tamano del yate y extras.",
+    "ft.pricing.includes.captain": "Capitan con licencia USCG",
+    "ft.pricing.includes.crew": "Tripulacion profesional",
+    "ft.pricing.includes.gear": "Todo el equipo incluido",
+    "ft.pricing.detail":
+      "Extras como saxofonista en vivo, chef de sushi, jet skis o servicio de botellas se cobran aparte. La mayoria de los grupos gastan \,500–\,000 en total por una tarde completa en el agua. Precios de fin de semana y feriados pueden variar.",
+    "ft.pricing.link": "Ver el desglose completo de precios",
     // First Time (ES) — Bareboat vs Crewed
     "ft.charter.label": "Conoce la Diferencia",
     "ft.charter.title": "Bareboat vs. Charter con Tripulacion",
@@ -2529,6 +3063,32 @@ const translations: Record<Lang, Record<string, string>> = {
       "En resumen: no necesitas licencia nautica, no necesitas experiencia, y no tienes que preocuparte por la navegacion o el atraque. Solo presentate.",
     "ft.charter.note":
       "Cada charter de Emerald Eyes incluye un capitan con licencia USCG y tripulacion entrenada \u2014 sin importar el paquete.",
+    // First Time (ES) — Your Captain Handles Everything
+    "ft.captain.title": "Tu Capitan Se Encarga de Todo",
+    "ft.captain.intro":
+      "Los primerizos a menudo se preguntan de que son responsables en el agua. La respuesta es simple: nada. Tu capitan con licencia USCG y tripulacion profesional manejan cada detalle para que puedas relajarte.",
+    "ft.captain.nav.title": "Navegacion y Ruta",
+    "ft.captain.nav.text":
+      "Tu capitan planifica y conduce toda la ruta \u2014 desde la salida hasta Haulover Sandbar, Star Island, o donde quieras ir. Conocen los canales, las zonas sin oleaje y los mejores puntos para anclar.",
+    "ft.captain.anchor.title": "Anclaje y Atraque",
+    "ft.captain.anchor.text":
+      "Poner el ancla en el banco de arena, reposicionar para el atardecer y atracar de vuelta en la marina \u2014 todo lo maneja el capitan. Tu nunca tocas una cuerda ni una cornamusa.",
+    "ft.captain.weather.title": "Monitoreo del Clima",
+    "ft.captain.weather.text":
+      "Tu capitan revisa los pronosticos marinos antes de la salida y monitorea las condiciones durante todo el viaje. Si el clima cambia, ajustaran la ruta o encontraran un lugar protegido \u2014 sin necesidad de que tu decidas nada.",
+    "ft.captain.safety.title": "Seguridad y Cumplimiento",
+    "ft.captain.safety.text":
+      "Charla de seguridad pre-salida, inventario de chalecos salvavidas, protocolos de emergencia y cumplimiento total con la Guardia Costera. Tu capitan tiene pruebas de drogas, licencia USCG y experiencia en aguas de Miami.",
+    "ft.captain.crew.title": "Servicio de Tripulacion",
+    "ft.captain.crew.text":
+      "La tripulacion mantiene la musica, sirve bebidas, prepara colchonetas flotantes y juguetes acuaticos, y se asegura de que cada invitado este comodo. Piensa en ellos como tu equipo personal de hospitalidad en el agua.",
+    "ft.captain.local.title": "Conocimiento Local",
+    "ft.captain.local.text":
+      "Los mejores bancos de arena, los fondeaderos mas tranquilos, el angulo perfecto del atardecer \u2014 tu capitan conoce las aguas de Miami por dentro y por fuera. Ajustaran la ruta al ambiente de tu grupo y haran sugerencias en tiempo real.",
+    "ft.captain.note":
+      "Cada charter incluye capitan y tripulacion. No necesitas experiencia nautica, licencia, ni siquiera un plan \u2014 solo presentate y disfruta.",
+    "ft.captain.cgLink":
+      "Aprende mas: Como las inspecciones de la Guardia Costera te protegen",
     // First Time (ES) — Booking Process
     "ft.booking.title": "El Proceso de Reserva",
     "ft.booking.intro":
@@ -2545,6 +3105,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.booking.step4.title": "Presentate y Disfruta",
     "ft.booking.step4.text":
       "Llega a la marina 15 minutos antes, conoce a tu capitan, recibe una breve charla de seguridad, y listo. Nosotros nos encargamos del resto \u2014 tu solo diviertete.",
+    "ft.booking.linkJetski":
+      "Agregando jet skis? Verifica si necesitas licencia",
+    "ft.booking.linkPrices": "Ver desglose completo de precios",
     // First Time (ES) — What to Bring
     "ft.bring.title": "Que Traer (y Que Proporcionamos Nosotros)",
     "ft.bring.intro":
@@ -2613,7 +3176,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time (ES) — Common Mistakes
     "ft.mistakes.title": "Errores Comunes que Debes Evitar",
     "ft.mistakes.intro":
-      "Lo hemos visto todo. Aqui estan los cuatro errores mas comunes de principiantes \u2014 y como evitarlos.",
+      "Lo hemos visto todo. Aqui estan los errores mas comunes de principiantes \u2014 y como evitarlos.",
     "ft.mistakes.short.title": "Reservar Muy Poco Tiempo",
     "ft.mistakes.short.text":
       "Un charter de 2 horas suena bien en papel, pero para cuando abordas, navegas, anclas y disfrutas el agua, ya es hora de regresar. Para un dia en el banco de arena o fiesta, 4 horas es el punto ideal. 6\u20138 horas si quieres realmente relajarte.",
@@ -2626,6 +3189,30 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.mistakes.glass.title": "Traer Botellas de Vidrio",
     "ft.mistakes.glass.text":
       "El vidrio en un barco es un riesgo de seguridad. Vidrio roto en una cubierta mojada es peligroso, y fragmentos en el agua son peor. Pasa las bebidas a latas o plastico antes de abordar. La mayoria de companias de yates no permiten vidrio a bordo.",
+    "ft.mistakes.weather.title": "No Revisar el Clima",
+    "ft.mistakes.weather.text":
+      "El clima de Miami cambia rapido. No esperes hasta estar en la marina para revisar el pronostico. Mira las condiciones marinas el dia anterior y la manana del viaje. Tu capitan tambien monitorea el clima \u2014 pero si las condiciones se ven dificiles, contactanos temprano para reprogramar antes de que manejes al muelle.",
+    "ft.mistakes.headcount.title": "No Confirmar el Numero de Invitados",
+    "ft.mistakes.headcount.text":
+      "Cada yate tiene un limite estricto de pasajeros de la Guardia Costera. Si tu grupo llega con mas personas de las reservadas, alguien se queda en el muelle. Confirma tu numero final de invitados 48 horas antes de la salida y avisanos de cualquier cambio \u2014 a veces podemos acomodar en una embarcacion mas grande.",
+    // First Time (ES) — Seasickness Tips
+    "ft.seasick.title": "Consejos para el Mareo",
+    "ft.seasick.intro":
+      "Te preocupa marearte? Es mas comun de lo que la gente admite \u2014 pero tambien es facil de prevenir. Esto es lo que funciona.",
+    "ft.seasick.deck.title": "Quedate en la Cubierta",
+    "ft.seasick.deck.text":
+      "Aire fresco y un horizonte abierto son la mejor prevencion. Quedate en la cubierta superior o la proa donde puedas sentir la brisa. Evita ir bajo cubierta por periodos prolongados \u2014 el espacio cerrado y la falta de referencia visual lo empeora.",
+    "ft.seasick.horizon.title": "Mira el Horizonte",
+    "ft.seasick.horizon.text":
+      "Tu oido interno detecta el movimiento, pero tus ojos necesitan un punto de referencia fijo para coincidir. Mira el horizonte o la costa \u2014 no tu telefono. Desplazarte en una pantalla mientras el barco se mueve es camino rapido a sentirte mal.",
+    "ft.seasick.ginger.title": "Jengibre y Remedios",
+    "ft.seasick.ginger.text":
+      "Caramelos de jengibre, ginger ale o masticables de jengibre son un remedio natural que realmente funciona. Dramamine o Bonine tomados 30\u201360 minutos antes de abordar son las opciones de venta libre mas populares. Las Sea-Bands (pulseras de acupresion) tambien ayudan a algunas personas.",
+    "ft.seasick.meals.title": "Evita Comidas Pesadas Antes",
+    "ft.seasick.meals.text":
+      "No abordes con el estomago vacio, pero tampoco comas una comida enorme. Una comida ligera y no grasosa una hora antes de la salida es ideal. Evita la comida picante y los lacteos pesados. Mantente hidratado \u2014 la deshidratacion amplifica los sintomas del mareo.",
+    "ft.seasick.note":
+      "La mayoria de los invitados en charters de dia en Miami nunca se marean \u2014 las aguas de la Bahia de Biscayne son calmas y protegidas. Pero si eres propenso al mareo, estos consejos hacen una diferencia real.",
     // First Time (ES) — Safety
     "ft.safety.title": "Seguridad a Bordo",
     "ft.safety.intro":
@@ -2681,6 +3268,8 @@ const translations: Record<Lang, Record<string, string>> = {
       "Mas guias para ayudarte a planificar el dia perfecto en el agua.",
     "ft.related.coastGuard":
       "Seguridad de la Guardia Costera e Inspecciones de Bareboat",
+    "ft.related.bachelorette":
+      "Despedida de Soltera en Yate: Guia de Planificacion",
     "ft.related.haulover": "Haulover Sandbar en Yate: La Guia Completa",
     "ft.related.jetski": "Necesitas Licencia para Manejar un Jet Ski en Miami?",
     "ft.related.prices": "Precios de Charter de Yate en Miami: Que Esperar",
@@ -2711,8 +3300,10 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.nav.included": "Que Esta Incluido",
     "yp.nav.duration": "Duracion y Precios",
     "yp.nav.addons": "Costos de Extras",
+    "yp.nav.captain": "Tu Capitan y Tripulacion",
     "yp.nav.factors": "Factores que Afectan el Precio",
     "yp.nav.save": "Como Ahorrar",
+    "yp.nav.tipping": "Guia de Propinas",
     "yp.nav.faq": "Preguntas Frecuentes",
     "yp.short.title": "La Respuesta Corta",
     "yp.short.p1":
@@ -2750,6 +3341,19 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.inc.glass.title": "Cristaleria y Vasos",
     "yp.inc.glass.text":
       "Vasos reutilizables y cristaleria para que traigas tus bebidas con estilo.",
+    "yp.captain.label": "Tu Tripulacion",
+    "yp.captain.title": "Tu Capitan y Tripulacion",
+    "yp.captain.intro":
+      "Cada charter de Emerald Eyes viene con un equipo profesional — y su costo ya esta incluido en tu precio base. Sin cargos adicionales, sin sorpresas.",
+    "yp.captain.captain.title": "Capitan con Licencia USCG",
+    "yp.captain.captain.text":
+      "Tu capitan tiene licencia de la Guardia Costera de los Estados Unidos y conoce cada canal, banco de arena y zona sin oleaje en Biscayne Bay. Se encarga de la navegacion, anclaje, atraque y todos los protocolos de seguridad para que tu solo te concentres en disfrutar.",
+    "yp.captain.crew.title": "Tripulacion Profesional",
+    "yp.captain.crew.text":
+      "Tu tripulacion se encarga de la hospitalidad — sirviendo bebidas, preparando juguetes acuaticos, manejando el sistema de sonido y asegurandose de que todo funcione perfectamente. Para grupos grandes (10+), agregamos un miembro adicional de tripulacion sin costo extra.",
+    "yp.captain.cost.title": "Cuanto Cuesta Esto?",
+    "yp.captain.cost.text":
+      "Nada adicional. Tu capitan y tripulacion estan incluidos en el precio base del charter. El unico costo adicional que debes presupuestar es la propina, que siempre queda a tu discrecion.",
     "yp.dur.title": "Duracion y Precios del Charter",
     "yp.dur.intro":
       "Los charters mas largos ofrecen mejor valor por hora y te permiten explorar mas de la costa de Miami. Asi se desglosan nuestras tarifas.",
@@ -2797,6 +3401,14 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.addon.photo.price": "Desde $150",
     "yp.addon.photo.desc":
       "Un fotografo profesional captura cada momento. Tomas con dron, fotos espontaneas y retratos al atardecer. Galeria editada en 48 horas.",
+    "yp.addon.hookah.title": "Hookah",
+    "yp.addon.hookah.price": "Desde $150",
+    "yp.addon.hookah.desc":
+      "Un setup premium de hookah con seleccion de sabores, entregado y manejado a bordo. Popular para cruceros al atardecer y celebraciones grupales.",
+    "yp.addon.decor.title": "Decoraciones Personalizadas",
+    "yp.addon.decor.price": "Desde $250",
+    "yp.addon.decor.desc":
+      "Globos, pancartas, arreglos florales y montajes tematicos para cumpleanos, propuestas y despedidas de soltera. Envianos tu vision y nosotros nos encargamos del resto.",
     "yp.factors.title": "Que Afecta el Precio",
     "yp.factors.intro":
       "No todos los charters cuestan lo mismo. Estos son los cuatro factores principales que determinan tu precio final.",
@@ -2827,6 +3439,20 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.save.longer.title": "Reserva un Charter Mas Largo",
     "yp.save.longer.text":
       "El costo por hora baja en charters mas largos. Un dia completo de 8 horas es significativamente mejor valor por hora que dos viajes separados de 4 horas. Ademas, obtienes la experiencia completa de Miami sin prisas.",
+    "yp.tipping.title": "Propina para Tu Capitan y Tripulacion",
+    "yp.tipping.intro":
+      "La propina es el unico costo adicional a tu cotizacion. Aqui tienes todo lo que necesitas saber para que no haya sorpresas.",
+    "yp.tipping.standard.title": "Estandar de la Industria: 15-20%",
+    "yp.tipping.standard.text":
+      "La propina estandar para charters de yate en Miami es 15-20% de la tarifa base del charter. Esto es consistente en toda la industria, similar a dar propina en un restaurante de alta gama.",
+    "yp.tipping.example.title": "Como Se Ve Eso",
+    "yp.tipping.example.text":
+      "En un charter de medio dia de $2,500, una propina tipica es $375-$500. En un charter de dia completo de $5,000, $750-$1,000. El monto siempre queda a tu discrecion basado en tu experiencia.",
+    "yp.tipping.how.title": "Como Dar Propina",
+    "yp.tipping.how.text":
+      "Se prefiere efectivo y se entrega directamente al capitan al final del viaje. El capitan reparte la propina con la tripulacion. Tambien se acepta Venmo y Zelle si prefieres digital.",
+    "yp.tipping.note":
+      "La propina nunca esta incluida en nuestros precios y nunca se espera — pero se agradece profundamente. Tu tripulacion trabaja duro para hacer cada charter especial.",
     "yp.midCta.label": "Listo para Reservar?",
     "yp.midCta.title": "Obtiene Tu Cotizacion en Minutos",
     "yp.midCta.text":

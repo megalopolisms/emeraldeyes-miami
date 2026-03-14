@@ -6,7 +6,12 @@
 // =============================================================================
 
 import type { Metadata } from "next";
-import { EXPERIENCES } from "@/lib/constants";
+import Script from "next/script";
+import {
+  BUSINESS,
+  EXPERIENCES,
+  ROUTABLE_EXPERIENCE_SLUGS,
+} from "@/lib/constants";
 import ExperienceCard from "@/components/ui/ExperienceCard";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -53,12 +58,64 @@ export const metadata: Metadata = {
   },
 };
 
+const activeExperiences = (EXPERIENCES as readonly Experience[]).filter((exp) =>
+  ROUTABLE_EXPERIENCE_SLUGS.has(exp.slug),
+);
+
+const experiencesSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "Miami Yacht Experiences | Emerald Eyes Miami",
+  description:
+    "Explore private yacht experiences in Miami including sunset cruises, bachelorette parties, proposals, corporate charters, and Haulover Sandbar trips.",
+  url: `${BUSINESS.siteUrl}/experiences`,
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: activeExperiences.map((exp, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${BUSINESS.siteUrl}/experiences/${exp.slug}`,
+      name: exp.title,
+      description: exp.description,
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: BUSINESS.siteUrl,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Experiences",
+      item: `${BUSINESS.siteUrl}/experiences`,
+    },
+  ],
+};
+
 // ---------------------------------------------------------------------------
 // Page Component
 // ---------------------------------------------------------------------------
 export default function ExperiencesPage() {
   return (
     <main itemScope itemType="http://schema.org/ItemList">
+      <Script
+        id="experiences-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(experiencesSchema) }}
+      />
+      <Script
+        id="experiences-breadcrumb"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative flex items-center justify-center min-h-[45vh] px-6 py-28 bg-gradient-to-b from-[--color-navy] to-[--color-navy-light]">
         <div className="text-center max-w-3xl mx-auto">
@@ -74,7 +131,7 @@ export default function ExperiencesPage() {
       {/* Experience Grid */}
       <Section>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {(EXPERIENCES as readonly Experience[]).map((exp) => (
+          {activeExperiences.map((exp) => (
             <ExperienceCard key={exp.slug} experience={exp} />
           ))}
         </div>
