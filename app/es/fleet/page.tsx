@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import FleetPage from "@/app/fleet/page";
 
 export const metadata: Metadata = {
   title: "Nuestra Flota | Emerald Eyes Miami",
@@ -41,4 +40,4 @@ export const metadata: Metadata = {
   },
 };
 
-export { FleetPage as default };
+export { default } from "@/app/fleet/page";

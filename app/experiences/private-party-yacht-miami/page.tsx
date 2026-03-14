@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/private-party-yacht-miami",
+    languages: {
+      en: "/experiences/private-party-yacht-miami",
+      es: "/es/experiences/private-party-yacht-miami",
+    },
   },
   openGraph: {
     title: "Private Party Yacht Miami | Emerald Eyes Miami",

@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/blog/haulover-sandbar-yacht-charter-miami",
+    languages: {
+      en: "/blog/haulover-sandbar-yacht-charter-miami",
+      es: "/es/blog/haulover-sandbar-yacht-charter-miami",
+    },
   },
   openGraph: {
     title: "Haulover Sandbar by Yacht: The Complete Miami Charter Guide",

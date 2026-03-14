@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/about",
+    languages: { en: "/about", es: "/es/about" },
   },
   openGraph: {
     title: "About Emerald Eyes Miami",

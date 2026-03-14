@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/blog/miami-yacht-charter-prices",
+    languages: {
+      en: "/blog/miami-yacht-charter-prices",
+      es: "/es/blog/miami-yacht-charter-prices",
+    },
   },
   openGraph: {
     title: "Miami Yacht Charter Prices: What Does It Actually Cost?",

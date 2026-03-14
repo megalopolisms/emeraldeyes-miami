@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/bachelorette-yacht-miami",
+    languages: {
+      en: "/experiences/bachelorette-yacht-miami",
+      es: "/es/experiences/bachelorette-yacht-miami",
+    },
   },
   openGraph: {
     title: "Bachelorette Yacht Miami | Emerald Eyes Miami",

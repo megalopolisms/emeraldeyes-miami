@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/sunset-cruise-miami",
+    languages: {
+      en: "/experiences/sunset-cruise-miami",
+      es: "/es/experiences/sunset-cruise-miami",
+    },
   },
   openGraph: {
     title: "Sunset Cruise Miami | Emerald Eyes Miami",

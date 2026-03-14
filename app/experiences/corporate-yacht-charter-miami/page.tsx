@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/corporate-yacht-charter-miami",
+    languages: {
+      en: "/experiences/corporate-yacht-charter-miami",
+      es: "/es/experiences/corporate-yacht-charter-miami",
+    },
   },
   openGraph: {
     title: "Corporate Yacht Charter Miami | Emerald Eyes Miami",

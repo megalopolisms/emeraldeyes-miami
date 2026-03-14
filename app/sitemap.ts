@@ -83,6 +83,32 @@ const experiencePages = EXPERIENCES.filter((exp) =>
   priority: 0.85,
 }));
 
+const spanishPages = [
+  "/es",
+  "/es/about",
+  "/es/blog",
+  "/es/book",
+  "/es/contact",
+  "/es/faq",
+  "/es/fleet",
+  "/es/gallery",
+  "/es/experiences",
+].map((route) => ({
+  url: `${BUSINESS.siteUrl}${route}`,
+  lastModified: getDate("2026-03-14"),
+  changeFrequency: route === "/es" ? ("weekly" as const) : ("monthly" as const),
+  priority: route === "/es" ? 0.8 : 0.6,
+}));
+
+const spanishExperiencePages = EXPERIENCES.filter((exp) =>
+  ROUTABLE_EXPERIENCE_SLUGS.has(exp.slug),
+).map((exp) => ({
+  url: `${BUSINESS.siteUrl}/es/experiences/${exp.slug}`,
+  lastModified: getDate("2026-03-14"),
+  changeFrequency: "monthly" as const,
+  priority: 0.7,
+}));
+
 const blogPages = [
   {
     route: "/blog/coast-guard-inspection-bareboat-charter",
@@ -115,6 +141,38 @@ const blogPages = [
   priority: 0.75,
 }));
 
+const spanishBlogPages = [
+  {
+    route: "/es/blog/coast-guard-inspection-bareboat-charter",
+    lastModified: "2026-03-13",
+  },
+  {
+    route: "/es/blog/haulover-sandbar-yacht-charter-miami",
+    lastModified: "2026-03-14",
+  },
+  {
+    route: "/es/blog/jet-ski-license-miami",
+    lastModified: "2026-03-14",
+  },
+  {
+    route: "/es/blog/miami-yacht-charter-prices",
+    lastModified: "2026-03-14",
+  },
+  {
+    route: "/es/blog/bachelorette-party-yacht-miami",
+    lastModified: "2026-03-14",
+  },
+  {
+    route: "/es/blog/first-time-yacht-rental-miami",
+    lastModified: "2026-03-14",
+  },
+].map((page) => ({
+  url: `${BUSINESS.siteUrl}${page.route}`,
+  lastModified: getDate(page.lastModified),
+  changeFrequency: "monthly" as const,
+  priority: 0.65,
+}));
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = BUSINESS.siteUrl;
 
@@ -125,5 +183,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  return [...basePages, ...experiencePages, ...blogPages];
+  return [
+    ...basePages,
+    ...experiencePages,
+    ...spanishPages,
+    ...spanishExperiencePages,
+    ...blogPages,
+    ...spanishBlogPages,
+  ];
 }

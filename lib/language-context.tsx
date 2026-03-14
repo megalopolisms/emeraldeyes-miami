@@ -335,7 +335,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "trust.uscg": "USCG Inspected",
     "trust.uscg.sub": "Fully compliant & safe vessels",
     "trust.captains": "Licensed Captains",
-    "trust.captains.sub": "Experienced professional crew",
+    "trust.captains.sub": "Available as add-on for every charter",
     "trust.location": "North Miami Based",
     "trust.location.sub": "Haulover, Aventura, Sunny Isles",
     "why.title": "Why Emerald Eyes",
@@ -368,7 +368,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "blog.backToBlog": "Back to Blog",
     "blog.ctaTitle": "Ready to get on the water?",
     "blog.ctaText":
-      "Every Emerald Eyes charter comes fully equipped, properly documented, and crewed by licensed professionals.",
+      "Every Emerald Eyes charter comes fully equipped and properly documented. Add a USCG-licensed captain and enjoy a worry-free day on the water.",
     "blog.ctaBook": "Plan Your Charter",
     "blog.ctaExperiences": "Browse Experiences",
     "blog.cat.safety": "Safety & Regulations",
@@ -601,69 +601,108 @@ const translations: Record<Lang, Record<string, string>> = {
     "cg.related.firstTimer": "First-Time Yacht Rental Guide",
     "cg.related.jetSki": "Jet Ski License Requirements",
     "cg.related.haulover": "Haulover Sandbar by Yacht",
-    "cg.xlink.pricing": "Wondering how much a fully compliant charter costs? Our pricing guide breaks down exactly what you pay for.",
-    "cg.xlink.bachelorette": "Planning a group event? See how we handle Coast Guard compliance for bachelorette parties and large groups.",
-    "cg.xlink.firstTimer": "Never rented a yacht before? Our first-timer guide covers everything from booking to boarding.",
-    "cg.xlink.jetSki": "Curious about watercraft licensing in Florida? Our jet ski guide explains the Boating Safety Education Card requirement.",
-    "cg.xlink.haulover": "Heading to Haulover Sandbar? Learn what to expect on one of Miami's most popular charter routes.",
+    "cg.xlink.pricing":
+      "Wondering how much a fully compliant charter costs? Our pricing guide breaks down exactly what you pay for.",
+    "cg.xlink.bachelorette":
+      "Planning a group event? See how we handle Coast Guard compliance for bachelorette parties and large groups.",
+    "cg.xlink.firstTimer":
+      "Never rented a yacht before? Our first-timer guide covers everything from booking to boarding.",
+    "cg.xlink.jetSki":
+      "Curious about watercraft licensing in Florida? Our jet ski guide explains the Boating Safety Education Card requirement.",
+    "cg.xlink.haulover":
+      "Heading to Haulover Sandbar? Learn what to expect on one of Miami's most popular charter routes.",
     "cg.checklist.title": "The Full Inspection Checklist",
-    "cg.checklist.intro": "Coast Guard officers follow a systematic protocol during every boarding. Here is everything they physically verify, check, and document — and what specifically causes a vessel to fail.",
+    "cg.checklist.intro":
+      "Coast Guard officers follow a systematic protocol during every boarding. Here is everything they physically verify, check, and document — and what specifically causes a vessel to fail.",
     "cg.check.pfd.title": "Life Jackets (PFDs)",
-    "cg.check.pfd.pass": "One USCG-approved Type I, II, or III PFD per person on board, including crew. Child-sized PFDs required for anyone under 13. Must be in serviceable condition — no rips, broken buckles, or missing straps.",
-    "cg.check.pfd.fail": "Wrong count, wrong size for children, damaged PFDs with torn fabric or non-functional closures, or PFDs stored in sealed packaging (must be readily accessible).",
+    "cg.check.pfd.pass":
+      "One USCG-approved Type I, II, or III PFD per person on board, including crew. Child-sized PFDs required for anyone under 13. Must be in serviceable condition — no rips, broken buckles, or missing straps.",
+    "cg.check.pfd.fail":
+      "Wrong count, wrong size for children, damaged PFDs with torn fabric or non-functional closures, or PFDs stored in sealed packaging (must be readily accessible).",
     "cg.check.fire.title": "Fire Extinguishers",
-    "cg.check.fire.pass": "Correct number for vessel length (one B-I for under 26 ft, two B-I or one B-II for 26–40 ft, three B-I for 40–65 ft). Gauge in the green. Inspection tag current. Nozzle clear and pin intact.",
-    "cg.check.fire.fail": "Expired inspection date, gauge in the red or missing, discharged or partially discharged units, corroded cylinder, broken handle or missing safety pin.",
+    "cg.check.fire.pass":
+      "Correct number for vessel length (one B-I for under 26 ft, two B-I or one B-II for 26–40 ft, three B-I for 40–65 ft). Gauge in the green. Inspection tag current. Nozzle clear and pin intact.",
+    "cg.check.fire.fail":
+      "Expired inspection date, gauge in the red or missing, discharged or partially discharged units, corroded cylinder, broken handle or missing safety pin.",
     "cg.check.ring.title": "Throwable Device (Type IV PFD)",
-    "cg.check.ring.pass": "One Type IV throwable — ring buoy or throwable cushion — required for vessels 16 ft and over. Must be immediately accessible, not stored under equipment or in a locked compartment.",
-    "cg.check.ring.fail": "Ring buoy buried under coolers or gear. Throwable cushion with waterlogged foam or torn covering. No throwable device on board at all.",
+    "cg.check.ring.pass":
+      "One Type IV throwable — ring buoy or throwable cushion — required for vessels 16 ft and over. Must be immediately accessible, not stored under equipment or in a locked compartment.",
+    "cg.check.ring.fail":
+      "Ring buoy buried under coolers or gear. Throwable cushion with waterlogged foam or torn covering. No throwable device on board at all.",
     "cg.check.vds.title": "Visual Distress Signals",
-    "cg.check.vds.pass": "Three USCG-approved day/night pyrotechnic signals (flares) with current expiration dates, OR one electric SOS distress light plus three day signals. Required on coastal waters for vessels 16 ft and over.",
-    "cg.check.vds.fail": "Expired flares (check the stamped date — they expire 42 months after manufacture). Fewer than three signals. Electric light with dead batteries. No signals on board.",
+    "cg.check.vds.pass":
+      "Three USCG-approved day/night pyrotechnic signals (flares) with current expiration dates, OR one electric SOS distress light plus three day signals. Required on coastal waters for vessels 16 ft and over.",
+    "cg.check.vds.fail":
+      "Expired flares (check the stamped date — they expire 42 months after manufacture). Fewer than three signals. Electric light with dead batteries. No signals on board.",
     "cg.check.sound.title": "Sound-Producing Device",
-    "cg.check.sound.pass": "A whistle or horn audible for at least half a nautical mile. Vessels 39.4 ft (12 m) and over also require a bell. Air horns must have a full charge.",
-    "cg.check.sound.fail": "No horn or whistle on board. Empty air horn canister. Bell missing on vessels over 39.4 ft.",
+    "cg.check.sound.pass":
+      "A whistle or horn audible for at least half a nautical mile. Vessels 39.4 ft (12 m) and over also require a bell. Air horns must have a full charge.",
+    "cg.check.sound.fail":
+      "No horn or whistle on board. Empty air horn canister. Bell missing on vessels over 39.4 ft.",
     "cg.check.nav.title": "Navigation Lights",
-    "cg.check.nav.pass": "Functional red/green sidelights, white stern light, and masthead light. Tested during boarding if operating after sunset or in restricted visibility. Lenses clean and properly colored.",
-    "cg.check.nav.fail": "Burned-out bulbs, cracked lenses, incorrect color filters, or lights wired incorrectly. Missing all-round white light on vessels under 39.4 ft operating at night.",
+    "cg.check.nav.pass":
+      "Functional red/green sidelights, white stern light, and masthead light. Tested during boarding if operating after sunset or in restricted visibility. Lenses clean and properly colored.",
+    "cg.check.nav.fail":
+      "Burned-out bulbs, cracked lenses, incorrect color filters, or lights wired incorrectly. Missing all-round white light on vessels under 39.4 ft operating at night.",
     "cg.check.placard.title": "Required Placards & Documentation",
-    "cg.check.placard.pass": "MARPOL trash placard (vessels 26 ft+), oil discharge placard (vessels with machinery), navigation rules summary, and FCC radio license if VHF is installed. Vessel registration or USCG Certificate of Documentation on board and current.",
-    "cg.check.placard.fail": "Missing required placards, expired vessel registration, documentation that does not match the vessel name or HIN, or no registration on board.",
+    "cg.check.placard.pass":
+      "MARPOL trash placard (vessels 26 ft+), oil discharge placard (vessels with machinery), navigation rules summary, and FCC radio license if VHF is installed. Vessel registration or USCG Certificate of Documentation on board and current.",
+    "cg.check.placard.fail":
+      "Missing required placards, expired vessel registration, documentation that does not match the vessel name or HIN, or no registration on board.",
     "cg.check.engine.title": "Engine Compartment & Bilge",
-    "cg.check.engine.pass": "No fuel leaks or fuel odor. Bilge clean and reasonably dry. Ventilation system functional (blowers operable on gas-powered inboard vessels). Hoses and clamps in serviceable condition. Backfire flame arrestor present and clean on gasoline engines.",
-    "cg.check.engine.fail": "Visible fuel in the bilge, strong fuel odor, non-functional blower, missing or fouled backfire flame arrestor, corroded fuel lines, or excessive oil accumulation.",
+    "cg.check.engine.pass":
+      "No fuel leaks or fuel odor. Bilge clean and reasonably dry. Ventilation system functional (blowers operable on gas-powered inboard vessels). Hoses and clamps in serviceable condition. Backfire flame arrestor present and clean on gasoline engines.",
+    "cg.check.engine.fail":
+      "Visible fuel in the bilge, strong fuel odor, non-functional blower, missing or fouled backfire flame arrestor, corroded fuel lines, or excessive oil accumulation.",
     "cg.check.contract.title": "Charter Contract & Credentials",
-    "cg.check.contract.pass": "Signed bareboat charter agreement with all parties' signatures. Vessel name, HIN, and dates match the actual situation. Captain's USCG credential (OUPV or Master) on board and current. Drug testing enrollment documentation available.",
-    "cg.check.contract.fail": "Unsigned or missing charter contract. Captain cannot produce a valid credential. Credential is expired. Contract vessel name does not match the boat. No evidence of drug testing compliance under 46 C.F.R. Part 16.",
+    "cg.check.contract.pass":
+      "Signed bareboat charter agreement with all parties' signatures. Vessel name, HIN, and dates match the actual situation. Captain's USCG credential (OUPV or Master) on board and current. Drug testing enrollment documentation available.",
+    "cg.check.contract.fail":
+      "Unsigned or missing charter contract. Captain cannot produce a valid credential. Credential is expired. Contract vessel name does not match the boat. No evidence of drug testing compliance under 46 C.F.R. Part 16.",
     "cg.fail.title": "What Happens If You Fail an Inspection",
-    "cg.fail.intro": "A failed Coast Guard inspection is not a slap on the wrist. The consequences are immediate, and they escalate depending on the severity of the violations found.",
+    "cg.fail.intro":
+      "A failed Coast Guard inspection is not a slap on the wrist. The consequences are immediate, and they escalate depending on the severity of the violations found.",
     "cg.fail.terminate.title": "Voyage Termination",
-    "cg.fail.terminate.text": "The Coast Guard can order the vessel to return to port immediately. Your charter is over. There is no fix-it-and-keep-going option on the water. If passenger count exceeds limits or the bareboat structure is a sham, the trip ends right there.",
+    "cg.fail.terminate.text":
+      "The Coast Guard can order the vessel to return to port immediately. Your charter is over. There is no fix-it-and-keep-going option on the water. If passenger count exceeds limits or the bareboat structure is a sham, the trip ends right there.",
     "cg.fail.fine.title": "Civil Penalties & Fines",
-    "cg.fail.fine.text": "Operating an uninspected passenger vessel illegally can result in civil penalties up to $25,000 per violation under 46 U.S.C. § 3718. Safety equipment violations carry fines from $1,000 to $10,000. Both the captain and vessel owner can be fined independently.",
+    "cg.fail.fine.text":
+      "Operating an uninspected passenger vessel illegally can result in civil penalties up to $25,000 per violation under 46 U.S.C. § 3718. Safety equipment violations carry fines from $1,000 to $10,000. Both the captain and vessel owner can be fined independently.",
     "cg.fail.seize.title": "Vessel Detention or Seizure",
-    "cg.fail.seize.text": "For serious violations — particularly operating a passenger vessel without a Certificate of Inspection when one is required — the Coast Guard can detain the vessel at the dock until all deficiencies are corrected and re-inspected. Repeat offenders risk permanent seizure.",
+    "cg.fail.seize.text":
+      "For serious violations — particularly operating a passenger vessel without a Certificate of Inspection when one is required — the Coast Guard can detain the vessel at the dock until all deficiencies are corrected and re-inspected. Repeat offenders risk permanent seizure.",
     "cg.fail.criminal.title": "Criminal Prosecution",
-    "cg.fail.criminal.text": "In cases involving willful negligence, repeat violations, or incidents resulting in injury, the vessel operator and owner can face criminal charges under 46 U.S.C. § 3718, including fines and imprisonment.",
+    "cg.fail.criminal.text":
+      "In cases involving willful negligence, repeat violations, or incidents resulting in injury, the vessel operator and owner can face criminal charges under 46 U.S.C. § 3718, including fines and imprisonment.",
     "cg.fail.captain.title": "Captain Credential Suspension",
-    "cg.fail.captain.text": "If the captain is found operating without valid credentials, with expired drug testing, or under the influence, the USCG can initiate suspension and revocation proceedings against their license. This can end a career.",
+    "cg.fail.captain.text":
+      "If the captain is found operating without valid credentials, with expired drug testing, or under the influence, the USCG can initiate suspension and revocation proceedings against their license. This can end a career.",
     "cg.fail.insurance.title": "Insurance Implications",
-    "cg.fail.insurance.text": "A documented Coast Guard violation can void marine insurance coverage. If an accident occurs during an illegal charter operation, neither the owner nor the charterer may have liability coverage — exposing everyone on board to personal financial liability.",
-    "cg.fail.closing": "The bottom line: failing a Coast Guard inspection is not just an inconvenience. It can mean fines, criminal charges, career-ending consequences for the captain, and total loss of insurance coverage. This is exactly why choosing a compliant charter operator matters.",
+    "cg.fail.insurance.text":
+      "A documented Coast Guard violation can void marine insurance coverage. If an accident occurs during an illegal charter operation, neither the owner nor the charterer may have liability coverage — exposing everyone on board to personal financial liability.",
+    "cg.fail.closing":
+      "The bottom line: failing a Coast Guard inspection is not just an inconvenience. It can mean fines, criminal charges, career-ending consequences for the captain, and total loss of insurance coverage. This is exactly why choosing a compliant charter operator matters.",
     "cg.ee.title": "What Emerald Eyes Does Differently",
-    "cg.ee.intro": "Most charter companies claim to be fully compliant. At Emerald Eyes, compliance is not a checkbox — it is the foundation of every trip we run. Here is exactly what sets us apart.",
+    "cg.ee.intro":
+      "Most charter companies claim to be fully compliant. At Emerald Eyes, compliance is not a checkbox — it is the foundation of every trip we run. Here is exactly what sets us apart.",
     "cg.ee.inspect.title": "Every Vessel Is Coast Guard Inspected",
-    "cg.ee.inspect.text": "Our vessels undergo regular Coast Guard safety inspections and are maintained to exceed federal requirements. Safety equipment is checked before every single departure — not once a season, not once a month. Every trip.",
+    "cg.ee.inspect.text":
+      "Our vessels undergo regular Coast Guard safety inspections and are maintained to exceed federal requirements. Safety equipment is checked before every single departure — not once a season, not once a month. Every trip.",
     "cg.ee.captains.title": "USCG-Licensed & Drug-Tested Captains",
-    "cg.ee.captains.text": "Every Emerald Eyes captain holds a valid USCG credential (OUPV or Master license) and is enrolled in a random drug and alcohol testing program as required by 46 C.F.R. Part 16. We verify credentials quarterly, not just at hire.",
+    "cg.ee.captains.text":
+      "Every Emerald Eyes captain holds a valid USCG credential (OUPV or Master license) and is enrolled in a random drug and alcohol testing program as required by 46 C.F.R. Part 16. We verify credentials quarterly, not just at hire.",
     "cg.ee.contract.title": "Bulletproof Bareboat Documentation",
-    "cg.ee.contract.text": "Our charter contracts are drafted to withstand Coast Guard scrutiny. Every agreement clearly establishes the bareboat structure, identifies the charterer as the temporary owner, and is fully executed before the vessel leaves the dock.",
+    "cg.ee.contract.text":
+      "Our charter contracts are drafted to withstand Coast Guard scrutiny. Every agreement clearly establishes the bareboat structure, identifies the charterer as the temporary owner, and is fully executed before the vessel leaves the dock.",
     "cg.ee.briefing.title": "Pre-Departure Safety Briefing",
-    "cg.ee.briefing.text": "Before every charter, our captain conducts a full safety briefing covering life jacket locations, fire extinguisher positions, man-overboard procedures, and emergency protocols. You will know your captain's name — because you chose them.",
+    "cg.ee.briefing.text":
+      "Before every charter, our captain conducts a full safety briefing covering life jacket locations, fire extinguisher positions, man-overboard procedures, and emergency protocols. You will know your captain's name — because you chose them.",
     "cg.ee.equipment.title": "Equipment That Exceeds Standards",
-    "cg.ee.equipment.text": "We carry more than the minimum required safety equipment. Extra PFDs, current flares, fully charged extinguishers, and first aid kits on every vessel. Our navigation lights are LED-upgraded for maximum visibility.",
+    "cg.ee.equipment.text":
+      "We carry more than the minimum required safety equipment. Extra PFDs, current flares, fully charged extinguishers, and first aid kits on every vessel. Our navigation lights are LED-upgraded for maximum visibility.",
     "cg.ee.record.title": "Zero Failed Inspections",
-    "cg.ee.record.text": "Emerald Eyes has never failed a Coast Guard inspection. Not once. We welcome boardings because we know exactly what the officers are looking for, and everything is already in order before we leave the dock.",
+    "cg.ee.record.text":
+      "Emerald Eyes has never failed a Coast Guard inspection. Not once. We welcome boardings because we know exactly what the officers are looking for, and everything is already in order before we leave the dock.",
     "cg.checklist.navTitle": "Full Inspection Checklist",
     "cg.fail.navTitle": "If You Fail",
     "cg.ee.navTitle": "Emerald Eyes Difference",
@@ -1003,9 +1042,9 @@ const translations: Record<Lang, Record<string, string>> = {
       "Inflatables, noodles, and accessories for the group.",
     "hs.provide.glass.title": "Bottled Water",
     "hs.provide.glass.text": "Complimentary bottled water throughout the trip.",
-    "hs.provide.captain.title": "Licensed Captain & Crew",
+    "hs.provide.captain.title": "Captain Add-On Available",
     "hs.provide.captain.text":
-      "USCG-credentialed captain who knows every inch of the sandbar.",
+      "USCG-licensed captains available who know every inch of the sandbar. We handle the booking.",
     // Haulover Sandbar article — Rules
     "hs.rules.title": "Rules & Regulations",
     "hs.rules.intro":
@@ -1095,12 +1134,12 @@ const translations: Record<Lang, Record<string, string>> = {
     // Haulover Sandbar article — Mid CTA
     "hs.midCta.title": "Ready to do the sandbar the right way?",
     "hs.midCta.text":
-      "Private yacht, licensed captain, floating mats, music, and the best anchoring spot at the sandbar. Starting at $2,500 for 4\u20138 hours. Bring your crew and your drinks \u2014 we handle everything else.",
+      "Private yacht, floating mats, music, and the best anchoring spot at the sandbar. Starting at $2,500 for 4\u20138 hours. Add a licensed captain and bring your drinks \u2014 we handle everything else.",
     "hs.midCta.btn": "See the Haulover Experience",
     // Haulover Sandbar article — Final CTA
     "hs.cta.title": "This is how Miami does the sandbar.",
     "hs.cta.text":
-      "Private yacht. Licensed captain. Floating mats, music, and room for up to 12. Pull up to Haulover Sandbar the way it was meant to be experienced \u2014 and let us handle the rest.",
+      "Private yacht. Floating mats, music, and room for up to 12. Add a licensed captain and pull up to Haulover Sandbar the way it was meant to be experienced \u2014 and let us handle the rest.",
     "hs.cta.book": "Plan Your Charter",
     "hs.cta.explore": "Browse Experiences",
     // Haulover Sandbar article — The Sandbar Experience (new section)
@@ -1136,7 +1175,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "hs.cost.navTitle": "Pricing",
     "hs.cost.title": "How Much Does It Cost?",
     "hs.cost.p1":
-      "A private yacht charter to Haulover Sandbar starts at $2,500 for a 4-hour trip with Emerald Eyes Miami. That includes the yacht, a USCG-licensed captain, fuel, floating mats, a premium sound system, ice, coolers, and bottled water. You bring the food, drinks, and your crew — up to 12 guests.",
+      "A private yacht charter to Haulover Sandbar starts at $2,500 for a 4-hour bareboat trip with Emerald Eyes Miami. That includes the yacht, fuel, floating mats, a premium sound system, ice, coolers, and bottled water. Most clients add a USCG-licensed captain. You bring the food, drinks, and your group — up to 12 guests.",
     "hs.cost.p2":
       "Longer trips (6–8 hours), premium add-ons like a live saxophonist or private sushi chef, and larger vessels are available at higher price points. No hidden fees, no fuel surcharges, no bait-and-switch.",
     "hs.cost.priceLink": "See full pricing breakdown →",
@@ -1203,24 +1242,24 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time — Quick Facts
     "ft.quick.title": "Quick facts",
     "ft.quick.price":
-      "Charters from $2,500 for 2\u20138 hours with captain & crew included",
+      "Bareboat charters from $2,500 for 2\u20138 hours \u2014 captain available as add-on",
     "ft.quick.group":
       "Groups from 2 to 25+ guests \u2014 there\u2019s a yacht for every party size",
     "ft.quick.included":
-      "Captain, crew, sound system, floating mats, ice & coolers all included",
+      "Fuel, sound system, floating mats, ice & coolers all included",
     "ft.quick.noLicense":
       "No boating license needed \u2014 your USCG-licensed captain handles everything",
     // First Time — What to Expect
     "ft.expect.label": "Getting Started",
     "ft.expect.title": "What to Expect on Your First Yacht Charter",
     "ft.expect.p1":
-      "A yacht charter in Miami is simpler than most people think. You show up at the marina, meet your captain and crew, get a quick safety briefing, and you\u2019re on the water within minutes. From there, it\u2019s your day \u2014 cruise to a sandbar, anchor off Star Island, watch a sunset from the open ocean, or just float with music and cold drinks.",
+      "A yacht charter in Miami is simpler than most people think. You show up at the marina, and if you've added a captain, they'll meet you for a quick safety briefing before you\u2019re on the water within minutes. From there, it\u2019s your day \u2014 cruise to a sandbar, anchor off Star Island, watch a sunset from the open ocean, or just float with music and cold drinks.",
     "ft.expect.p2":
-      "Your captain handles all the navigation, anchoring, and boat operations. The crew keeps the music going, sets out the floating mats and water toys, and makes sure everyone\u2019s having a good time. You don\u2019t need to know anything about boats.",
+      "When you add a captain, they handle all the navigation, anchoring, and boat operations so you don\u2019t need to know anything about boats. Most first-time charterers choose this option for a completely stress-free experience.",
     "ft.expect.p3":
       "Most first-time guests are surprised at how relaxed the whole experience is. There\u2019s no formal dress code, no stiff protocol, no assigned seating. You\u2019re basically on a private floating lounge with a professional team making it all work behind the scenes.",
     "ft.expect.tag1": "No experience needed",
-    "ft.expect.tag2": "Captain included",
+    "ft.expect.tag2": "Captain available",
     "ft.expect.tag3": "All ages welcome",
     "ft.expect.linkHaulover": "Popular route: Haulover Sandbar guide",
     "ft.expect.linkBach": "Planning a bachelorette? Read our guide",
@@ -1230,9 +1269,9 @@ const translations: Record<Lang, Record<string, string>> = {
       "The number one question first-timers ask. Here\u2019s a quick answer \u2014 with a link to the full pricing breakdown.",
     "ft.pricing.starting.title": "$2,500 starting for 4 hours",
     "ft.pricing.starting.text":
-      "That\u2019s for a private yacht with captain, crew, sound system, floating mats, ice, and coolers \u2014 everything included. No hidden fees, no surprise charges. Shorter 2-hour sunset cruises start lower, and full-day adventures go higher depending on yacht size and add-ons.",
-    "ft.pricing.includes.captain": "USCG-licensed captain",
-    "ft.pricing.includes.crew": "Professional crew",
+      "That\u2019s for a private bareboat yacht with fuel, sound system, floating mats, ice, and coolers included. Most clients add a USCG-licensed captain (from $300). No hidden fees, no surprise charges. Shorter 2-hour sunset cruises start lower, and full-day adventures go higher depending on yacht size and add-ons.",
+    "ft.pricing.includes.captain": "Captain available as add-on",
+    "ft.pricing.includes.crew": "Fuel & equipment included",
     "ft.pricing.includes.gear": "All equipment included",
     "ft.pricing.detail":
       "Add-ons like a live sax player, sushi chef, jet skis, or bottle service are priced separately. Most groups spend $2,500\u2013$5,000 total for a full afternoon on the water. Weekend and holiday pricing may vary.",
@@ -1241,17 +1280,17 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.charter.label": "Know the Difference",
     "ft.charter.title": "Bareboat vs. Crewed Charter",
     "ft.charter.p1":
-      "In the yacht world, \u201Cbareboat\u201D means you rent the vessel itself \u2014 and the operator provides the captain and crew. It\u2019s not the same as sailing a boat by yourself. At Emerald Eyes, every charter comes with a USCG-licensed captain and professional crew, so even our bareboat model is fully crewed.",
+      "In the yacht world, \u201Cbareboat\u201D means you rent the vessel itself \u2014 without a captain or crew included in the base price. At Emerald Eyes, we operate a true bareboat model. Most clients add a USCG-licensed captain through us, but if you have proper licensing, you can operate the vessel yourself.",
     "ft.charter.p2":
-      "A \u201Ccrewed charter\u201D in the traditional sense usually means a multi-day trip on a larger yacht with a live-aboard captain, chef, and stewardess \u2014 think Caribbean weeklong voyages. For day charters in Miami, the bareboat model with a provided captain is standard and gives you the best of both worlds: professional crew handling the boat, and total freedom for you to enjoy the experience.",
+      "A \u201Ccrewed charter\u201D in the traditional sense usually means a multi-day trip on a larger yacht with a live-aboard captain, chef, and stewardess \u2014 think Caribbean weeklong voyages. For day charters in Miami, the bareboat model is standard. You rent the yacht and choose whether to add a captain \u2014 most clients do, and we handle the booking for you.",
     "ft.charter.p3":
       "Bottom line: you don\u2019t need a boating license, you don\u2019t need experience, and you don\u2019t need to worry about navigation or docking. Just show up.",
     "ft.charter.note":
-      "Every Emerald Eyes charter includes a USCG-licensed captain and trained crew \u2014 no matter the package.",
+      "Emerald Eyes is a bareboat charter company. Captain is available as an add-on \u2014 most clients choose this option for a worry-free experience.",
     // First Time — Your Captain Handles Everything
     "ft.captain.title": "Your Captain Handles Everything",
     "ft.captain.intro":
-      "First-timers often wonder what they’re responsible for on the water. The answer is simple: nothing. Your USCG-licensed captain and professional crew handle every detail so you can relax.",
+      "First-timers often wonder what they’re responsible for on the water. When you add a captain through us, the answer is simple: nothing. Your USCG-licensed captain handles every detail so you can relax.",
     "ft.captain.nav.title": "Navigation & Route",
     "ft.captain.nav.text":
       "Your captain plans and drives the entire route — from departure to Haulover Sandbar, Star Island, or wherever you want to go. They know the channels, the no-wake zones, and the best spots to anchor.",
@@ -1271,7 +1310,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.captain.local.text":
       "The best sandbars, the quietest anchorages, the perfect sunset angle — your captain knows Miami’s waters inside out. They’ll tailor the route to your group’s vibe and make real-time suggestions.",
     "ft.captain.note":
-      "Every charter includes captain and crew. You don’t need boating experience, a license, or even a plan — just show up and enjoy.",
+      "Most clients add a captain \u2014 we handle the booking. You don’t need boating experience or even a plan. Just show up and enjoy.",
     "ft.captain.cgLink": "Learn more: How Coast Guard inspections protect you",
     // First Time — Booking Process
     "ft.booking.title": "The Booking Process",
@@ -1305,16 +1344,16 @@ const translations: Record<Lang, Record<string, string>> = {
       "You\u2019ll likely be in and out of the water. Bring a change of clothes if you want to stay dry later.",
     "ft.bring.cash.title": "Cash for Tips",
     "ft.bring.cash.text":
-      "15\u201320% for your captain and crew is standard in the charter industry. They work hard to make your day perfect.",
+      "If you add a captain, 15\u201320% gratuity is standard in the charter industry. They work hard to make your day perfect.",
     "ft.bring.id.title": "Valid ID",
     "ft.bring.id.text":
       "Bring a government-issued photo ID. Required for check-in and if you\u2019re bringing alcohol aboard.",
-    "ft.provide.captain.title": "Licensed Captain",
+    "ft.provide.captain.title": "Captain Add-On",
     "ft.provide.captain.text":
-      "USCG-licensed and Coast Guard inspected. Your captain knows every anchorage, sandbar, and sunset spot in Miami.",
-    "ft.provide.crew.title": "Professional Crew",
+      "USCG-licensed captains available. They know every anchorage, sandbar, and sunset spot in Miami. We handle the booking.",
+    "ft.provide.crew.title": "Fully Equipped Vessel",
     "ft.provide.crew.text":
-      "Trained hospitality crew to keep the music going, serve drinks, set out toys, and make sure everyone\u2019s comfortable.",
+      "Everything on board for a great day \u2014 sound system, floating mats, water toys, ice, coolers, and bottled water.",
     "ft.provide.sound.title": "Sound System",
     "ft.provide.sound.text":
       "Premium Bluetooth speakers throughout the yacht. Connect your phone and play your own playlist all day.",
@@ -1350,12 +1389,12 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.etiquette.time.title": "Be On Time",
     "ft.etiquette.time.text":
       "Arrive 15 minutes before departure. The charter clock starts at your confirmed time, not when you show up. Late arrivals mean less time on the water \u2014 for everyone.",
-    "ft.etiquette.tip.title": "Tipping Your Crew",
+    "ft.etiquette.tip.title": "Tipping Your Captain",
     "ft.etiquette.tip.text":
-      "15\u201320% of the charter cost is standard. Cash is preferred, divided between the captain and crew. A great crew makes the experience \u2014 show them you noticed.",
-    "ft.etiquette.respect.title": "Respect the Crew & Vessel",
+      "If you hire a captain, 15\u201320% of the charter cost is standard. Cash is preferred and given directly to the captain. A great captain makes the experience \u2014 show them you noticed.",
+    "ft.etiquette.respect.title": "Respect the Captain & Vessel",
     "ft.etiquette.respect.text":
-      "The crew is there to make your day amazing, not to be ordered around. Treat them like you\u2019d treat a host at their home. Don\u2019t enter the helm or engine areas, and follow the captain\u2019s instructions at all times.",
+      "If you've added a captain, they\u2019re there to make your day amazing. Treat them like you\u2019d treat a host at their home. Don\u2019t enter the helm or engine areas, and follow the captain\u2019s instructions at all times.",
     // First Time — Common Mistakes
     "ft.mistakes.title": "Common Mistakes to Avoid",
     "ft.mistakes.intro":
@@ -1399,7 +1438,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time — Safety
     "ft.safety.title": "Safety on Board",
     "ft.safety.intro":
-      "Your safety is the number one priority \u2014 and on a professionally crewed charter, the captain handles everything.",
+      "Your safety is the number one priority. When you add a captain through us, they handle all safety protocols and compliance.",
     "ft.safety.briefing.title": "Pre-Departure Safety Briefing",
     "ft.safety.briefing.text":
       "Before you leave the dock, your captain will walk through the location of life jackets, fire extinguishers, emergency exits, and the basic rules of the vessel. It takes five minutes and it matters.",
@@ -1413,7 +1452,7 @@ const translations: Record<Lang, Record<string, string>> = {
     // First Time — Mid CTA
     "ft.midCta.title": "Ready for Your First Charter?",
     "ft.midCta.text":
-      "Emerald Eyes makes it easy. Licensed captain, professional crew, all equipment included. Just pick your date and show up \u2014 we handle everything else.",
+      "Emerald Eyes makes it easy. Fully equipped yacht, captain available as add-on, everything you need on board. Just pick your date and show up \u2014 we handle everything else.",
     "ft.midCta.btn": "Plan Your Charter",
     // First Time — FAQ
     "ft.faq.title": "First-Timer FAQs",
@@ -1421,7 +1460,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Real questions from real first-time guests. If yours isn\u2019t here, message us on WhatsApp \u2014 we respond within an hour.",
     "ft.faq.q1": "Do I need a boating license to rent a yacht in Miami?",
     "ft.faq.a1":
-      "No. Every Emerald Eyes charter comes with a USCG-licensed captain who handles all navigation and boat operations. You don\u2019t need any boating experience or certifications.",
+      "No. Most clients add a USCG-licensed captain through us, and they handle all navigation and boat operations. You don\u2019t need any boating experience or certifications. If you do have a license, you can operate the vessel yourself.",
     "ft.faq.q2": "Can I bring my own food and drinks?",
     "ft.faq.a2":
       "Yes. Most guests bring their own cooler with drinks and snacks. We provide ice, coolers, and glassware. No glass bottles \u2014 cans and plastic only. You can also add catering packages like a sushi chef or bottle service.",
@@ -1434,9 +1473,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.faq.q5": "Is it safe to bring kids on a yacht?",
     "ft.faq.a5":
       "Absolutely. We have life jackets in children\u2019s sizes, and our crew is experienced with families. Kids under 6 are required to wear a life jacket at all times. The sandbar experiences are especially popular with families.",
-    "ft.faq.q6": "How much should I tip the captain and crew?",
+    "ft.faq.q6": "How much should I tip the captain?",
     "ft.faq.a6":
-      "15\u201320% of the total charter cost is standard in the industry. Cash is preferred and can be given directly to the captain at the end of the trip, who will split it with the crew.",
+      "If you hire a captain through us, 15\u201320% of the total charter cost is standard in the industry. Cash is preferred and can be given directly to the captain at the end of the trip.",
     "ft.faq.q7": "What\u2019s the cancellation policy?",
     "ft.faq.a7":
       "Cancellations more than 48 hours before departure receive a full refund. Within 48 hours, your deposit may be applied to a future date. Weather cancellations are always rescheduled at no cost.",
@@ -1456,7 +1495,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "ft.related.experience": "Browse All Experiences",
     "ft.cta.title": "Your first time on a yacht should feel effortless.",
     "ft.cta.text":
-      "Private yacht. Licensed captain. Sound system, floating mats, and a crew that handles every detail. All you have to do is show up.",
+      "Private yacht. Sound system, floating mats, and everything you need on board. Add a licensed captain and all you have to do is show up.",
     "ft.cta.explore": "Browse Experiences",
     // Yacht Prices article
     "yp.heroTitle": "Miami Yacht Charter Prices: What Does It Actually Cost?",
@@ -1471,34 +1510,35 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.quick.title": "Pricing at a glance",
     "yp.quick.starting": "Starting at $2,500 for a 4-hour charter",
     "yp.quick.minimum": "4-hour minimum on all bookings",
-    "yp.quick.included": "Captain, crew, fuel, sound & toys included",
+    "yp.quick.included":
+      "Fuel, sound system, water toys & floating mats included",
     "yp.quick.peak": "Peak season: December through April",
     "yp.nav.title": "In this guide",
     "yp.nav.shortAnswer": "The Short Answer",
     "yp.nav.included": "What's Included",
     "yp.nav.duration": "Duration & Pricing",
     "yp.nav.addons": "Add-On Costs",
-    "yp.nav.captain": "Your Captain & Crew",
+    "yp.nav.captain": "Bareboat & Captain",
     "yp.nav.factors": "Factors That Affect Price",
     "yp.nav.save": "How to Save",
     "yp.nav.tipping": "Tipping Guide",
     "yp.nav.faq": "FAQ",
     "yp.short.title": "The Short Answer",
     "yp.short.p1":
-      "A private yacht charter in Miami starts at $2,500 for a 4-hour outing with Emerald Eyes. That includes a USCG-licensed captain, professional crew, fuel for local cruising, a premium sound system, ice, coolers, floating mats, water toys, bottled water, and glassware.",
+      "A private yacht charter in Miami starts at $2,500 for a 4-hour bareboat rental with Emerald Eyes. That includes the vessel, fuel for local cruising, a premium sound system, ice, coolers, floating mats, water toys, bottled water, and glassware. Most clients add a USCG-licensed captain, which we arrange for you.",
     "yp.short.p2":
       "If you want to compare: across the Miami market, yacht charters range from roughly $1,000 to $15,000+ for a half-day depending on boat size, vessel age, and level of service. The wide range comes down to whether you're on a 30-foot center console or a 100-foot superyacht.",
     "yp.short.p3":
       "At Emerald Eyes, we operate a curated fleet of well-maintained vessels in the 40-65 foot range — the sweet spot for groups of 2 to 15 who want a luxury experience without the superyacht price tag.",
     "yp.short.note":
-      "No hidden fees. The price we quote is the price you pay. Gratuity for your crew is the only additional cost and is always at your discretion.",
+      "No hidden fees. The price we quote is the price you pay. Captain and gratuity are the only additional costs, and both are quoted upfront.",
     "yp.included.label": "Every Charter",
     "yp.included.title": "What's Included in Your Price",
     "yp.included.intro":
       "Every Emerald Eyes charter comes with everything you need for a perfect day on the water. No surprise charges, no upsells at the dock.",
-    "yp.inc.captain.title": "Licensed Captain & Crew",
-    "yp.inc.captain.text":
-      "USCG-licensed captain and professional crew who know every inch of Biscayne Bay.",
+    "yp.inc.vessel.title": "Your Private Yacht",
+    "yp.inc.vessel.text":
+      "A well-maintained vessel in the 40-65 foot range, fully equipped for a luxury day on the water.",
     "yp.inc.sound.title": "Premium Sound System",
     "yp.inc.sound.text":
       "Bluetooth-connected marine-grade speakers. Play your playlist all day.",
@@ -1520,19 +1560,19 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.inc.glass.title": "Glassware & Cups",
     "yp.inc.glass.text":
       "Reusable cups and glassware so you can bring your own drinks in style.",
-    "yp.captain.label": "Your Crew",
-    "yp.captain.title": "Your Captain & Crew",
+    "yp.captain.label": "Bareboat Charter",
+    "yp.captain.title": "Bareboat Charter & Captain Add-On",
     "yp.captain.intro":
-      "Every Emerald Eyes charter comes with a professional team — and their cost is already included in your base price. No extra fees, no surprises.",
-    "yp.captain.captain.title": "USCG-Licensed Captain",
-    "yp.captain.captain.text":
-      "Your captain holds a United States Coast Guard license and knows every channel, sandbar, and no-wake zone in Biscayne Bay. They handle navigation, anchoring, docking, and all safety protocols so you can focus on enjoying the ride.",
-    "yp.captain.crew.title": "Professional Crew",
-    "yp.captain.crew.text":
-      "Your crew handles hospitality — serving drinks, setting up water toys, managing the sound system, and keeping everything running smoothly. For larger groups (10+), we add an additional crew member at no extra charge.",
-    "yp.captain.cost.title": "What Does This Cost?",
-    "yp.captain.cost.text":
-      "Nothing extra. Your captain and crew are included in the base charter price. The only additional cost you should budget for is gratuity, which is always at your discretion.",
+      "Emerald Eyes is a bareboat charter company — you rent the yacht itself. Most clients add a USCG-licensed captain, and we handle the booking for you. If you have proper licensing, you can operate the vessel yourself.",
+    "yp.captain.bareboat.title": "What Bareboat Means",
+    "yp.captain.bareboat.text":
+      "A bareboat charter means you rent the vessel without a captain or crew included in the base price. You are the temporary charterer of the yacht for the duration of your rental. This gives you flexibility to choose exactly the crew you want — or operate the boat yourself if you hold the proper credentials.",
+    "yp.captain.addon.title": "Add a USCG-Licensed Captain",
+    "yp.captain.addon.text":
+      "Most clients add a captain, and we make it easy. We connect you with experienced, USCG-licensed captains who know every channel, sandbar, and no-wake zone in Biscayne Bay. They handle navigation, anchoring, docking, and all safety protocols so you can focus on enjoying the ride.",
+    "yp.captain.self.title": "Can I Captain It Myself?",
+    "yp.captain.self.text":
+      "If you hold a valid boating license and meet USCG requirements, you can operate the vessel yourself. Most first-time charterers choose to add a captain for peace of mind — especially for sandbar anchoring and navigating Biscayne Bay.",
     "yp.dur.title": "Charter Duration & Pricing",
     "yp.dur.intro":
       "Longer charters offer better per-hour value and let you explore more of Miami's coastline. Here's how our rates break down.",
@@ -1552,10 +1592,14 @@ const translations: Record<Lang, Record<string, string>> = {
       "The complete Miami experience. Sandbar in the morning, island-hopping through Biscayne Bay, and a sunset return. Best per-hour value.",
     "yp.dur.8hr.perHour": "~$625/hour",
     "yp.dur.tipNote":
-      "Industry-standard gratuity is 15-20% of the charter fee and is given directly to your captain and crew. It's never included in our pricing and always at your discretion.",
+      "If you hire a captain through us, industry-standard gratuity is 15-20% of the charter fee. It's never included in our pricing and always at your discretion.",
     "yp.addons.title": "Popular Add-Ons",
     "yp.addons.intro":
       "Make your charter unforgettable with our curated add-on experiences. All can be arranged at the time of booking.",
+    "yp.addon.captain.title": "USCG-Licensed Captain",
+    "yp.addon.captain.price": "From $300",
+    "yp.addon.captain.desc":
+      "A professional USCG-licensed captain who knows every route, sandbar, and sunset spot in Miami. Handles navigation, anchoring, and safety. Recommended for most groups — especially first-timers.",
     "yp.addon.sax.title": "Live Saxophone",
     "yp.addon.sax.price": "From $350",
     "yp.addon.sax.desc":
@@ -1593,13 +1637,13 @@ const translations: Record<Lang, Record<string, string>> = {
       "Not every charter costs the same. Here are the four main variables that determine your final price.",
     "yp.factor.size.title": "Vessel Size & Type",
     "yp.factor.size.text":
-      "A 40-foot cruiser costs less than a 65-foot yacht. Larger vessels have more deck space, cabins, and amenities — and require more fuel and a larger crew. For groups under 10, a mid-size vessel (40-50 ft) is usually the best value.",
+      "A 40-foot cruiser costs less than a 65-foot yacht. Larger vessels have more deck space, cabins, and amenities — and require more fuel. For groups under 10, a mid-size vessel (40-50 ft) is usually the best value.",
     "yp.factor.season.title": "Season",
     "yp.factor.season.text":
       "Peak season runs December through April, when Miami is packed with tourists and demand is highest. Off-peak (May through November) offers the same beautiful weather at lower rates. Hurricane season (June-November) has rare disruptions but the best deals.",
     "yp.factor.group.title": "Group Size",
     "yp.factor.group.text":
-      "More guests may require a larger vessel or additional crew members. Groups of 2-8 fit comfortably on our standard fleet. Groups of 9-15 may need a larger yacht. For 16+, we recommend multi-vessel packages.",
+      "More guests may require a larger vessel. Groups of 2-8 fit comfortably on our standard fleet. Groups of 9-15 may need a larger yacht. For 16+, we recommend multi-vessel packages.",
     "yp.factor.day.title": "Day of Week",
     "yp.factor.day.text":
       "Friday, Saturday, and Sunday are premium days with higher demand. Tuesday through Thursday typically offer the best availability and rates. Monday charters also tend to be quieter with better pricing.",
@@ -1608,7 +1652,7 @@ const translations: Record<Lang, Record<string, string>> = {
       "Smart booking strategies that get you the same experience for less. We want you on the water — here's how to make it happen.",
     "yp.save.weekday.title": "Book a Weekday",
     "yp.save.weekday.text":
-      "Tuesday through Thursday charters typically offer better rates than weekends. You also get less boat traffic at the sandbar, calmer waters, and more personalized attention from the crew.",
+      "Tuesday through Thursday charters typically offer better rates than weekends. You also get less boat traffic at the sandbar, calmer waters, and a more relaxed experience overall.",
     "yp.save.offpeak.title": "Go Off-Peak",
     "yp.save.offpeak.text":
       "May through November offers warm weather, calm seas, and rates that can be 10-20% lower than peak season. September and October are hidden gems — gorgeous water, minimal crowds, and the best deals of the year.",
@@ -1618,9 +1662,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.save.longer.title": "Book a Longer Charter",
     "yp.save.longer.text":
       "The per-hour cost drops on longer charters. An 8-hour full day is significantly better value per hour than two separate 4-hour trips. Plus, you get the full Miami experience without rushing.",
-    "yp.tipping.title": "Tipping Your Captain & Crew",
+    "yp.tipping.title": "Tipping Your Captain",
     "yp.tipping.intro":
-      "Gratuity is the only cost beyond your quoted price. Here's everything you need to know so there are zero surprises.",
+      "If you hire a captain through us, gratuity is customary. Here's everything you need to know so there are zero surprises.",
     "yp.tipping.standard.title": "Industry Standard: 15-20%",
     "yp.tipping.standard.text":
       "The standard gratuity for yacht charters in Miami is 15-20% of the base charter fee. This is consistent across the industry, similar to tipping at a high-end restaurant.",
@@ -1629,9 +1673,9 @@ const translations: Record<Lang, Record<string, string>> = {
       "On a $2,500 half-day charter, a typical tip is $375-$500. On a $5,000 full-day charter, $750-$1,000. The amount is always at your discretion based on your experience.",
     "yp.tipping.how.title": "How to Tip",
     "yp.tipping.how.text":
-      "Cash is preferred and is given directly to the captain at the end of the trip. The captain splits the tip with the crew. Venmo and Zelle are also accepted if you prefer digital.",
+      "Cash is preferred and is given directly to the captain at the end of the trip. Venmo and Zelle are also accepted if you prefer digital.",
     "yp.tipping.note":
-      "Gratuity is never included in our pricing and never expected — but it is deeply appreciated. Your crew works hard to make every charter special.",
+      "Gratuity is never included in our pricing and never expected — but when you hire a captain through us, it is deeply appreciated. They work hard to make every charter special.",
     "yp.midCta.label": "Ready to Book?",
     "yp.midCta.title": "Get Your Custom Quote in Minutes",
     "yp.midCta.text":
@@ -1644,22 +1688,22 @@ const translations: Record<Lang, Record<string, string>> = {
       "A private yacht charter in Miami starts at $2,500 for a 4-hour outing with Emerald Eyes. Prices across the market range from $1,000 to $15,000+ for a half-day depending on vessel size and amenities. Our sweet spot is the $2,500-$5,000 range for groups of 2-15.",
     "yp.faq.q2": "What's included in the charter price?",
     "yp.faq.a2":
-      "Every Emerald Eyes charter includes a USCG-licensed captain, professional crew, fuel for local cruising, premium sound system, ice and coolers, floating mats, water toys, bottled water, and glassware. There are no hidden fuel surcharges or docking fees.",
+      "Every Emerald Eyes bareboat charter includes the vessel, fuel for local cruising, premium sound system, ice and coolers, floating mats, water toys, bottled water, and glassware. Captain is available as a popular add-on. There are no hidden fuel surcharges or docking fees.",
     "yp.faq.q3": "How much does a yacht cost per hour?",
     "yp.faq.a3":
       "Based on our rates, per-hour cost is approximately $583-$625 depending on charter length. Across the broader Miami market, hourly rates range from $250 to $1,500+ depending on the yacht. Longer charters always offer better per-hour value.",
     "yp.faq.q4": "Are there additional costs I should budget for?",
     "yp.faq.a4":
-      "The only additional cost is gratuity for your captain and crew, which is at your discretion (industry standard is 15-20%). If you add extras like a sax player, sushi chef, or jet ski, those are quoted upfront. Your own food and drinks are welcome and free to bring.",
+      "Most clients add a captain (from $300), and gratuity for your captain is at your discretion (industry standard is 15-20%). If you add extras like a sax player, sushi chef, or jet ski, those are quoted upfront. Your own food and drinks are welcome and free to bring.",
     "yp.faq.q5": "Is fuel included?",
     "yp.faq.a5":
       "Yes. Fuel for all standard Miami cruising routes is included — Haulover Sandbar, Star Island, Biscayne Bay, and Key Biscayne. Extended trips outside of the standard area may incur additional fuel costs, but we'll always tell you before booking.",
     "yp.faq.q6": "When is the cheapest time to charter?",
     "yp.faq.a6":
       "Weekdays (Tuesday-Thursday) during off-peak months (May-November) offer the best rates. You can save 10-20% compared to a weekend charter during peak season. September and October are often the most affordable months with excellent weather.",
-    "yp.faq.q7": "How much should I tip the crew?",
+    "yp.faq.q7": "How much should I tip the captain?",
     "yp.faq.a7":
-      "Gratuity is never included and always at your discretion. The industry standard in Miami is 15-20% of the base charter fee. For a $2,500 charter, that's typically $375-$500. Tips go directly to your captain and crew.",
+      "If you hire a captain through us, gratuity is never included and always at your discretion. The industry standard in Miami is 15-20% of the base charter fee. For a $2,500 charter, that's typically $375-$500. Tips go directly to your captain.",
     "yp.faq.q8": "Can I bring my own food and drinks?",
     "yp.faq.a8":
       "Absolutely. You're welcome to bring your own food, drinks, and alcohol at no extra charge. We provide ice, coolers, and glassware. No glass bottles on board — please use cans or pour into the cups we provide. You can also add our catering packages.",
@@ -1681,7 +1725,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "yp.sample.perPersonBase": "Per person without add-ons: ~$192",
     "yp.finalCta.title": "Know the Price. Love the Experience.",
     "yp.finalCta.text":
-      "No surprises, no hidden fees. Just a transparent quote and a crew that's ready to make your day on the water unforgettable. Tell us what you're looking for.",
+      "No surprises, no hidden fees. Just a transparent quote and a team ready to make your day on the water unforgettable. Tell us what you're looking for.",
     // Bachelorette article
     "bach.category": "Experiences",
     "bach.readTime": "16 min read",
@@ -1713,7 +1757,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.why.p2":
       "Every photo looks like a magazine cover when you're shooting against turquoise water and the Miami skyline. The lighting at golden hour is unreal. And when the music is bouncing off the water with no walls around you, the energy hits different.",
     "bach.why.p3":
-      "Plus, everything is handled for you. A licensed captain drives, the crew sets up and cleans up, and all you have to do is show up. This is the bachelorette party where the maid of honor actually gets to enjoy it.",
+      "Plus, everything can be handled for you. Add a licensed captain and they drive while you party. All you have to do is show up. This is the bachelorette party where the maid of honor actually gets to enjoy it.",
     "bach.why.privacy.title": "Total Privacy",
     "bach.why.privacy.text":
       "No strangers, no lines, no noise complaints. The yacht is exclusively yours — your playlist, your rules, your party.",
@@ -1724,7 +1768,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.why.freedom.text":
       "Premium Bluetooth sound system on board. Play your own playlist as loud as you want — no noise limits on the open water.",
     "bach.why.tag1": "Private Yacht",
-    "bach.why.tag2": "All-Inclusive Crew",
+    "bach.why.tag2": "Captain Available",
     "bach.why.tag3": "Zero Cleanup",
     "bach.plan.title": "When to Book & How to Plan",
     "bach.plan.p1":
@@ -1751,9 +1795,9 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.included.intro":
       "Everything you need for a stress-free bachelorette party is on board from the moment you step on.",
     "bach.included.label": "Included in Your Charter",
-    "bach.included.captain.title": "USCG Licensed Captain",
+    "bach.included.captain.title": "Your Private Yacht",
     "bach.included.captain.text":
-      "Professional captain who knows every route, sandbar, and sunset spot in Miami. You relax — they drive.",
+      "A fully equipped vessel with everything you need for the perfect day on the water. Add a USCG-licensed captain and they handle the rest.",
     "bach.included.sound.title": "Premium Sound System",
     "bach.included.sound.text":
       "Bluetooth speakers throughout the yacht. Connect your phone and play your playlist at full volume — no noise limits on the water.",
@@ -1839,7 +1883,7 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.price.big.price": "$6,000+",
     "bach.price.perHour": "4-hour minimum charter",
     "bach.price.note":
-      "All pricing includes captain, crew, sound system, floating mats, ice, coolers, and glassware. Add-ons are extra. Custom quotes for multi-day or special requests — just ask.",
+      "All pricing includes the yacht, sound system, floating mats, ice, coolers, and glassware. Captain and other add-ons are extra. Custom quotes for multi-day or special requests — just ask.",
     "bach.tips.label": "From Our Team",
     "bach.tips.title": "Insider Tips from Sasha",
     "bach.tips.tip1":
@@ -1854,12 +1898,12 @@ const translations: Record<Lang, Record<string, string>> = {
       "Designate one person as the booking contact. Too many cooks in the group chat makes planning harder. One person talks to us, collects payment from the group, and shares the details.",
     "bach.midCta.title": "Ready to start planning?",
     "bach.midCta.text":
-      "Private yacht, licensed captain, floating mats, sound system, and the entire Miami coastline as your venue. Tell us your date and group size — we'll build the perfect bachelorette charter for you.",
+      "Private yacht, floating mats, sound system, and the entire Miami coastline as your venue. Add a licensed captain and we handle the rest. Tell us your date and group size — we'll build the perfect bachelorette charter for you.",
     "bach.midCta.btn": "See Bachelorette Packages",
     "bach.faq.title": "Frequently Asked Questions",
     "bach.faq.q1": "How much does a bachelorette yacht party cost in Miami?",
     "bach.faq.a1":
-      "A private bachelorette yacht charter with Emerald Eyes starts at $3,500 for 4 hours. That includes a USCG-licensed captain, professional crew, premium sound system, floating mats, ice, coolers, and glassware. Popular add-ons like a live sax player ($350), sushi chef ($500), or jet skis ($200) are available. Most bachelorette groups spend $4,000-$6,000 for a fully loaded 4-6 hour experience.",
+      "A private bachelorette yacht charter with Emerald Eyes starts at $3,500 for 4 hours. That includes the yacht, premium sound system, floating mats, ice, coolers, and glassware. Most groups add a USCG-licensed captain (from $300). Popular add-ons like a live sax player ($350), sushi chef ($500), or jet skis ($200) are also available. Most bachelorette groups spend $4,000-$6,000 for a fully loaded 4-6 hour experience.",
     "bach.faq.q2": "How many people can fit on a bachelorette yacht?",
     "bach.faq.a2":
       "Our yachts accommodate groups of 2 to 25+ guests. The sweet spot for bachelorette parties is 8-15 people — large enough for a great party, intimate enough for everyone to enjoy the yacht. Groups over 13 may require a larger vessel at adjusted pricing.",

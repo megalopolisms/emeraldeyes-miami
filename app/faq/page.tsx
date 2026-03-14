@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/faq",
+    languages: { en: "/faq", es: "/es/faq" },
   },
   openGraph: {
     title: "Miami Yacht Charter FAQ | Emerald Eyes Miami",

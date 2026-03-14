@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/haulover-sandbar-yacht-miami",
+    languages: {
+      en: "/experiences/haulover-sandbar-yacht-miami",
+      es: "/es/experiences/haulover-sandbar-yacht-miami",
+    },
   },
   openGraph: {
     title: "Haulover Sandbar Yacht Miami | Emerald Eyes Miami",

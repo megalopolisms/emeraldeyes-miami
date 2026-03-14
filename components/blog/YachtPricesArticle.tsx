@@ -40,7 +40,7 @@ const GUIDE_SECTIONS = [
 ];
 
 const INCLUDED_ITEMS = [
-  { emoji: "\u{2693}", key: "captain" },
+  { emoji: "\u{26F5}", key: "vessel" },
   { emoji: "\u{1F3B5}", key: "sound" },
   { emoji: "\u{26FD}", key: "fuel" },
   { emoji: "\u{1F9CA}", key: "ice" },
@@ -78,6 +78,12 @@ const DURATION_CARDS = [
 ];
 
 const ADDON_CARDS = [
+  {
+    titleKey: "yp.addon.captain.title",
+    priceKey: "yp.addon.captain.price",
+    descKey: "yp.addon.captain.desc",
+    icon: ShieldCheck,
+  },
   {
     titleKey: "yp.addon.sax.title",
     priceKey: "yp.addon.sax.price",
@@ -475,21 +481,21 @@ export default function YachtPricesArticle() {
           <div className="mt-10 grid gap-5 md:grid-cols-3">
             {[
               {
+                icon: Anchor,
+                titleKey: "yp.captain.bareboat.title",
+                textKey: "yp.captain.bareboat.text",
+                accent: "emerald",
+              },
+              {
                 icon: ShieldCheck,
-                titleKey: "yp.captain.captain.title",
-                textKey: "yp.captain.captain.text",
+                titleKey: "yp.captain.addon.title",
+                textKey: "yp.captain.addon.text",
                 accent: "emerald",
               },
               {
                 icon: Users,
-                titleKey: "yp.captain.crew.title",
-                textKey: "yp.captain.crew.text",
-                accent: "emerald",
-              },
-              {
-                icon: DollarSign,
-                titleKey: "yp.captain.cost.title",
-                textKey: "yp.captain.cost.text",
+                titleKey: "yp.captain.self.title",
+                textKey: "yp.captain.self.text",
                 accent: "gold",
               },
             ].map((item) => (

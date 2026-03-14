@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/blog/first-time-yacht-rental-miami",
+    languages: {
+      en: "/blog/first-time-yacht-rental-miami",
+      es: "/es/blog/first-time-yacht-rental-miami",
+    },
   },
   openGraph: {
     title: "First Time Renting a Yacht in Miami? Everything You Need to Know",

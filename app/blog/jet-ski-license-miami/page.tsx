@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/blog/jet-ski-license-miami",
+    languages: {
+      en: "/blog/jet-ski-license-miami",
+      es: "/es/blog/jet-ski-license-miami",
+    },
   },
   openGraph: {
     title: "Do You Need a License to Ride a Jet Ski in Miami?",

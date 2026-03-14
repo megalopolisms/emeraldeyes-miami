@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import AboutPage from "@/app/about/page";
 
 export const metadata: Metadata = {
   title: "Nosotros | Emerald Eyes Miami",
@@ -41,4 +40,4 @@ export const metadata: Metadata = {
   },
 };
 
-export { AboutPage as default };
+export { default } from "@/app/about/page";

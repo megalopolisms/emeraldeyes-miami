@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences/proposal-yacht-miami",
+    languages: {
+      en: "/experiences/proposal-yacht-miami",
+      es: "/es/experiences/proposal-yacht-miami",
+    },
   },
   openGraph: {
     title: "Proposal Yacht Miami | Emerald Eyes Miami",

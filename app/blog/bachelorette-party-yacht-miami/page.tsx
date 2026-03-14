@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/blog/bachelorette-party-yacht-miami",
+    languages: {
+      en: "/blog/bachelorette-party-yacht-miami",
+      es: "/es/blog/bachelorette-party-yacht-miami",
+    },
   },
   openGraph: {
     title:

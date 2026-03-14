@@ -16,9 +16,21 @@ export const metadata: Metadata = {
     "What Happens During a Coast Guard Inspection on a Bareboat Charter? | Emerald Eyes Miami",
   description:
     "A complete guide to Coast Guard boardings on bareboat yacht charters in Miami. Learn what the USCG checks, what paperwork you need, safety equipment requirements, and how to pass every time.",
-  keywords: ["Coast Guard inspection", "bareboat charter Miami", "USCG boarding", "yacht rental safety", "Miami yacht charter rules", "bareboat agreement", "uninspected passenger vessel"],
+  keywords: [
+    "Coast Guard inspection",
+    "bareboat charter Miami",
+    "USCG boarding",
+    "yacht rental safety",
+    "Miami yacht charter rules",
+    "bareboat agreement",
+    "uninspected passenger vessel",
+  ],
   alternates: {
     canonical: "/blog/coast-guard-inspection-bareboat-charter",
+    languages: {
+      en: "/blog/coast-guard-inspection-bareboat-charter",
+      es: "/es/blog/coast-guard-inspection-bareboat-charter",
+    },
   },
   openGraph: {
     title:
@@ -58,7 +70,7 @@ const articleSchema = {
     "A comprehensive guide to Coast Guard boardings during bareboat yacht charters in Miami, covering safety equipment, documentation, and USCG requirements.",
   image: [
     "https://emeraldeyesmiami.com/images/sax.jpg",
-    "https://emeraldeyesmiami.com/images/sushi.jpg"
+    "https://emeraldeyesmiami.com/images/sushi.jpg",
   ],
   author: {
     "@type": "Person",
@@ -66,15 +78,15 @@ const articleSchema = {
     jobTitle: "Partner & Director of Operations",
     worksFor: {
       "@type": "Organization",
-      name: "Emerald Eyes Miami"
-    }
+      name: "Emerald Eyes Miami",
+    },
   },
   publisher: {
     "@type": "Organization",
     name: "Emerald Eyes Miami",
     logo: {
       "@type": "ImageObject",
-      url: "https://emeraldeyesmiami.com/images/emeraldeyes.jpg"
+      url: "https://emeraldeyesmiami.com/images/emeraldeyes.jpg",
     },
     url: "https://emeraldeyesmiami.com",
   },

@@ -45,6 +45,7 @@ export const metadata: Metadata = {
     "Premium yacht charters in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate charters on Biscayne Bay and beyond.",
   alternates: {
     canonical: "/",
+    languages: { en: "/", es: "/es" },
   },
   openGraph: {
     title: "Emerald Eyes Miami | Luxury Yacht Rental",
@@ -178,7 +179,7 @@ export default function RootLayout({
           {/* Floating chat button (hidden on homepage) */}
           <FloatingButton />
         </LanguageProvider>
-        <GoogleAnalytics gaId="G-377706558" />
+        <GoogleAnalytics gaId="G-L456NWD86C" />
       </body>
     </html>
   );
