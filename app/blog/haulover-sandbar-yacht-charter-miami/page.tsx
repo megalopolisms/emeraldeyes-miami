@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/haulover-sandbar-yacht-charter-miami",
       es: "/es/blog/haulover-sandbar-yacht-charter-miami",
+      pt: "/pt/blog/haulover-sandbar-yacht-charter-miami",
+      de: "/de/blog/haulover-sandbar-yacht-charter-miami",
+      fr: "/fr/blog/haulover-sandbar-yacht-charter-miami",
+      zh: "/zh/blog/haulover-sandbar-yacht-charter-miami",
+      ja: "/ja/blog/haulover-sandbar-yacht-charter-miami",
     },
   },
   openGraph: {

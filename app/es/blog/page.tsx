@@ -15,7 +15,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/es/blog",
-    languages: { en: "/blog", es: "/es/blog" },
+    languages: {
+      en: "/blog",
+      es: "/es/blog",
+      pt: "/pt/blog",
+      de: "/de/blog",
+      fr: "/fr/blog",
+      zh: "/zh/blog",
+      ja: "/ja/blog",
+    },
   },
   openGraph: {
     title: "Blog | Emerald Eyes Miami",

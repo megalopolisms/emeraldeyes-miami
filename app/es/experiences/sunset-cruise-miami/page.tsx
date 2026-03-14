@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/sunset-cruise-miami",
       es: "/es/experiences/sunset-cruise-miami",
+      pt: "/pt/experiences/sunset-cruise-miami",
+      de: "/de/experiences/sunset-cruise-miami",
+      fr: "/fr/experiences/sunset-cruise-miami",
+      zh: "/zh/experiences/sunset-cruise-miami",
+      ja: "/ja/experiences/sunset-cruise-miami",
     },
   },
   openGraph: {

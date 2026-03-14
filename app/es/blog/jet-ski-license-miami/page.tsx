@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/jet-ski-license-miami",
       es: "/es/blog/jet-ski-license-miami",
+      pt: "/pt/blog/jet-ski-license-miami",
+      de: "/de/blog/jet-ski-license-miami",
+      fr: "/fr/blog/jet-ski-license-miami",
+      zh: "/zh/blog/jet-ski-license-miami",
+      ja: "/ja/blog/jet-ski-license-miami",
     },
   },
   openGraph: {

@@ -17,7 +17,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/book",
-    languages: { en: "/book", es: "/es/book" },
+    languages: {
+      en: "/book",
+      es: "/es/book",
+      pt: "/pt/book",
+      de: "/de/book",
+      fr: "/fr/book",
+      zh: "/zh/book",
+      ja: "/ja/book",
+    },
   },
   openGraph: {
     title: "Book a Yacht Charter in North Miami | Emerald Eyes Miami",

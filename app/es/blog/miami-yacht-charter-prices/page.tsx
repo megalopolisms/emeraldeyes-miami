@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/miami-yacht-charter-prices",
       es: "/es/blog/miami-yacht-charter-prices",
+      pt: "/pt/blog/miami-yacht-charter-prices",
+      de: "/de/blog/miami-yacht-charter-prices",
+      fr: "/fr/blog/miami-yacht-charter-prices",
+      zh: "/zh/blog/miami-yacht-charter-prices",
+      ja: "/ja/blog/miami-yacht-charter-prices",
     },
   },
   openGraph: {

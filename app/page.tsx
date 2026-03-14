@@ -27,7 +27,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/",
-    languages: { en: "/", es: "/es" },
+    languages: {
+      en: "/",
+      es: "/es",
+      pt: "/pt",
+      de: "/de",
+      fr: "/fr",
+      zh: "/zh",
+      ja: "/ja",
+    },
   },
   openGraph: {
     title: "Emerald Eyes Miami | Luxury Yacht Rental in North Miami",

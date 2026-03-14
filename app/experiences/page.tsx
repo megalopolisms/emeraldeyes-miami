@@ -33,7 +33,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/experiences",
-    languages: { en: "/experiences", es: "/es/experiences" },
+    languages: {
+      en: "/experiences",
+      es: "/es/experiences",
+      pt: "/pt/experiences",
+      de: "/de/experiences",
+      fr: "/fr/experiences",
+      zh: "/zh/experiences",
+      ja: "/ja/experiences",
+    },
   },
   openGraph: {
     title: "Yacht Experiences | Emerald Eyes Miami",

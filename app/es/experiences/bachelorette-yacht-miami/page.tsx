@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/bachelorette-yacht-miami",
       es: "/es/experiences/bachelorette-yacht-miami",
+      pt: "/pt/experiences/bachelorette-yacht-miami",
+      de: "/de/experiences/bachelorette-yacht-miami",
+      fr: "/fr/experiences/bachelorette-yacht-miami",
+      zh: "/zh/experiences/bachelorette-yacht-miami",
+      ja: "/ja/experiences/bachelorette-yacht-miami",
     },
   },
   openGraph: {

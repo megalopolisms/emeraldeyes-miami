@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/private-party-yacht-miami",
       es: "/es/experiences/private-party-yacht-miami",
+      pt: "/pt/experiences/private-party-yacht-miami",
+      de: "/de/experiences/private-party-yacht-miami",
+      fr: "/fr/experiences/private-party-yacht-miami",
+      zh: "/zh/experiences/private-party-yacht-miami",
+      ja: "/ja/experiences/private-party-yacht-miami",
     },
   },
   openGraph: {

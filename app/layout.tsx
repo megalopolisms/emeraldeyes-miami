@@ -45,7 +45,15 @@ export const metadata: Metadata = {
     "Premium yacht charters in North Miami. Sunset cruises, private parties, bachelorette events, proposals, and corporate charters on Biscayne Bay and beyond.",
   alternates: {
     canonical: "/",
-    languages: { en: "/", es: "/es" },
+    languages: {
+      en: "/",
+      es: "/es",
+      pt: "/pt",
+      de: "/de",
+      fr: "/fr",
+      zh: "/zh",
+      ja: "/ja",
+    },
   },
   openGraph: {
     title: "Emerald Eyes Miami | Luxury Yacht Rental",

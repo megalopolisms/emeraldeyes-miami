@@ -16,7 +16,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/es/faq",
-    languages: { en: "/faq", es: "/es/faq" },
+    languages: {
+      en: "/faq",
+      es: "/es/faq",
+      pt: "/pt/faq",
+      de: "/de/faq",
+      fr: "/fr/faq",
+      zh: "/zh/faq",
+      ja: "/ja/faq",
+    },
   },
   openGraph: {
     title: "Preguntas Frecuentes Charter de Yate Miami | Emerald Eyes Miami",

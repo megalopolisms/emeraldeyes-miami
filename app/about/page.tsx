@@ -25,7 +25,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/about",
-    languages: { en: "/about", es: "/es/about" },
+    languages: {
+      en: "/about",
+      es: "/es/about",
+      pt: "/pt/about",
+      de: "/de/about",
+      fr: "/fr/about",
+      zh: "/zh/about",
+      ja: "/ja/about",
+    },
   },
   openGraph: {
     title: "About Emerald Eyes Miami",

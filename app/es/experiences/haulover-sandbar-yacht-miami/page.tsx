@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/haulover-sandbar-yacht-miami",
       es: "/es/experiences/haulover-sandbar-yacht-miami",
+      pt: "/pt/experiences/haulover-sandbar-yacht-miami",
+      de: "/de/experiences/haulover-sandbar-yacht-miami",
+      fr: "/fr/experiences/haulover-sandbar-yacht-miami",
+      zh: "/zh/experiences/haulover-sandbar-yacht-miami",
+      ja: "/ja/experiences/haulover-sandbar-yacht-miami",
     },
   },
   openGraph: {

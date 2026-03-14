@@ -14,7 +14,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/es/book",
-    languages: { en: "/book", es: "/es/book" },
+    languages: {
+      en: "/book",
+      es: "/es/book",
+      pt: "/pt/book",
+      de: "/de/book",
+      fr: "/fr/book",
+      zh: "/zh/book",
+      ja: "/ja/book",
+    },
   },
   openGraph: {
     title: "Reserve un Charter de Yate en North Miami | Emerald Eyes Miami",

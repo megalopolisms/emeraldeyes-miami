@@ -35,6 +35,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/first-time-yacht-rental-miami",
       es: "/es/blog/first-time-yacht-rental-miami",
+      pt: "/pt/blog/first-time-yacht-rental-miami",
+      de: "/de/blog/first-time-yacht-rental-miami",
+      fr: "/fr/blog/first-time-yacht-rental-miami",
+      zh: "/zh/blog/first-time-yacht-rental-miami",
+      ja: "/ja/blog/first-time-yacht-rental-miami",
     },
   },
   openGraph: {

@@ -16,7 +16,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/es",
-    languages: { en: "/", es: "/es" },
+    languages: {
+      en: "/",
+      es: "/es",
+      pt: "/pt",
+      de: "/de",
+      fr: "/fr",
+      zh: "/zh",
+      ja: "/ja",
+    },
   },
   openGraph: {
     title: "Emerald Eyes Miami | Alquiler de Yates de Lujo en North Miami",

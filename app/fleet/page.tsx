@@ -26,7 +26,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/fleet",
-    languages: { en: "/fleet", es: "/es/fleet" },
+    languages: {
+      en: "/fleet",
+      es: "/es/fleet",
+      pt: "/pt/fleet",
+      de: "/de/fleet",
+      fr: "/fr/fleet",
+      zh: "/zh/fleet",
+      ja: "/ja/fleet",
+    },
   },
   openGraph: {
     title: "Yacht Fleet | Emerald Eyes Miami",

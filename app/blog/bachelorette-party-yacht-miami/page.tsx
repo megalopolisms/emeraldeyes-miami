@@ -33,6 +33,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/bachelorette-party-yacht-miami",
       es: "/es/blog/bachelorette-party-yacht-miami",
+      pt: "/pt/blog/bachelorette-party-yacht-miami",
+      de: "/de/blog/bachelorette-party-yacht-miami",
+      fr: "/fr/blog/bachelorette-party-yacht-miami",
+      zh: "/zh/blog/bachelorette-party-yacht-miami",
+      ja: "/ja/blog/bachelorette-party-yacht-miami",
     },
   },
   openGraph: {

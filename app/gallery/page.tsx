@@ -24,7 +24,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/gallery",
-    languages: { en: "/gallery", es: "/es/gallery" },
+    languages: {
+      en: "/gallery",
+      es: "/es/gallery",
+      pt: "/pt/gallery",
+      de: "/de/gallery",
+      fr: "/fr/gallery",
+      zh: "/zh/gallery",
+      ja: "/ja/gallery",
+    },
   },
   openGraph: {
     title: "Photo Gallery | Emerald Eyes Miami",

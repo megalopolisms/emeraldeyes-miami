@@ -28,6 +28,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/corporate-yacht-charter-miami",
       es: "/es/experiences/corporate-yacht-charter-miami",
+      pt: "/pt/experiences/corporate-yacht-charter-miami",
+      de: "/de/experiences/corporate-yacht-charter-miami",
+      fr: "/fr/experiences/corporate-yacht-charter-miami",
+      zh: "/zh/experiences/corporate-yacht-charter-miami",
+      ja: "/ja/experiences/corporate-yacht-charter-miami",
     },
   },
   openGraph: {

@@ -11,6 +11,8 @@ function getDate(value: string) {
   return new Date(`${value}T00:00:00.000Z`);
 }
 
+const I18N_LANGS = ["es", "pt", "de", "fr", "zh", "ja"] as const;
+
 const staticPages = [
   {
     route: "",
@@ -74,121 +76,87 @@ const staticPages = [
   },
 ];
 
-const experiencePages = EXPERIENCES.filter((exp) =>
+const experienceSlugs = EXPERIENCES.filter((exp) =>
   ROUTABLE_EXPERIENCE_SLUGS.has(exp.slug),
-).map((exp) => ({
-  url: `${BUSINESS.siteUrl}/experiences/${exp.slug}`,
-  lastModified: getDate("2026-03-14"),
-  changeFrequency: "monthly" as const,
-  priority: 0.85,
-}));
+).map((exp) => exp.slug);
 
-const spanishPages = [
-  "/es",
-  "/es/about",
-  "/es/blog",
-  "/es/book",
-  "/es/contact",
-  "/es/faq",
-  "/es/fleet",
-  "/es/gallery",
-  "/es/experiences",
-].map((route) => ({
-  url: `${BUSINESS.siteUrl}${route}`,
-  lastModified: getDate("2026-03-14"),
-  changeFrequency: route === "/es" ? ("weekly" as const) : ("monthly" as const),
-  priority: route === "/es" ? 0.8 : 0.6,
-}));
-
-const spanishExperiencePages = EXPERIENCES.filter((exp) =>
-  ROUTABLE_EXPERIENCE_SLUGS.has(exp.slug),
-).map((exp) => ({
-  url: `${BUSINESS.siteUrl}/es/experiences/${exp.slug}`,
-  lastModified: getDate("2026-03-14"),
-  changeFrequency: "monthly" as const,
-  priority: 0.7,
-}));
-
-const blogPages = [
-  {
-    route: "/blog/coast-guard-inspection-bareboat-charter",
-    lastModified: "2026-03-13",
-  },
-  {
-    route: "/blog/haulover-sandbar-yacht-charter-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/blog/jet-ski-license-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/blog/miami-yacht-charter-prices",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/blog/bachelorette-party-yacht-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/blog/first-time-yacht-rental-miami",
-    lastModified: "2026-03-14",
-  },
-].map((page) => ({
-  url: `${BUSINESS.siteUrl}${page.route}`,
-  lastModified: getDate(page.lastModified),
-  changeFrequency: "monthly" as const,
-  priority: 0.75,
-}));
-
-const spanishBlogPages = [
-  {
-    route: "/es/blog/coast-guard-inspection-bareboat-charter",
-    lastModified: "2026-03-13",
-  },
-  {
-    route: "/es/blog/haulover-sandbar-yacht-charter-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/es/blog/jet-ski-license-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/es/blog/miami-yacht-charter-prices",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/es/blog/bachelorette-party-yacht-miami",
-    lastModified: "2026-03-14",
-  },
-  {
-    route: "/es/blog/first-time-yacht-rental-miami",
-    lastModified: "2026-03-14",
-  },
-].map((page) => ({
-  url: `${BUSINESS.siteUrl}${page.route}`,
-  lastModified: getDate(page.lastModified),
-  changeFrequency: "monthly" as const,
-  priority: 0.65,
-}));
+const blogSlugs = [
+  "coast-guard-inspection-bareboat-charter",
+  "haulover-sandbar-yacht-charter-miami",
+  "jet-ski-license-miami",
+  "miami-yacht-charter-prices",
+  "bachelorette-party-yacht-miami",
+  "first-time-yacht-rental-miami",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = BUSINESS.siteUrl;
+  const entries: MetadataRoute.Sitemap = [];
 
-  const basePages = staticPages.map((page) => ({
-    url: `${baseUrl}${page.route}`,
-    lastModified: getDate(page.lastModified),
-    changeFrequency: page.changeFrequency,
-    priority: page.priority,
-  }));
+  // English base pages
+  for (const page of staticPages) {
+    entries.push({
+      url: `${baseUrl}${page.route}`,
+      lastModified: getDate(page.lastModified),
+      changeFrequency: page.changeFrequency,
+      priority: page.priority,
+    });
+  }
 
-  return [
-    ...basePages,
-    ...experiencePages,
-    ...spanishPages,
-    ...spanishExperiencePages,
-    ...blogPages,
-    ...spanishBlogPages,
-  ];
+  // English experience pages
+  for (const slug of experienceSlugs) {
+    entries.push({
+      url: `${baseUrl}/experiences/${slug}`,
+      lastModified: getDate("2026-03-14"),
+      changeFrequency: "monthly",
+      priority: 0.85,
+    });
+  }
+
+  // English blog pages
+  for (const slug of blogSlugs) {
+    entries.push({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: getDate("2026-03-14"),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    });
+  }
+
+  // All i18n language versions (es, pt, de, fr, zh, ja)
+  for (const lang of I18N_LANGS) {
+    // Static pages per language
+    for (const page of staticPages) {
+      if (page.route === "/cancellation-policy") continue;
+      const route = page.route ? `/${lang}${page.route}` : `/${lang}`;
+      entries.push({
+        url: `${baseUrl}${route}`,
+        lastModified: getDate(page.lastModified),
+        changeFrequency: page.route === "" ? "weekly" : "monthly",
+        priority: page.route === "" ? 0.8 : 0.6,
+      });
+    }
+
+    // Experience pages per language
+    for (const slug of experienceSlugs) {
+      entries.push({
+        url: `${baseUrl}/${lang}/experiences/${slug}`,
+        lastModified: getDate("2026-03-14"),
+        changeFrequency: "monthly",
+        priority: 0.7,
+      });
+    }
+
+    // Blog pages per language
+    for (const slug of blogSlugs) {
+      entries.push({
+        url: `${baseUrl}/${lang}/blog/${slug}`,
+        lastModified: getDate("2026-03-14"),
+        changeFrequency: "monthly",
+        priority: 0.65,
+      });
+    }
+  }
+
+  return entries;
 }

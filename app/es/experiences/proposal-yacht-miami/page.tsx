@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/experiences/proposal-yacht-miami",
       es: "/es/experiences/proposal-yacht-miami",
+      pt: "/pt/experiences/proposal-yacht-miami",
+      de: "/de/experiences/proposal-yacht-miami",
+      fr: "/fr/experiences/proposal-yacht-miami",
+      zh: "/zh/experiences/proposal-yacht-miami",
+      ja: "/ja/experiences/proposal-yacht-miami",
     },
   },
   openGraph: {

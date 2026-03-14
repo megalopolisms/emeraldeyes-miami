@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     languages: {
       en: "/blog/coast-guard-inspection-bareboat-charter",
       es: "/es/blog/coast-guard-inspection-bareboat-charter",
+      pt: "/pt/blog/coast-guard-inspection-bareboat-charter",
+      de: "/de/blog/coast-guard-inspection-bareboat-charter",
+      fr: "/fr/blog/coast-guard-inspection-bareboat-charter",
+      zh: "/zh/blog/coast-guard-inspection-bareboat-charter",
+      ja: "/ja/blog/coast-guard-inspection-bareboat-charter",
     },
   },
   openGraph: {

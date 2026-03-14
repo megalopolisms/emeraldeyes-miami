@@ -16,7 +16,15 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: "/contact",
-    languages: { en: "/contact", es: "/es/contact" },
+    languages: {
+      en: "/contact",
+      es: "/es/contact",
+      pt: "/pt/contact",
+      de: "/de/contact",
+      fr: "/fr/contact",
+      zh: "/zh/contact",
+      ja: "/ja/contact",
+    },
   },
   openGraph: {
     title: "Contact Emerald Eyes Miami | North Miami Yacht Charters",
