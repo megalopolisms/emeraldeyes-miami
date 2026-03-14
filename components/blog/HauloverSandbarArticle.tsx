@@ -5,13 +5,19 @@ import Image from "next/image";
 import {
   Anchor,
   Award,
+  BookOpen,
   CheckCircle,
   ChevronRight,
   Clock,
   Compass,
+  DollarSign,
+  Heart,
   MapPin,
   ShieldCheck,
+  Sparkles,
+  Star,
   Sun,
+  Users,
   Waves,
 } from "lucide-react";
 import Section from "@/components/ui/Section";
@@ -25,12 +31,15 @@ import { asset } from "@/lib/constants";
 
 const GUIDE_SECTIONS = [
   { id: "what-is", titleKey: "hs.what.title" },
+  { id: "the-experience", titleKey: "hs.exp.navTitle" },
   { id: "how-to-get-there", titleKey: "hs.route.title" },
   { id: "best-time", titleKey: "hs.time.title" },
+  { id: "how-much", titleKey: "hs.cost.navTitle" },
   { id: "what-to-bring", titleKey: "hs.bring.title" },
   { id: "rules", titleKey: "hs.rules.title" },
   { id: "safety", titleKey: "hs.safety.title" },
   { id: "activities", titleKey: "hs.do.title" },
+  { id: "why-emerald-eyes", titleKey: "hs.advantage.navTitle" },
   { id: "nearby", titleKey: "hs.nearby.title" },
 ];
 
@@ -52,6 +61,51 @@ const TIMING_CARDS = [
     textKey: "hs.time.tide.text",
     accent: "emerald" as const,
     icon: Anchor,
+  },
+  {
+    titleKey: "hs.time.season.title",
+    textKey: "hs.time.season.text",
+    accent: "gold" as const,
+    icon: Clock,
+  },
+  {
+    titleKey: "hs.time.arrival.title",
+    textKey: "hs.time.arrival.text",
+    accent: "emerald" as const,
+    icon: Compass,
+  },
+];
+
+const ADVANTAGE_ITEMS = [
+  {
+    titleKey: "hs.advantage.captain.title",
+    textKey: "hs.advantage.captain.text",
+    icon: ShieldCheck,
+  },
+  {
+    titleKey: "hs.advantage.gear.title",
+    textKey: "hs.advantage.gear.text",
+    icon: Anchor,
+  },
+  {
+    titleKey: "hs.advantage.spot.title",
+    textKey: "hs.advantage.spot.text",
+    icon: MapPin,
+  },
+  {
+    titleKey: "hs.advantage.vip.title",
+    textKey: "hs.advantage.vip.text",
+    icon: Star,
+  },
+  {
+    titleKey: "hs.advantage.group.title",
+    textKey: "hs.advantage.group.text",
+    icon: Users,
+  },
+  {
+    titleKey: "hs.advantage.stress.title",
+    textKey: "hs.advantage.stress.text",
+    icon: Sparkles,
   },
 ];
 
@@ -153,8 +207,24 @@ const RELATED_LINKS = [
     labelKey: "hs.related.experience",
   },
   {
+    href: "/blog/miami-yacht-charter-prices",
+    labelKey: "hs.related.prices",
+  },
+  {
+    href: "/blog/bachelorette-party-yacht-miami",
+    labelKey: "hs.related.bachelorette",
+  },
+  {
+    href: "/blog/first-time-yacht-rental-miami",
+    labelKey: "hs.related.firstTimer",
+  },
+  {
     href: "/blog/coast-guard-inspection-bareboat-charter",
     labelKey: "hs.related.coastGuard",
+  },
+  {
+    href: "/blog/jet-ski-license-miami",
+    labelKey: "hs.related.jetski",
   },
   {
     href: "/experiences/sunset-cruise-miami",
@@ -371,8 +441,77 @@ export default function HauloverSandbarArticle() {
         </div>
       </Section>
 
+      {/* ── The Sandbar Experience ──────────────────────────────── */}
+      <Section id="the-experience" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
+              {t("hs.exp.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+              {t("hs.exp.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-5">
+            <div className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
+              <Anchor className="h-7 w-7 text-[--color-emerald]" />
+              <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                {t("hs.exp.anchor.title")}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
+                {t("hs.exp.anchor.text")}
+              </p>
+            </div>
+
+            <div className="grid gap-5 md:grid-cols-2">
+              <div className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
+                <Waves className="h-7 w-7 text-[--color-emerald]" />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t("hs.exp.wade.title")}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                  {t("hs.exp.wade.text")}
+                </p>
+              </div>
+              <div className="rounded-[1.75rem] border border-white/8 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
+                <Sun className="h-7 w-7 text-[--color-gold]" />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t("hs.exp.vendors.title")}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/65">
+                  {t("hs.exp.vendors.text")}
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-[1.75rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-5 sm:p-6 md:p-8">
+              <Users className="h-7 w-7 text-[--color-gold]" />
+              <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                {t("hs.exp.party.title")}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
+                {t("hs.exp.party.text")}
+              </p>
+            </div>
+          </div>
+
+          {/* Cross-link to first-timer guide */}
+          <div className="mt-8 text-center">
+            <Link
+              href="/blog/first-time-yacht-rental-miami"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] hover:underline underline-offset-4"
+            >
+              <BookOpen className="h-4 w-4" />
+              {t("hs.exp.firstTimerLink")}
+            </Link>
+          </div>
+        </div>
+      </Section>
+
       {/* ── How to Get There ─────────────────────────────────────── */}
-      <Section id="how-to-get-there" dark className="scroll-mt-28">
+      <Section id="how-to-get-there" className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_26px_70px_rgba(0,0,0,0.26)]">
@@ -416,23 +555,24 @@ export default function HauloverSandbarArticle() {
       </Section>
 
       {/* ── Best Time to Visit ───────────────────────────────────── */}
-      <Section id="best-time" className="scroll-mt-28">
+      <Section id="best-time" dark className="scroll-mt-28">
         <div className="mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("hs.time.title")}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/50">
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
               {t("hs.time.intro")}
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {TIMING_CARDS.map((card) => (
+          {/* Top row: 3 cards */}
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {TIMING_CARDS.slice(0, 3).map((card) => (
               <div
                 key={card.titleKey}
-                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6"
               >
                 <card.icon
                   className={`h-8 w-8 ${
@@ -441,7 +581,7 @@ export default function HauloverSandbarArticle() {
                       : "text-[--color-emerald]"
                   }`}
                 />
-                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
                   {t(card.titleKey)}
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-white/60">
@@ -449,6 +589,84 @@ export default function HauloverSandbarArticle() {
                 </p>
               </div>
             ))}
+          </div>
+
+          {/* Bottom row: 2 cards */}
+          <div className="mt-5 grid gap-5 sm:grid-cols-2">
+            {TIMING_CARDS.slice(3).map((card) => (
+              <div
+                key={card.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-5 sm:p-6"
+              >
+                <card.icon
+                  className={`h-8 w-8 ${
+                    card.accent === "gold"
+                      ? "text-[--color-gold]"
+                      : "text-[--color-emerald]"
+                  }`}
+                />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-lg text-white sm:text-xl">
+                  {t(card.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {t(card.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Tide detail callout */}
+          <div className="mt-8 rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4">
+            <p className="text-sm leading-relaxed text-[--color-emerald]">
+              {t("hs.time.tideDetail")}
+            </p>
+          </div>
+
+          {/* Cross-link: bachelorette */}
+          <div className="mt-6 text-center">
+            <Link
+              href="/blog/bachelorette-party-yacht-miami"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-gold] hover:underline underline-offset-4"
+            >
+              <Heart className="h-4 w-4" />
+              {t("hs.time.bachLink")}
+            </Link>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── How Much Does It Cost ───────────────────────────────── */}
+      <Section id="how-much" className="scroll-mt-28">
+        <div className="mx-auto max-w-4xl">
+          <div className="rounded-[2rem] border border-[--color-gold]/25 bg-gradient-to-br from-[--color-navy-light]/80 to-[--color-navy]/60 p-6 sm:p-8 md:p-10">
+            <div className="flex items-start gap-4 sm:gap-5">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-[--color-gold]/30 bg-[--color-gold]/10 sm:h-14 sm:w-14">
+                <DollarSign className="h-6 w-6 text-[--color-gold] sm:h-7 sm:w-7" />
+              </div>
+              <div>
+                <h2 className="font-[family-name:var(--font-heading)] text-xl text-white sm:text-2xl md:text-3xl">
+                  {t("hs.cost.title")}
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-white/72">
+                  {t("hs.cost.p1")}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-white/58">
+                  {t("hs.cost.p2")}
+                </p>
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link
+                    href="/blog/miami-yacht-charter-prices"
+                    className="inline-flex items-center justify-center gap-2 rounded-full border border-[--color-gold] bg-transparent px-6 py-3 text-sm font-semibold text-[--color-gold] transition-colors hover:bg-[--color-gold]/10"
+                  >
+                    <DollarSign className="h-4 w-4" />
+                    {t("hs.cost.priceLink")}
+                  </Link>
+                  <Button href="/book" variant="secondary" size="md">
+                    {t("hs.cta.book")}
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Section>

@@ -10,12 +10,16 @@ import {
   CheckCircle,
   ChevronRight,
   Clock,
+  CloudRain,
   Compass,
+  DollarSign,
   HelpCircle,
+  Heart,
   MapPin,
   ShieldCheck,
   Shirt,
   Sun,
+  UserCheck,
   Users,
   Waves,
 } from "lucide-react";
@@ -30,12 +34,15 @@ import { asset } from "@/lib/constants";
 
 const GUIDE_SECTIONS = [
   { id: "what-to-expect", titleKey: "ft.expect.title" },
+  { id: "pricing", titleKey: "ft.pricing.title" },
   { id: "bareboat-vs-crewed", titleKey: "ft.charter.title" },
+  { id: "captain-crew", titleKey: "ft.captain.title" },
   { id: "booking-process", titleKey: "ft.booking.title" },
   { id: "what-to-bring", titleKey: "ft.bring.title" },
   { id: "what-to-wear", titleKey: "ft.wear.title" },
   { id: "etiquette", titleKey: "ft.etiquette.title" },
   { id: "mistakes", titleKey: "ft.mistakes.title" },
+  { id: "seasickness", titleKey: "ft.seasick.title" },
   { id: "safety", titleKey: "ft.safety.title" },
   { id: "faq", titleKey: "ft.faq.title" },
 ];
@@ -152,6 +159,16 @@ const MISTAKE_CARDS = [
     textKey: "ft.mistakes.glass.text",
     icon: AlertTriangle,
   },
+  {
+    titleKey: "ft.mistakes.weather.title",
+    textKey: "ft.mistakes.weather.text",
+    icon: CloudRain,
+  },
+  {
+    titleKey: "ft.mistakes.headcount.title",
+    textKey: "ft.mistakes.headcount.text",
+    icon: UserCheck,
+  },
 ];
 
 const FAQ_ITEMS = [
@@ -167,20 +184,24 @@ const FAQ_ITEMS = [
 
 const RELATED_LINKS = [
   {
-    href: "/blog/coast-guard-inspection-bareboat-charter",
-    labelKey: "ft.related.coastGuard",
+    href: "/blog/miami-yacht-charter-prices",
+    labelKey: "ft.related.prices",
+  },
+  {
+    href: "/blog/bachelorette-party-yacht-miami",
+    labelKey: "ft.related.bachelorette",
   },
   {
     href: "/blog/haulover-sandbar-yacht-charter-miami",
     labelKey: "ft.related.haulover",
   },
   {
-    href: "/blog/jet-ski-license-miami",
-    labelKey: "ft.related.jetski",
+    href: "/blog/coast-guard-inspection-bareboat-charter",
+    labelKey: "ft.related.coastGuard",
   },
   {
-    href: "/blog/miami-yacht-charter-prices",
-    labelKey: "ft.related.prices",
+    href: "/blog/jet-ski-license-miami",
+    labelKey: "ft.related.jetski",
   },
   {
     href: "/experiences",
@@ -401,8 +422,78 @@ export default function FirstTimeYachtArticle() {
         </div>
       </Section>
 
+      {/* -- How Much Does It Cost? --------------------------------------- */}
+      <Section id="pricing" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-gold]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+              {t("ft.pricing.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+              {t("ft.pricing.intro")}
+            </p>
+          </div>
+
+          <div className="mx-auto mt-10 max-w-3xl rounded-[2rem] border border-[--color-gold]/20 bg-[--color-navy]/70 p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <DollarSign className="mt-1 h-8 w-8 shrink-0 text-[--color-gold]" />
+              <div>
+                <h3 className="font-[family-name:var(--font-heading)] text-2xl text-white">
+                  {t("ft.pricing.starting.title")}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-white/70">
+                  {t("ft.pricing.starting.text")}
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {[
+                {
+                  labelKey: "ft.pricing.includes.captain",
+                  icon: Anchor,
+                },
+                {
+                  labelKey: "ft.pricing.includes.crew",
+                  icon: Users,
+                },
+                {
+                  labelKey: "ft.pricing.includes.gear",
+                  icon: CheckCircle,
+                },
+              ].map((item) => (
+                <div
+                  key={item.labelKey}
+                  className="flex items-center gap-2 text-sm text-white/60"
+                >
+                  <item.icon className="h-4 w-4 shrink-0 text-[--color-emerald]" />
+                  <span>{t(item.labelKey)}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-white/8 bg-white/[0.03] p-5">
+              <p className="text-sm leading-relaxed text-white/65">
+                {t("ft.pricing.detail")}
+              </p>
+            </div>
+
+            <div className="mt-6 text-center">
+              <Link
+                href="/blog/miami-yacht-charter-prices"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-gold] hover:underline underline-offset-4"
+              >
+                <DollarSign className="h-4 w-4" />
+                {t("ft.pricing.link")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </Section>
+
       {/* -- Bareboat vs Crewed ------------------------------------------- */}
-      <Section id="bareboat-vs-crewed" dark className="scroll-mt-28">
+      <Section id="bareboat-vs-crewed" className="scroll-mt-28">
         <div className="mx-auto grid max-w-6xl items-center gap-6 md:gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="relative mx-auto w-full max-w-md">
             <div className="overflow-hidden rounded-[2rem] border-2 border-[--color-emerald]/20 shadow-[0_26px_70px_rgba(0,0,0,0.26)]">
@@ -441,6 +532,97 @@ export default function FirstTimeYachtArticle() {
                 {t("ft.charter.note")}
               </p>
             </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* -- Your Captain Handles Everything ------------------------------- */}
+      <Section id="captain-crew" dark className="scroll-mt-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="mx-auto mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl text-white sm:text-4xl md:text-5xl">
+              {t("ft.captain.title")}
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-white/55">
+              {t("ft.captain.intro")}
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                titleKey: "ft.captain.nav.title",
+                textKey: "ft.captain.nav.text",
+                icon: Compass,
+                accent: "emerald" as const,
+              },
+              {
+                titleKey: "ft.captain.anchor.title",
+                textKey: "ft.captain.anchor.text",
+                icon: Anchor,
+                accent: "gold" as const,
+              },
+              {
+                titleKey: "ft.captain.weather.title",
+                textKey: "ft.captain.weather.text",
+                icon: CloudRain,
+                accent: "emerald" as const,
+              },
+              {
+                titleKey: "ft.captain.safety.title",
+                textKey: "ft.captain.safety.text",
+                icon: ShieldCheck,
+                accent: "gold" as const,
+              },
+              {
+                titleKey: "ft.captain.crew.title",
+                textKey: "ft.captain.crew.text",
+                icon: Users,
+                accent: "emerald" as const,
+              },
+              {
+                titleKey: "ft.captain.local.title",
+                textKey: "ft.captain.local.text",
+                icon: MapPin,
+                accent: "gold" as const,
+              },
+            ].map((card) => (
+              <div
+                key={card.titleKey}
+                className="rounded-[1.75rem] border border-white/8 bg-[--color-navy-light]/55 p-6"
+              >
+                <card.icon
+                  className={`h-7 w-7 ${
+                    card.accent === "gold"
+                      ? "text-[--color-gold]"
+                      : "text-[--color-emerald]"
+                  }`}
+                />
+                <h3 className="mt-4 font-[family-name:var(--font-heading)] text-xl text-white">
+                  {t(card.titleKey)}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  {t(card.textKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-[--color-emerald]/20 bg-[--color-emerald]/5 px-5 py-4">
+            <p className="text-sm font-medium text-[--color-emerald]">
+              {t("ft.captain.note")}
+            </p>
+          </div>
+
+          <div className="mt-6 text-center">
+            <Link
+              href="/blog/coast-guard-inspection-bareboat-charter"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[--color-emerald] hover:underline underline-offset-4"
+            >
+              <ShieldCheck className="h-4 w-4" />
+              {t("ft.captain.cgLink")}
+            </Link>
           </div>
         </div>
       </Section>

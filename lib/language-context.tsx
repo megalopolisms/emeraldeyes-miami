@@ -1593,6 +1593,43 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.share.title": "Share with Your Group",
     "bach.share.text":
       "Send this guide to the bridal party group chat. Everyone will have the details they need — what to bring, what to wear, and what to expect.",
+
+    // -- Cross-link & callout keys (added 2026-03-14) --
+    "bach.costRef.title": "What It Costs",
+    "bach.costRef.text":
+      "Starting at $3,500 for 4 hours. See our full pricing breakdown",
+    "bach.costRef.link": "Full pricing guide",
+    "bach.perPerson.text":
+      "$3,500 \u00F7 12 guests = ~$292/person \u2014 less than a night at LIV or E11EVEN",
+    "bach.perPerson.label": "Per-Person Math",
+    "bach.itin.morning.time": "11:00 AM \u2014 Depart the dock",
+    "bach.itin.morning.time2": "12:00 PM \u2014 Arrive at Haulover Sandbar",
+    "bach.itin.sunset.time": "4:00 PM \u2014 Depart for Star Island cruise",
+    "bach.itin.sunset.time2": "5:30 PM \u2014 Golden hour photos",
+    "bach.itin.evening.time": "7:00 PM \u2014 Depart for night cruise",
+    "bach.itin.evening.time2": "8:30 PM \u2014 City lights skyline pass",
+    "bach.itin.morning.schedule":
+      "11 AM departure \u2192 12 PM sandbar arrival \u2192 2 PM Star Island cruise \u2192 3 PM return to dock",
+    "bach.itin.sunset.schedule":
+      "4 PM departure \u2192 5 PM Millionaire\u2019s Row \u2192 6 PM sunset photos \u2192 7:30 PM return",
+    "bach.itin.evening.schedule":
+      "7 PM departure \u2192 8 PM Brickell skyline \u2192 9 PM South Beach pass \u2192 10:30 PM return",
+    "bach.tips.tip6":
+      "Book as early as you can \u2014 especially for peak season (December through April) and holiday weekends. Saturdays in March and April fill up 3+ months out. Midweek dates and summer are more flexible, but the best vessels still go fast.",
+    "bach.tips.tip7":
+      "Miami weather is unpredictable. We monitor conditions 72 hours before your charter and will reach out if anything looks concerning. If rain or high winds force a reschedule, your deposit transfers to a new date at no extra charge. Summer afternoon thunderstorms usually clear by 5 PM \u2014 sunset cruises rarely get affected.",
+    "bach.related.yachtPrices": "Yacht Charter Prices Guide",
+    "bach.related.firstTimer": "First-Time Yacht Rental Guide",
+    "bach.related.coastGuard": "Coast Guard & Safety Standards",
+    "bach.related.jetSki": "Jet Ski License Guide for Miami",
+    "bach.crosslink.pricing": "See our full yacht pricing breakdown \u2192",
+    "bach.crosslink.firstTimer":
+      "First time on a yacht? Read the essentials \u2192",
+    "bach.crosslink.haulover": "Our complete Haulover Sandbar guide \u2192",
+    "bach.crosslink.coastGuard":
+      "How we exceed Coast Guard requirements \u2192",
+    "bach.crosslink.jetSki": "Jet ski license rules in Florida \u2192",
+
     "bach.final.title": "This is the bachelorette she deserves.",
     "bach.final.text":
       "Private yacht. Licensed captain. The Miami skyline, golden hour, and a sound system loud enough for the whole sandbar to hear. This is the celebration your bride-to-be will talk about forever.",
@@ -3046,6 +3083,44 @@ const translations: Record<Lang, Record<string, string>> = {
     "bach.share.title": "Comparte con Tu Grupo",
     "bach.share.text":
       "Envia esta guia al chat grupal. Todas tendran los detalles que necesitan — que traer, que usar y que esperar.",
+
+    // -- Cross-link & callout keys (added 2026-03-14) --
+    "bach.costRef.title": "Cuanto Cuesta",
+    "bach.costRef.text":
+      "Desde $3,500 por 4 horas. Ve nuestro desglose completo de precios",
+    "bach.costRef.link": "Guia completa de precios",
+    "bach.perPerson.text":
+      "$3,500 \u00F7 12 invitadas = ~$292/persona \u2014 menos que una noche en LIV o E11EVEN",
+    "bach.perPerson.label": "Matematica Por Persona",
+    "bach.itin.morning.time": "11:00 AM \u2014 Salida del muelle",
+    "bach.itin.morning.time2": "12:00 PM \u2014 Llegada a Haulover Sandbar",
+    "bach.itin.sunset.time": "4:00 PM \u2014 Salida para crucero Star Island",
+    "bach.itin.sunset.time2": "5:30 PM \u2014 Fotos de hora dorada",
+    "bach.itin.evening.time": "7:00 PM \u2014 Salida para crucero nocturno",
+    "bach.itin.evening.time2": "8:30 PM \u2014 Paso por luces del skyline",
+    "bach.itin.morning.schedule":
+      "11 AM salida \u2192 12 PM llegada al sandbar \u2192 2 PM crucero Star Island \u2192 3 PM regreso al muelle",
+    "bach.itin.sunset.schedule":
+      "4 PM salida \u2192 5 PM Millionaire\u2019s Row \u2192 6 PM fotos atardecer \u2192 7:30 PM regreso",
+    "bach.itin.evening.schedule":
+      "7 PM salida \u2192 8 PM skyline Brickell \u2192 9 PM paso South Beach \u2192 10:30 PM regreso",
+    "bach.tips.tip6":
+      "Reserva lo antes posible \u2014 especialmente para temporada alta (diciembre a abril) y fines de semana festivos. Los sabados de marzo y abril se llenan 3+ meses antes. Los dias entre semana y verano son mas flexibles, pero las mejores embarcaciones se van rapido.",
+    "bach.tips.tip7":
+      "El clima de Miami es impredecible. Monitoreamos las condiciones 72 horas antes de tu charter y te contactaremos si algo se ve preocupante. Si la lluvia o vientos fuertes obligan a reprogramar, tu deposito se transfiere a una nueva fecha sin costo adicional. Las tormentas de verano usualmente pasan antes de las 5 PM \u2014 los cruceros al atardecer rara vez se ven afectados.",
+    "bach.related.yachtPrices": "Guia de Precios de Yate",
+    "bach.related.firstTimer": "Guia de Primer Alquiler de Yate",
+    "bach.related.coastGuard": "Guardacostas y Estandares de Seguridad",
+    "bach.related.jetSki": "Guia de Licencia de Jet Ski en Miami",
+    "bach.crosslink.pricing": "Ve nuestro desglose completo de precios \u2192",
+    "bach.crosslink.firstTimer":
+      "Primera vez en un yate? Lee lo esencial \u2192",
+    "bach.crosslink.haulover":
+      "Nuestra guia completa de Haulover Sandbar \u2192",
+    "bach.crosslink.coastGuard":
+      "Como superamos los requisitos de Guardacostas \u2192",
+    "bach.crosslink.jetSki": "Reglas de licencia de jet ski en Florida \u2192",
+
     "bach.final.title": "Esta es la despedida que ella merece.",
     "bach.final.text":
       "Yate privado. Capitan licenciado. El skyline de Miami, hora dorada y un sistema de sonido lo suficientemente fuerte para que todo el sandbar escuche. Esta es la celebracion de la que tu novia hablara por siempre.",

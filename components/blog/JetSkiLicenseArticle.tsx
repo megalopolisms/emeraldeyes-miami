@@ -22,6 +22,11 @@ import {
   Waves,
   AlertTriangle,
   BookOpen,
+  Ship,
+  Gauge,
+  Fish,
+  Wine,
+  Sparkles,
 } from "lucide-react";
 import Section from "@/components/ui/Section";
 import Button from "@/components/ui/Button";
@@ -74,9 +79,27 @@ const RULES_CARDS = [
     accent: "emerald" as const,
   },
   {
-    icon: AlertTriangle,
+    icon: Wine,
     titleKey: "js.rules.bui.title",
     textKey: "js.rules.bui.text",
+    accent: "gold" as const,
+  },
+  {
+    icon: Gauge,
+    titleKey: "js.rules.speed.title",
+    textKey: "js.rules.speed.text",
+    accent: "emerald" as const,
+  },
+  {
+    icon: Fish,
+    titleKey: "js.rules.wildlife.title",
+    textKey: "js.rules.wildlife.text",
+    accent: "gold" as const,
+  },
+  {
+    icon: AlertTriangle,
+    titleKey: "js.rules.buiPenalties.title",
+    textKey: "js.rules.buiPenalties.text",
     accent: "gold" as const,
   },
 ];
@@ -405,7 +428,7 @@ export default function JetSkiLicenseArticle() {
       </Section>
 
       {/* ================================================================= */}
-      {/* FLORIDA RULES — 3 Key Rules Cards                                 */}
+      {/* FLORIDA RULES — 6 Key Rules Cards (expanded safety)              */}
       {/* ================================================================= */}
       <Section>
         <div className="mb-12 text-center">
@@ -418,7 +441,7 @@ export default function JetSkiLicenseArticle() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {RULES_CARDS.map((card, i) => (
             <motion.div
               key={i}
@@ -500,6 +523,81 @@ export default function JetSkiLicenseArticle() {
               <Button href="/book" size="lg">
                 {t("js.midCta.btn")}
               </Button>
+            </div>
+          </motion.div>
+        </div>
+      </Section>
+
+      {/* ================================================================= */}
+      {/* JET SKIS FROM YOUR YACHT — add-on section                        */}
+      {/* ================================================================= */}
+      <Section dark>
+        <div className="mx-auto max-w-5xl grid items-center gap-8 md:gap-12 md:grid-cols-[1fr_1.3fr]">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="relative mx-auto w-full max-w-[280px] md:max-w-sm"
+          >
+            <div className="overflow-hidden rounded-2xl border-2 border-[--color-emerald]/25 shadow-xl shadow-[--color-emerald]/10">
+              <Image
+                src={asset("/images/jetski.jpg")}
+                alt="Jet ski delivered to yacht at Haulover Sandbar — Emerald Eyes Miami"
+                width={784}
+                height={1168}
+                className="h-auto w-full object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-4 -right-4 h-28 w-28 rounded-2xl border border-[--color-emerald]/15 bg-[--color-emerald]/5 -z-10" />
+            <div className="absolute -top-3 -left-3 h-16 w-16 rounded-full border border-[--color-gold]/15 bg-[--color-gold]/5 -z-10" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
+            <div className="mb-4 h-1 w-12 rounded-full bg-[--color-emerald]" />
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[--color-gold]">
+              {t("js.yacht.eyebrow")}
+            </p>
+            <h2 className="mt-3 font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-bold text-white">
+              {t("js.yacht.title")}
+            </h2>
+            <p className="mt-6 text-base leading-relaxed text-white/75">
+              {t("js.yacht.p1")}
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-white/75">
+              {t("js.yacht.p2")}
+            </p>
+            <p className="mt-4 text-base leading-relaxed text-white/75">
+              {t("js.yacht.p3")}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3 text-xs">
+              <span className="rounded-full border border-[--color-emerald]/30 bg-[--color-emerald]/10 px-4 py-1.5 text-[--color-emerald] font-medium">
+                {t("js.yacht.tag1")}
+              </span>
+              <span className="rounded-full border border-[--color-gold]/30 bg-[--color-gold]/10 px-4 py-1.5 text-[--color-gold] font-medium">
+                {t("js.yacht.tag2")}
+              </span>
+            </div>
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/blog/miami-yacht-charter-prices"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                {t("js.yacht.pricingLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="/blog/haulover-sandbar-yacht-charter-miami"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                {t("js.yacht.sandbarLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -618,6 +716,22 @@ export default function JetSkiLicenseArticle() {
             <p className="mt-4 text-base leading-relaxed text-white/75">
               {t("js.pricing.p3")}
             </p>
+            <div className="mt-5 flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/blog/miami-yacht-charter-prices"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-gold] hover:underline underline-offset-4"
+              >
+                {t("js.pricing.yachtPricesLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+              <Link
+                href="/blog/bachelorette-party-yacht-miami"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-gold] hover:underline underline-offset-4"
+              >
+                {t("js.pricing.bacheloretteLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </motion.div>
 
           <motion.div
@@ -680,8 +794,56 @@ export default function JetSkiLicenseArticle() {
             <p className="mt-8 text-base leading-relaxed text-white/75 max-w-2xl mx-auto">
               {t("js.safety.p2")}
             </p>
+            <div className="mt-6">
+              <Link
+                href="/blog/coast-guard-inspection-bareboat-charter"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                {t("js.safety.coastGuardLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
           </motion.div>
         </div>
+      </Section>
+
+      {/* ================================================================= */}
+      {/* BOOK A JET SKI ADD-ON — CTA section                              */}
+      {/* ================================================================= */}
+      <Section dark>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          custom={0}
+          className="mx-auto max-w-3xl text-center"
+        >
+          <div className="rounded-2xl border border-[--color-emerald]/20 bg-gradient-to-b from-[--color-emerald]/5 to-transparent p-8 sm:p-10 md:p-14">
+            <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-[--color-emerald] mx-auto mb-5" />
+            <h2 className="font-[family-name:var(--font-heading)] text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
+              {t("js.bookAddon.title")}
+            </h2>
+            <p className="text-white/70 text-base leading-relaxed max-w-xl mx-auto mb-4">
+              {t("js.bookAddon.p1")}
+            </p>
+            <p className="text-white/60 text-sm leading-relaxed max-w-xl mx-auto mb-8">
+              {t("js.bookAddon.p2")}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button href="/book" size="lg">
+                {t("js.bookAddon.btn")}
+              </Button>
+              <Link
+                href="/blog/first-time-yacht-rental-miami"
+                className="inline-flex items-center gap-1.5 text-sm text-[--color-emerald] hover:underline underline-offset-4"
+              >
+                {t("js.bookAddon.firstTimeLink")}{" "}
+                <ChevronRight className="w-3.5 h-3.5" />
+              </Link>
+            </div>
+          </div>
+        </motion.div>
       </Section>
 
       {/* ================================================================= */}
@@ -776,18 +938,25 @@ export default function JetSkiLicenseArticle() {
             <div className="space-y-2">
               {[
                 {
+                  href: "/blog/miami-yacht-charter-prices",
+                  labelKey: "js.related.yachtPrices",
+                },
+                {
+                  href: "/blog/haulover-sandbar-yacht-charter-miami",
+                  labelKey: "js.related.sandbar",
+                },
+                {
+                  href: "/blog/first-time-yacht-rental-miami",
+                  labelKey: "js.related.firstTime",
+                },
+                {
+                  href: "/blog/bachelorette-party-yacht-miami",
+                  labelKey: "js.related.bachelorette",
+                },
+                {
                   href: "/blog/coast-guard-inspection-bareboat-charter",
                   labelKey: "js.related.coastGuard",
                 },
-                {
-                  href: "/experiences/sunset-cruise-miami",
-                  labelKey: "js.related.sunset",
-                },
-                {
-                  href: "/experiences/haulover-sandbar-yacht-miami",
-                  labelKey: "js.related.sandbar",
-                },
-                { href: "/fleet", labelKey: "js.related.fleet" },
                 { href: "/book", labelKey: "js.related.book" },
               ].map((link) => (
                 <Link
